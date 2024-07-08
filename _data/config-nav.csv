@@ -1,9 +1,8 @@
 display_name,stub,dropdown_parent
 Home,/
-Browse,/browse.html
-Subjects,/subjects.html
-Locations,/locations.html
+Essays,/essays.html
+Photos,/browse.html
 Map,/map.html
+Gray Literature,/browse.html
 Timeline,/timeline.html
-Data,/data.html
 About,/about.html
