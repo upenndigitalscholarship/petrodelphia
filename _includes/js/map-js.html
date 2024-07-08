@@ -58,7 +58,7 @@
         "Esri Imagery": Esri_WorldImagery,
         "1965": petro1965
     };
-    L.control.layers(baseMaps).addTo(map);
+    L.control.layers(baseMaps, collapsed=false).addTo(map);
     /* load base map */
     {{ site.data.theme.map-base | default: 'Esri_WorldStreetMap' }}.addTo(map);
 
