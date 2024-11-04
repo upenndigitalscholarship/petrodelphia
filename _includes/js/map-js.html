@@ -17,12 +17,15 @@
 {% if site.data.theme.map-search == true and site.data.theme.map-cluster == true %}<script src="{{ '/assets/lib/leaflet/leaflet.markercluster.freezable.js' | relative_url }}"></script>{% endif %}
 
 <script>
-    async function getData(url) {
-        const response = await fetch(url);
-
-        return response.json();
-    }
-    const data = await getData({{ '/assets/data/cleanupAOI.json' | relative_url }});
+    const url = {{ '/assets/data/cleanupAOI.json' | relative_url }};
+    let jsondata;    
+    fetch(url).then(
+        function(u){ return u.json();}
+      ).then(
+        function(json){
+          jsondata = json;
+        }
+      )
 
 (function(){
     /* add collection map data */
