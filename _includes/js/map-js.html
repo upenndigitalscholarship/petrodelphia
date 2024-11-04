@@ -17,6 +17,13 @@
 {% if site.data.theme.map-search == true and site.data.theme.map-cluster == true %}<script src="{{ '/assets/lib/leaflet/leaflet.markercluster.freezable.js' | relative_url }}"></script>{% endif %}
 
 <script>
+    async function getData(url) {
+        const response = await fetch(url);
+
+        return response.json();
+    }
+    const data = await getData({{ '/assets/data/cleanupAOI.json' | relative_url }});
+
 (function(){
     /* add collection map data */
     var geodata = { "type": "FeatureCollection", "features": [ 
