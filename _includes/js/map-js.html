@@ -51,12 +51,16 @@
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
+    var PASDA2019 = L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
+    layers: '1' 
+    });
     /* add base map switcher */
     var baseMaps = {
         "Esri World StreetMap": Esri_WorldStreetMap,
         "Esri National Geo": Esri_NatGeoWorldMap,
         "Esri Imagery": Esri_WorldImagery,
-        "1965": petro1965
+        "1965": petro1965,
+        "2019": PASDA2019
     };
     L.control.layers(baseMaps, null, { collapsed: false }).addTo(map);
     /* load base map */
