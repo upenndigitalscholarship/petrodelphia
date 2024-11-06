@@ -36,6 +36,7 @@ author: Jared Farmer + Penn Libraries RDDS
 # Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
 metadata: images
 metadata_2: documents
+metadata_3: essays
 
 ##########
 # Site/Organization Branding 
