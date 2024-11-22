@@ -14,6 +14,7 @@
     "contributors": [
         {
             "title": "{{ site.author | escape }}",
+            "path": "{{ site.organization-link }}",
             "role": "author"
         }
     ],
