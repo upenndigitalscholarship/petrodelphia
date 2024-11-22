@@ -11,3 +11,20 @@
 	display: block !important;
 	visibility:visible !important;
 }
+
+.accordion-button:not(.collapsed) {
+    color: black !important;
+    background-color:white;
+}
+
+.accordion-button.collapsed {
+    color:black !important; 
+}
+
+.accordion-button::before {
+    color:black !important;
+}
+
+.accordion-button::after {
+    color:black !important;
+}
