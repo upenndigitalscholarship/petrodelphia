@@ -1,8 +1,14 @@
 display_name,stub,dropdown_parent
-Home,/
-Essays,/essays.html
-Photos,/browse.html
-Map,/map.html
-Gray Literature,/browse_2.html
-Timeline,/timeline.html
-About,/about.html
+Home,/,
+Browse,,
+All,/browse.html,Browse
+Essays,/browse.html#essay,Browse
+Government Publications,/browse.html#Government%20Publication,Browse
+Subjects,/subjects.html,
+Locations,/locations.html,
+Map,/map.html,
+Timeline,/timeline.html,
+Data,/data.html,
+About,,
+About the Project,/about.html,About
+Credits,/credit.html,About
