@@ -64,15 +64,15 @@ custom-foot: js/browse-js.html
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
               <button class="accordion-button collapsed bg-light text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Institution Type
+                Genre
               </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                {% assign mapped_institutions = site.data[site.metadata] | map: "institution_type" | compact | uniq %}{% capture included_institutions %}{% for s in mapped_institutions %}{{s}}  {% endfor %}{% endcapture %}
+                {% assign mapped_gtypes = site.data[site.metadata] | map: "genre_type" | compact | uniq %}{% capture included_gtypes %}{% for s in mapped_gtypes %}{{s}}  {% endfor %}{% endcapture %}
                 
-                {% for itype in site.data.institution-types%} {% if included_institutions contains itype.title %}
-                <a href="#{{itype.title}}" class="btn btn-outline-primary btn-sm m-1">{{itype.title}}</a>
+                {% for gtype in site.data.genre-types%} {% if included_gtypes contains gtype.title %}
+                <a href="#{{gtype.title}}" class="btn btn-outline-primary btn-sm m-1">{{gtype.title}}</a>
                 {% endif %}
               {% endfor %}
               </div>
