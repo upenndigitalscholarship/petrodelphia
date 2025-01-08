@@ -1,9 +1,9 @@
 {% comment %}
 
     Term cloud.
-    This include adds a word cloud feature based on one more metadata fields. Cloud will work best with multi-value (separated by semicolon ; ) controlled vocab type fields, such as "subject".
+    This include adds a word cloud feature based on one more metadata fields. Cloud will work best with multi-value (separated by semicolon ; ) controlled vocab type fields, such as "keyword".
 
-    E.G. --> {% include feature/cloud.html fields="subject;creator" min=2 %}
+    E.G. --> {% include feature/cloud.html fields="keyword;creator" min=2 %}
 
     Options:
     - "fields" = one or more metadata fields to include in the cloud. (required)

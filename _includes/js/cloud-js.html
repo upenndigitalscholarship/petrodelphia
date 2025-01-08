@@ -23,7 +23,7 @@
 {%- assign cloud_id = include.id | default: "cloud" -%}
 
 <script>
-    /* subject terms + count */
+    /* keyword terms + count */
     var terms = [
         {% for u in uniqueTerms %}{% assign count = terms | where_exp: 'item', 'item == u' | size %}{% if count >= termsMin %}[ {{ u | jsonify }}, {{ count }}],{% endif %}{% endfor %}[]
     ];

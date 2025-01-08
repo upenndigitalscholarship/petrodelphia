@@ -3,5 +3,5 @@ title,true,true
 date,true,true
 creator,true,false
 description,true,true
-subject,true,true
+keyword,true,true
 location,true,false

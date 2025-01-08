@@ -36,18 +36,18 @@
             "format":"json",
             "profile": "data-resource"
         },{% endif %}
-        {% if stubs contains "subject" %}
+        {% if stubs contains "keyword" %}
         {
-            "name": "subject-csv",
-            "path": "subjects.csv",
-            "title": "{{ site.title | escape }} metadata subject counts in csv",
-            "description": "Unique values and counts of metadata subject fields.",
+            "name": "keyword-csv",
+            "path": "keywords.csv",
+            "title": "{{ site.title | escape }} metadata keyword counts in csv",
+            "description": "Unique values and counts of metadata keyword fields.",
             "format":"csv",
             "profile":"tabular-data-resource",
             "schema": {
                 "fields": [
                     {
-                        "name": "subject",
+                        "name": "keyword",
                         "type": "string",
                         "format": "default"
                     },
@@ -65,17 +65,17 @@
             }
         },
         {
-            "name": "subjects-json",
-            "path": "subjects.json",
-            "title": "{{ site.title | escape }}  metadata subject counts in json",
-            "description":"Unique values and counts of metadata subject fields.",
+            "name": "keywords-json",
+            "path": "keywords.json",
+            "title": "{{ site.title | escape }}  metadata keyword counts in json",
+            "description":"Unique values and counts of metadata keyword fields.",
             "format":"json",
             "profile": "data-resource"
         },{% endif %}
         {% if stubs contains "location" %}
         {
             "name": "locations-csv",
-            "path": "subjects.csv",
+            "path": "keywords.csv", 
             "title": "{{ site.title | escape }} metadata location counts in csv",
             "description": "Unique values and counts of metadata location fields.",
             "format":"csv",

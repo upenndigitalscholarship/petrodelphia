@@ -2,7 +2,7 @@
 # find all unique locations used in the metadata
 ---
 {%- if site.data.theme.locations-fields -%}
-{%- assign cloud-fields = site.data.theme.subjects-fields | split: ";" -%}
+{%- assign cloud-fields = site.data.theme.keywords-fields | split: ";" -%}
 {% comment %} Capture all cloud terms {% endcomment %} 
 {%- assign raw-terms = "" -%}
 {%- for c in cloud-fields -%}

@@ -1,7 +1,7 @@
 {% comment %}
     This include creates a modal pop up with data export options.
     The logic of which formats appear is based on config-nav stubs:
-    if subject.html, map.html, location.html, or timeline.html are present, 
+    if keyword.html, map.html, location.html, or timeline.html are present, 
     corresponding data formats will be available for download.
 {%- endcomment -%}
 
@@ -38,13 +38,13 @@
                     </div>
                 </div>
                 {%- endif -%}
-                {% if stubs contains "subject" %}
+                {% if stubs contains "keyword" %}
                 <div class="card my-3">
                     <div class="card-body">
-                        <h2 class="card-title h4">Subject Metadata</h2>
-                        <p class="card-text">Unique values and counts of subject metadata, useful for further analyzing the content of this collection.</p>
-                        <a href="{{ '/assets/data/subjects.csv' | relative_url }}" class="btn btn-outline-dark" target="_blank">Subjects CSV</a>
-                        <a href="{{ '/assets/data/subjects.json' | relative_url }}" class="btn btn-outline-dark" target="_blank">Subjects JSON</a>
+                        <h2 class="card-title h4">Keyword Metadata</h2>
+                        <p class="card-text">Unique values and counts of keyword metadata, useful for further analyzing the content of this collection.</p>
+                        <a href="{{ '/assets/data/keywords.csv' | relative_url }}" class="btn btn-outline-dark" target="_blank">Keywords CSV</a>
+                        <a href="{{ '/assets/data/keywords.json' | relative_url }}" class="btn btn-outline-dark" target="_blank">Keywords JSON</a>
                     </div>
                 </div>
                 {% endif %}

@@ -5,9 +5,9 @@
         <p class="card-text text-center">
             <a class="btn btn-sm btn-secondary m-2" href="{{ '/assets/data/metadata.csv' | relative_url }}" target="_blank">Metadata CSV</a>
             <a class="btn btn-sm btn-secondary m-2" href="{{ '/assets/data/metadata.json' | relative_url }}" target="_blank">Metadata JSON</a>
-            {% if stubs contains "subject" %}
-            <a class="btn btn-sm btn-secondary m-2" href="{{ '/assets/data/subjects.json' | relative_url }}" target="_blank">Subjects JSON</a>
-            <a class="btn btn-sm btn-secondary m-2" href="{{ '/assets/data/subjects.csv' | relative_url }}" target="_blank">Subjects CSV</a>
+            {% if stubs contains "keyword" %}
+            <a class="btn btn-sm btn-secondary m-2" href="{{ '/assets/data/keywords.json' | relative_url }}" target="_blank">Keywords JSON</a>
+            <a class="btn btn-sm btn-secondary m-2" href="{{ '/assets/data/keywords.csv' | relative_url }}" target="_blank">Keywords CSV</a>
             {% endif %}
             {% if stubs contains "map" %}
             <a class="btn btn-sm btn-secondary m-2" href="{{ '/assets/data/geodata.json' | relative_url }}" target="_blank">Geodata JSON</a>
