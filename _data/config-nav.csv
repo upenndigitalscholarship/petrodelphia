@@ -2,13 +2,28 @@ display_name,stub,dropdown_parent
 Home,/,
 Browse,,
 All,/browse.html,Browse
-Essays,/browse.html#essay,Browse
-Government Publications,/browse.html#Government%20Publication,Browse
-Keywords,/keywords.html,
-Locations,/locations.html,
-Map,/map.html,
-Timeline,/timeline.html,
-Data,/data.html,
+Date,/browse.html#date,Browse
+Creator,/browse.html#creator,Browse
+Type,/browse.html#collection_type,Browse
+Genre,/browse.html#genre,Browse
+Collection,/browse.html#collection,Browse
+Keyword,/browse.html#keyword,Browse
+Location,/browse.html#location,Browse
+Reference,,
+Executive Summary,/summary.html,Reference
+Timeline,/timeline.html,Reference
+The Petroleum Industry and Philadelphia,/petro-industry.html,Reference
+Pennsylvania Coal and Philadelphia,/penna-coal.html,Reference
+"Philadelphia, PGW, and the Gas Works at Point Breeze",/point-breeze.html,Reference
+The Lower Schuylkill River,/schuylkill.html,Reference
+The South Philadelphia Refinery Complex,/south-philly-refinery.html,Reference
+Fenceline Risk and Environmental Justice in South and Southwest Philadelphia,/fenceline-risk.html,Reference
+Maps,,
+Layered map,/layer-map.html,Maps
+Chronological accident map,/accident-map.html,Maps
 About,,
-About the Project,/about.html,About
+Description,/about.html,About
+How to use,/navigate.html,About
+Data,/data.html,About
 Credits,/credit.html,About
+
