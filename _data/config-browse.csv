@@ -1,7 +1,8 @@
 field,display_name,btn,hidden,sort_name
-date,Date,,,Date
+date,Date,,,Date Ascending
+date_desc,Date desc,,true,Date Descending
 creator,Creator,,,
-collection_type,Collection Type,true,,Collection Type
-genre_type,Genre,true,,Genres
-keyword,Keywords,true,,Keywords
-location,Locations,true,,Locations
+collection_type,Collection,true,,Collection
+genre_type,Genre,true,,Genre
+keyword,Keywords,true,,Keyword
+location,Locations,true,,Location
