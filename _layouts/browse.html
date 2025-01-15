@@ -45,7 +45,7 @@ custom-foot: js/browse-js.html
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
               <button class="accordion-button bg-light text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Collection Type
+                Collection
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -53,7 +53,7 @@ custom-foot: js/browse-js.html
                 {% assign mapped_ctypes = site.data[site.metadata] | map: "collection_type" | compact | uniq %}{% capture included_ctypes %}{% for s in mapped_ctypes %}{{s}}  {% endfor %}{% endcapture %}
                 
                   {% for ctype in site.data.collection-types%} {% if included_ctypes contains ctype.title %}
-                  <a href="#{{ctype.title}}" class="btn btn-outline-primary btn-sm m-1">{{ctype.title}}</a>
+                  <a href="#{{ctype.title}}" class="btn btn-outline-primary btn-sm m-1">{{ctype.short}}</a>
                   {% endif %}
         
                   {% endfor %}
@@ -72,7 +72,7 @@ custom-foot: js/browse-js.html
                 {% assign mapped_gtypes = site.data[site.metadata] | map: "genre_type" | compact | uniq %}{% capture included_gtypes %}{% for s in mapped_gtypes %}{{s}}  {% endfor %}{% endcapture %}
                 
                 {% for gtype in site.data.genre-types%} {% if included_gtypes contains gtype.title %}
-                <a href="#{{gtype.title}}" class="btn btn-outline-primary btn-sm m-1">{{gtype.title}}</a>
+                <a href="#{{gtype.short}}" class="btn btn-outline-primary btn-sm m-1">{{gtype.title}}</a>
                 {% endif %}
               {% endfor %}
               </div>
