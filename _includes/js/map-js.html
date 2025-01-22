@@ -144,10 +144,10 @@ var OSMLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services
     };
     
 //    var layerControl = L.control.layers(overlayMaps, null, {collapsed:false}).addTo(map);
-
+    
     var layerControl = L.control.layers(overlayMaps, null, {collapsed:false}).addTo(map)
     /* load base map */
-
+    
     {% if site.data.theme.map-search == true %}
     /* add leaflet-fusesearch */
     var options = {
