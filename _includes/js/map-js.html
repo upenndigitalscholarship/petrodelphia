@@ -28,6 +28,7 @@
 
 (function(){
     /* add collection map data */
+    
     var geodata = { "type": "FeatureCollection", "features": [ 
     {% for item in items %}
     { "type":"Feature", "geometry":{ "type":"Point", "coordinates":[{{ item.longitude | strip }},{{ item.latitude | strip }}] }, "properties":
@@ -43,29 +44,47 @@
     var markerFilter = url.searchParams.get('marker') ? url.searchParams.get('marker') : "";
 
     /* init map, set center and zoom */
-    var map = L.map('map').setView(mapCenter, mapZoom);
+    var map = L.map('map').setView([39.902, -75.208], 13);
 
     var PASDA2019 = L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
     layers: '1' 
   
 }).addTo(map)
 
+//add reference layer
 
 
 //add reference layer
-    var USGS_1894 = L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png')
-    var USGS_1920 = L.tileLayer('https://mapwarper.net/maps/tile/88561/{z}/{x}/{y}.png')
-    var USGS_1949 = L.tileLayer('https://mapwarper.net/maps/tile/88564/{z}/{x}/{y}.png')
-    var USGS_1967 = L.tileLayer('https://mapwarper.net/maps/tile/88567/{z}/{x}/{y}.png')
-    var USGS_1995 = L.tileLayer('https://mapwarper.net/maps/tile/88568/{z}/{x}/{y}.png')
-    var USGS_2019 = L.tileLayer('https://mapwarper.net/maps/tile/88569/{z}/{x}/{y}.png')
-    var USGS_2023 = L.tileLayer('https://mapwarper.net/maps/tile/88570/{z}/{x}/{y}.png')
+var USGS_1894 = L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png', {
+    attribution: '<i>1894 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
+});
+var USGS_1920 = L.tileLayer('https://mapwarper.net/maps/tile/88561/{z}/{x}/{y}.png', {
+    attribution: '<i>1920 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
+})
+var USGS_1949 = L.tileLayer('https://mapwarper.net/maps/tile/88564/{z}/{x}/{y}.png', {
+    attribution: '<i>1949 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
+}).addTo(map);
+//.addTo(map); makes this a default load layer
 
-    var Bromley_1910 = L.tileLayer('https://mapwarper.net/maps/tile/88539/{z}/{x}/{y}.png')
+var USGS_1967 = L.tileLayer('https://mapwarper.net/maps/tile/88567/{z}/{x}/{y}.png',{
+    attribution: '<i>1967 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
+})
+var USGS_1995 = L.tileLayer('https://mapwarper.net/maps/tile/88568/{z}/{x}/{y}.png',{
+    attribution: '<i>1995 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
+})
+var USGS_2019 = L.tileLayer('https://mapwarper.net/maps/tile/88569/{z}/{x}/{y}.png',{
+    attribution: '<i>2019 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
+})
+var USGS_2023 = L.tileLayer('https://mapwarper.net/maps/tile/88570/{z}/{x}/{y}.png',{
+    attribution: '<i>2023 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
+})
 
-    var OSMLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-        layers: '1'   
-    }).addTo(map);
+var Bromley_1910 = L.tileLayer('https://mapwarper.net/maps/tile/88539/{z}/{x}/{y}.png')
+
+var OSMLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'},{
+    layers: '1' 
+}).addTo(map);
 
     var Aerial_1928 = L.tileLayer('https://mapwarper.net/maps/tile/88306/{z}/{x}/{y}.png')//
     var Aerial_1965 = L.tileLayer('https://mapwarper.net/maps/tile/88299/{z}/{x}/{y}.png')//
@@ -122,10 +141,12 @@
 //    "1990 Aerial Photograph" : Aerial_1995,
     "2019 Aerial Photograph": PASDA2019
 
-};
-    var layerControl = L.control.layers(overlayMaps, null, {collapsed:false}).addTo(map);
+    };
+    
+//    var layerControl = L.control.layers(overlayMaps, null, {collapsed:false}).addTo(map);
+
+    var layerControl = L.control.layers(overlayMaps, null, {collapsed:false}).addTo(map)
     /* load base map */
-    {{ site.data.theme.map-base | default: 'Bromley_1910' }}.addTo(map);
 
     {% if site.data.theme.map-search == true %}
     /* add leaflet-fusesearch */
@@ -141,6 +162,7 @@
             container.innerHTML = result;
         }
     };
+    
     var searchCtrl = L.control.fuseSearch(options);
     searchCtrl.addTo(map);
     searchCtrl.indexFeatures(geodata.features, {{ fields | where: 'search','true' | map: 'field' | unshift: 'title' | jsonify }});{% endif %}
