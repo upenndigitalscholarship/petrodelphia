@@ -94,6 +94,10 @@ var OSMLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services
 //var Aerial_1995 = L.tileLayer('https://mapwarper.net/maps/tile/88304/{z}/{x}/{y}.png')
 
 
+var ArmyPlume_1 = L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png') 
+var ArmyPlume_2 = L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png') //
+var ArmyPlume_3 = L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png') //
+var ArmyPlume_4 = L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png') //
 
     /* add map layer options */
     var Esri_WorldStreetMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -138,6 +142,10 @@ var OSMLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services
     "1975 Aerial Photograph" : Aerial_1975,
     "1980 Aerial Photograph" : Aerial_1980,
     "1985 Aerial Photograph": Aerial_1985,
+    "1997 Oil Plume Map pt.1" : ArmyPlume_1,
+    "1997 Oil Plume Map pt.2" : ArmyPlume_2,
+    "1997 Oil Plume Map pt.3" : ArmyPlume_3,
+    "1997 Oil Plume Map pt.4" : ArmyPlume_4,
 //    "1990 Aerial Photograph" : Aerial_1995,
     "2019 Aerial Photograph": PASDA2019
 
@@ -145,7 +153,7 @@ var OSMLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services
     
 //    var layerControl = L.control.layers(overlayMaps, null, {collapsed:false}).addTo(map);
     
-    var layerControl = L.control.layers(overlayMaps, null, {collapsed:false}).addTo(map)
+    var layerControl = L.control.layers(null, overlayMaps, {collapsed:false}).addTo(map)
     /* load base map */
     
     {% if site.data.theme.map-search == true %}
