@@ -7,3 +7,11 @@ credits: true
 ---
 
 ## Philadelphia, PGW, and the Gas Works at Point Breeze
+- Author
+- Date
+
+Abstract here, if applicable
+
+---
+
+Text of article here. This platform supports headings, blockquotes, endnotes, and footnotes.  Supported formatting includes **bolding**, _italics_, and ~~strikethrough~~ (but not underline).
