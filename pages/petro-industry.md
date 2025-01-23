@@ -7,3 +7,11 @@ credits: true
 ---
 
 ## The Petroleum Industry and Philadelphia
+- Author
+- Date
+
+Abstract here, if applicable
+
+---
+
+Text of article here. This platform supports headings, blockquotes, endnotes, and footnotes.  Supported formatting includes **bolding**, _italics_, and ~~strikethrough~~ (but not underline).
