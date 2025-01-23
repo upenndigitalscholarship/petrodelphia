@@ -13,3 +13,5 @@ credits: true
 {% include feature/nav-menu.html sections="About CollectionBuilder CSV;About the About Page" %} --->
 
 ## About America's First Petrochemical Corridor
+
+Text of about page here. This platform supports headings, blockquotes, endnotes, and footnotes.  Supported formatting includes **bolding**, _italics_, and ~~strikethrough~~ (but not underline).
