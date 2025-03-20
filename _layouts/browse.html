@@ -54,7 +54,7 @@ custom-foot: js/browse-js.html
                 {% assign mapped_ctypes = site.data[site.metadata] | map: "collection_type" | compact | uniq %}{% capture included_ctypes %}{% for s in mapped_ctypes %}{{s}}  {% endfor %}{% endcapture %}
                 
                   {% for ctype in site.data.collection-types%} {% if included_ctypes contains ctype.title %}
-                  <a href="#{{ctype.title}}" class="btn btn-outline-primary btn-sm m-1">{{ctype.short}}</a>
+                  <a href="#{{ctype.short}}" class="btn btn-outline-primary btn-sm m-1">{{ctype.title}}</a>
                   {% endif %}
         
                   {% endfor %}
