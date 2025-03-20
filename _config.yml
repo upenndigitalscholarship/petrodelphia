@@ -34,11 +34,11 @@ author: Jared Farmer + Penn Libraries RDDS
 #
 # Set the metadata for your collection (the name of the CSV file in your _data directory that describes the objects in your collection) 
 # Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
-metadata: petro-metadata
+metadata: 2025-03-20_Petro-Metadata_Sample
 # page generation settings [optional!]
 # [optional: only used if you need to tweak CB defaults or generate from more than one data file]
 # page_gen:
-#   - data: 'demo-metadata'
+#   - data: 'petro-metadata'
 #     template: 'item'
 #     name: 'objectid'
 #     dir: 'items'
@@ -73,3 +73,4 @@ exclude: [docs/, Rakefile, README.md, LICENSE, CITATION.cff, CODE_OF_CONDUCT.md,
 # compress CSS output
 sass:
   style: compressed
+
