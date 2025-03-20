@@ -9,18 +9,18 @@ Genre,/browse.html#genre,Browse
 Collection,/browse.html#collection,Browse
 Keyword,/browse.html#keyword,Browse
 Location,/browse.html#location,Browse
-Reference,,
-Executive Summary,/summary.html,Reference
+Reference,/reference.html,Reference
+Executive Summary,/reference.html#summary,Reference
 Timeline,/timeline.html,Reference
-The Petroleum Industry and Philadelphia,/petro-industry.html,Reference
-Pennsylvania Coal and Philadelphia,/penna-coal.html,Reference
-"Philadelphia, PGW, and the Gas Works at Point Breeze",/point-breeze.html,Reference
-The Lower Schuylkill River,/schuylkill.html,Reference
-The South Philadelphia Refinery Complex,/south-philly-refinery.html,Reference
-Fenceline Risk and Environmental Justice in South and Southwest Philadelphia,/fenceline-risk.html,Reference
+The Petroleum Industry and Philadelphia,/reference.html#petro-industry,Reference
+Pennsylvania Coal and Philadelphia,/reference.html#penna-coal,Reference
+"Philadelphia, PGW, and the Gas Works at Point Breeze",/reference.html#point-breeze,Reference
+The Lower Schuylkill River,/reference.html#schuylkill,Reference
+The South Philadelphia Refinery Complex,/reference.html#south-philly-refinery,Reference
+Fenceline Risk and Environmental Justice in South and Southwest Philadelphia,/reference.html#fenceline-risk,Reference
 Maps,,
-Layered map,/map.html,Maps
-Chronological accident map,/map.html,Maps
+Layered map,/map.html#layered,Maps
+Chronological accident map,/map.html#accident-map,Maps
 About,,
 Description,/about.html,About
 How to use,/navigate.html,About

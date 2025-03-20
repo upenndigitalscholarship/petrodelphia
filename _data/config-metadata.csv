@@ -1,7 +1,7 @@
 field,display_name,browse_link,external_link,dc_map,schema_map
+date,Date Created,,,DCTERMS.date,dateCreated
 title,Title,,,DCTERMS.title,headline
 creator,Creator,,,DCTERMS.creator,creator
-date,Date Created,,,DCTERMS.date,dateCreated
 description,Description,,,DCTERMS.description,description
 keyword,Keywords,true,,DCTERMS.subject,keywords
 location,Location,,,DCTERMS.spatial,contentLocation
