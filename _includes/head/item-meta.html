@@ -1,4 +1,4 @@
-{% if page.keyword %}<meta name="keywords" content="{{ page.keyword | escape }}" >{% endif %}
+{% if page.subject %}<meta name="keywords" content="{{ page.subject | escape }}" >{% endif %}
 {% if page.description %}<meta name="description" content="Item from {{ site.title | escape }}: {{ page.description | truncatewords: 25 | escape }}">{% endif %}
 <!-- DC meta -->
 <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />

@@ -49,7 +49,7 @@ function lunr_search () {
     var ref = result[item].ref;
     var searchitem =
       '<tr>'+
-          '<td class="">' +
+          '<td>' +
             {% assign display = fields | where: 'display','true' %}
             {% for d in display %}
             {% if forloop.first %}

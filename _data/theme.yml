@@ -21,11 +21,11 @@ home-banner-image-position: center # Default is top
 browse-buttons: true # true / false, adds previous/next arrows to items, but increases build time
 
 ##########
-# KEYWORDS PAGE
-#
-keywords-fields: keyword;creator # set of fields separated by ; to be featured in the cloud (leave blank or comment out to not generate)
-keywords-min: 1 # min size for keyword cloud, too many terms = slow load time!
-keywords-stopwords: # set of keywords separated by ; that will be removed from display, e.g. boxers;boxing
+# SUBJECTS PAGE
+# EDIT ME TO MATCH KEYWORD NOTATION INSTEAD OF SUBJECT
+subjects-fields: subject;creator # set of fields separated by ; to be featured in the cloud (leave blank or comment out to not generate)
+subjects-min: 1 # min size for subject cloud, too many terms = slow load time!
+subjects-stopwords: # set of subjects separated by ; that will be removed from display, e.g. boxers;boxing
 
 ##########
 # LOCATIONS PAGE
@@ -38,9 +38,10 @@ locations-stopwords: # set of subjects separated by ; that will be removed from 
 # MAP PAGE
 #
 # see _data/map-config.csv for field display options
-latitude: 46.727485 #to determine center of map
-longitude: -117.014185 #to determine center of map
-zoom-level: 5 # zoom level for map 
+auto-center-map: true # have the map auto fit all features into its view
+latitude: 46.727485 # to manually center map if not using auto-center-map option
+longitude: -117.014185 # to manually center map if not using auto-center-map option
+zoom-level: 5 # zoom level for map if not using auto-center-map option
 map-base: Esri_WorldStreetMap # set default base map, choose from: Esri_WorldStreetMap, Esri_NatGeoWorldMap, Esri_WorldImagery, OpenStreetMap_Mapnik
 map-search: true # not suggested with large collections
 map-search-fuzziness: 0.35 # fuzzy search range from 1 = anything to 0 = exact match only
@@ -59,9 +60,9 @@ year-nav-increment: 5 # set increments to auto gen nav years
 # 
 # add metadata fields for export in data downloads (tip: paste in first row of csv)
 # comma delimited list, reference url is automatic
-metadata-export-fields: "title,creator,date,description,keyword,location,latitude,longitude,source,identifier,type,format,language,rights,rightsstatement"
+metadata-export-fields: "title,creator,date,description,subject,location,latitude,longitude,source,identifier,type,format,language,rights,rightsstatement"
 # generate a facets list for given fields, comma delimited
-metadata-facets-fields: "keyword,creator,format"
+metadata-facets-fields: "subject,creator,format"
 
 ##########
 # Compound Objects 
@@ -72,7 +73,7 @@ metadata-facets-fields: "keyword,creator,format"
 map-child-objects: true # true / false - if true, and if child item has latitude and longitude, child objects will be displayed on map
 timeline-child-objects: true # true / false - if true, and if child object has date, child objects will appear as thumbnails on timeline page
 data-child-objects: false # true / false - if true, child objects will appear linked in table on data page
-browse-child-objects: true # true / false - if true, child objects will appear on browse page and child objects' metadata will populate cloud pages like Keywords page and Locations page, as well as featured terms boxes on the home page
+browse-child-objects: true # true / false - if true, child objects will appear on browse page and child objects' metadata will populate cloud pages like Subjects page and Locations page, as well as featured terms boxes on the home page
 search-child-objects: true # true / false - if true, child objects will appear on on search page along with parent objects
 
 
@@ -83,10 +84,10 @@ search-child-objects: true # true / false - if true, child objects will appear o
 # NAVBAR COLORS [optional!]
 # navbar text color
 # Choose from "navbar-light" for use with light background colors, or "navbar-dark" for dark background colors
-navbar-color: navbar-light
+navbar-color: navbar-dark
 # navbar background color
 # Choose from bg-primary, bg-secondary, bg-success, bg-danger, bg-warning, bg-info, bg-light, bg-dark, bg-white
-navbar-background: bg-light
+navbar-background: bg-dark
 
 # BOOTSWATCH THEMES [optional!]
 # You can replace the standard Bootstrap theme with a Bootswatch (https://github.com/thomaspark/bootswatch) option
@@ -96,7 +97,7 @@ bootswatch: # leave blank or comment out for plain bootstrap
 # THEME FONTS [optional!]
 base-font-size: 1.2em
 text-color: "#191919"
-link-color: "#580C1F"
+link-color: "#0d6efd"
 base-font-family: # comment out for bootstrap defaults. e.g. Roboto
 font-cdn: # add font stylesheet, e.g. <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
@@ -116,6 +117,3 @@ font-cdn: # add font stylesheet, e.g. <link href="https://fonts.googleapis.com/c
 #   icon-multiple: postcard
 #   icon-default: file-earmark # fall back icon
 #   icon-back-to-top: arrow-up-square
-#   arrow-left: arrow-left
-#   arrow-right: arrow-right
-#   arrow-down: arrow-down

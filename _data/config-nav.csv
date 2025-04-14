@@ -9,9 +9,9 @@ Genre,/browse.html#genre,Browse
 Collection,/browse.html#collection,Browse
 Keyword,/browse.html#keyword,Browse
 Location,/browse.html#location,Browse
-Reference,/reference.html,Reference
+Reference,,
 Executive Summary,/reference.html#summary,Reference
-Timeline,/timeline.html,Reference
+Timeline,/reference.html#timeline,Reference
 The Petroleum Industry and Philadelphia,/reference.html#petro-industry,Reference
 Pennsylvania Coal and Philadelphia,/reference.html#penna-coal,Reference
 "Philadelphia, PGW, and the Gas Works at Point Breeze",/reference.html#point-breeze,Reference
@@ -27,4 +27,3 @@ How to use,/navigate.html,About
 Lesson plan,/lesson.html,About
 Data,/data.html,About
 Credits,/credits.html,About
-
