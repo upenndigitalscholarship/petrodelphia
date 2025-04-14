@@ -7,9 +7,9 @@ credits: true
 ---
 
 <div id="summary"></div>
-## Executive Summary
-- Author
-- Date
+## Executive Summary: Reckoning with Fossil Fuel in Philadelphia
+- Creator: Farmer, Jared
+- Date: 2025
 
 Abstract here, if applicable
 
@@ -29,10 +29,8 @@ Preferred citation, if applicable
 --- 
 <div id="petro-industry"></div>
 ## The Petroleum Industry and Philadelphia
-- Authors
-- Researchers
-- Editor
-- Date
+- Creator: Varee, Nolan
+- Date: 2025
 - Permalink
 
 PDF embedded here
@@ -42,10 +40,8 @@ Preferred citation, if available
 ---
 <div id="penna-coal"></div>
 ## Pennsylvania Coal and Philadelphia
-- Authors
-- Researchers
-- Editor
-- Date
+- Creators: Lester, Gustave; Wolff, Jacob; Farmer, Jared
+- Date: 2025
 - Permalink
 
 PDF embedded here
@@ -55,10 +51,8 @@ Preferred citation, if available
 ---
 <div id="point-breeze"></div>
 ## Philadelphia, PGW, and the Gas Works at Point Breeze
-- Authors
-- Researchers
-- Editor
-- Date
+- Creators: McLeod, Angus; Farmer, Jared
+- Date: 2025
 - Permalink
 
 PDF embedded here
@@ -68,10 +62,8 @@ Preferred citation, if available
 ---
 <div id="schuylkill"></div>
 ## The Lower Schuylkill River
-- Authors
-- Researchers
-- Editor
-- Date
+- Creator: Pentecost-Farren, Aislinn E.
+- Date: 2025
 - Permalink
 
 PDF embedded here
@@ -81,10 +73,8 @@ Preferred citation, if available
 ---
 <div id="south-philly-refinery"></div>
 ## The South Philadelphia Refinery Complex
-- Authors
-- Researchers
-- Editor
-- Date
+- Creator: Sasko, Claire
+- Date: 2025
 - Permalink
 
 PDF embedded here
@@ -94,10 +84,8 @@ Preferred citation, if available
 ---
 <div id="fenceline-risk"></div>
 ## Fenceline Risk and Environmental Justice in South and Southwest Philadelphia
-- Authors
-- Researchers
-- Editor
-- Date
+- Creator: Hurdle, Jon
+- Date: 2025
 - Permalink
 
 PDF embedded here
