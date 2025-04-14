@@ -14,4 +14,4 @@ credits: true
 
 ## About America's First Petrochemical Corridor
 
-Text of about page here. This platform supports headings, blockquotes, endnotes, and footnotes.  Supported formatting includes **bolding**, _italics_, and ~~strikethrough~~ (but not underline).
+This project originated in 2020, the year the South Philadelphia Refinery Complex permanently closed, and the year when principal investigator Jared Farmer moved to Philadelphia to join the faculty of the University of Pennsylvania. At Penn, Farmer began teaching courses on Pennsylvania fossil fuel history and began doing collaborative research with students. Over time, the primary output of Farmer’s “Petrosylvania” project came into focus: A freely accessible public-facing website for collecting and curating historical sources about the lower Schuylkill River petrochemical corridor, and for sharing scholarship that synthesize that information. With technical help from Penn Libraries, Farmer launched this website in 2025, in advance of the US semiquincentennial (250th anniversary) in Philadelphia.
