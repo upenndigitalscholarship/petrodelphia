@@ -1,5 +1,6 @@
 field,display_name,search
 date,Date,true
 creator,Creator,true
+subject,Subjects,true
 keyword,Keyword,true
 location,Location,true

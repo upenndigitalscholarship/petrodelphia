@@ -1,19 +1,107 @@
 ---
-title: Executive Summary
+title: Reference
 layout: page
-permalink: /summary.html
+permalink: /reference.html
 credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
+<div id="summary"></div>
 ## Executive Summary
 - Author
 - Date
 
 Abstract here, if applicable
 
+PDF embedded here
+
+Preferred citation, if applicable
+
 ---
+<div id="timeline"></div>
+## Timeline
+- Author
 
-Text of article here. This platform supports headings, blockquotes, endnotes, and footnotes.  Supported formatting includes **bolding**, _italics_, and ~~strikethrough~~ (but not underline).
+PDF embedded here
 
-Footnotes/Endnotes/Works cited, if applicable
+Preferred citation, if applicable
+
+--- 
+<div id="petro-industry"></div>
+## The Petroleum Industry and Philadelphia
+- Authors
+- Researchers
+- Editor
+- Date
+- Permalink
+
+PDF embedded here
+
+Preferred citation, if available
+
+---
+<div id="penna-coal"></div>
+## Pennsylvania Coal and Philadelphia
+- Authors
+- Researchers
+- Editor
+- Date
+- Permalink
+
+PDF embedded here
+
+Preferred citation, if available
+
+---
+<div id="point-breeze"></div>
+## Philadelphia, PGW, and the Gas Works at Point Breeze
+- Authors
+- Researchers
+- Editor
+- Date
+- Permalink
+
+PDF embedded here
+
+Preferred citation, if available
+
+---
+<div id="schuylkill"></div>
+## The Lower Schuylkill River
+- Authors
+- Researchers
+- Editor
+- Date
+- Permalink
+
+PDF embedded here
+
+Preferred citation, if available
+
+---
+<div id="south-philly-refinery"></div>
+## The South Philadelphia Refinery Complex
+- Authors
+- Researchers
+- Editor
+- Date
+- Permalink
+
+PDF embedded here
+
+Preferred citation, if available
+
+---
+<div id="fenceline-risk"></div>
+## Fenceline Risk and Environmental Justice in South and Southwest Philadelphia
+- Authors
+- Researchers
+- Editor
+- Date
+- Permalink
+
+PDF embedded here
+
+Preferred citation, if available
+
+---

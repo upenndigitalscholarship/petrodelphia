@@ -1,17 +1,15 @@
 field,display_name,browse_link,external_link,dc_map,schema_map
-date,Date Created,,,DCTERMS.date,dateCreated
 title,Title,,,DCTERMS.title,headline
 creator,Creator,,,DCTERMS.creator,creator
+date,Date Created,,,DCTERMS.date,dateCreated
 description,Description,,,DCTERMS.description,description
-keyword,Keywords,true,,DCTERMS.subject,keywords
-location,Location,,,DCTERMS.spatial,contentLocation
-source,Source Collection,,,DCTERMS:isPartOf,,
-source_identifier,Source Identifier,,,DCTERMS:identifier,,
-institution,Institution,true,,,,
-collection_type,Collection,true,,,,
-genre_type,Genre,true,,,,
+subject,Subjects,true,,DCTERMS.subject,keywords
+location,Location,,,,contentLocation
+latitude,Latitude,,,,
+longitude,Longitude,,,,
+source,Source,,,,
+identifier,Source Identifier,,,,
 type,Type,,,DCTERMS.type,
-format,Format,,,DCTERMS.format,
-rights,Rights,,,DCTERMS.rights,license
-display_template,CollectionBuilder Template,true,,,
-
+format,Format,,,,encodingFormat
+language,Language,,,DCTERMS.language,
+rightsstatement,,,,DCTERMS.rights,license
