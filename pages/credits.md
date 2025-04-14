@@ -12,31 +12,94 @@ This project was created by staff on the Research Data and Digital Scholarship t
 
 ### Project and data creation
 
-Prof. Jared Farmer
-_Principal investigator_
+#### Principal investigator, project manager, and editor
+Jared Farmer, Walter H. Annenberg Professor of History, University of Pennsylvania
 
-Frank Eccher
-_Graduate student worker_
+#### Student researchers
+Nicole Adrian
 
-Incoming student worker
-_Undergraduate student worker_
+Nicholas Angellino
+
+Yoora Do
+
+Chelsea Chamberlain
+
+Franklin Eccher
+
+Samuel Finkelstein
+
+Mikayla Golub
+
+Jacqueline Guerrero
+
+Christine Kim
+
+Lynn Larabi
+
+Angus McLeod
+
+Sophia Powell
+
+Georgia Ray
+
+Summer Thomas
+
+Ciara Williams
+
+Alex Worrall
+
+#### Freelance writers
+Jon Hurdle
+
+Gustave Lester
+
+Angus McLeod
+
+Aislinn E. Pentecost-Farren
+
+Claire Sasko
+
+Nolan Varee
+
+Jacob Wolff
+
+#### Copyeditor
+Amyrose McCue Gill
+
+#### Lesson plan writer
+Angie Whistler
+
+### Funding providers
+Department of History
+
+Kleinman Center for Energy Policy
+
+Penn Libraries
+
+Penn Program in Environmental Humanities
+
+Price Lab for Digital Humanities
+
+School of Arts and Sciences
 
 ### Map and website design and development
 
+#### RDDS project manager
 Lynda Kellam
-_RDDS project manager_
 
+#### GIS and maps developer
 Benjamin Liebersohn
-_GIS and maps developer_
 
+#### Site developers
 Cynthia Heider
-_Site developer and consultant_
 
 Andrew Janco
-_Site developer_
 
+#### Site designer
 Cassandra Hradil
-_Site designer_
+
+#### Beta testers
+TBA
 
 ## Technical details
 The project website "America's First Petrochemical Corridor" was created with [CollectionBuilder](https://collectionbuilder.github.io/) (CB-CSV), a Jekyll-based open source framework for creating digital collection and exhibit websites.
