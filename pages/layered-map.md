@@ -1,7 +1,7 @@
 ---
-title: Maps
+title: Historic Maps
 layout: map
-permalink: /map.html
+permalink: /layered-map.html
 ---
 
 # {{ page.title }}
@@ -9,10 +9,4 @@ permalink: /map.html
 <div id="layered">
 {% include_relative layered-map.html %}
 <div id="map"></div>
-</div>
-
-<hr />
-
-<div id="accident-map">
-{% include_relative accident-map.html %}
 </div>
