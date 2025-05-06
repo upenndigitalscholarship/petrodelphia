@@ -1,25 +1,9 @@
 display_name,stub,dropdown_parent
 Home,/,
-Browse,,
-All,/browse.html,Browse
-Date,/browse.html#date,Browse
-Creator,/browse.html#creator,Browse
-Type,/browse.html#collection_type,Browse
-Genre,/browse.html#genre,Browse
-Collection,/browse.html#collection,Browse
-Keyword,/browse.html#keyword,Browse
-Location,/browse.html#location,Browse
-Reference,,
-Executive Summary: Reckoning with Fossil Fuel in Philadelphia,/reference.html#summary,Reference
-The Petroleum Industry and Philadelphia,/reference.html#petro-industry,Reference
-Pennsylvania Coal and Philadelphia,/reference.html#penna-coal,Reference
-"Philadelphia, PGW, and the Gas Works at Point Breeze",/reference.html#point-breeze,Reference
-The Lower Schuylkill River,/reference.html#schuylkill,Reference
-The South Philadelphia Refinery Complex,/reference.html#south-philly-refinery,Reference
-Fenceline Risk and Environmental Justice in South and Southwest Philadelphia,/reference.html#fenceline-risk,Reference
-Maps,,
-Historic maps,/map.html#layered,Maps
-Accident mapper,/map.html#accident-map,Maps
+Browse,/browse.html,
+Reference,/reference.html,
+Historic maps,/layered-map.html,Maps
+Accident mapper,/accident-map.html,Maps
 About,,
 Description,/about.html,About
 How to use,/navigate.html,About
