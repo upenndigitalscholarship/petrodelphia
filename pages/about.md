@@ -8,7 +8,7 @@ credits: true
 
 ## About America's First Petrochemical Corridor
 
-This project originated in 2020, the year the South Philadelphia Refinery Complex permanently closed, and the year when principal investigator Jared Farmer moved to Philadelphia to join the faculty of the University of Pennsylvania. At Penn, Farmer began teaching courses on Pennsylvania fossil fuel history and began doing collaborative research with students. Over time, the primary output of Farmer’s “Petrosylvania” project came into focus: A freely accessible public-facing website for collecting and curating historical sources about the lower Schuylkill River petrochemical corridor, and for sharing scholarship that synthesize that information. With technical help from Penn Libraries, Farmer launched this website in 2025, in advance of the US Semiquincentennial (250th anniversary) in Philadelphia!
+This project originated in 2020, the year the South Philadelphia Refinery Complex permanently closed, and the year when principal investigator Jared Farmer moved to Philadelphia to join the faculty of the University of Pennsylvania. At Penn, Farmer began teaching courses on Pennsylvania fossil fuel history and began doing collaborative research with students. Over time, the primary output of Farmer’s “Petrosylvania” project came into focus: A freely accessible public-facing website for collecting and curating historical sources about the lower Schuylkill River petrochemical corridor, and for sharing scholarship that synthesize that information. With technical help from Penn Libraries, Farmer launched this website in 2025, in advance of the US Semiquincentennial (250th anniversary) in Philadelphia.
 
 ## How to Use This Site
 
@@ -23,36 +23,36 @@ Read one or more of the six encyclopedia-style articles, which range in length f
 Browse ~200 downloadable images, grouped into five collection types: 1) architectural views and plans, 2) river- and street-level views, 3) oblique aerial photography, 4) newspaper headlines, and 5) news photography. You can also search for images using geographic or descriptive keywords that you encounter in the reference works. For example: ARCO, Atlantic Refining, bridge, DuPont, Center City, explosion, expressway, fire, firefighters, Gibson Point, Girard Point, Grays Ferry, Gulf, incinerator, north yard, Passyunk Avenue, PGW, pollution, Quartermaster Depot, Point Breeze, Schuylkill River, storage tank, tanker ship, Tasker Homes, Yankee Point, and so on.
 
 ### Explore collections
-    - Browse ~400 downloadable items of grey literature, grouped into fifteen collection types:
-        — PGW [Philadelphia Gas Works] documents
-        — refinery history and policy documents
-        — refinery remediation documents
-        — DSCP [Defense Supply Center Philadelphia] remediation documents		
-        — HRP [Hilco Redevelopment Partners] documents
-        — public health documents
-        — air quality documents
-        — water quality documents
-        — urban planning documents
-        — regional planning documents
-        — energy policy documents
-        — Pew reports on Philadelphia
-        — urban sustainability reports
-        — Penn sustainability reports	
-        — student projects
-    - You can also browse the grey literature based on genre:
-        
-        — federal document
-        — Commonwealth document
-        — metropolitan document
-        — city document
-        — NGO document
-        — university document
-        — corporate document
-        — legal document
-        — book
-        — research article 
-        — reference work
-        — data sheet
+- Browse ~400 downloadable items of grey literature, grouped into fifteen collection types:
+    - PGW [Philadelphia Gas Works] documents
+    - refinery history and policy documents
+    - refinery remediation documents
+    - DSCP [Defense Supply Center Philadelphia] remediation documents		
+    - HRP [Hilco Redevelopment Partners] documents
+    - public health documents
+    - air quality documents
+    - water quality documents
+    - urban planning documents
+    - regional planning documents
+    - energy policy documents
+    - Pew reports on Philadelphia
+    - urban sustainability reports
+    - Penn sustainability reports	
+    - student projects
+- You can also browse the grey literature based on genre:
+    
+    - federal document
+    - Commonwealth document
+    - metropolitan document
+    - city document
+    - NGO document
+    - university document
+    - corporate document
+    - legal document
+    - book
+    - research article 
+    - reference work
+    - data sheet
     
 ### Targeted searching
 Use the website’s search bar for targeted searching by keyword, personal name, place name, year, etc. This will work for texts as well as images.
@@ -65,10 +65,9 @@ Read the [lesson plans](/lesson.html), which have been designed for social studi
 
 ### Interactive maps
 Explore the two mapping tools: 
+- [“Historic maps”](/layered-map.html) consists maps, planar (top-down) aerial photographs, and satellite images. The date range goes from 1876, the year of the US centennial, to 2019, the year the refinery exploded for the last time. All these cartographic scans have been georeferenced and georectified (pinned and aligned) so they can be layered for visual comparison. By layering and unlayering, and by zooming in and zooming out, you can see how the built environment has changed over time. These layered maps have inherent visual interest, but you will gain more from them as you learn about Philadelphia and its fossil fuel history from the textual side of the website. Atop any layer, you can superimpose the boundaries of the ten “Areas of Interest” (environmental remediation zones) that comprise the former PES Refinery. 
 
-    - [“Historic maps”](/layered-map.html) consists maps, planar (top-down) aerial photographs, and satellite images. The date range goes from 1876, the year of the US centennial, to 2019, the year the refinery exploded for the last time. All these cartographic scans have been georeferenced and georectified (pinned and aligned) so they can be layered for visual comparison. By layering and unlayering, and by zooming in and zooming out, you can see how the built environment has changed over time. These layered maps have inherent visual interest, but you will gain more from them as you learn about Philadelphia and its fossil fuel history from the textual side of the website. Atop any layer, you can superimpose the boundaries of the ten “Areas of Interest” (environmental remediation zones) that comprise the former PES Refinery. 
-
-    - [“Accident mapper”](/accident-map.html) allows you to see where and when 160 reported petrochemical accidents occurred. Certain sites within the refinery zone had multiple accidents over time, as indicated by a number. Zoom in on a number until it disaggregates into individual accidents. (Users with data visualization skills may wish to create their own maps or infographics using the underlying data sheets, one of which provides names and addresses of accidents victims. [Browse under the genre tag “data sheets.”](/browse.html#data))
+- [“Accident mapper”](/accident-map.html) allows you to see where and when 160 reported petrochemical accidents occurred. Certain sites within the refinery zone had multiple accidents over time, as indicated by a number. Zoom in on a number until it disaggregates into individual accidents. (Users with data visualization skills may wish to create their own maps or infographics using the underlying data sheets, one of which provides names and addresses of accidents victims. [Browse under the genre tag “data sheets.”](/browse.html#data))
 
 
 ## Additional information
