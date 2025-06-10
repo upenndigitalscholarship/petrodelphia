@@ -9,7 +9,6 @@
 #home-title-box {
     padding-top: 0em;
     padding-bottom: {{ site.data.theme.home-title-y-padding | default: '0em' }};
-    font-family: "minion-pro-display";
 }
 @media screen and (max-width: 576px) {
     #home-title-box {
@@ -18,7 +17,7 @@
 }
 </style>
 <div id="home-banner" class="container-fluid mb-0 p-0">
-    <div id="home-title-box" class="position-relative" >
+    <div id="home-title-box" class="position-relative header-text-minion-pro" >
         <div class="p-2 text-center text-white bg-dark bg-opacity-50">
             <h1 class="display-4">{{ site.title }}</h1>
             {% if site.tagline %}<p class="mb-0">{{ site.tagline }}</p>{% endif %}
