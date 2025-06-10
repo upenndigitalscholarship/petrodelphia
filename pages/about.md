@@ -4,17 +4,11 @@ layout: page
 permalink: /about.html
 # include CollectionBuilder info at bottom
 credits: true
-# Edit the markdown on in this file to describe your collection
-# Look in _includes/feature for options to easily add features to the page
 ---
-
-<!--- {% include feature/jumbotron.html objectid="https://cdil.lib.uidaho.edu/images/palouse_sm.jpg" %} 
-
-{% include feature/nav-menu.html sections="About CollectionBuilder CSV;About the About Page" %} --->
 
 ## About America's First Petrochemical Corridor
 
-This project originated in 2020, the year the South Philadelphia Refinery Complex permanently closed, and the year when principal investigator Jared Farmer moved to Philadelphia to join the faculty of the University of Pennsylvania. At Penn, Farmer began teaching courses on Pennsylvania fossil fuel history and began doing collaborative research with students. Over time, the primary output of Farmer’s “Petrosylvania” project came into focus: A freely accessible public-facing website for collecting and curating historical sources about the lower Schuylkill River petrochemical corridor, and for sharing scholarship that synthesize that information. With technical help from Penn Libraries, Farmer launched this website in 2025, in advance of the US semiquincentennial (250th anniversary) in Philadelphia!
+This project originated in 2020, the year the South Philadelphia Refinery Complex permanently closed, and the year when principal investigator Jared Farmer moved to Philadelphia to join the faculty of the University of Pennsylvania. At Penn, Farmer began teaching courses on Pennsylvania fossil fuel history and began doing collaborative research with students. Over time, the primary output of Farmer’s “Petrosylvania” project came into focus: A freely accessible public-facing website for collecting and curating historical sources about the lower Schuylkill River petrochemical corridor, and for sharing scholarship that synthesize that information. With technical help from Penn Libraries, Farmer launched this website in 2025, in advance of the US Semiquincentennial (250th anniversary) in Philadelphia!
 
 ## How to Use This Site
 
@@ -23,13 +17,13 @@ There are any number of ways to use this site—no right or wrong way. That bein
 After that, consider these pathways:
 
 ### Reference articles
-Read one or more of the six encyclopedia-style articles, which range in length from 7,500 to 20,000 words. Each of these articles (under the [Reference](/reference.html) tab) includes a bibliography. Readers lacking background in fossil fuel history should begin with the two shortest articles: “Pennsylvania Coal and Philadelphia” and “The Petroleum Industry and Greater Philadelphia.” Others may prefer to go straight to the longest article: [“The South Philadelphia Refinery Complex.”](/reference.html#south-philly-refinery) All the reference works can be downloaded.
+Read one or more of the six encyclopedia-style articles, which range in length from 7,500 to 20,000 words. Each of these articles (under the [Reference](/reference.html) tab) includes a bibliography. Readers lacking background in fossil fuel history should begin with the two shortest articles: [“Pennsylvania Coal and Philadelphia”](/reference.html#penna-coal) and [“Petroleum Industry and Greater Philadelphia.”](/reference.html#petro-industry) Others may prefer to go straight to the longest article: [“South Philadelphia Refinery Complex.”](/reference.html#south-philly-refinery) All the reference works can be downloaded.
 
 ### Historic images
-Browse the 350+ historic images, which include 1) architectural views and plans, 2) street-level and river views, 3) oblique aerial photography, and 4) newspaper headlines. These images can be keyword-limited by visual elements (e.g., “bridge,” “explosion,” “fire truck”). The images can also be keyword-limited by topographic, geographic, and/or corporate location (e.g., “Point Breeze (topographical),” “Point Breeze (neighborhood),” “Point Breeze Avenue Bridge,” or “PGW at Point Breeze”). All the images can be downloaded.
+Browse ~200 downloadable images, grouped into five collection types: 1) architectural views and plans, 2) river- and street-level views, 3) oblique aerial photography, 4) newspaper headlines, and 5) news photography. You can also search for images using geographic or descriptive keywords that you encounter in the reference works. For example: ARCO, Atlantic Refining, bridge, DuPont, Center City, explosion, expressway, fire, firefighters, Gibson Point, Girard Point, Grays Ferry, Gulf, incinerator, north yard, Passyunk Avenue, PGW, pollution, Quartermaster Depot, Point Breeze, Schuylkill River, storage tank, tanker ship, Tasker Homes, Yankee Point, and so on.
 
 ### Explore collections
-    - Browse the 350+ downloadable items of grey literature based on collection type:
+    - Browse ~400 downloadable items of grey literature, grouped into fifteen collection types:
         — PGW [Philadelphia Gas Works] documents
         — refinery history and policy documents
         — refinery remediation documents
@@ -44,7 +38,7 @@ Browse the 350+ historic images, which include 1) architectural views and plans,
         — Pew reports on Philadelphia
         — urban sustainability reports
         — Penn sustainability reports	
-        — Penn student projects
+        — student projects
     - You can also browse the grey literature based on genre:
         
         — federal document
@@ -61,10 +55,13 @@ Browse the 350+ historic images, which include 1) architectural views and plans,
         — data sheet
     
 ### Targeted searching
-Use the website’s search bar for targeted searching by keyword, personal name, place name, year, and so on.
+Use the website’s search bar for targeted searching by keyword, personal name, place name, year, etc. This will work for texts as well as images.
+
+### Chronological browsing
+Browse all the items, both texts and images, chronologically.
 
 ### Lesson plan
-Read the [lesson plan](/lesson.html), which has been designed for social studies teachers at the middle and high school levels in Greater Philadelphia. The curriculum may also be of interest to college educators anywhere who offer courses on energy history, energy policy, environmental justice, labor history, urban environmental history, city planning, or the built environment. The lesson plan could also could be pertinent, in a comparative way, for residents, activists, and planners in other urban zones with legacy refineries (e.g., Richmond, California, on San Francisco Bay).
+Read the [lesson plans](/lesson.html), which have been designed for social studies teachers at the middle and high school levels in Greater Philadelphia. The curriculum may also be of interest to college educators anywhere who offer courses on energy history, energy policy, environmental justice, labor history, urban environmental history, city planning, or the built environment. The lesson plan could also could be pertinent, in a comparative way, for residents, activists, and planners in other urban zones with legacy refineries (e.g., Linden, New Jersey; Brooklyn, New York; and Richmond, California).
 
 ### Interactive maps
 Explore the two mapping tools: 
@@ -77,6 +74,16 @@ Explore the two mapping tools:
 ## Additional information
 Everything on this website is public domain, or in Creative Commons license, or sharable under the fair use doctrine.
 
-It is highly recommended that all users also consult the [Encyclopedia of Greater Philadelphia](https://philadelphiaencyclopedia.org/), a web-based reference hosted by Rutgers University–Newark.
+It is highly recommended that all users also consult the [Encyclopedia of Greater Philadelphia](https://philadelphiaencyclopedia.org/), a website maintained by Rutgers University–Newark.
 
-One large class of sources crucial to this project cannot be included here: proprietary scans from ProQuest Historical Newspapers and Newspapers.com. Serious researchers may want to use such subscription services to supplement this website.
+Users interested in the legal and technical sides of environmental remediation should be aware of [Philadelphia Refinery Legacy Remediation](https://phillyrefinerycleanup.info/), a website maintained by Evergreen Resources LLP.
+
+For up-to-date information on the redevelopment of the former refinery complex, see [The Bellwether District](https://www.thebellwetherdistrict.com/), a website maintained by HRP.
+
+Other important resources include [Hidden City Philadelphia](https://hiddencityphila.org/) and the [Philadelphia Inquirer](https://www.inquirer.com/).
+
+One large class of primary sources crucial to the "Petrosylvania" project cannot be included here: proprietary scans from ProQuest Historical Newspapers and Newspapers.com. Serious researchers may want to use such subscription services to supplement this website.
+
+Much of the information on this website was compiled by student research assistants from newspaper accounts. Journalists, past and present, are known to make mistakes—and researchers are fallible, too. It is inevitable, despite fact-checking, that a certain number of errors persist. Readers are encouraged to do follow-up research. Indeed, this public-facing digital history project has been designed to facilitate that.
+
+The deepest purpose “Petrosylvania” is to inspire and facilitate additional scholarship and sharing. Many stories about America’s first petrochemical corridor remain to be told.
