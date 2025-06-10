@@ -3,6 +3,11 @@
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
 
+body {
+    font-family: "gotham", sans-serif;
+}
+
+
 .leaflet-control-layers{
 
 }
@@ -45,4 +50,8 @@
 
 .header-text-minion-pro {
     font-family: "minion-pro-display";
+}
+
+.bs-body-font-family {
+    font-family: "gotham", sans-serif;
 }
