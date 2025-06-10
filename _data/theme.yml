@@ -10,7 +10,7 @@
 # use either an objectid (from an item in this collect), a relative location of an image in this repo, or a full url to an image elsewhere
 featured-image: /assets/img/2020--CSN--Rendering_2019_PES_Refinery_Accident.jpeg
 # optional: add extra padding around collection title for a larger image feature. 
-home-title-y-padding: 10em # the margin from the top your title portion will appear.
+home-title-y-padding: 20em # the margin from the top your title portion will appear.
 # optional: change position of background image, center, top, bottom
 home-banner-image-position: center # Default is top
 
