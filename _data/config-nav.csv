@@ -2,11 +2,11 @@ display_name,stub,dropdown_parent
 Home,/,
 Browse,/browse.html,
 Reference,/reference.html,
+Maps,,
 Historic maps,/layered-map.html,Maps
 Accident mapper,/accident-map.html,Maps
 About,,
-Description,/about.html,About
-How to use,/navigate.html,About
+About & How to use,/about.html,About
 Lesson plan,/lesson.html,About
 Data,/data.html,About
 Credits,/credits.html,About

@@ -20,10 +20,11 @@ source-code: https://github.com/upenndigitalscholarship/petrosylvania-collection
 # title of site appears in banner
 title: America's First Petrochemical Corridor
 # tagline, a short phrase that will appear throughout the site in the top banner
-tagline: for site dev purposes - main branch
+tagline:
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
-description: "This educational website provides Philadelphians—and others who care about the past and future of this city—an unsurpassed collection of sources about the South Philadelphia Refinery Complex and other petrochemical landscapes along the lower Schuylkill River. Fundamentally, this website is a digital archive accompanied by reference works. Stakeholders at all levels—neighborhood, municipal, Commonwealth, business, non-profit—will find information of interest among the encyclopedia articles, primary sources (historic maps, images, documents), grey literature, and data sheets curated here. Whether you are a student, teacher, researcher, planner, developer, activist, journalist, or infrastructure geek, you are invited to use this website to learn, share, and create content about the fossil fuel legacies in Philadelphia’s built environment."
+description: "This website provides you—and others who care about the past and future of Philadelphia—a rich collection of sources about the South Philadelphia refinery complex and other petrochemical facilities along the lower Schuylkill River. Fundamentally, this website is a digital archive accompanied by reference works. Stakeholders at all levels—neighborhood, municipal, Commonwealth, business, non-profit—should find information of interest among the articles, primary sources (historic maps, images, documents), grey literature, and data sheets curated here. Whether you’re a student, teacher, researcher, planner, designer, real estate developer, neighborhood activist, environmental journalist, or infrastructure geek, you are invited to use this website to learn, to share, and to create content about fossil fuel legacies in Philadelphia."
+footer: "An educational website about the history of the South Philadelphia refinery complex and the changing landscapes of the lower Schuylkill River."
 # keywords, a short list of subjects describing the collection, separated by semicolon, to appear in rich markup
 keywords:
 # creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name

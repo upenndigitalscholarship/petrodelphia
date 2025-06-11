@@ -3,6 +3,11 @@
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
 
+body {
+    font-family: "gotham", sans-serif;
+}
+
+
 .leaflet-control-layers{
 
 }
@@ -27,4 +32,31 @@
 
 .accordion-button::after {
     color:black !important;
+}
+
+.card-body {
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.nav {
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.highlight {
+    background-color:#FFF000;
+}
+
+.header-text-minion-pro {
+    font-family: "minion-pro-display";
+}
+
+.header-text-gotham {
+    font-family: "gotham", sans-serif;
+}
+
+.card {
+    height: 100%;
+    background-color:#e3e3e3;
 }

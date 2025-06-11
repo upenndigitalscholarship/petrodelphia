@@ -8,88 +8,56 @@ credits: true
 
 <div id="summary"></div>
 ## Executive Summary: Reckoning with Fossil Fuel in Philadelphia
-- Creator: Farmer, Jared
-- Date: 2025
+Author: Jared Farmer
 
-Abstract here, if applicable
+This document summarizes key findings of the multi-year collaborative research project “Petrosylvania” that resulted in the website America’s First Petrochemical Corridor. It comprises six parts: 1) Executive Summary, 2) Interpretive Framework, 3) Major Takeaways, 4) Accident Statistics, 5) Remarkable Facts, and 6) Historical Chronology.
 
-PDF embedded here
-
-Preferred citation, if applicable
-
----
-<div id="timeline"></div>
-## Timeline
-- Author
-
-PDF embedded here
-
-Preferred citation, if applicable
+<p class="highlight">PDF embedded here or link out</p>
 
 --- 
-<div id="petro-industry"></div>
-## The Petroleum Industry and Philadelphia
-- Creator: Varee, Nolan
-- Date: 2025
-- Permalink
-
-PDF embedded here
-
-Preferred citation, if available
-
----
 <div id="penna-coal"></div>
 ## Pennsylvania Coal and Philadelphia
-- Creators: Lester, Gustave; Wolff, Jacob; Farmer, Jared
-- Date: 2025
-- Permalink
+Authors: Gustave Lester, Jacob Wolff, and Jared Farmer
 
-PDF embedded here
-
-Preferred citation, if available
+<p class="highlight">PDF embedded here or link out</p>
 
 ---
-<div id="point-breeze"></div>
-## Philadelphia, PGW, and the Gas Works at Point Breeze
-- Creators: McLeod, Angus; Farmer, Jared
-- Date: 2025
-- Permalink
 
-PDF embedded here
+<div id="petro-industry"></div>
+## Petroleum Industry and Philadelphia
+Author: Nolan Varee
 
-Preferred citation, if available
+<p class="highlight">PDF embedded here or link out</p>
 
 ---
 <div id="schuylkill"></div>
-## The Lower Schuylkill River
-- Creator: Pentecost-Farren, Aislinn E.
-- Date: 2025
-- Permalink
+## Lower Schuylkill River
+Author: Aislinn E. Pentecost-Farren 
 
-PDF embedded here
-
-Preferred citation, if available
+<p class="highlight">PDF embedded here or link out</p>
 
 ---
+
+<div id="point-breeze"></div>
+## Philadelphia, PGW, and the Gas Works at Point Breeze
+Authors: Angus McLeod IV and Jared Farmer
+
+<p class="highlight">PDF embedded here or link out</p>
+
+---
+
 <div id="south-philly-refinery"></div>
 ## The South Philadelphia Refinery Complex
-- Creator: Sasko, Claire
-- Date: 2025
-- Permalink
+Author: Claire Sasko
 
-PDF embedded here
+<p class="highlight">PDF embedded here or link out</p>
 
-Preferred citation, if available
 
 ---
 <div id="fenceline-risk"></div>
 ## Fenceline Risk and Environmental Justice in South and Southwest Philadelphia
-- Creator: Hurdle, Jon
-- Date: 2025
-- Permalink
+Creator: Jon Hurdle
 
-PDF embedded here
-
-Preferred citation, if available
+<p class="highlight">PDF embedded here or link out</p>
 
 ---
