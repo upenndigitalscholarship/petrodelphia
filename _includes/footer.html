@@ -9,21 +9,22 @@
 
         </div>
     </div>
-    <div class="container">
-        <div class="row pb-4 mb-2 justify-content-center">
+    <div class="container d-flex justify-content-end">
+        <div class="row pb-4 mb-2">
 
-            <div class="col-sm mt-3 text-center">
+            <div class="col-md mt-3 text-center">
 
-            {% if site.organization-logo-nav %} <p class="text-md-end">
+            {% if site.organization-logo-nav %} 
+                <p class="text-md-end">
                     <a href="{{ site.organization-link }}" target="_blank" rel="noopener">
                         <img id="footer-logo" class="img-fluid bg-light" src="{{ site.organization-logo-nav | relative_url }}" alt="{{ site.organization-name | escape }} home">
-                        </a>
+                    </a>
                 </p>
+
                 {% endif %}
             </div>
-            <div class="col-sm mt-3 text-center">
+            <div class="col-md mt-3 text-center">
                 <p class="text-white text-md-end" id="footer-credits">
-                    <small><em>built with</em>
                         <a href="https://collectionbuilder.github.io/" target="_blank" rel="noopener" title="CollectionBuilder">
                             <img src="{{ '/assets/img/collectionbuilder-logo.png' | relative_url }}" class="img-fluid" alt="CollectionBuilder" >
                         </a>
