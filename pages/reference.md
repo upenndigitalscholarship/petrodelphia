@@ -47,7 +47,7 @@ Authors: Angus McLeod IV and Jared Farmer
 ---
 
 <div id="south-philly-refinery"></div>
-## The South Philadelphia Refinery Complex
+## South Philadelphia Refinery Complex
 Author: Claire Sasko
 
 <p class="highlight">PDF embedded here or link out</p>
