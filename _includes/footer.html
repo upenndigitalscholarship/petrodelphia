@@ -7,13 +7,22 @@
             <h2 class="h4"><a href="{{ '/' | relative_url }}" class="text-white header-text-minion-pro">{{ site.title }}</a></h2>
             <p class="text-white"><small>{{ site.footer }}</small></p>
 
+            <div class="alert alert-primary" role="alert">
+                <div>
+            <!-- this is how SVGs are included in CollectionBuilder CSV-->
+                <svg class="bi icon-sprite" aria-hidden="true">
+                    <use xlink:href="{{ '/assets/lib/icons/bootstrap-icons.svg' | relative_url }}#info-circle-fill" href="{{ '/assets/lib/icons/bootstrap-icons.svg' | relative_url }}#info-circle-fill"></use>
+                </svg>
+                <span class="visually-hidden">Info icon</span>
+                This site is currently in beta testing. If you encountered an error, <a class="alert-link" href="https://upenn.libwizard.com/id/303adf1736dc164722ae21a1151f51be">report it here</a>.
+                </div>
+            </div>
+        
         </div>
     </div>
     <div class="container d-flex justify-content-end">
         <div class="row pb-4 mb-2">
-
             <div class="col-md mt-3 text-center">
-
             {% if site.organization-logo-nav %} 
                 <p class="text-md-end">
                     <a href="{{ site.organization-link }}" target="_blank" rel="noopener">
