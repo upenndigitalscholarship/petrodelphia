@@ -1,7 +1,7 @@
 color_class,color
-primary,
-secondary,#0D6EFD
-tertiary,#65B7C2
+primary,#0D6EFD
+secondary,#65B7C2
+tertiary,
 success,
 info,
 warning,#FFFF00
