@@ -23,6 +23,8 @@ item-meta: true
     <div class="my-0 h5 small">{{ page.display_template | replace: "_", " " | upcase }} {% if page.display_template == "compound_object" or page.display_template == "multiple" %}{% assign children = site.data[site.metadata] | where_exp: 'item','item.parentid == page.objectid' %} ({{ children | size }} Items){% endif %}</div>
     <h2 class="mb-3">{{ page.title }} 
     </h2>
+        <dt>Link to this page:</dt>
+        <dd>{{ page.url | absolute_url }}</dd>
 
     <div class="row justify-content-center">
         <div class="col-12 col-md-10">
@@ -31,23 +33,15 @@ item-meta: true
 
         </div>
 
-        <div class="col-12 col-md-10 mt-2" id="metadata">
+        <div class="col-6 col-md-5 mt-2" id="metadata">
 
             {% include item/metadata.html %}
 
         </div>
 
-        <div class="col-md-5 py-4">
+        <div class="col-6 col-md-5 py-4">
             {% include item/citation-box.html %}
         </div>
-
-        <div class="col-md-5 py-4">
-        {% if page.rights or page.rightsstatement %}    
-            {% include item/rights-box.html %}
-        {% endif %}
-        </div>
-        <dt>Link to this page:</dt>
-            <dd>{{ page.url | absolute_url }}</dd>
         
     </div>
 
