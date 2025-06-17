@@ -1,10 +1,10 @@
 {% comment %}
 
-    Adds a basic citation box for the item with reference link to the item page.
+    Adds a basic citation box for the item with rights in.
 
 {%- endcomment -%}
 <div class="card">
-    <div class="card-header">Source</div>
+    <div class="card-header">Rights & attribution</div>
     <div class="card-body">
         <dl>
             {% if page.institution %}
@@ -13,11 +13,15 @@
             {% endif %}
             {% if page.source %}
             <dt>Source:</dt>
-            <dd>{{ page.source }}</dd>
+            <dd><a href="{{ page.source }}" target="_blank" rel="noopener">{{ page.source }}</a>
             {% endif %}
             {% if page.source_id %}
             <dt>Source identifier:</dt>
             <dd>{{ page.source_id }}</dd>
+            {% endif %}
+            {% if page.rights %}
+            <dt>Rights:</dt>   
+            <dd>{{ page.rights }}</dd>
             {% endif %}
         </dl>
     </div>
