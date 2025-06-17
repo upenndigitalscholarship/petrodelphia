@@ -1,6 +1,6 @@
 field,display_name,browse_link,external_link,dc_map,schema_map
 title,Title,,,DCTERMS.title,headline
-creator,Creator,,,DCTERMS.creator,creator
+creator,Creator,true,,DCTERMS.creator,creator
 date,Date created,,,DCTERMS.date,dateCreated
 description,Description,,,DCTERMS.description,description
 subject,Subjects,true,,DCTERMS.subject,keywords
@@ -10,7 +10,7 @@ longitude,Longitude,,,,
 genre_type,Genre,true,,,
 collection_type,Collection,true,,,
 institution,,,,,
-source,,,,,
+source,,,true,,
 source_id,,,,,
 type,,,,DCTERMS.type,
 format,,,,,encodingFormat
