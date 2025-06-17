@@ -7,10 +7,18 @@
     <div class="card-header">Source</div>
     <div class="card-body">
         <dl>
-            <dt>Preferred Citation:</dt>
-            <dd>"{{ page.title }}", {{ site.title }}, {{ site.organization-name }}</dd>
-            <dt>Reference Link:</dt>
-            <dd>{{ page.url | absolute_url }}</dd>
+            {% if page.institution %}
+            <dt>Institution:</dt>
+            <dd>{{ page.institution }}</dd>
+            {% endif %}
+            {% if page.source %}
+            <dt>Source:</dt>
+            <dd>{{ page.source }}</dd>
+            {% endif %}
+            {% if page.source_id %}
+            <dt>Source identifier:</dt>
+            <dd>{{ page.source_id }}</dd>
+            {% endif %}
         </dl>
     </div>
 </div>
