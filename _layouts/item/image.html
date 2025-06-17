@@ -6,10 +6,10 @@ layout: item/item-page-base
 gallery: true
 ---
 
-<div class="card mb-4 text-center">
+<div class="card mb-2 text-center">
 
-    {% include item/image-gallery.html %}
-    
+    <!--{% include item/image-gallery.html %} This is now in download-buttons instead-->
+    {% include item/item-thumb.html %}    
     <div class="card-body">
 
         {% include item/download-buttons.html %}
