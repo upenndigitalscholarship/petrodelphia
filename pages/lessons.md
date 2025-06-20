@@ -7,5 +7,3 @@ credits: true
 ---
 
 # {{ page.title }}
-
-{% include_relative lessons-content.html %}
