@@ -1,5 +1,5 @@
 ---
-title: Lesson Plan
+title: Lesson Plans
 layout: page
 permalink: /lessons.html
 credits: true
@@ -8,4 +8,8 @@ credits: true
 
 # {{ page.title }}
 
+<div class="container">
+
 {% include_relative lessons-content.html %}
+
+</div>
