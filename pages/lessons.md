@@ -7,3 +7,9 @@ credits: true
 ---
 
 # {{ page.title }}
+
+<div class="container">
+
+{% include_relative lessons-content.html %}
+
+</div>
