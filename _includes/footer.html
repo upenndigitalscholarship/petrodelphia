@@ -14,7 +14,7 @@
                     <use xlink:href="{{ '/assets/lib/icons/bootstrap-icons.svg' | relative_url }}#info-circle-fill" href="{{ '/assets/lib/icons/bootstrap-icons.svg' | relative_url }}#info-circle-fill"></use>
                 </svg>
                 <span class="visually-hidden">Info icon</span>
-                This site is currently in beta testing. If you encountered an error on this page, <a class="alert-link" href="https://upenn.libwizard.com/id/303adf1736dc164722ae21a1151f51be" target="_blank">report it here</a> with the URL {{ page.url | absolute_url }}.
+                This site is currently in beta testing. If you encountered an error on this page, <a class="alert-link" href="https://upenn.libwizard.com/id/303adf1736dc164722ae21a1151f51be" target="_blank">report it here</a> with the URL <code>{{ page.url | absolute_url }}</code>.
                 </div>
             </div>
         
@@ -35,7 +35,7 @@
             <div class="col-md mt-3 text-center">
                 <p class="text-white text-md-end" id="footer-credits">
                         <a href="https://collectionbuilder.github.io/" target="_blank" rel="noopener" title="CollectionBuilder">
-                            <img src="{{ '/assets/img/collectionbuilder-logo.png' | relative_url }}" class="img-fluid" alt="CollectionBuilder" >
+                            <img src="{{ '/assets/img/collectionbuilder-logo.png' | relative_url }}" class="img-fluid" alt="CollectionBuilder">
                         </a>
                     </small>
                 </p>
