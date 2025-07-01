@@ -176,7 +176,7 @@ var USGS_1949 = L.tileLayer('https://mapwarper.net/maps/tile/88564/{z}/{x}/{y}.p
 
     attribution: '<i>1949 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
 
-}).addTo(map);
+})//.addTo(map);
 
 //.addTo(map); makes this a default load layer
 
@@ -218,7 +218,7 @@ var OSMLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services
 
     layers: '1' 
 
-}).addTo(map);
+})//.addTo(map);
 
 
 
@@ -326,9 +326,9 @@ let AOI;
 let FEMA;
 
 let AOI_Layer;
-var aoiLayer = L.layerGroup().addTo(map);
+var aoiLayer = L.layerGroup()//.addTo(map);
 var femaFloodLayer = L.layerGroup()//.addTo(map);
-var industrialLayer = L.layerGroup().addTo(map);
+var industrialLayer = L.layerGroup()//.addTo(map);
     
 var aoiStyle = {
         color: '#FF7800',
