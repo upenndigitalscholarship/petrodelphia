@@ -74,8 +74,27 @@ css
 } --->
 
 <script>
+// /path/to/geojson/file.geojson
+    const geoJsonURL = "https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson";
 
-  
+// Initial center of the map in terms of longitude and latitude
+    const geoCenter = [39.91, -75.19];
+
+// Determine initial range of area shown on map (zoom closer when the number is higher)
+    const zoomLevel = 13;
+
+// Start and End year of the dataset
+    const baseStartYear = 1860;
+    const baseEndYear = 2019;
+
+//Markers & Clusters
+// The color of the markers, used in function customizeMarker()
+    const markColor = '#4E91BE';
+// Determine the threshold of distance that cluster multiple markers, used in Function initialMarkerClusters()
+    const maxClusterRadius = 10;
+// Specify the color of the marker cluster in css under the class name, used in Function initialMarkerClusters()
+    const clusterColorClass = 'marker-cluster-color';
+
     ( function() {
         // config opaque slider
             ( "#slider-opaque" ).slider({
