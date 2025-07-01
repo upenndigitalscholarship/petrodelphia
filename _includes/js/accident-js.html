@@ -123,7 +123,6 @@ css
     /* add collection map data */
 
 //&&&&&&&&&&&&&& 
-    /*
 
     var geodata = { "type": "FeatureCollection", "features": [ 
 
@@ -139,7 +138,7 @@ css
 
     ]};
     /* check for url parameters and set initial view options */ 
-*/
+
     let url = new URL(window.location);
 
     var mapCenter = url.searchParams.get('location') ? url.searchParams.get('location').split(',') : [{{ site.data.theme.latitude | default: 46.727485 }}, {{ site.data.theme.longitude | default: -117.014185 }}];
@@ -153,7 +152,12 @@ css
     /* init map, set center and zoom */
 
     var map = L.map('map').setView([39.91295726620451, -75.2036260383046], 14); //39.95258150210489, -75.19328134637577
+    var map = L.map('timeline-map', {
+        layers: [OpenStreetMap_BlackAndWhite]
+    });
 
+    // Initial zoom and center in the map
+        map2.setView(geoCenter, zoomLevel);
 
 
     var PASDA2019 = L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
