@@ -122,7 +122,8 @@ css
 
     /* add collection map data */
 
-
+//&&&&&&&&&&&&&& 
+    /*
 
     var geodata = { "type": "FeatureCollection", "features": [ 
 
@@ -138,7 +139,7 @@ css
 
     ]};
     /* check for url parameters and set initial view options */ 
-
+*/
     let url = new URL(window.location);
 
     var mapCenter = url.searchParams.get('location') ? url.searchParams.get('location').split(',') : [{{ site.data.theme.latitude | default: 46.727485 }}, {{ site.data.theme.longitude | default: -117.014185 }}];
