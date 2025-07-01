@@ -1,6 +1,6 @@
 ---
 title: Accident Mapper
-layout: map
+layout: accidents
 permalink: /accident-map.html
 ---
 
