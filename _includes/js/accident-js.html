@@ -45,18 +45,31 @@ More actions
             padding: 0;
         }
         #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width:100%;
-            height:100%;
+            height: 500px;   /* Medium height */
+            width: 800px;    /* Medium width */
+            margin: 20px auto; /* Centers the map */
 
         }
     </style>
 </head>
+<!--- 
+css
 
+#map {
+    height: 500px;   /* Medium height */
+    width: 800px;    /* Medium width */
+    margin: 20px auto; /* Centers the map */
+    border: 1px solid #ccc; /* Optional border */
+}
+
+2. Viewport-Relative Sizing
+css
+
+#map {
+    height: 60vh;    /* 60% of viewport height */
+    width: 80vw;     /* 80% of viewport width */
+    max-width: 1000px; /* Maximum size */
+} --->
 
 <script>
 
