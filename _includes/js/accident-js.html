@@ -92,7 +92,7 @@ More actions
     <hr>
 
     <!-- Title -->
-    <h1>Timeline map of injurious accidents at the Philadelphia Oil Refinery <a href="https://clarkdatalabs.github.io/time_filter_map/"><small>Tutorial</small></a></h1>
+    <h1>--Timeline map of injurious accidents at the Philadelphia Oil Refinery <a href="https://clarkdatalabs.github.io/time_filter_map/"><small>Tutorial</small></a></h1>
     <h3>1890 - 2019</h3>
 
     <!-- MAP -->
@@ -213,12 +213,12 @@ css
             maxZoom: 18,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         });
-        var map2 = L.map('timeline-map', {
+        var map = L.map('timeline-map', {
             layers: [OpenStreetMap_BlackAndWhite]
         });
 
     // Initial zoom and center in the map
-        map2.setView(geoCenter, zoomLevel);
+        map.setView(geoCenter, zoomLevel);
 
     // Set markers & clusters on the map
         var something_markers = initialMarkerClusters();
@@ -318,6 +318,6 @@ css
                             });
             markers.clearLayers();
             markers.addLayer(geojson);
-            map2.addLayer(markers);
+            map.addLayer(markers);
         };
 </script>
