@@ -1,3 +1,5 @@
+<!--- This file is used to define the leaflet industrial accidents timeline selector map --->
+
 {%- if site.data.theme.icons -%}{% assign icons = site.data.theme.icons %}{% else %}
 More actions
 
@@ -35,7 +37,7 @@ More actions
     <!-- import the Area of Interest GeoJSON file -->
 
 <head>
-    <title>Fixed Leaflet Map</title>
+    <title>Timeline selector Leaflet map</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -73,10 +75,10 @@ css
 
 <script>
 
-    
-    $( function() {
+  /*  
+    ( function() {
         // config opaque slider
-            $( "#slider-opaque" ).slider({
+            ( "#slider-opaque" ).slider({
                 range: false,
                 min: 0,
                 max: 1,
@@ -85,17 +87,16 @@ css
                 slide: function( event, ui ) {
                     let opaque = ui.value;
 
-                    $( "#opacity" ).val( opaque );
+                    ( "#opacity" ).val( opaque );
                     a2_1916_02.setOpacity(opaque);
                 }
             });
 
         // initial display
-            $( "#opacity" ).val("1");
-
+            ( "#opacity" ).val("1");
 
         // config time range slider
-            $( "#slider-range" ).slider({
+            ( "#slider-range" ).slider({
                 range: true,
                 min: baseStartYear,
                 max: baseEndYear,
@@ -110,7 +111,7 @@ css
                         let startYear = ui.values[ 0 ];
                         let endYear = ui.values[ 1 ];
 
-                        $( "#amount" ).val( startYear + " - " + endYear );
+                        ( "#amount" ).val( startYear + " - " + endYear );
 
                         $.getJSON(geoJsonURL, function(data){
                             let GEOJSON  = data;
@@ -124,11 +125,11 @@ css
                     }
             });
         //initial display
-            $( "#amount" ).val(
+            ( "#amount" ).val(
                  $( "#slider-range" ).slider( "values", 0 ) + " - " + $( "#slider-range" ).slider( "values", 1 )
             );
     });
-
+*/
 
     src="{{ '/assets/data/AOI_features.json' | relative_url }}";
 
@@ -152,7 +153,7 @@ css
 
 
 
-$(function(){
+(function(){
 
     /* add collection map data */
 
@@ -396,7 +397,7 @@ var aoiStyle = {
         };
 //https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson
 //https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.json
-$ fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
+    fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
         // Load and add the FEMA floodplain GeoJSON
        // fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/FEMA_100yr_floodplain.geojson')
             .then(response => response.json())
@@ -416,7 +417,7 @@ $ fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collectio
                 
             });
 
-$ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.json')
+ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.json')
         // Load and add the FEMA floodplain GeoJSON
        // fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/FEMA_100yr_floodplain.geojson')
             .then(response => response.json())
@@ -436,7 +437,7 @@ $ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania
                 
             });
 
-$ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/FEMA_100yr_floodplain.geojson')
+ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/FEMA_100yr_floodplain.geojson')
         // Load and add the FEMA floodplain GeoJSON
        // fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/FEMA_100yr_floodplain.geojson')
             .then(response => response.json())
@@ -456,7 +457,7 @@ $ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania
                 
             });
     
-$ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson')
+ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson')
 
 
 
