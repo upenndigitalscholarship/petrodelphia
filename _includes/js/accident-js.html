@@ -440,7 +440,7 @@ var baseMaps = {
 
 
 //Bromley_1910 Hopkins_1876
-var overlayMaps = {
+var overlayMaps = {/*
     "1876 Hopkins City Atlas" : Hopkins_1876,
     
     "1892 Philadelphia waterfront" : Waterfront_1892,
@@ -489,18 +489,18 @@ var overlayMaps = {
 
     "2019 aerial photograph": PASDA2019,
 
-    "2023 USGS map" : USGS_2023,
+    "2023 USGS map" : USGS_2023,*/
 
     "Overlay 1: AOI overlay" : AOI_Layer,
-    "Overlay 2: FEMA 100 year flood" : femaFloodLayer,
-    "Overlay 3: Industrial census tracts" : industrialLayer,
+  //  "Overlay 2: FEMA 100 year flood" : femaFloodLayer,
+    "Overlay 3: Injurious accidents" : industrialLayer,
     };
 
     var layerControl = L.control.layers(null, overlayMaps, {collapsed: false}).addTo(map);
 
 
 
-        AOI_Layer.addTo(map);
+        //AOI_Layer.addTo(map);
 
 
 
@@ -513,7 +513,7 @@ var overlayMaps = {
 
 
 
-        layerControl.addOverlay(AOI_Layer, "GeoJSON Features").addTo(map);
+        //layerControl.addOverlay(AOI_Layer, "GeoJSON Features").addTo(map);
         
     })
 
