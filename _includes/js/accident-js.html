@@ -33,9 +33,34 @@ More actions
 {% if site.data.theme.map-search == true and site.data.theme.map-cluster == true %}<script src="{{ '/assets/lib/leaflet/leaflet.markercluster.freezable.js' | relative_url }}"></script>{% endif %}
 
     <!-- import the Area of Interest GeoJSON file -->
-
 <head>
-    <title>Fixed Leaflet Map</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Time-filter Map</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" media="screen, print" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" />
+
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+
+    <!-- Time range slider -->
+    <link rel="stylesheet" href="forSlider/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="forSlider/jquery-ui.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -52,6 +77,32 @@ More actions
         }
     </style>
 </head>
+
+<body>
+
+    <!-- time range slider -->
+    <div class="sliderDiv" >
+        <p>
+            <label for="amount">Time range for acidents:</label>
+            <input class="sliderValue" type="text" id="amount" >
+        </p>
+        <div id="slider-range"></div>
+    </div>
+
+    <hr>
+
+    <!-- Title -->
+    <h1>Timeline map of injurious accidents at the Philadelphia Oil Refinery <a href="https://clarkdatalabs.github.io/time_filter_map/"><small>Tutorial</small></a></h1>
+    <h3>1890 - 2019</h3>
+
+    <!-- MAP -->
+    <div id="timeline-map"></div>
+
+    <!-- Manipulate the MAP -->
+    <script type='text/javascript' src='script.js'></script>
+    <h3>Based on the time filter map from <a href="https://clarkdatalabs.github.io/time_filter_map/"><small>Clark Data Labs</small></a></h1>
+
+</body>
 <!--- 
 css
 
