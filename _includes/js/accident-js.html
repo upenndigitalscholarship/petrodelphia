@@ -73,6 +73,63 @@ css
 
 <script>
 
+    
+    $( function() {
+        // config opaque slider
+            $( "#slider-opaque" ).slider({
+                range: false,
+                min: 0,
+                max: 1,
+                step: 0.1,
+                value: 1,
+                slide: function( event, ui ) {
+                    let opaque = ui.value;
+
+                    $( "#opacity" ).val( opaque );
+                    a2_1916_02.setOpacity(opaque);
+                }
+            });
+
+        // initial display
+            $( "#opacity" ).val("1");
+
+
+        // config time range slider
+            $( "#slider-range" ).slider({
+                range: true,
+                min: baseStartYear,
+                max: baseEndYear,
+                values: [ baseStartYear, baseEndYear],
+
+                // Every time slider is slided, the map should be refreshed
+                    slide: function( event, ui ) {
+                        var newGeoJson = {
+                            "type" : "Feature Collection",
+                            "features": []
+                        };
+                        let startYear = ui.values[ 0 ];
+                        let endYear = ui.values[ 1 ];
+
+                        $( "#amount" ).val( startYear + " - " + endYear );
+
+                        $.getJSON(geoJsonURL, function(data){
+                            let GEOJSON  = data;
+                            for (let i = 0; i < GEOJSON["features"].length; i++){
+                                if (GEOJSON["features"][i]["properties"]["Date"] >= startYear && GEOJSON["features"][i]["properties"]["Date"] <= endYear) {  // will change "id" to "year"
+                                    newGeoJson["features"].push(GEOJSON["features"][i])
+                                }
+                            }
+                            renderPinsFromJson(something_markers,newGeoJson);
+                        });
+                    }
+            });
+        //initial display
+            $( "#amount" ).val(
+                 $( "#slider-range" ).slider( "values", 0 ) + " - " + $( "#slider-range" ).slider( "values", 1 )
+            );
+    });
+
+
     src="{{ '/assets/data/AOI_features.json' | relative_url }}";
 
 
@@ -95,7 +152,7 @@ css
 
 
 
-(function(){
+$(function(){
 
     /* add collection map data */
 
@@ -339,7 +396,7 @@ var aoiStyle = {
         };
 //https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson
 //https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.json
-fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
+$ fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
         // Load and add the FEMA floodplain GeoJSON
        // fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/FEMA_100yr_floodplain.geojson')
             .then(response => response.json())
@@ -359,7 +416,7 @@ fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-
                 
             });
 
-fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.json')
+$ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.json')
         // Load and add the FEMA floodplain GeoJSON
        // fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/FEMA_100yr_floodplain.geojson')
             .then(response => response.json())
@@ -379,7 +436,7 @@ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-c
                 
             });
 
-fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/FEMA_100yr_floodplain.geojson')
+$ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/FEMA_100yr_floodplain.geojson')
         // Load and add the FEMA floodplain GeoJSON
        // fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/FEMA_100yr_floodplain.geojson')
             .then(response => response.json())
@@ -399,7 +456,7 @@ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-c
                 
             });
     
-fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson')
+$ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson')
 
 
 
