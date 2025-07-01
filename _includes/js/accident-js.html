@@ -1,7 +1,7 @@
 <!--- This file is used to define the leaflet industrial accidents timeline selector map --->
+    <title>Timeline selector Leaflet map</title>
 
 {%- if site.data.theme.icons -%}{% assign icons = site.data.theme.icons %}{% else %}
-More actions
 
 {% assign cb_icons = site.pages | where: "name","cb-icons.svg" | first %}
 
@@ -40,7 +40,6 @@ More actions
 </head>
 <body>
     
-    <title>Timeline selector Leaflet map</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
