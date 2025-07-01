@@ -148,6 +148,16 @@ css
                  $( "#slider-range" ).slider( "values", 0 ) + " - " + $( "#slider-range" ).slider( "values", 1 )
             );
     });
+    
+    var OpenStreetMap_BlackAndWhite = L.tileLayer('https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        });
+    
+    var map2 = L.map('timeline-map', {
+        layers: [OpenStreetMap_BlackAndWhite]
+        });
+
 
 
     src="{{ '/assets/data/AOI_features.json' | relative_url }}";
