@@ -337,7 +337,28 @@ var aoiStyle = {
             fillOpacity: 0.3,
             fillColor: '#FFD700'
         };
+//https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson
 //https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.json
+fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
+        // Load and add the FEMA floodplain GeoJSON
+       // fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/FEMA_100yr_floodplain.geojson')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    style: femaStyle,
+                    onEachFeature: function(feature, layer) {
+                        if (feature.properties) {
+                            let popupContent = "Industrial Tracts";
+                            if (feature.properties.ZONE_SUBTY) {
+                                popupContent += ": " + feature.properties.ZONE_SUBTY;
+                            }
+                            layer.bindPopup(popupContent);
+                        }
+                    }
+                }).addTo(industrialLayer);
+                
+            });
+
 fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.json')
         // Load and add the FEMA floodplain GeoJSON
        // fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/FEMA_100yr_floodplain.geojson')
