@@ -154,10 +154,7 @@ css
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         });
     
-/*    var map2 = L.map('timeline-map', {
-        layers: [OpenStreetMap_BlackAndWhite]
-        });
-*/ //Problem child?
+
 
 
     src="{{ '/assets/data/AOI_features.json' | relative_url }}";
@@ -210,12 +207,17 @@ css
     var mapZoom = url.searchParams.get('location') ? 16 : {{ site.data.theme.zoom-level | default: 5 }};
 
     var markerFilter = url.searchParams.get('marker') ? url.searchParams.get('marker') : "";
-
+/*    var map2 = L.map('timeline-map', {
+        layers: [OpenStreetMap_BlackAndWhite]
+        });
+*/ //Problem child?
 
 
     /* init map, set center and zoom */
 
-    var map = L.map('map').setView([39.91295726620451, -75.2036260383046], 14); //39.95258150210489, -75.19328134637577
+    var map = L.map('map', {
+        layers: [OpenStreetMap_BlackAndWhite]
+    }).setView([39.91295726620451, -75.2036260383046], 14); //39.95258150210489, -75.19328134637577
 
 
 
