@@ -217,8 +217,9 @@ css
 
     var map = L.map('map', {
         layers: [OpenStreetMap_BlackAndWhite]
-    }).setView([39.91295726620451, -75.2036260383046], 14); //39.95258150210489, -75.19328134637577
+    });//.setView([39.91295726620451, -75.2036260383046], 14); //39.95258150210489, -75.19328134637577
 
+    map.setView(geoCenter, zoomLevel);
 
 
     var PASDA2019 = L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
