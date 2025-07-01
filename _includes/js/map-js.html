@@ -178,6 +178,7 @@ var Bromley_1895 = L.tileLayer('https://mapwarper.net/mosaics/tile/2184/{z}/{x}/
 var Bromley_1901 = L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png')
 var Bromley_1910 = L.tileLayer('https://mapwarper.net/mosaics/tile/2271/{z}/{x}/{y}.png')
 
+var Landuse_1942 = L.tileLayer('https://mapwarper.net/maps/tile/94403/{z}/{x}/{y}.png')
 
 
 var OSMLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -405,7 +406,9 @@ var overlayMaps = {
     "1928 aerial photograph" : Aerial_1928,
 
     "1937 Redlining map" : HOLC_1937,
-
+    
+    "1942 Land use map" : Landuse_1942,
+    
     "1949 USGS map" : USGS_1949,
 
     "1959 aerial photograph" : Aerial_1959,
