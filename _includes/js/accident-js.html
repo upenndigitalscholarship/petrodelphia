@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Leaflet Year Filter</title>
+  <title>Leaflet Year Range Filter</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map { height: 600px; }
-    #sliderContainer { margin: 10px; }
+    #controls {
+      padding: 10px;
+      font-family: sans-serif;
+    }
+    #controls label {
+      margin-right: 10px;
+    }
   </style>
 </head>
 <body>
 
-<div id="sliderContainer">
-  <label for="yearRange">Filter by Year: <span id="yearLabel">2000</span></label>
-  <input type="range" id="yearRange" min="2000" max="2025" step="1" value="2000" />
+<div id="controls">
+  <label for="startYear">Start Year: <span id="startYearLabel">2000</span></label>
+  <input type="range" id="startYear" min="2000" max="2025" step="1" value="2000">
+
+  <label for="endYear">End Year: <span id="endYearLabel">2025</span></label>
+  <input type="range" id="endYear" min="2000" max="2025" step="1" value="2025">
 </div>
 
 <div id="map"></div>
@@ -26,29 +35,31 @@
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
 
-  let geojsonData;     // will hold the full GeoJSON
-  let geojsonLayer;    // Leaflet layer reference
+  let geojsonData;
+  let geojsonLayer;
 
-  // Sample GeoJSON points (replace this with your actual data or fetch from file)
   const sampleGeoJSON = {
     "type": "FeatureCollection",
     "features": [
       { "type": "Feature", "properties": { "year": 2000, "name": "Point A" }, "geometry": { "type": "Point", "coordinates": [-100, 40] } },
       { "type": "Feature", "properties": { "year": 2010, "name": "Point B" }, "geometry": { "type": "Point", "coordinates": [-90, 42] } },
-      { "type": "Feature", "properties": { "year": 2020, "name": "Point C" }, "geometry": { "type": "Point", "coordinates": [-95, 38] } }
+      { "type": "Feature", "properties": { "year": 2015, "name": "Point C" }, "geometry": { "type": "Point", "coordinates": [-95, 38] } },
+      { "type": "Feature", "properties": { "year": 2020, "name": "Point D" }, "geometry": { "type": "Point", "coordinates": [-85, 37] } }
     ]
   };
 
-  geojsonData = sampleGeoJSON; // assign the full dataset
+  geojsonData = sampleGeoJSON;
 
-  function updateMap(year) {
+  function updateMap(startYear, endYear) {
     if (geojsonLayer) {
-      geojsonLayer.remove(); // remove existing layer
+      geojsonLayer.remove();
     }
 
     const filtered = {
       type: "FeatureCollection",
-      features: geojsonData.features.filter(f => f.properties.year <= year)
+      features: geojsonData.features.filter(f =>
+        f.properties.year >= startYear && f.properties.year <= endYear
+      )
     };
 
     geojsonLayer = L.geoJSON(filtered, {
@@ -58,15 +69,31 @@
     }).addTo(map);
   }
 
-  // Initial load
-  updateMap(2000);
+  // Initialize with default range
+  updateMap(2000, 2025);
 
-  // Event listener for slider
-  document.getElementById('yearRange').addEventListener('input', function () {
-    const year = parseInt(this.value);
-    document.getElementById('yearLabel').textContent = year;
-    updateMap(year);
-  });
+  const startSlider = document.getElementById('startYear');
+  const endSlider = document.getElementById('endYear');
+  const startLabel = document.getElementById('startYearLabel');
+  const endLabel = document.getElementById('endYearLabel');
+
+  function handleSliderChange() {
+    let startYear = parseInt(startSlider.value);
+    let endYear = parseInt(endSlider.value);
+
+    // Ensure startYear is always <= endYear
+    if (startYear > endYear) {
+      [startYear, endYear] = [endYear, startYear];
+    }
+
+    startLabel.textContent = startYear;
+    endLabel.textContent = endYear;
+
+    updateMap(startYear, endYear);
+  }
+
+  startSlider.addEventListener('input', handleSliderChange);
+  endSlider.addEventListener('input', handleSliderChange);
 </script>
 
 </body>
