@@ -4,8 +4,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1891,
-        "Year": "1871-06-22",
+        "Year": 1891,
+        "Date": "1871-06-22",
         "Descript": "Explosion of tank (kerosene).",
         "Injury": "N",
         "Dead": "N",
@@ -28,8 +28,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1900,
-        "Year": "1900-02-12",
+        "Year": 1900,
+        "Date": "1900-02-12",
         "Descript": "Explosion of tanks and pipes (benzene).",
         "Injury": "Y",
         "Dead": "Y",
@@ -52,8 +52,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1906,
-        "Year": "1906-07-22",
+        "Year": 1906,
+        "Date": "1906-07-22",
         "Descript": "Explosion of tank (oil).",
         "Injury": "Y",
         "Dead": "Y",
@@ -76,8 +76,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1907,
-        "Year": "1907-05-03",
+        "Year": 1907,
+        "Date": "1907-05-03",
         "Descript": "Fire in compounding room of chemical building.",
         "Injury": "Y",
         "Dead": "N",
@@ -100,8 +100,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1917,
-        "Year": "1917-07-24",
+        "Year": 1917,
+        "Date": "1917-07-24",
         "Descript": "Multi-day fire causes widespread damage.",
         "Injury": "Y",
         "Dead": "N",
@@ -124,8 +124,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1925,
-        "Year": "1925-08-31",
+        "Year": 1925,
+        "Date": "1925-08-31",
         "Descript": "Explosion of tank (gasoline); fire lasts about two hours.",
         "Injury": "Y",
         "Dead": "N",
@@ -148,8 +148,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1975,
-        "Year": "1975-10-12",
+        "Year": 1975,
+        "Date": "1975-10-12",
         "Descript": "Nine-alarm fire lasts about 34 hours.",
         "Injury": "Y",
         "Dead": "N",
@@ -172,8 +172,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1983,
-        "Year": "1983-08-07",
+        "Year": 1983,
+        "Date": "1983-08-07",
         "Descript": "Blown valve leads to leakage of tank (butane); Tasker Homes evacuated.",
         "Injury": "N",
         "Dead": "N",
@@ -196,8 +196,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1995,
-        "Year": "1995-07-18",
+        "Year": 1995,
+        "Date": "1995-07-18",
         "Descript": "Small fire (butane and propane).",
         "Injury": "N",
         "Dead": "N",
@@ -220,8 +220,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 2000,
-        "Year": "2000-06-30",
+        "Year": 2000,
+        "Date": "2000-06-30",
         "Descript": "Explosion of pipe (gasoline).",
         "Injury": "Y",
         "Dead": "N",
@@ -244,8 +244,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 2000,
-        "Year": "2000-09-07",
+        "Year": 2000,
+        "Date": "2000-09-07",
         "Descript": "Ignition of flammable vapor.",
         "Injury": "Y",
         "Dead": "N",
@@ -268,8 +268,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1875,
-        "Year": "1875-07-20",
+        "Year": 1875,
+        "Date": "1875-07-20",
         "Descript": "Lightning-caused explosion of tank (benzene) becomes conflagration, causes about $500,000 in property loss, including some 150,000 barrels of oil.",
         "Injury": "Y",
         "Dead": "N",
@@ -292,8 +292,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1901,
-        "Year": "1901-08-19",
+        "Year": 1901,
+        "Date": "1901-08-19",
         "Descript": "Lightning-caused explosion of tank (benzene) becomes conflagration, causes about $500,000 in property loss, including some 150,000 barrels of oil.",
         "Injury": "Y",
         "Dead": "Y",
@@ -316,8 +316,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1915,
-        "Year": "1915-04-30",
+        "Year": 1915,
+        "Date": "1915-04-30",
         "Descript": "Lightning-caused explosion of tank (coal tar) spreads to city\u0019s gas works; four-alarm fire.",
         "Injury": "N",
         "Dead": "N",
@@ -340,8 +340,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1924,
-        "Year": "1924-12-27",
+        "Year": 1924,
+        "Date": "1924-12-27",
         "Descript": "Explosion of still (crude oil).",
         "Injury": "N",
         "Dead": "N",
@@ -364,8 +364,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1929,
-        "Year": "1929-12-27",
+        "Year": 1929,
+        "Date": "1929-12-27",
         "Descript": "Explosion of tank (oil).",
         "Injury": "N",
         "Dead": "N",
@@ -388,8 +388,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1933,
-        "Year": "1933-06-27",
+        "Year": 1933,
+        "Date": "1933-06-27",
         "Descript": "Explosion of still.",
         "Injury": "N",
         "Dead": "N",
@@ -412,8 +412,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1976,
-        "Year": "1976-04-25",
+        "Year": 1976,
+        "Date": "1976-04-25",
         "Descript": "Five-alarm fire at asphalt storage tank.",
         "Injury": "N",
         "Dead": "N",
@@ -436,8 +436,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1988,
-        "Year": "1988-01-11",
+        "Year": 1988,
+        "Date": "1988-01-11",
         "Descript": "Explosion of tank (waste chemicals).",
         "Injury": "Y",
         "Dead": "N",
@@ -460,8 +460,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1922,
-        "Year": "1922-07-01",
+        "Year": 1922,
+        "Date": "1922-07-01",
         "Descript": "Explosion of tank (gasoline).",
         "Injury": "Y",
         "Dead": "N",
@@ -484,8 +484,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1922,
-        "Year": "1922-07-01",
+        "Year": 1922,
+        "Date": "1922-07-01",
         "Descript": "Explosion of tank (gasoline).",
         "Injury": "Y",
         "Dead": "N",
@@ -508,8 +508,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1962,
-        "Year": "1962-08-23",
+        "Year": 1962,
+        "Date": "1962-08-23",
         "Descript": "Explosion of storm sewer tunnel infused with refinery leakage.",
         "Injury": "Y",
         "Dead": "Y",
@@ -532,8 +532,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1930,
-        "Year": "1930-03-19",
+        "Year": 1930,
+        "Date": "1930-03-19",
         "Descript": "Fire in shanty by pier leads to fire in warehouse storing kerosene; loss of some 70,000 barrels of fuel.",
         "Injury": "Y",
         "Dead": "N",
@@ -556,8 +556,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1930,
-        "Year": "1930-07-12",
+        "Year": 1930,
+        "Date": "1930-07-12",
         "Descript": "Three-alarm fire",
         "Injury": "Y",
         "Dead": "N",
@@ -580,8 +580,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1941,
-        "Year": "1941-03-24",
+        "Year": 1941,
+        "Date": "1941-03-24",
         "Descript": "Explosion of still.",
         "Injury": "N",
         "Dead": "N",
@@ -604,8 +604,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1941,
-        "Year": "1941-06-14",
+        "Year": 1941,
+        "Date": "1941-06-14",
         "Descript": "Explosion of tanker ship carrying crude oil from Venezuela.",
         "Injury": "Y",
         "Dead": "N",
@@ -628,8 +628,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1947,
-        "Year": "1947-12-28",
+        "Year": 1947,
+        "Date": "1947-12-28",
         "Descript": "Explosion of tank (crude oil)",
         "Injury": "N",
         "Dead": "N",
@@ -652,8 +652,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1950,
-        "Year": "1950-05-06",
+        "Year": 1950,
+        "Date": "1950-05-06",
         "Descript": "Explosion of experimental still.",
         "Injury": "Y",
         "Dead": "Y",
@@ -676,8 +676,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1950,
-        "Year": "1950-11-10",
+        "Year": 1950,
+        "Date": "1950-11-10",
         "Descript": "Explosion of still.",
         "Injury": "N",
         "Dead": "N",
@@ -700,8 +700,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1960,
-        "Year": "1960-09-09",
+        "Year": 1960,
+        "Date": "1960-09-09",
         "Descript": "Lightning-caused accident destroys twenty tanks; eight-alarm fire lasts at least seven hours, and causes about $1 million in property loss.",
         "Injury": "N",
         "Dead": "N",
@@ -724,8 +724,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1961,
-        "Year": "1961-02-02",
+        "Year": 1961,
+        "Date": "1961-02-02",
         "Descript": "Explosion of cracking still (crude oil); four-alarm fire lasts 2.5 hours.",
         "Injury": "N",
         "Dead": "N",
@@ -748,8 +748,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1966,
-        "Year": "1966-05-23",
+        "Year": 1966,
+        "Date": "1966-05-23",
         "Descript": "Explosion of distillation tower (benzene and cumene); five-alarm fire lasts 3.5 hours.",
         "Injury": "N",
         "Dead": "N",
@@ -772,8 +772,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1967,
-        "Year": "1967-04-22",
+        "Year": 1967,
+        "Date": "1967-04-22",
         "Descript": "Explosion of fuel line in boiler room; four-alarm fire lasts three hours.",
         "Injury": "N",
         "Dead": "N",
@@ -796,8 +796,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1967,
-        "Year": "1967-08-21",
+        "Year": 1967,
+        "Date": "1967-08-21",
         "Descript": "Explosion of still after failure of heat exchanger; three-alarm fire.",
         "Injury": "N",
         "Dead": "N",
@@ -820,8 +820,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1967,
-        "Year": "1967-12-26",
+        "Year": 1967,
+        "Date": "1967-12-26",
         "Descript": "Explosion of tank (sulphuric acid); four-alarm fire.",
         "Injury": "Y",
         "Dead": "N",
@@ -844,8 +844,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1969,
-        "Year": "1969-11-28",
+        "Year": 1969,
+        "Date": "1969-11-28",
         "Descript": "Explosion of pipeline and some 70 drums (naphtha); seven-alarm fire.",
         "Injury": "N",
         "Dead": "N",
@@ -868,8 +868,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1975,
-        "Year": "1975-10-20",
+        "Year": 1975,
+        "Date": "1975-10-20",
         "Descript": "Failure of pump in distillery (crude oil) that had been inspected days before; six-alarm fire lasts about nine hours.",
         "Injury": "N",
         "Dead": "N",
@@ -892,8 +892,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1976,
-        "Year": "1976-11-11",
+        "Year": 1976,
+        "Date": "1976-11-11",
         "Descript": "Two-alarm fire at ruptured line (crude oil) leading to cracking unit.",
         "Injury": "N",
         "Dead": "N",
@@ -916,8 +916,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1977,
-        "Year": "1977-04-09",
+        "Year": 1977,
+        "Date": "1977-04-09",
         "Descript": "Explosion of oil barge leads to six-alarm fire on both sides of Schuylkill; river on fire.",
         "Injury": "Y",
         "Dead": "Y",
@@ -940,8 +940,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1985,
-        "Year": "1985-12-27",
+        "Year": 1985,
+        "Date": "1985-12-27",
         "Descript": "Three-alarm fire.",
         "Injury": "N",
         "Dead": "N",
@@ -964,8 +964,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 2000,
-        "Year": "2000-12-23",
+        "Year": 2000,
+        "Date": "2000-12-23",
         "Descript": "Two-alarm fire in hydrogen unit.",
         "Injury": "N",
         "Dead": "N",
@@ -988,8 +988,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1969,
-        "Year": "1969-01-03",
+        "Year": 1969,
+        "Date": "1969-01-03",
         "Descript": "Explosion of pipe ignites large still (high-octane gas); five-alarm fire causes about $1 million in property loss.",
         "Injury": "Y",
         "Dead": "N",
@@ -1012,8 +1012,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1975,
-        "Year": "1975-08-17",
+        "Year": 1975,
+        "Date": "1975-08-17",
         "Descript": "Explosion of pipes (crude oil); eleven-alarm fire over ten days causes about $11 million in property loss.",
         "Injury": "Y",
         "Dead": "Y",
@@ -1036,8 +1036,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1969,
-        "Year": "1969-01-03",
+        "Year": 1969,
+        "Date": "1969-01-03",
         "Descript": "Explosion of pipe ignites large still (high-octane gas); five-alarm fire causes about $1 million in property damage.",
         "Injury": "Y",
         "Dead": "N",
@@ -1060,8 +1060,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 2019,
-        "Year": "2019-06-21",
+        "Year": 2019,
+        "Date": "2019-06-21",
         "Descript": "Ignition of flammable vapor in alkylation unit leads to fire and explosions, and approximately $750 million in property loss.",
         "Injury": "Y",
         "Dead": "N",
@@ -1084,8 +1084,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1879,
-        "Year": "1879-05-20",
+        "Year": 1879,
+        "Date": "1879-05-20",
         "Descript": "Explosion of still (petroleum).",
         "Injury": "Y",
         "Dead": "N",
@@ -1108,8 +1108,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1884,
-        "Year": "1884-05-23",
+        "Year": 1884,
+        "Date": "1884-05-23",
         "Descript": "Lightning-caused explosion of tank becomes major conflagration.",
         "Injury": "N",
         "Dead": "N",
@@ -1132,8 +1132,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1886,
-        "Year": "1886-06-06",
+        "Year": 1886,
+        "Date": "1886-06-06",
         "Descript": "Explosion of tank.",
         "Injury": "N",
         "Dead": "N",
@@ -1156,8 +1156,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1887,
-        "Year": "1887-07-31",
+        "Year": 1887,
+        "Date": "1887-07-31",
         "Descript": "Lightning-caused explosion of tank (distilled oil)\u0014same tank that attracted lightning in 1884\u0014leads to fire that lasts about five hours.",
         "Injury": "N",
         "Dead": "N",
@@ -1180,8 +1180,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1895,
-        "Year": "1895-07-22",
+        "Year": 1895,
+        "Date": "1895-07-22",
         "Descript": "Explosion of escaped gas destroys receiving department building.",
         "Injury": "Y",
         "Dead": "N",
@@ -1204,8 +1204,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1898,
-        "Year": "1898-06-13",
+        "Year": 1898,
+        "Date": "1898-06-13",
         "Descript": "Refinery fire.",
         "Injury": "Y",
         "Dead": "N",
@@ -1228,8 +1228,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1900,
-        "Year": "1900-08-16",
+        "Year": 1900,
+        "Date": "1900-08-16",
         "Descript": "Explosion of tank (kerosense) leads to fire in illuminating gas factory.",
         "Injury": "Y",
         "Dead": "Y",
@@ -1252,8 +1252,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1901,
-        "Year": "1901-04-12",
+        "Year": 1901,
+        "Date": "1901-04-12",
         "Descript": "Explosion of stills (hot tar).",
         "Injury": "Y",
         "Dead": "N",
@@ -1276,8 +1276,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1904,
-        "Year": "1904-02-16",
+        "Year": 1904,
+        "Date": "1904-02-16",
         "Descript": "Still (crude oil) catches on fire.",
         "Injury": "N",
         "Dead": "N",
@@ -1300,8 +1300,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1912,
-        "Year": "1912-02-18",
+        "Year": 1912,
+        "Date": "1912-02-18",
         "Descript": "Explosion of still destroying many tanks; four-alarm fire lasts about 15 hours, causes $500,000 in property loss.",
         "Injury": "Y",
         "Dead": "N",
@@ -1324,8 +1324,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1921,
-        "Year": "1921-02-17",
+        "Year": 1921,
+        "Date": "1921-02-17",
         "Descript": "Explosion of five tanks threatens city gas works; five-alarm fire.",
         "Injury": "Y",
         "Dead": "N",
@@ -1348,8 +1348,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1921,
-        "Year": "1921-09-14",
+        "Year": 1921,
+        "Date": "1921-09-14",
         "Descript": "Explosion of still (naphta).",
         "Injury": "Y",
         "Dead": "Y",
@@ -1372,8 +1372,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1926,
-        "Year": "1926-02-01",
+        "Year": 1926,
+        "Date": "1926-02-01",
         "Descript": "Explosion of still (oil) spreads flames to numerous other stills, fire lasts about 4 hours.",
         "Injury": "Y",
         "Dead": "N",
@@ -1396,8 +1396,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1931,
-        "Year": "1931-09-01",
+        "Year": 1931,
+        "Date": "1931-09-01",
         "Descript": "Explosion of gas stabilization plant causes about $900,000 in property loss.",
         "Injury": "Y",
         "Dead": "Y",
@@ -1420,8 +1420,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1913,
-        "Year": "1913-09-14",
+        "Year": 1913,
+        "Date": "1913-09-14",
         "Descript": "Explosion of still.",
         "Injury": "Y",
         "Dead": "N",
@@ -1444,8 +1444,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1934,
-        "Year": "1934-01-06",
+        "Year": 1934,
+        "Date": "1934-01-06",
         "Descript": "Explosion of stills and tanks; the blast, felt in Camden, New Jersey, breaks windows and doors in South Philadelphia",
         "Injury": "Y",
         "Dead": "N",
@@ -1468,8 +1468,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1931,
-        "Year": "1931-09-01",
+        "Year": 1931,
+        "Date": "1931-09-01",
         "Descript": "Explosion of gas stabilization plant causes about $900,000 in property loss.",
         "Injury": "Y",
         "Dead": "Y",
@@ -1492,8 +1492,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1944,
-        "Year": "1944-04-12",
+        "Year": 1944,
+        "Date": "1944-04-12",
         "Descript": "Explosion of pumping unit; five-alarm fire.",
         "Injury": "Y",
         "Dead": "Y",
@@ -1516,8 +1516,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1969,
-        "Year": "1969-09-07",
+        "Year": 1969,
+        "Date": "1969-09-07",
         "Descript": "Five-alarm fire destroys three phenol tanks and five extractor towers.",
         "Injury": "Y",
         "Dead": "Y",
@@ -1540,8 +1540,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1970,
-        "Year": "1970-05-11",
+        "Year": 1970,
+        "Date": "1970-05-11",
         "Descript": "Explosion of 13-story catalytic cracking unit leads to conflagration and general destruction, about $900,000 in property loss.",
         "Injury": "Y",
         "Dead": "Y",
@@ -1564,8 +1564,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1987,
-        "Year": "1987-08-02",
+        "Year": 1987,
+        "Date": "1987-08-02",
         "Descript": "Lightning-caused explosion and collapse of tank (gasoline); five-alarm fire lasts two days, burns some 25,000 barrels of fuel worth about $2 million.",
         "Injury": "Y",
         "Dead": "N",
@@ -1588,8 +1588,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1994,
-        "Year": "1994-08-02",
+        "Year": 1994,
+        "Date": "1994-08-02",
         "Descript": "Three-alarm fire at reformer unit (naphtha and hydrogen) lasts five hours.",
         "Injury": "N",
         "Dead": "N",
@@ -1612,8 +1612,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1910,
-        "Year": "1910-12-19",
+        "Year": 1910,
+        "Date": "1910-12-19",
         "Descript": "Explosion in oil testing room.",
         "Injury": "Y",
         "Dead": "N",
@@ -1636,8 +1636,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1973,
-        "Year": "1973-11-05",
+        "Year": 1973,
+        "Date": "1973-11-05",
         "Descript": "Small fire (gasoline additives).\n",
         "Injury": "N",
         "Dead": "N",
@@ -1660,8 +1660,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1978,
-        "Year": "1978-03-18",
+        "Year": 1978,
+        "Date": "1978-03-18",
         "Descript": "Seal failure in a pump at oil-processing still leads to two-alarm fire.\n",
         "Injury": "N",
         "Dead": "N",
@@ -1684,8 +1684,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1983,
-        "Year": "1983-06-29",
+        "Year": 1983,
+        "Date": "1983-06-29",
         "Descript": "Six-alarm fire.\n",
         "Injury": "N",
         "Dead": "N",
@@ -1708,8 +1708,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1983,
-        "Year": "1983-10-05",
+        "Year": 1983,
+        "Date": "1983-10-05",
         "Descript": "Explosion of storage tank (naphtha); five-alarm fire\n",
         "Injury": "N",
         "Dead": "N",
@@ -1732,8 +1732,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1994,
-        "Year": "1994-09-20",
+        "Year": 1994,
+        "Date": "1994-09-20",
         "Descript": "Faulty valve in cracking unit releases three yellow clouds of silica alumina coated with oil.\n",
         "Injury": "N",
         "Dead": "N",
@@ -1756,8 +1756,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1999,
-        "Year": "1999-06-21",
+        "Year": 1999,
+        "Date": "1999-06-21",
         "Descript": "Four-alarm fire in sulfur removal unit leads to large release of silica alumina catalyst.\n",
         "Injury": "N",
         "Dead": "N",
@@ -1780,8 +1780,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 2000,
-        "Year": "2000-06-21",
+        "Year": 2000,
+        "Date": "2000-06-21",
         "Descript": "Malfunction causes release of substantial amount of silica alumina catalyst.\n",
         "Injury": "N",
         "Dead": "N",
@@ -1804,8 +1804,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1983,
-        "Year": "1983-10-05",
+        "Year": 1983,
+        "Date": "1983-10-05",
         "Descript": "",
         "Injury": "",
         "Dead": "",
@@ -1822,8 +1822,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1974,
-        "Year": "1974-04-09",
+        "Year": 1974,
+        "Date": "1974-04-09",
         "Descript": "Explosion of tanker ship Elias and loss of about 12,000 barrels of Venezuelan crude oil (burned off rather than spilled).",
         "Injury": "Y",
         "Dead": "Y",
@@ -1846,8 +1846,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1874,
-        "Year": "1874-06-13",
+        "Year": 1874,
+        "Date": "1874-06-13",
         "Descript": "Lightning-caused explosion of two tanks (kerosene).",
         "Injury": "N",
         "Dead": "N",
@@ -1870,8 +1870,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1971,
-        "Year": "1971-09-11",
+        "Year": 1971,
+        "Date": "1971-09-11",
         "Descript": "Explosion of still (gasoline); two-alarm fire lasts 90 minutes.",
         "Injury": "Y",
         "Dead": "N",
@@ -1894,8 +1894,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1974,
-        "Year": "1974-10-11",
+        "Year": 1974,
+        "Date": "1974-10-11",
         "Descript": "Two-alarm fire destroys cooling tower.",
         "Injury": "N",
         "Dead": "N",
@@ -1918,8 +1918,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1975,
-        "Year": "1975-05-17",
+        "Year": 1975,
+        "Date": "1975-05-17",
         "Descript": "Explosion of fuel line; six-alarm fire burns for 2.5 hours.",
         "Injury": "N",
         "Dead": "N",
@@ -1942,8 +1942,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1986,
-        "Year": "1986-05-17",
+        "Year": 1986,
+        "Date": "1986-05-17",
         "Descript": "Explosion of fuel line; six-alarm fire burns for 2.5 hours.",
         "Injury": "N",
         "Dead": "N",
@@ -1966,8 +1966,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1986,
-        "Year": "1986-08-10",
+        "Year": 1986,
+        "Date": "1986-08-10",
         "Descript": "Lightning-caused explosion of tank (gasoline); eight-alarm fire lasts about 31 hours; loss of some 20,000 barrels.",
         "Injury": "N",
         "Dead": "N",
@@ -1990,8 +1990,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1993,
-        "Year": "1993-10-21",
+        "Year": 1993,
+        "Date": "1993-10-21",
         "Descript": "Four-alarm propane fire lasts three hours.",
         "Injury": "Y",
         "Dead": "N",
@@ -2014,8 +2014,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1885,
-        "Year": "1885-05-24",
+        "Year": 1885,
+        "Date": "1885-05-24",
         "Descript": "Fire destroys alum and acid buildings at chemical works.",
         "Injury": "N",
         "Dead": "N",
@@ -2038,8 +2038,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1887,
-        "Year": "1887-02-19",
+        "Year": 1887,
+        "Date": "1887-02-19",
         "Descript": "Fire at sulfur acid building at chemical works.",
         "Injury": "N",
         "Dead": "N",
@@ -2062,8 +2062,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1904,
-        "Year": "1904-08-16",
+        "Year": 1904,
+        "Date": "1904-08-16",
         "Descript": "Fire in asphalt plant.",
         "Injury": "Y",
         "Dead": "N",
@@ -2086,8 +2086,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1916,
-        "Year": "1916-02-15",
+        "Year": 1916,
+        "Date": "1916-02-15",
         "Descript": "Break in pipe (nitric acid) at chemical works leads to 15-alarm fire.",
         "Injury": "N",
         "Dead": "N",
@@ -2110,8 +2110,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1929,
-        "Year": "1929-12-13",
+        "Year": 1929,
+        "Date": "1929-12-13",
         "Descript": "Four-alarm fire causes general damage to coal tar distillery.",
         "Injury": "N",
         "Dead": "N",
@@ -2134,8 +2134,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1935,
-        "Year": "1935-07-16",
+        "Year": 1935,
+        "Date": "1935-07-16",
         "Descript": "Explosion of still (coal tar).",
         "Injury": "Y",
         "Dead": "N",
@@ -2158,8 +2158,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1938,
-        "Year": "1938-02-14",
+        "Year": 1938,
+        "Date": "1938-02-14",
         "Descript": "Small coal tar fire",
         "Injury": "N",
         "Dead": "N",
@@ -2182,8 +2182,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1938,
-        "Year": "1938-04-24",
+        "Year": 1938,
+        "Date": "1938-04-24",
         "Descript": "Two-alarm coal tar fire.",
         "Injury": "N",
         "Dead": "N",
@@ -2206,8 +2206,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1941,
-        "Year": "1941-05-07",
+        "Year": 1941,
+        "Date": "1941-05-07",
         "Descript": "Explosion of vat in varnish distillery.",
         "Injury": "Y",
         "Dead": "Y",
@@ -2230,8 +2230,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1879,
-        "Year": "1879-03-31",
+        "Year": 1879,
+        "Date": "1879-03-31",
         "Descript": "Explosion of leaking sill (kerosene).",
         "Injury": "Y",
         "Dead": "Y",
@@ -2254,8 +2254,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": "1881-03-09",
-        "Year": 1881,
+        "Year": "1881-03-09",
+        "Date": 1881,
         "Descript": "Explosion of tank (benzene) spreads fire throughout refinery.",
         "Injury": "N",
         "Dead": "N",
@@ -2278,8 +2278,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1891,
-        "Year": "1891-05-14",
+        "Year": 1891,
+        "Date": "1891-05-14",
         "Descript": "Three tanks (oil, benzene) catch on fire, which spreads to buildings",
         "Injury": "Y",
         "Dead": "N",
@@ -2302,8 +2302,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1905,
-        "Year": "1905-05-12",
+        "Year": 1905,
+        "Date": "1905-05-12",
         "Descript": "Explosion of gas holder.",
         "Injury": "Y",
         "Dead": "Y",
@@ -2326,8 +2326,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1894,
-        "Year": "1894-02-27",
+        "Year": 1894,
+        "Date": "1894-02-27",
         "Descript": "Explosion of purifying house.",
         "Injury": "Y",
         "Dead": "Y",
@@ -2350,8 +2350,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1905,
-        "Year": "1905-08-23",
+        "Year": 1905,
+        "Date": "1905-08-23",
         "Descript": "Fire in coal gas plant.",
         "Injury": "Y",
         "Dead": "N",
@@ -2374,8 +2374,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1925,
-        "Year": "1925-10-14",
+        "Year": 1925,
+        "Date": "1925-10-14",
         "Descript": "Explosion in engine room of tugboat VanDyke sinks the craft.",
         "Injury": "Y",
         "Dead": "Y",
@@ -2398,8 +2398,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1926,
-        "Year": "1926-11-18",
+        "Year": 1926,
+        "Date": "1926-11-18",
         "Descript": "Explosion of barge carrying gasoline.",
         "Injury": "Y",
         "Dead": "Y",
@@ -2422,8 +2422,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1890,
-        "Year": "1890-06-05",
+        "Year": 1890,
+        "Date": "1890-06-05",
         "Descript": "Explosion on tanker ship during loading of refined oil.",
         "Injury": "Y",
         "Dead": "Y",
@@ -2446,8 +2446,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1891,
-        "Year": "1891-07-03",
+        "Year": 1891,
+        "Date": "1891-07-03",
         "Descript": "Explosion of tanker ship carrying refined oil.",
         "Injury": "Y",
         "Dead": "N",
@@ -2470,8 +2470,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1892,
-        "Year": "1892-10-30",
+        "Year": 1892,
+        "Date": "1892-10-30",
         "Descript": "Explosion of leaking oil pipes burns wharves, boats, and threatens gas works; river catches on fire.",
         "Injury": "N",
         "Dead": "N",
@@ -2494,8 +2494,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1892,
-        "Year": "1892-11-01",
+        "Year": 1892,
+        "Date": "1892-11-01",
         "Descript": "River catches on fire after continued oil spill from leaking pipes.",
         "Injury": "Y",
         "Dead": "Y",
@@ -2518,8 +2518,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Date": 1919,
-        "Year": "1919-01-16",
+        "Year": 1919,
+        "Date": "1919-01-16",
         "Descript": "Tanker ship fire spreads to wharves and neighboring vessels, causes about $1 million in property loss.",
         "Injury": "Y",
         "Dead": "Y",
