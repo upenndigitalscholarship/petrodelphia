@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Leaflet Year Range Filter</title>
+  <title>Leaflet Map with Year Range Slider</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" />
+
   <style>
     #map { height: 600px; }
-    #controls {
-      padding: 10px;
+    #slider-container {
+      width: 300px;
+      margin: 20px;
       font-family: sans-serif;
     }
-    #controls label {
-      margin-right: 10px;
+    #year-range {
+      margin: 10px 0;
+    }
+    #range-label {
+      margin-top: 5px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-<div id="controls">
-  <label for="startYear">Start Year: <span id="startYearLabel">2000</span></label>
-  <input type="range" id="startYear" min="2000" max="2025" step="1" value="2000">
-
-  <label for="endYear">End Year: <span id="endYearLabel">2025</span></label>
-  <input type="range" id="endYear" min="2000" max="2025" step="1" value="2025">
+<div id="slider-container">
+  <div id="year-range"></div>
+  <div id="range-label">Showing: 2000 - 2025</div>
 </div>
 
 <div id="map"></div>
 
+<!-- Leaflet -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- noUiSlider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
+
 <script>
   const map = L.map('map').setView([40, -95], 4);
 
@@ -38,22 +47,20 @@
   let geojsonData;
   let geojsonLayer;
 
-  const sampleGeoJSON = {
+  // Sample GeoJSON
+  geojsonData = {
     "type": "FeatureCollection",
     "features": [
       { "type": "Feature", "properties": { "year": 2000, "name": "Point A" }, "geometry": { "type": "Point", "coordinates": [-100, 40] } },
-      { "type": "Feature", "properties": { "year": 2010, "name": "Point B" }, "geometry": { "type": "Point", "coordinates": [-90, 42] } },
+      { "type": "Feature", "properties": { "year": 2005, "name": "Point B" }, "geometry": { "type": "Point", "coordinates": [-90, 42] } },
       { "type": "Feature", "properties": { "year": 2015, "name": "Point C" }, "geometry": { "type": "Point", "coordinates": [-95, 38] } },
       { "type": "Feature", "properties": { "year": 2020, "name": "Point D" }, "geometry": { "type": "Point", "coordinates": [-85, 37] } }
     ]
   };
 
-  geojsonData = sampleGeoJSON;
-
+  // Initialize map with all data
   function updateMap(startYear, endYear) {
-    if (geojsonLayer) {
-      geojsonLayer.remove();
-    }
+    if (geojsonLayer) geojsonLayer.remove();
 
     const filtered = {
       type: "FeatureCollection",
@@ -69,31 +76,33 @@
     }).addTo(map);
   }
 
-  // Initialize with default range
-  updateMap(2000, 2025);
+  // noUiSlider setup
+  const slider = document.getElementById('year-range');
+  const label = document.getElementById('range-label');
 
-  const startSlider = document.getElementById('startYear');
-  const endSlider = document.getElementById('endYear');
-  const startLabel = document.getElementById('startYearLabel');
-  const endLabel = document.getElementById('endYearLabel');
-
-  function handleSliderChange() {
-    let startYear = parseInt(startSlider.value);
-    let endYear = parseInt(endSlider.value);
-
-    // Ensure startYear is always <= endYear
-    if (startYear > endYear) {
-      [startYear, endYear] = [endYear, startYear];
+  noUiSlider.create(slider, {
+    start: [2000, 2025],
+    connect: true,
+    range: {
+      'min': 2000,
+      'max': 2025
+    },
+    step: 1,
+    tooltips: true,
+    format: {
+      to: value => Math.round(value),
+      from: value => Number(value)
     }
+  });
 
-    startLabel.textContent = startYear;
-    endLabel.textContent = endYear;
-
+  slider.noUiSlider.on('update', function (values) {
+    const [startYear, endYear] = values.map(Number);
+    label.textContent = `Showing: ${startYear} - ${endYear}`;
     updateMap(startYear, endYear);
-  }
+  });
 
-  startSlider.addEventListener('input', handleSliderChange);
-  endSlider.addEventListener('input', handleSliderChange);
+  // Initial load
+  updateMap(2000, 2025);
 </script>
 
 </body>
