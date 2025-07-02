@@ -1,5 +1,4 @@
 <!--- This file is used to define the leaflet industrial accidents timeline selector map --->
-    <title>Timeline selector Leaflet map</title>
 
 {%- if site.data.theme.icons -%}{% assign icons = site.data.theme.icons %}{% else %}
 
@@ -35,17 +34,6 @@
 {% if site.data.theme.map-search == true and site.data.theme.map-cluster == true %}<script src="{{ '/assets/lib/leaflet/leaflet.markercluster.freezable.js' | relative_url }}"></script>{% endif %}
 
     <!-- import the Area of Interest GeoJSON file -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello World</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-</body>
-</html>
-
 <body>
     
     
@@ -208,7 +196,17 @@ css
     max-width: 1000px; /* Maximum size */
 } --->
 
-    
+<script type="text/template" id="my-template">
+  <div class="card">
+    <h2>Title</h2>
+    <p>This is some HTML content stored in a script tag.</p>
+  </div>
+</script>
+
+<script>
+  const template = document.getElementById('my-template').innerHTML;
+  document.body.innerHTML += template;
+</script>
 
 <script>
 // /path/to/geojson/file.geojson
