@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Leaflet Map with Year Range Slider</title>
+  <title>Leaflet Map with Year Range Slider & External GeoJSON</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" />
@@ -26,15 +26,12 @@
 
 <div id="slider-container">
   <div id="year-range"></div>
-  <div id="range-label">Showing: 2000 - 2025</div>
+  <div id="range-label">Loading data...</div>
 </div>
 
 <div id="map"></div>
 
-<!-- Leaflet -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<!-- noUiSlider -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
 
 <script>
@@ -44,65 +41,83 @@
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
 
-  let geojsonData;
-  let geojsonLayer;
+  let geojsonData = null;
+  let geojsonLayer = null;
 
-  // Sample GeoJSON
-  geojsonData = {
-    "type": "FeatureCollection",
-    "features": [
-      { "type": "Feature", "properties": { "year": 2000, "name": "Point A" }, "geometry": { "type": "Point", "coordinates": [-100, 40] } },
-      { "type": "Feature", "properties": { "year": 2005, "name": "Point B" }, "geometry": { "type": "Point", "coordinates": [-90, 42] } },
-      { "type": "Feature", "properties": { "year": 2015, "name": "Point C" }, "geometry": { "type": "Point", "coordinates": [-95, 38] } },
-      { "type": "Feature", "properties": { "year": 2020, "name": "Point D" }, "geometry": { "type": "Point", "coordinates": [-85, 37] } }
-    ]
-  };
+  const slider = document.getElementById('year-range');
+  const label = document.getElementById('range-label');
 
-  // Initialize map with all data
+  // Fetch GeoJSON data from the URL
+  fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
+    .then(response => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.json();
+    })
+    .then(data => {
+      geojsonData = data;
+
+      // Extract years from features to find min and max year
+      const years = geojsonData.features
+        .map(f => f.properties.year)
+        .filter(y => typeof y === 'number')
+        .sort((a, b) => a - b);
+
+      const minYear = years[0] || 2000;
+      const maxYear = years[years.length - 1] || 2025;
+
+      // Initialize noUiSlider with actual year range
+      noUiSlider.create(slider, {
+        start: [minYear, maxYear],
+        connect: true,
+        range: {
+          'min': minYear,
+          'max': maxYear
+        },
+        step: 1,
+        tooltips: true,
+        format: {
+          to: value => Math.round(value),
+          from: value => Number(value)
+        }
+      });
+
+      slider.noUiSlider.on('update', function(values) {
+        const [startYear, endYear] = values.map(Number);
+        label.textContent = `Showing: ${startYear} - ${endYear}`;
+        updateMap(startYear, endYear);
+      });
+
+      // Initial render
+      updateMap(minYear, maxYear);
+    })
+    .catch(err => {
+      console.error("Failed to load GeoJSON:", err);
+      label.textContent = "Failed to load data";
+    });
+
   function updateMap(startYear, endYear) {
-    if (geojsonLayer) geojsonLayer.remove();
+    if (!geojsonData) return;
 
+    if (geojsonLayer) {
+      geojsonLayer.remove();
+    }
+
+    // Filter features based on year range, assuming 'year' property exists and is numeric
     const filtered = {
       type: "FeatureCollection",
-      features: geojsonData.features.filter(f =>
-        f.properties.year >= startYear && f.properties.year <= endYear
-      )
+      features: geojsonData.features.filter(f => {
+        const y = f.properties.year;
+        return typeof y === 'number' && y >= startYear && y <= endYear;
+      })
     };
 
     geojsonLayer = L.geoJSON(filtered, {
       onEachFeature: (feature, layer) => {
-        layer.bindPopup(`${feature.properties.name} (${feature.properties.year})`);
+        // Customize popup content here if needed
+        layer.bindPopup(`Name: ${feature.properties.name || 'N/A'}<br>Year: ${feature.properties.year}`);
       }
     }).addTo(map);
   }
-
-  // noUiSlider setup
-  const slider = document.getElementById('year-range');
-  const label = document.getElementById('range-label');
-
-  noUiSlider.create(slider, {
-    start: [2000, 2025],
-    connect: true,
-    range: {
-      'min': 2000,
-      'max': 2025
-    },
-    step: 1,
-    tooltips: true,
-    format: {
-      to: value => Math.round(value),
-      from: value => Number(value)
-    }
-  });
-
-  slider.noUiSlider.on('update', function (values) {
-    const [startYear, endYear] = values.map(Number);
-    label.textContent = `Showing: ${startYear} - ${endYear}`;
-    updateMap(startYear, endYear);
-  });
-
-  // Initial load
-  updateMap(2000, 2025);
 </script>
 
 </body>
