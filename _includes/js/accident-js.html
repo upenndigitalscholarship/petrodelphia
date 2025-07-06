@@ -35,7 +35,7 @@
         <h3>Filter by Year</h3>
         <div id="year-slider"></div>
         <div id="year-value">Year range: <span id="min-year"></span> - <span id="max-year"></span>
-            <span id="loading" class="loading" style="display:none;">Loading data...</span>
+            <span id="loading" class="loading">Loading data...</span>
         </div>
     </div>
 
@@ -51,9 +51,6 @@
 
         // Create a layer group for our points
         const pointsLayer = L.layerGroup().addTo(map);
-        
-        // Show loading indicator
-        document.getElementById('loading').style.display = 'inline-block';
 
         // Fetch the external GeoJSON
         fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/AOIgeoData.geojson')
@@ -70,13 +67,18 @@
             });
 
         function processGeoJSON(geojsonData) {
-            // Extract all years from features
-            const years = geojsonData.features
-                .filter(feature => feature.properties.year)
-                .map(feature => feature.properties.year);
+            // Extract all valid years from features
+            const years = [];
+            
+            geojsonData.features.forEach(feature => {
+                if (feature.properties.year && !isNaN(feature.properties.year)) {
+                    years.push(Number(feature.properties.year));
+                }
+            });
             
             if (years.length === 0) {
                 console.error('No valid years found in GeoJSON properties');
+                document.getElementById('loading').textContent = 'No valid year data found';
                 return;
             }
             
@@ -84,7 +86,14 @@
             const minYear = Math.min(...years);
             const maxYear = Math.max(...years);
             
-            // Initialize slider
+            // Only proceed if we have valid numeric values
+            if (isNaN(minYear) || isNaN(maxYear)) {
+                console.error('Invalid year range values');
+                document.getElementById('loading').textContent = 'Invalid year data';
+                return;
+            }
+
+            // Initialize slider with numeric values
             const slider = document.getElementById('year-slider');
             noUiSlider.create(slider, {
                 start: [minYear, maxYear],
@@ -117,6 +126,7 @@
                 // Filter features by year
                 const filteredFeatures = geojsonData.features.filter(feature => {
                     return feature.properties.year && 
+                           !isNaN(feature.properties.year) &&
                            feature.properties.year >= yearRange[0] && 
                            feature.properties.year <= yearRange[1];
                 });
