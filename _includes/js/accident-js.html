@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leaflet Year Filter</title>
+    <title>Archaeological Sites Year Filter</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css" />
     <style>
-        #map { height: 500px; }
+        #map { height: 600px; }
         #year-slider {
             margin: 20px;
-            width: 300px;
+            width: 400px;
         }
         .slider-container {
             position: absolute;
@@ -16,126 +16,160 @@
             left: 30px;
             z-index: 1000;
             background: white;
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .loading {
+            display: inline-block;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
     <div id="map"></div>
     <div class="slider-container">
+        <h3>Filter by Year</h3>
         <div id="year-slider"></div>
-        <div id="year-value">Year range: <span id="min-year"></span> - <span id="max-year"></span></div>
+        <div id="year-value">Year range: <span id="min-year"></span> - <span id="max-year"></span>
+            <span id="loading" class="loading" style="display:none;">Loading data...</span>
+        </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
     
     <script>
-        // Initialize map
-        const map = L.map('map').setView([51.505, -0.09], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
-        // Sample GeoJSON data with year property
-        const geojsonData = {
-            type: "FeatureCollection",
-            features: [
-                {
-                    type: "Feature",
-                    properties: { name: "Point 1", year: 2010 },
-                    geometry: { type: "Point", coordinates: [-0.09, 51.505] }
-                },
-                {
-                    type: "Feature",
-                    properties: { name: "Point 2", year: 2015 },
-                    geometry: { type: "Point", coordinates: [-0.08, 51.51] }
-                },
-                {
-                    type: "Feature",
-                    properties: { name: "Point 3", year: 2018 },
-                    geometry: { type: "Point", coordinates: [-0.1, 51.50] }
-                },
-                {
-                    type: "Feature",
-                    properties: { name: "Point 4", year: 2020 },
-                    geometry: { type: "Point", coordinates: [-0.07, 51.515] }
-                }
-            ]
-        };
-
-        // Get min and max years from data
-        const years = geojsonData.features.map(f => f.properties.year);
-        const minYear = Math.min(...years);
-        const maxYear = Math.max(...years);
-
-        // Initialize slider
-        const slider = document.getElementById('year-slider');
-        noUiSlider.create(slider, {
-            start: [minYear, maxYear],
-            connect: true,
-            range: {
-                'min': minYear,
-                'max': maxYear
-            },
-            step: 1,
-            tooltips: [true, true],
-            format: {
-                to: function(value) {
-                    return Math.round(value);
-                },
-                from: function(value) {
-                    return Math.round(value);
-                }
-            }
-        });
-
-        // Display current year range
-        document.getElementById('min-year').textContent = minYear;
-        document.getElementById('max-year').textContent = maxYear;
+        // Initialize map with a view that will fit the GeoJSON data
+        const map = L.map('map').setView([0, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
         // Create a layer group for our points
         const pointsLayer = L.layerGroup().addTo(map);
+        
+        // Show loading indicator
+        document.getElementById('loading').style.display = 'inline-block';
 
-        // Function to filter and display points
-        function updatePointsByYear(yearRange) {
-            // Clear existing points
-            pointsLayer.clearLayers();
+        // Fetch the external GeoJSON
+        fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/AOIgeoData.geojson')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loading').style.display = 'none';
+                
+                // Process the GeoJSON data
+                processGeoJSON(data);
+            })
+            .catch(error => {
+                console.error('Error loading GeoJSON:', error);
+                document.getElementById('loading').textContent = 'Error loading data';
+            });
+
+        function processGeoJSON(geojsonData) {
+            // Extract all years from features
+            const years = [];
             
-            // Filter features by year
-            const filteredFeatures = geojsonData.features.filter(feature => {
-                return feature.properties.year >= yearRange[0] && 
-                       feature.properties.year <= yearRange[1];
+            geojsonData.features.forEach(feature => {
+                if (feature.properties.Date) {
+                    // Extract year from date string (assuming format like "1930s" or "1935")
+                    const yearMatch = feature.properties.Date.match(/\d{4}/);
+                    if (yearMatch) {
+                        const year = parseInt(yearMatch[0]);
+                        feature.properties.yearExtracted = year; // Store extracted year
+                        years.push(year);
+                    }
+                }
             });
             
-            // Add filtered features to map
-            L.geoJSON({
-                type: "FeatureCollection",
-                features: filteredFeatures
-            }, {
-                pointToLayer: function(feature, latlng) {
-                    return L.circleMarker(latlng, {
-                        radius: 8,
-                        fillColor: "#ff7800",
-                        color: "#000",
-                        weight: 1,
-                        opacity: 1,
-                        fillOpacity: 0.8
-                    }).bindPopup(`<b>${feature.properties.name}</b><br>Year: ${feature.properties.year}`);
+            if (years.length === 0) {
+                console.error('No valid years found in GeoJSON properties');
+                return;
+            }
+            
+            // Get min and max years from data
+            const minYear = Math.min(...years);
+            const maxYear = Math.max(...years);
+            
+            // Initialize slider
+            const slider = document.getElementById('year-slider');
+            noUiSlider.create(slider, {
+                start: [minYear, maxYear],
+                connect: true,
+                range: {
+                    'min': minYear,
+                    'max': maxYear
+                },
+                step: 1,
+                tooltips: [true, true],
+                format: {
+                    to: function(value) {
+                        return Math.round(value);
+                    },
+                    from: function(value) {
+                        return Math.round(value);
+                    }
                 }
-            }).addTo(pointsLayer);
+            });
+
+            // Display current year range
+            document.getElementById('min-year').textContent = minYear;
+            document.getElementById('max-year').textContent = maxYear;
+
+            // Function to filter and display points
+            function updatePointsByYear(yearRange) {
+                // Clear existing points
+                pointsLayer.clearLayers();
+                
+                // Filter features by year
+                const filteredFeatures = geojsonData.features.filter(feature => {
+                    if (!feature.properties.yearExtracted) return false;
+                    return feature.properties.yearExtracted >= yearRange[0] && 
+                           feature.properties.yearExtracted <= yearRange[1];
+                });
+                
+                // Add filtered features to map
+                L.geoJSON({
+                    type: "FeatureCollection",
+                    features: filteredFeatures
+                }, {
+                    pointToLayer: function(feature, latlng) {
+                        return L.circleMarker(latlng, {
+                            radius: 6,
+                            fillColor: "#3388ff",
+                            color: "#000",
+                            weight: 1,
+                            opacity: 0.7,
+                            fillOpacity: 0.8
+                        }).bindPopup(`
+                            <b>${feature.properties.Title || 'Untitled'}</b><br>
+                            Date: ${feature.properties.Date || 'Unknown'}<br>
+                            ${feature.properties.Description ? feature.properties.Description + '<br>' : ''}
+                            ${feature.properties['Web Link'] ? `<a href="${feature.properties['Web Link']}" target="_blank">More info</a>` : ''}
+                        `);
+                    }
+                }).addTo(pointsLayer);
+                
+                // Fit map to filtered features
+                if (filteredFeatures.length > 0) {
+                    const bounds = pointsLayer.getBounds();
+                    if (bounds.isValid()) {
+                        map.fitBounds(bounds, { padding: [50, 50] });
+                    }
+                }
+            }
+
+            // Initial display with all points
+            updatePointsByYear([minYear, maxYear]);
+
+            // Update display when slider changes
+            slider.noUiSlider.on('update', function(values) {
+                const yearRange = values.map(Number);
+                document.getElementById('min-year').textContent = yearRange[0];
+                document.getElementById('max-year').textContent = yearRange[1];
+                updatePointsByYear(yearRange);
+            });
         }
-
-        // Initial display with all points
-        updatePointsByYear([minYear, maxYear]);
-
-        // Update display when slider changes
-        slider.noUiSlider.on('update', function(values) {
-            const yearRange = values.map(Number);
-            document.getElementById('min-year').textContent = yearRange[0];
-            document.getElementById('max-year').textContent = yearRange[1];
-            updatePointsByYear(yearRange);
-        });
     </script>
 </body>
 </html>
