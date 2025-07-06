@@ -155,14 +155,6 @@
                         }).bindPopup(createPopupContent(feature));
                     }
                 }).addTo(pointsLayer);
-                
-                // Fit map to filtered features
-                if (filteredFeatures.length > 0) {
-                    const bounds = pointsLayer.getBounds();
-                    if (bounds.isValid()) {
-                        map.fitBounds(bounds, { padding: [50, 50] });
-                    }
-                }
             }
 
             // Function to create popup content
