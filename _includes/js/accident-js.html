@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accident Sites Year Filter</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css" />
+    <style>
+        #map { height: 600px; }
+        #year-slider {
+            margin: 20px;
+            width: 400px;
+        }
+        .slider-container {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .loading {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .leaflet-popup-content {
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div class="slider-container">
+        <h3>Filter by Year</h3>
+        <div id="year-slider"></div>
+        <div id="year-value">Year range: <span id="min-year"></span> - <span id="max-year"></span>
+            <span id="loading" class="loading">Loading data...</span>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+    
+    <script>
+        // Initialize map with a view that will fit the GeoJSON data
+        const map = L.map('map').setView([39.9526, -75.1652], 11); // Centered on Philadelphia
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Create a layer group for our points
+        const pointsLayer = L.layerGroup().addTo(map);
+
+        // Fetch the external GeoJSON
+        fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/AOIgeoData.geojson')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loading').style.display = 'none';
+                
+                // Process the GeoJSON data
+                processGeoJSON(data);
+            })
+            .catch(error => {
+                console.error('Error loading GeoJSON:', error);
+                document.getElementById('loading').textContent = 'Error loading data';
+            });
+
+        function processGeoJSON(geojsonData) {
+            // Extract all valid years from features
+            const years = [];
+            
+            geojsonData.features.forEach(feature => {
+                if (feature.properties.year && !isNaN(feature.properties.year)) {
+                    years.push(Number(feature.properties.year));
+                }
+            });
+            
+            if (years.length === 0) {
+                console.error('No valid years found in GeoJSON properties');
+                document.getElementById('loading').textContent = 'No valid year data found';
+                return;
+            }
+            
+            // Get min and max years from data
+            const minYear = Math.min(...years);
+            const maxYear = Math.max(...years);
+            
+            // Only proceed if we have valid numeric values
+            if (isNaN(minYear) || isNaN(maxYear)) {
+                console.error('Invalid year range values');
+                document.getElementById('loading').textContent = 'Invalid year data';
+                return;
+            }
+
+            // Initialize slider with numeric values
+            const slider = document.getElementById('year-slider');
+            noUiSlider.create(slider, {
+                start: [minYear, maxYear],
+                connect: true,
+                range: {
+                    'min': minYear,
+                    'max': maxYear
+                },
+                step: 1,
+                tooltips: [true, true],
+                format: {
+                    to: function(value) {
+                        return Math.round(value);
+                    },
+                    from: function(value) {
+                        return Math.round(value);
+                    }
+                }
+            });
+
+            // Display current year range
+            document.getElementById('min-year').textContent = minYear;
+            document.getElementById('max-year').textContent = maxYear;
+
+            // Function to filter and display points
+            function updatePointsByYear(yearRange) {
+                // Clear existing points
+                pointsLayer.clearLayers();
+                
+                // Filter features by year
+                const filteredFeatures = geojsonData.features.filter(feature => {
+                    return feature.properties.year && 
+                           !isNaN(feature.properties.year) &&
+                           feature.properties.year >= yearRange[0] && 
+                           feature.properties.year <= yearRange[1];
+                });
+                
+                // Add filtered features to map
+                L.geoJSON({
+                    type: "FeatureCollection",
+                    features: filteredFeatures
+                }, {
+                    pointToLayer: function(feature, latlng) {
+                        // Customize marker color based on casualties
+                        let color = "#3388ff"; // Default blue
+                        if (feature.properties.Dead === "Y" || feature.properties.NumDead > 0) {
+                            color = "#ff0000"; // Red for fatal accidents
+                        } else if (feature.properties.Injury === "Y" || feature.properties.NumInjur > 0) {
+                            color = "#ff7800"; // Orange for injuries
+                        }
+                        
+                        return L.circleMarker(latlng, {
+                            radius: 6,
+                            fillColor: color,
+                            color: "#000",
+                            weight: 1,
+                            opacity: 0.7,
+                            fillOpacity: 0.8
+                        }).bindPopup(createPopupContent(feature));
+                    }
+                }).addTo(pointsLayer);
+            }
+
+            // Function to create popup content
+            function createPopupContent(feature) {
+                const props = feature.properties;
+                let content = `<b>${props.name || 'Unnamed Location'}</b><br>`;
+                content += `<small>AOI ID: ${props.AOI_ID}</small><hr>`;
+                
+                content += `<b>Date:</b> ${props.Date} (Year: ${props.year})<br>`;
+                content += `<b>Description:</b> ${props.Descript || 'No description'}<br>`;
+                
+                // Add casualty information
+                if (props.Dead === "Y" || props.NumDead > 0) {
+                    content += `<b style="color:red">Fatalities:</b> ${props.NumDead || 'Yes'}<br>`;
+                }
+                if (props.Injury === "Y" || props.NumInjur > 0) {
+                    content += `<b style="color:orange">Injuries:</b> ${props.NumInjur || 'Yes'}<br>`;
+                }
+                
+                content += `<b>Responsible Party:</b> ${props.Responsi || 'Unknown'}<br>`;
+                if (props.Street_D) {
+                    content += `<b>Street Address:</b> ${props.Street_D}<br>`;
+                }
+                
+                return content;
+            }
+
+            // Initial display with all points
+            updatePointsByYear([minYear, maxYear]);
+
+            // Update display when slider changes
+            slider.noUiSlider.on('update', function(values) {
+                const yearRange = values.map(Number);
+                document.getElementById('min-year').textContent = yearRange[0];
+                document.getElementById('max-year').textContent = yearRange[1];
+                updatePointsByYear(yearRange);
+            });
+        }
+    </script>
+</body>
+</html>
