@@ -173,13 +173,14 @@ var USGS_2023 = L.tileLayer('https://mapwarper.net/maps/tile/88570/{z}/{x}/{y}.p
     attribution: '<i>2023 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
 
 })
+var Barnes_1867 = L.tileLayer('https://mapwarper.net/mosaics/tile/2278/{z}/{x}/{y}.png ')
 var Hopkins_1876 = L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png')
 var Bromley_1895 = L.tileLayer('https://mapwarper.net/mosaics/tile/2184/{z}/{x}/{y}.png')
 var Bromley_1901 = L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png')
 var Bromley_1910 = L.tileLayer('https://mapwarper.net/mosaics/tile/2271/{z}/{x}/{y}.png')
 
 var Landuse_1942 = L.tileLayer('https://mapwarper.net/maps/tile/94403/{z}/{x}/{y}.png')
-
+var Landuse_1962 = L.tileLayer('https://mapwarper.net/maps/tile/94678/{z}/{x}/{y}.png')
 
 var OSMLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
 
@@ -261,6 +262,7 @@ var HOLC_1937 = L.tileLayer('https://mapwarper.net/maps/tile/90758/{z}/{x}/{y}.p
 
 var Aerial_1959 = L.tileLayer('https://mapwarper.net/maps/tile/88304/{z}/{x}/{y}.png')//
 
+var Google_sat = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}')
 
 
 function setStyle(feature) {
@@ -296,8 +298,8 @@ let FEMA;
 
 let AOI_Layer;
 var aoiLayer = L.layerGroup().addTo(map);
-var femaFloodLayer = L.layerGroup().addTo(map);
-var industrialLayer = L.layerGroup().addTo(map);
+var femaFloodLayer = L.layerGroup()//.addTo(map);
+var industrialLayer = L.layerGroup()//.addTo(map);
     
 var aoiStyle = {
         color: '#FF7800',
@@ -389,6 +391,11 @@ var baseMaps = {
 
 //Bromley_1910 Hopkins_1876
 var overlayMaps = {
+    
+    "Areas of Interest" : AOI_Layer,
+    "FEMA 100 year flood" : femaFloodLayer,
+    "Significantly industrial census tracts" : industrialLayer,
+    "1867 Incorporated City map" : Barnes_1867,
     "1876 Hopkins City Atlas" : Hopkins_1876,
     
     "1892 Philadelphia waterfront" : Waterfront_1892,
@@ -403,27 +410,29 @@ var overlayMaps = {
 
     "1920 USGS map" : USGS_1920,
 
-    "1928 aerial photograph" : Aerial_1928,
+    "1928 aerial photo" : Aerial_1928,
 
     "1937 Redlining map" : HOLC_1937,
     
-    "1942 Land use map" : Landuse_1942,
+    "1942 land use map" : Landuse_1942,
     
     "1949 USGS map" : USGS_1949,
 
-    "1959 aerial photograph" : Aerial_1959,
+    "1959 aerial photo" : Aerial_1959,
 
-    "1965 aerial photograph" : Aerial_1965,
+    "1962 land use map" : Landuse_1962,
+    
+    "1965 aerial photo" : Aerial_1965,
 
     "1967 USGS map" : USGS_1967,
 
-    "1975 aerial photograph" : Aerial_1975,
+    "1975 aerial photo" : Aerial_1975,
 
-    "1980 aerial photograph" : Aerial_1980,
+    "1980 aerial photo" : Aerial_1980,
 
-    "1985 aerial photograph": Aerial_1985,
+    "1985 aerial photo": Aerial_1985,
 
-    "1990 aerial photograph" : Aerial_1990,
+    "1990 aerial photo" : Aerial_1990,
 
     "1995 USGS map" : USGS_1995,
 
@@ -437,13 +446,12 @@ var overlayMaps = {
 
     "2019 USGS map" : USGS_2019,
 
-    "2019 aerial photograph": PASDA2019,
+    "2019 aerial photo": PASDA2019,
 
     "2023 USGS map" : USGS_2023,
 
-    "Overlay 1: AOI overlay" : AOI_Layer,
-    "Overlay 2: FEMA 100 year flood" : femaFloodLayer,
-    "Overlay 3: Industrial census tracts" : industrialLayer,
+    "Current Satellite View" : Google_sat
+
     };
 
     var layerControl = L.control.layers(null, overlayMaps, {collapsed: false}).addTo(map);
