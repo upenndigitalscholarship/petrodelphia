@@ -1,812 +1,216 @@
-{%- if site.data.theme.icons -%}{% assign icons = site.data.theme.icons %}{% else %}
-More actions
-
-{% assign cb_icons = site.pages | where: "name","cb-icons.svg" | first %}
-
-{% assign icons = cb_icons.icons %}{%- endif -%}
-
-{% if site.data.theme.map-child-objects == true %}
-{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid' -%}
-
-{% else %}
-
-{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid' | where_exp: 'item','item.parentid == nil' -%}
-
-{% endif %}
-
-{%- assign items = items | where_exp: 'item', 'item.objectid != nil' | where_exp: 'item','item.latitude' -%}
-
-{%- assign fields = site.data.config-map -%}
-
-<!-- load leaflet dependencies -->
-
-<script src="{{ '/assets/lib/leaflet/leaflet.js' | relative_url }}"></script>
-
-<script src="{{ '/assets/lib/leaflet/Leaflet.fullscreen.min.js' | relative_url }}"></script>
-
-{% if site.data.theme.map-search == true %}<script src="{{ '/assets/lib/leaflet/fuse.min.js' | relative_url }}"></script>
-
-<script src="{{ '/assets/lib/leaflet/leaflet.fusesearch.js' | relative_url }}"></script>{% endif %}
-
-{% if site.data.theme.map-cluster == true %}<script src="{{ '/assets/lib/leaflet/leaflet.markercluster.js' | relative_url }}"></script>{% endif %}
-
-{% if site.data.theme.map-search == true and site.data.theme.map-cluster == true %}<script src="{{ '/assets/lib/leaflet/leaflet.markercluster.freezable.js' | relative_url }}"></script>{% endif %}
-
-    <!-- import the Area of Interest GeoJSON file -->
-
-
-
-<script>
-
-    src="{{ '/assets/data/AOI_features.json' | relative_url }}";
-
-
-
-    let jsondata;    
-
-    fetch("{{ '/assets/data/cleanupAOI.json' | relative_url }}").then(
-
-        function(u){ return u.json();}
-
-      ).then(
-
-        function(json){
-
-          jsondata = json;
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Historical Map Collection</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
         }
-
-      );
-
-
-
-(function(){
-
-    /* add collection map data */
-
-
-
-    var geodata = { "type": "FeatureCollection", "features": [ 
-
-    {% for item in items %}
-
-    { "type":"Feature", "geometry":{ "type":"Point", "coordinates":[{{ item.longitude | strip }},{{ item.latitude | strip }}] }, "properties":
-
-    { "title": {{ item.title | jsonify }}, 
-
-    {% for f in fields %}{{ f.field | jsonify }}: {{ item[f.field] | jsonify }},{% endfor %}{% if item.youtubeid %} "youtube": {{ item.youtubeid | jsonify }}, {% endif %}
-
-    "format": {{ item.format | jsonify }}, {% if  item.filename contains '/' %}"filename": "{{ item.filename }}" {% else %}"filename":{{ '/objects/' | relative_url | append: item.filename | jsonify }}{% endif %}, "link": "{% if item.parentid %}{{ item.parentid }}#{{ item.objectid }}{% else %}{{ item.objectid }}{% endif %}", "id": {{ item.objectid | jsonify }} } }{% unless forloop.last %}, {% endunless %}{% endfor %}
-
-    ]};
-
-
-
-    /* check for url parameters and set initial view options */ 
-
-    let url = new URL(window.location);
-
-    var mapCenter = url.searchParams.get('location') ? url.searchParams.get('location').split(',') : [{{ site.data.theme.latitude | default: 46.727485 }}, {{ site.data.theme.longitude | default: -117.014185 }}];
-
-    var mapZoom = url.searchParams.get('location') ? 16 : {{ site.data.theme.zoom-level | default: 5 }};
-
-    var markerFilter = url.searchParams.get('marker') ? url.searchParams.get('marker') : "";
-
-
-
-    /* init map, set center and zoom */
-
-    var map = L.map('map').setView([39.91295726620451, -75.2036260383046], 14); //39.95258150210489, -75.19328134637577
-
-
-
-    var PASDA2019 = L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
-
-    layers: '1' 
-
-
-
-}).addTo(map)
-
-
-
-//add reference layer
-
-var Aerial_1928 = L.tileLayer('https://mapwarper.net/maps/tile/88306/{z}/{x}/{y}.png')//
-
-
-
-var Waterfront_1892 = L.tileLayer('https://mapwarper.net/maps/tile/91523/{z}/{x}/{y}.png', {
-
-    attribution: '<i>1892 USGS Map</i> courtesy of [insert credits]'
-
-})
-
-
-
-//add reference layer
-
-var USGS_1894 = L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png', {
-
-    attribution: '<i>1894 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
-
-})
-
-var USGS_1920 = L.tileLayer('https://mapwarper.net/maps/tile/88561/{z}/{x}/{y}.png', {
-
-    attribution: '<i>1920 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
-
-})
-
-
-
-var USGS_1949 = L.tileLayer('https://mapwarper.net/maps/tile/88564/{z}/{x}/{y}.png', {
-
-    attribution: '<i>1949 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
-
-}).addTo(map);
-
-//.addTo(map); makes this a default load layer
-
-
-
-var USGS_1967 = L.tileLayer('https://mapwarper.net/maps/tile/88567/{z}/{x}/{y}.png',{
-
-    attribution: '<i>1967 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
-
-})
-
-var USGS_1995 = L.tileLayer('https://mapwarper.net/maps/tile/88568/{z}/{x}/{y}.png',{
-
-    attribution: '<i>1995 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
-
-})
-
-var USGS_2019 = L.tileLayer('https://mapwarper.net/maps/tile/88569/{z}/{x}/{y}.png',{
-
-    attribution: '<i>2019 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
-
-})
-
-var USGS_2023 = L.tileLayer('https://mapwarper.net/maps/tile/88570/{z}/{x}/{y}.png',{
-
-    attribution: '<i>2023 USGS Map</i> courtesy of <a href="https://www.usgs.gov/">US Geological Survey</a>'
-
-})
-var Barnes_1867 = L.tileLayer('https://mapwarper.net/mosaics/tile/2278/{z}/{x}/{y}.png ')
-var Hopkins_1876 = L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png')
-var Bromley_1895 = L.tileLayer('https://mapwarper.net/mosaics/tile/2184/{z}/{x}/{y}.png')
-var Bromley_1901 = L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png')
-var Bromley_1910 = L.tileLayer('https://mapwarper.net/mosaics/tile/2271/{z}/{x}/{y}.png')
-
-var Landuse_1942 = L.tileLayer('https://mapwarper.net/maps/tile/94403/{z}/{x}/{y}.png')
-var Landuse_1962 = L.tileLayer('https://mapwarper.net/maps/tile/94678/{z}/{x}/{y}.png')
-
-var OSMLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-
-    attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'},{
-
-    layers: '1' 
-
-}).addTo(map);
-
-
-
-var Aerial_1928 = L.tileLayer('https://mapwarper.net/maps/tile/88306/{z}/{x}/{y}.png')//
-
-var Aerial_1965 = L.tileLayer('https://mapwarper.net/maps/tile/88299/{z}/{x}/{y}.png')//
-
-var Aerial_1975 = L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png')
-
-var Aerial_1980 = L.tileLayer('https://mapwarper.net/maps/tile/88301/{z}/{x}/{y}.png')//
-
-var Aerial_1985 = L.tileLayer('https://mapwarper.net/maps/tile/88295/{z}/{x}/{y}.png')//.addTo(map);
-
-var Aerial_1990 = L.tileLayer('https://mapwarper.net/maps/tile/90707/{z}/{x}/{y}.png')//
-
-
-
-//var Aerial_1995 = L.tileLayer('https://mapwarper.net/maps/tile/88304/{z}/{x}/{y}.png')
-
-
-
-
-
-var ArmyPlume_1 = L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png') 
-
-var ArmyPlume_2 = L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png') //
-
-var ArmyPlume_3 = L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png') //
-
-var ArmyPlume_4 = L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png') //
-
-
-
-    /* add map layer options */
-
-var Esri_WorldStreetMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-
-        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
-
-    });
-
-var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-
-        attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
-
-        maxZoom: 16
-
-    });
-
-var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-
-        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-
-    });
-
-var petro1965 = L.tileLayer('https://mapwarper.net/maps/tile/83445/{z}/{x}/{y}.png ', {
-
-        maxZoom: 19,
-
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-
-    });
-
-var PASDA2019 = L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
-
-    layers: '1' 
-
-    });
-
-var HOLC_1937 = L.tileLayer('https://mapwarper.net/maps/tile/90758/{z}/{x}/{y}.png')//
-
-var Aerial_1959 = L.tileLayer('https://mapwarper.net/maps/tile/88304/{z}/{x}/{y}.png')//
-
-var Google_sat = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}')
-
-
-function setStyle(feature) {
-
-  return {
-
-      fillColor: feature.properties.fill,
-
-      color: feature.properties.stroke,
-
-      fillOpacity: feature.properties.stroke,
-
-      opacity: feature.properties.strokeOpacity
-
-  }
-
-}
-
-var femaStyle = {
-    color: '#0066FF',
-    weight: 2,
-    opacity: 1,
-    fillOpacity: 0.3,
-    fillColor: '#0066FF'
-};
-
-
-
-
-let AOI;
-
-let FEMA;
-
-let AOI_Layer;
-var aoiLayer = L.layerGroup().addTo(map);
-var femaFloodLayer = L.layerGroup()//.addTo(map);
-var industrialLayer = L.layerGroup()//.addTo(map);
-    
-var aoiStyle = {
-        color: '#FF7800',
-            weight: 2,
-            opacity: 1,
-            fillOpacity: 0.3,
-            fillColor: '#FFD700'
+        #map {
+            width: 100%;
+            height: 80vh;
+        }
+        .leaflet-control {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .leaflet-left .leaflet-control {
+            margin-left: 10px;
+        }
+        .leaflet-right .leaflet-control {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map centered on Philadelphia
+        const map = L.map('map').setView([39.9526, -75.1652], 12);
+        //create a top pane for the AOI labels
+        map.createPane('topPane').style.zIndex = 650;
+
+        const historicalMap = L.tileLayer('https://mapwarper.net/maps/tile/94844/{z}/{x}/{y}.png', {
+            attribution: 'Historical map from <a href="https://mapwarper.net">MapWarper</a>',
+            maxZoom: 18,
+            minZoom: 10,
+            pane: 'topPane', // this is what makes it stay on top
+            tms: false,
+            crossOrigin: true,
+            detectRetina: false,
+            noWrap: true
+        });
+        // Define all basemaps with year information
+        const basemaps = [
+            // Historical maps sorted by year
+            { name: "Barnes 1867", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2278/{z}/{x}/{y}.png'), year: 1867 },
+            { name: "Hopkins 1876", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png'), year: 1876 },
+            { name: "Waterfront 1892", layer: L.tileLayer('https://mapwarper.net/maps/tile/91523/{z}/{x}/{y}.png'), year: 1892 },
+            { name: "USGS 1894", layer: L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png', {
+                attribution: '1894 USGS Map courtesy of USGS'
+            }), year: 1894 },
+            { name: "Bromley 1895", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2184/{z}/{x}/{y}.png'), year: 1895 },
+            { name: "Bromley 1901", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png'), year: 1901 },
+            { name: "Bromley 1910", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2271/{z}/{x}/{y}.png'), year: 1910 },
+            { name: "USGS 1920", layer: L.tileLayer('https://mapwarper.net/maps/tile/88561/{z}/{x}/{y}.png', {
+                attribution: '1920 USGS Map courtesy of USGS'
+            }), year: 1920 },
+            { name: "Aerial 1928", layer: L.tileLayer('https://mapwarper.net/maps/tile/88306/{z}/{x}/{y}.png'), year: 1928 },
+            { name: "HOLC 1937", layer: L.tileLayer('https://mapwarper.net/maps/tile/90758/{z}/{x}/{y}.png'), year: 1937 },
+            { name: "Landuse 1942", layer: L.tileLayer('https://mapwarper.net/maps/tile/94403/{z}/{x}/{y}.png'), year: 1942 },
+            { name: "USGS 1949", layer: L.tileLayer('https://mapwarper.net/maps/tile/88564/{z}/{x}/{y}.png', {
+                attribution: '1949 USGS Map courtesy of USGS'
+            }), year: 1949 },
+            { name: "Aerial 1959", layer: L.tileLayer('https://mapwarper.net/maps/tile/88304/{z}/{x}/{y}.png'), year: 1959 },
+            { name: "Landuse 1962", layer: L.tileLayer('https://mapwarper.net/maps/tile/94678/{z}/{x}/{y}.png'), year: 1962 },
+            { name: "Aerial 1965", layer: L.tileLayer('https://mapwarper.net/maps/tile/88299/{z}/{x}/{y}.png'), year: 1965 },
+            { name: "Petro 1965", layer: L.tileLayer('https://mapwarper.net/maps/tile/83445/{z}/{x}/{y}.png', {
+                maxZoom: 19
+            }), year: 1965 },
+            { name: "USGS 1967", layer: L.tileLayer('https://mapwarper.net/maps/tile/88567/{z}/{x}/{y}.png', {
+                attribution: '1967 USGS Map courtesy of USGS'
+            }), year: 1967 },
+            { name: "Aerial 1975", layer: L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png'), year: 1975 },
+            { name: "Aerial 1980", layer: L.tileLayer('https://mapwarper.net/maps/tile/88301/{z}/{x}/{y}.png'), year: 1980 },
+            { name: "Aerial 1985", layer: L.tileLayer('https://mapwarper.net/maps/tile/88295/{z}/{x}/{y}.png'), year: 1985 },
+            { name: "Aerial 1990", layer: L.tileLayer('https://mapwarper.net/maps/tile/90707/{z}/{x}/{y}.png'), year: 1990 },
+            { name: "USGS 1995", layer: L.tileLayer('https://mapwarper.net/maps/tile/88568/{z}/{x}/{y}.png', {
+                attribution: '1995 USGS Map courtesy of USGS'
+            }), year: 1995 },
+            { name: "Philadelphia 2019 Imagery", layer: L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
+                layers: '1',
+                format: 'image/png',
+                transparent: true
+            }), year: 2019 },
+            { name: "USGS 2019", layer: L.tileLayer('https://mapwarper.net/maps/tile/88569/{z}/{x}/{y}.png', {
+                attribution: '2019 USGS Map courtesy of USGS'
+            }), year: 2019 },
+            { name: "USGS 2023", layer: L.tileLayer('https://mapwarper.net/maps/tile/88570/{z}/{x}/{y}.png', {
+                attribution: '2023 USGS Map courtesy of USGS'
+            }), year: 2023 },
+            
+            // Modern reference maps (no year)
+            { name: "OSM Streets", layer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png') },
+            { name: "ESRI StreetMap", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}') },
+            { name: "ESRI Imagery", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}') },
+            { name: "Google Satellite", layer: L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}') },
+            { name: "ESRI NatGeo", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}') },
+            { name: "Army Plume 1", layer: L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png') },
+            { name: "Army Plume 2", layer: L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png') },
+            { name: "Army Plume 3", layer: L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png') },
+            { name: "Army Plume 4", layer: L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png') },
+        ];
+
+        // Sort basemaps by year (those without years at the bottom)
+        basemaps.sort((a, b) => {
+            if (a.year && b.year) return a.year - b.year;
+            if (a.year) return -1;
+            if (b.year) return 1;
+            return a.name.localeCompare(b.name);
+        });
+
+        // Create an object for the layer control
+        const baseLayers = {};
+        basemaps.forEach(bm => {
+            baseLayers[bm.name] = bm.layer;
+        });
+
+        // Add default basemap
+        baseLayers["OSM Streets"].addTo(map);
+
+        // Create overlay layers
+        const overlays = {
+            "AOI Boundaries": L.layerGroup(),
+            "FEMA 100-year flood zone": L.layerGroup(),
+            "Census tracts predominantly zoned for industrial use, 2025": L.layerGroup()
         };
-//https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.json
-fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.json')
-        // Load and add the FEMA floodplain GeoJSON
-       // fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/FEMA_100yr_floodplain.geojson')
-            .then(response => response.json())
-            .then(data => {
+
+        // Function to load GeoJSON data
+        async function loadGeoJSON(url, layerGroup, style) {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
                 L.geoJSON(data, {
-                    style: femaStyle,
-                    onEachFeature: function(feature, layer) {
-                        if (feature.properties) {
-                            let popupContent = "Industrial Tracts";
-                            if (feature.properties.ZONE_SUBTY) {
-                                popupContent += ": " + feature.properties.ZONE_SUBTY;
-                            }
-                            layer.bindPopup(popupContent);
-                        }
+                    style: style
+                }).addTo(layerGroup);
+            } catch (error) {
+                console.error('Error loading GeoJSON:', error);
+            }
+        }
+
+        // Load sample Philadelphia GeoJSON data
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson', 
+                    overlays["AOI Boundaries"], 
+                    function(feature) {
+                        return {
+                            color: feature.properties.stroke || '#555555', // Default color if not specified
+                            weight: feature.properties['stroke-width'] || 2,
+                            opacity: feature.properties['stroke-opacity'] || 1,
+                            fillColor: feature.properties.fill || '#cab2d6',
+                            fillOpacity: feature.properties['fill-opacity'] || 0.5
+                        };
                     }
-                }).addTo(industrialLayer);
+                   );
                 
-            });
-
-fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/FEMA_100yr_floodplain.geojson')
-        // Load and add the FEMA floodplain GeoJSON
-       // fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/FEMA_100yr_floodplain.geojson')
-            .then(response => response.json())
-            .then(data => {
-                L.geoJSON(data, {
-                    style: femaStyle,
-                    onEachFeature: function(feature, layer) {
-                        if (feature.properties) {
-                            let popupContent = "FEMA Flood Zone";
-                            if (feature.properties.ZONE_SUBTY) {
-                                popupContent += ": " + feature.properties.ZONE_SUBTY;
-                            }
-                            layer.bindPopup(popupContent);
-                        }
-                    }
-                }).addTo(femaFloodLayer);
-                
-            });
-    
-fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson')
-
-
-
-    .then(response => response.json())
-
-    .then(data => {
-
-                // Create a GeoJSON layer and add to map
-        var AOI_Layer = L.geoJSON(data, {
-
-                    // You can style your features here
-//            L.geoJSON(data, {
-  //              style: aoiStyle,
-                    
-                style: function(feature) {
-
-                return {
-
-                    fillColor: feature.properties.fill,
-
-                    color: feature.properties.stroke,
-
-                    fillOpacity: feature.properties.stroke,
-
-                    opacity: feature.properties.strokeOpacity
-
-                };
-
-            },
-
-    });
-
-var baseMaps = {
-
-    "OSM": OSMLayer
-
-    };
-
-
-//Bromley_1910 Hopkins_1876
-var overlayMaps = {
-    
-    "Areas of Interest" : AOI_Layer,
-    "FEMA 100 year flood" : femaFloodLayer,
-    "Significantly industrial census tracts" : industrialLayer,
-    "1867 Incorporated City map" : Barnes_1867,
-    "1876 Hopkins City Atlas" : Hopkins_1876,
-    
-    "1892 Philadelphia waterfront" : Waterfront_1892,
-
-    "1894 USGS map" : USGS_1894,
-
-    "1895 Bromley street atlas": Bromley_1895,
-
-    "1901 Bromley street atlas": Bromley_1901,
-
-    "1910 Bromley street atlas" : Bromley_1910,
-
-    "1920 USGS map" : USGS_1920,
-
-    "1928 aerial photo" : Aerial_1928,
-
-    "1937 Redlining map" : HOLC_1937,
-    
-    "1942 land use map" : Landuse_1942,
-    
-    "1949 USGS map" : USGS_1949,
-
-    "1959 aerial photo" : Aerial_1959,
-
-    "1962 land use map" : Landuse_1962,
-    
-    "1965 aerial photo" : Aerial_1965,
-
-    "1967 USGS map" : USGS_1967,
-
-    "1975 aerial photo" : Aerial_1975,
-
-    "1980 aerial photo" : Aerial_1980,
-
-    "1985 aerial photo": Aerial_1985,
-
-    "1990 aerial photo" : Aerial_1990,
-
-    "1995 USGS map" : USGS_1995,
-
-    "1997 LNAPL plume map 1" : ArmyPlume_1,
-
-    "1997 LNAPL plume map 2" : ArmyPlume_2,
-
-    "1997 LNAPL plume map 3" : ArmyPlume_3,
-
-    "1997 LNAPL plume map 4" : ArmyPlume_4,
-
-    "2019 USGS map" : USGS_2019,
-
-    "2019 aerial photo": PASDA2019,
-
-    "2023 USGS map" : USGS_2023,
-
-    "Current Satellite View" : Google_sat
-
-    };
-
-    var layerControl = L.control.layers(null, overlayMaps, {collapsed: false}).addTo(map);
-
-
-
-        AOI_Layer.addTo(map);
-
-
-
-        map.fitBounds(AOI_Layer.getBounds());
-
-
-
-        overlays["GeoJSON Features"] = AOI_Layer;
-
-
-
-
-        layerControl.addOverlay(AOI_Layer, "GeoJSON Features").addTo(map);
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/FEMA_100yr_floodplain.geojson', 
+                   overlays["FEMA 100-year flood zone"], {color: 'blue', radius: 1, fillOpacity: 0.3});
         
-    })
+        loadGeoJSON('https://opendata.arcgis.com/datasets/b54ec5210cee41c3a884c9086f7af1be_0.geojson', 
+                   overlays["Census tracts predominantly zoned for industrial use, 2025"], {color: 'red', weight: 2});
 
-    .catch(error => {
+        // Create overlay control (left side)
+            const aoiLabel = L.marker([39.9210070, -75.1928358], {
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label',
+            html: '<div>AOI-1</div>',
+            iconSize: [40, 20]  // Width, height
+        }),
+        interactive: false  // Makes the label non-clickable
+    })//.addTo(map);
+        
 
-        console.error('Error loading GeoJSON:', error);
-
-    });
-
-
-
-
+        overlays["AOI Boundaries"].on('add', function() {
+            if (!map.hasLayer(aoiLabel)) {
+                aoiLabel.addTo(map);
+                // More aggressive refresh approach
+                setTimeout(() => {
+                    map.invalidateSize({animate: false});
+                    aoiLabel._reset();
+                    aoiLabel.redraw();
+                    map.fire('moveend');
+                }, 300);
+            }
+        });
+        
+        overlays["AOI Boundaries"].on('remove', function() {
+            if (map.hasLayer(aoiLabel)) {
+                aoiLabel.removeFrom(map);
+            }
+        });
+        
+    map.createPane('labelPane').style.zIndex = 700; // Higher than tile layers
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*    .catch(error => {
-
-        console.error('Error loading GeoJSON:', error);
-
-    });
-
-  */  
-
-//L.geoJSON(AOI).addTo(map);
-
-/*var AOI_Layer2 = L.geoJSON(AOI, {
-
-  style: setStyle,
-
-  onEachFeature: function (feature, layer) {
-
-    layer.bindPopup('<h1>'+feature.properties.Name+'</h1><p>ID: '+feature.properties.AOI_ID+'</p>'+feature.properties.Event_1+'</p>'+feature.properties.Event_2+'</p>'+feature.properties.Event_3+'</p>'+feature.properties.Event_4+'</p>'+feature.properties.Event_5+'</p>'+feature.properties.Event_6+'</p>'+feature.properties.Event_7+'</p>'+feature.properties.Event_8+'</p>'+feature.properties.Event_9+'</p>'+feature.properties.Event_10+'</p>'+feature.properties.Event_11+'</p>'+feature.properties.Event_12+'</p>'+feature.properties.Event_13+'</p>'+feature.properties.Event_14+'</p>'+feature.properties.Event_15+'</p>'+feature.properties.Event_16+'</p>'+feature.properties.Event_17+'</p>'+feature.properties.Event_18+'</p>'+feature.properties.Event_19+'</p>'+feature.properties.Event_20+'</p>');
-
-  }
-
-})
-
-    /* add base map switcher */
-
-
-
-
-
-
-
-//    var layerControl = L.control.layers(overlayMaps, null, {collapsed:false}).addTo(map);
-
-
-
-    /* load base map */
-
-
-
-    {% if site.data.theme.map-search == true %}
-
-    /* add leaflet-fusesearch */
-
-    var options = {
-
-        title: 'Search Map Items',
-
-        locationholder: 'Search map items...',
-
-        threshold: {{ site.data.theme.map-search-fuzziness | default: 0.35 }},
-
-        showResultFct: function(feature, container) {
-
-            var result = `<strong>${feature.properties.title}</strong><br>`;
-
-            {% for f in fields %}
-
-            if(feature.properties[{{ f.field | jsonify }}]) { result += feature.properties[{{ f.field | jsonify }}] + `<br>`; }
-
-            {% endfor %}
-
-            container.innerHTML = result;
-
-        }
-
-    };
-
-
-
-    var searchCtrl = L.control.fuseSearch(options);
-
-    searchCtrl.addTo(map);
-
-    searchCtrl.indexFeatures(geodata.features, {{ fields | where: 'search','true' | map: 'field' | unshift: 'title' | jsonify }});{% endif %}
-
-
-
-    /* add fullscreen control */ 
-
-    map.addControl(new L.Control.Fullscreen());
-
-
-
-//var geojsonFile = 'https://horn-obvious-lake.glitch.me/box_box_export.geojson'
-
-// Add the polygon to the map
-
-
-
-    {% if site.data.theme.map-cluster == true %}
-
-    /* create cluster group */
-
-    var markers = L.markerClusterGroup({ 
-
-        maxClusterRadius: {{ site.data.theme.map-cluster-radius | default: 15 }}, 
-
-        singleMarkerMode: true,
-
-        iconCreateFunction: function(cluster) {
-
-            /* custom icon function, tweak default to add more alt text */
-
-            var childCount = cluster.getChildCount();
-
-            var csize;
-
-            if (childCount < 10) {
-
-                csize = 'small';
-
-            } else if (childCount < 100) {
-
-                csize = 'medium';
-
-            } else {
-
-                csize = 'large';
-
-            }
-
-            var c = ' marker-cluster-' + csize;
-
-            return new L.DivIcon({ html: '<div><span class="visually-hidden">' + csize +' cluster of </span><span>' + childCount + '</span><span class="visually-hidden"> items</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) });
-
-        }
-
-        {% if site.data.theme.map-search == true %}, removeOutsideVisibleBounds: false{% endif %} 
-
-    });{% endif %}
-
-
-
-    /* function to create object popups */
-
-    function objectPopups(feature, layer) {
-
-        {% if site.data.theme.map-search == true %}
-
-        /* bind feature for search */
-
-        feature.layer = layer;{% endif %}
-
-        /* calculate item link */
-
-        var itemHref = '{{ "/item.html?id=" | relative_url }}' + feature.properties.link;
-
-        /* find object thumb based on format */
-
-        var thumbSrc;
-
-        if (feature.properties.youtube) {
-
-            thumbSrc = 'https://img.youtube.com/vi/' +  feature.properties.youtube + '/default.jpg';
-
-        } else if (feature.properties.format && feature.properties.format.includes("image")) {
-
-            thumbSrc = feature.properties.filename;
-
-        } else if (feature.properties.format && feature.properties.format.includes("audio")) {
-
-            thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-audio }}.svg';
-
-        } else if (feature.properties.format && feature.properties.format.includes("video")) {
-
-            thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-video }}.svg'; 
-
-        } else if (feature.properties.format && feature.properties.format.includes("pdf")) {
-
-            thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-pdf }}.svg';
-
-        } else if (feature.properties.format && feature.properties.format.includes("compound")) {
-
-            thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-compound-object }}.svg';  
-
-        } else if (feature.properties.format && feature.properties.format.includes("multiple")) {
-
-            thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-multiple }}.svg';        
-
-        } else {
-
-            thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-default }}.svg';
-
-        }    
-
-        /* create popup content */
-
-        var popupTemplate = '<h2 class="h4"><a class="text-dark" href="' + itemHref + '">' +
-
-            feature.properties.title + '</a></h2><div class="text-center"><a href="' + itemHref + 
-
-            '" ><img class="mapthumb img-thumb" src="' +  thumbSrc + '" alt="item thumbnail"></a></div><p>';
-
-        /* add metadata fields */
-
-        {% for f in fields %}{% if f.display_name %}
-
-        if (feature.properties[{{ f.field | jsonify }}]) {
-
-            popupTemplate += '<strong>{{ f.display_name }}:</strong> ' + feature.properties[{{ f.field | jsonify }}] + '<br>'; 
-
-        }
-
-        {% endif %}{% endfor %}
-
-        /* add object link button to popup */
-
-        popupTemplate += '</p><div class="text-center"><a class="btn btn-light" href="' + itemHref + '" >View Item</a></div>';
-
-        /* add object popup to map layer */
-
-        layer.bindPopup(popupTemplate);
-
-    }
-
-    /* function to add objects to map */
-
-    function objectMarkers(feature,latlng) {
-
-        var marker = L.marker(latlng, {alt: feature.properties.title});
-
-        {% if site.data.theme.map-cluster == true %}markers.addLayer(marker);{% endif %}
-
-        return marker;
-
-    }
-
-
-
-    /* use geoJson features to add objects to map */
-
-    var mapFeatures = L.geoJson(geodata, {
-
-        onEachFeature: objectPopups,
-
-        pointToLayer: objectMarkers
-
-    }){% if site.data.theme.map-cluster != true %}.addTo(map);{% else %};
-
-    map.addLayer(markers);{% endif %}
-
-
-
-    {% if site.data.theme.map-cluster == true and site.data.theme.map-search == true %}
-
-    /* uncluster when search is clicked */
-
-    document.querySelector('a.button').addEventListener("click", function() {
-
-        markers.disableClustering();
-
-    });
-
-    /* recluster when search is closed */
-
-    document.querySelector('a.close').addEventListener("click", function() {
-
-        markers.enableClustering();
-
-        document.querySelector('input.search-input').value = "";
-
-    });{% endif %}
-
-
-
-    /* show popup if id in URL query */ 
-
-    if (markerFilter != "") {
-
-        {% if site.data.theme.map-cluster == true %}
-
-        markers.eachLayer(layer => {
-
-            if (layer.feature.properties.id === markerFilter) {
-
-                /* uncluster clusters, then show */ 
-
-                if (markers.getVisibleParent(layer)["_childCount"]) {
-
-                    markers.getVisibleParent(layer).spiderfy();
-
-                } 
-
-                layer.openPopup();
-
-            }
-
-        });
-
-        {% else %}
-
-        mapFeatures.eachLayer(layer => {
-
-            if (layer.feature.properties.id === markerFilter) {
-
-                layer.openPopup();
-
-            }
-
-        });
-
-        {% endif %}
-
-    }
-
-
-
-})();
-
-</script>
+    // Create the label
+
+        const overlayControl = L.control.layers(null, overlays, {
+            collapsed: false,
+            position: 'topleft'
+        }).addTo(map);
+
+        // Create basemap control (right side)
+        const basemapControl = L.control.layers(baseLayers, null, {
+            collapsed: false,
+            position: 'topright'
+        }).addTo(map);
+    </script>
+</body>
+</html>
