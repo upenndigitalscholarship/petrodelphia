@@ -1,5 +1,5 @@
 ---
-title: Lesson Plans
+title: Lessons
 layout: page
 permalink: /lessons.html
 credits: true
