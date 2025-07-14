@@ -1,12 +1,12 @@
 title,short
-federal document,fed
-Commonwealth document,Commonwealth
-metropolitan document,metro
-city document,city
-NGO document,NGO
-university document,uni
-corporate document,corp
-legal document,legal
-research article,article
+federal document,federal%20document
+Commonwealth document,Commonwealth%20document
+metropolitan document,metropolitan%20document
+city document,city%20document
+NGO document,NGO%20document
+university document,university%20document
+corporate document,corporate%20document
+legal document,legal%20document
+research article,research%20article
 book,book
-data sheet,data
+data sheet,data%20sheet
