@@ -2,7 +2,7 @@ display_name,stub,dropdown_parent
 Home,/,
 Browse,/browse.html,
 Reference,/reference.html,
-Lesson plans,/lessons.html,
+Lessons,/lessons.html,
 Maps,,
 Historic maps,/layered-map.html,Maps
 Accident mapper,/accident-map.html,Maps
