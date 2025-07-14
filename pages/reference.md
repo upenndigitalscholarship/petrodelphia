@@ -6,7 +6,7 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 # {{ page.title }}
-
+<br>
 <div id="summary"></div>
 ## Executive Summary: Reckoning with Fossil Fuel in Philadelphia
 Author: Jared Farmer
