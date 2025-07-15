@@ -1,25 +1,54 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
-title: "CollectionBuilder-GH"
+title: America's First Petrochemical Corridor
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
 type: software
 authors:
-  - family-names: Williamson
-    given-names: Evan Peter
-    orcid: https://orcid.org/0000-0002-7990-9924
-  - family-names: Becker
-    given-names: Devin
-    orcid: https://orcid.org/0000-0002-0974-9064
-  - family-names: Wikle
-    given-names: Olivia
-    orcid: https://orcid.org/0000-0001-8122-4169
-repository-code: 'https://github.com/CollectionBuilder/collectionbuilder-gh'
-url: 'https://collectionbuilder.github.io/'
-license: MIT
-version: 1+
-date-released: '2018-09-23'
+  - name: Penn Libraries
+    address: 3420 Walnut Street
+    city: Philadelphia
+    country: US
+    post-code: '19104'
+    website: 'https://www.library.upenn.edu/'
+  - given-names: Jared
+    family-names: Farmer
+    affiliation: University of Pennsylvania
+  - given-names: Cynthia
+    family-names: Heider
+    affiliation: Penn Libraries
+    orcid: 'https://orcid.org/0000-0002-4600-3456'
+  - given-names: Benjamin
+    family-names: Liebersohn
+    orcid: 'https://orcid.org/0009-0004-8265-9964'
+    affiliation: Penn Libraries
+  - given-names: Andrew
+    family-names: Janco
+    orcid: 'https://orcid.org/0000-0002-8872-9474'
+    affiliation: Penn Libraries
+  - given-names: Cassandra
+    family-names: Hradil
+    affiliation: Penn Libraries
+repository-code: >-
+  https://github.com/upenndigitalscholarship/petrosylvania-collection-builder
+url: 'https://petrosylvania.org/'
 abstract: >-
-  CollectionBuilder is an open source tool for
-  creating digital collection and exhibit websites
-  that are driven by metadata and powered by modern
-  static web technology.
-license: MIT
+  This website provides you—and others who care about the
+  past and future of Philadelphia—a rich collection of
+  sources about the South Philadelphia refinery complex and
+  other petrochemical facilities along the lower Schuylkill
+  River. Fundamentally, this website is a digital archive
+  accompanied by reference works. Stakeholders at all
+  levels—neighborhood, municipal, Commonwealth, business,
+  non-profit—should find information of interest among the
+  articles, primary sources (historic maps, images,
+  documents), grey literature, and data sheets curated here.
+  Whether you’re a student, teacher, researcher, planner,
+  designer, real estate developer, neighborhood activist,
+  environmental journalist, or infrastructure geek, you are
+  invited to use this website to learn, to share, and to
+  create content about fossil fuel legacies in Philadelphia.
+license: CC-BY-NC-4.0
