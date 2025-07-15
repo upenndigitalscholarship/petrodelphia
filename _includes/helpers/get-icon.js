@@ -33,6 +33,9 @@ function getIcon(objectTemplate,objectFormat,svgType) {
     } else if (iconTemplate.includes("multiple")) {
         iconId = "icon-multiple";
         iconTitle = "multiple object icon";
+    } else if (iconTemplate.includes("csv")) {
+        iconId = "icon-csv";
+        iconTitle = "csv file icon";
     } else {
         iconId = "icon-default";
         iconTitle = "file icon";
