@@ -63,11 +63,5 @@ references:
       - family-names: Wikle
         given-names: Olivia
         orcid: https://orcid.org/0000-0001-8122-4169
-  - title: "CollectionBuilder-GH"
-  - type: software
-preferred-citation:
-  - authors:
-    - family-names: Farmer
-      given-names: Jared
-  - title: "America's First Petrochemical Corridor."
-  - type: generic
+    title: "CollectionBuilder-GH"
+    type: software
