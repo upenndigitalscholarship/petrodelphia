@@ -23,7 +23,7 @@ title: America's First Petrochemical Corridor
 tagline:
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
-description: "This website provides you—and others who care about the past and future of Philadelphia—a rich collection of sources about the South Philadelphia refinery complex and other petrochemical facilities along the lower Schuylkill River. Fundamentally, this website is a digital archive accompanied by reference works. Stakeholders at all levels—neighborhood, municipal, Commonwealth, business, non-profit—should find information of interest among the articles, primary sources (historic maps, images, documents), grey literature, and data sheets curated here. Whether you’re a student, teacher, researcher, planner, designer, real estate developer, neighborhood activist, environmental journalist, or infrastructure geek, you are invited to use this website to learn, to share, and to create content about fossil fuel legacies in Philadelphia."
+description: "This website provides you—and others who care about the past and future of Philadelphia—a rich collection of sources about the South Philadelphia refinery complex and other petrochemical facilities along the lower Schuylkill River. Fundamentally, this website is a digital archive accompanied by reference works. Stakeholders at all levels—neighborhood, municipal, Commonwealth, business, non-profit—should find information of interest among the articles, primary sources (historic maps, images, documents), grey literature, and data sheets curated here. Whether you’re a student, teacher, researcher, planner, designer, real estate developer, neighborhood activist, environmental journalist, or infrastructure geek, you are invited to use this website to learn, to share, and to tell stories about fossil fuel legacies in Philadelphia."
 footer: "An educational website about the history of the South Philadelphia refinery complex and the changing landscapes of the lower Schuylkill River."
 # keywords, a short list of subjects describing the collection, separated by semicolon, to appear in rich markup
 keywords:
@@ -35,7 +35,7 @@ author: Jared Farmer + Penn Libraries RDDS
 #
 # Set the metadata for your collection (the name of the CSV file in your _data directory that describes the objects in your collection) 
 # Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
-metadata: 2025-06-11_Petro-Metadata
+metadata: 2025-07-15_Petro-metadata
 # page generation settings [optional!]
 # [optional: only used if you need to tweak CB defaults or generate from more than one data file]
 # page_gen:
