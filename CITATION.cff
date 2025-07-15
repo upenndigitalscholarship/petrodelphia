@@ -54,17 +54,17 @@ abstract: >-
 license: CC-BY-NC-4.0
 references:
   - authors:
-    - family-names: Williamson
-      given-names: Evan Peter
-      orcid: https://orcid.org/0000-0002-7990-9924
-    - family-names: Becker
-      given-names: Devin
-      orcid: https://orcid.org/0000-0002-0974-9064
-    - family-names: Wikle
-      given-names: Olivia
-      orcid: https://orcid.org/0000-0001-8122-4169
-    title: "CollectionBuilder-GH"
-    type: software
+      - family-names: Williamson
+        given-names: Evan Peter
+        orcid: https://orcid.org/0000-0002-7990-9924
+      - family-names: Becker
+        given-names: Devin
+        orcid: https://orcid.org/0000-0002-0974-9064
+      - family-names: Wikle
+        given-names: Olivia
+        orcid: https://orcid.org/0000-0001-8122-4169
+  - title: "CollectionBuilder-GH"
+  - type: software
 preferred-citation:
   - authors:
     - family-names: Farmer
