@@ -65,9 +65,9 @@ license: CC-BY-NC-4.0
     title: "CollectionBuilder-GH"
     type: software
 preferred-citation:
-  authors:
+  - authors:
     - family-names: Farmer
       given-names: Jared
-  title: "America's First Petrochemical Corridor."
-  type: generic
-  year: 2025
+  - title: "America's First Petrochemical Corridor."
+  - type: generic
+  - year: 2025
