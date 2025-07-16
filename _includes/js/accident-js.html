@@ -58,7 +58,7 @@
         const pointsLayer = L.layerGroup().addTo(map);
 
         // Fetch the external GeoJSON
-        fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
+        fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
             .then(response => response.json())
             .then(data => {
                 document.getElementById('loading').style.display = 'none';
