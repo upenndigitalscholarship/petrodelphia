@@ -1,154 +1,3529 @@
 {
-"type": "FeatureCollection",
-"name": "Complete Accidents",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "year": "1891", "Date": "1871", "Descript": "Explosion of tank (kerosene).", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "1900", "Date": "1900", "Descript": "Explosion of tanks and pipes (benzene).", "Injury": "Y", "Dead": "Y", "NumInjur": "4", "NumDead": "1", "Responsi": "Atlantic (Standard)", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "29th St and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "1906", "Date": "1906", "Descript": "Explosion of tank (oil).", "Injury": "Y", "Dead": "Y", "NumInjur": "4", "NumDead": "1", "Responsi": "Atlantic (Standard)", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "28th St and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "1907", "Date": "1907", "Descript": "Fire in compounding room of chemical building.", "Injury": "Y", "Dead": "N", "NumInjur": "3", "NumDead": "0", "Responsi": "Atlantic (Standard)", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "Passyunk Ave and League Island Rd" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "1917", "Date": "1917", "Descript": "Multi-day fire causes widespread damage.", "Injury": "Y", "Dead": "N", "NumInjur": "10", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "27th St and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "1925", "Date": "1925", "Descript": "Explosion of tank (gasoline); fire lasts about two hours.", "Injury": "Y", "Dead": "N", "NumInjur": "3", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "28th St and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "1975", "Date": "1975", "Descript": "Nine-alarm fire lasts about 34 hours.", "Injury": "Y", "Dead": "N", "NumInjur": "6", "NumDead": "0", "Responsi": "ARCO", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "26th St and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "1983", "Date": "1983", "Descript": "Blown valve leads to leakage of tank (butane); Tasker Homes evacuated.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "ARCO", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "26th St and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "1995", "Date": "1995", "Descript": "Small fire (butane and propane).", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "Schuylkill Expressway and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "2000", "Date": "2000", "Descript": "Explosion of pipe (gasoline).", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "2800 W Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "2000", "Date": "2000", "Descript": "Ignition of flammable vapor.", "Injury": "Y", "Dead": "N", "NumInjur": "5", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "AOI-1", "name": "Point Breeze No. 1 Tank Farm", "Count": "1", "Street_D": "2800 W Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.193839627516269, 39.916670475486733 ] } },
-{ "type": "Feature", "properties": { "year": "1875", "Date": "1875", "Descript": "Lightning-caused explosion of tank (benzene) becomes conflagration, causes about $500,000 in property loss, including some 150,000 barrels of oil.", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Stewart, Matthews, and Pennington", "AOI_ID": "AOI-2", "name": "Point Breeze Processing Area", "Count": "1", "Street_D": "Magazine Lane and river" }, "geometry": { "type": "Point", "coordinates": [ -75.199044610032786, 39.916461648082212 ] } },
-{ "type": "Feature", "properties": { "year": "1901", "Date": "1901", "Descript": "Lightning-caused explosion of tank (benzene) becomes conflagration, causes about $500,000 in property loss, including some 150,000 barrels of oil.", "Injury": "Y", "Dead": "Y", "NumInjur": "100", "NumDead": "5", "Responsi": "Atlantic (Standard)", "AOI_ID": "AOI-2", "name": "Point Breeze Processing Area", "Count": "1", "Street_D": "Just south of Passyunk Ave, opposite UGI office" }, "geometry": { "type": "Point", "coordinates": [ -75.199044610032786, 39.916461648082212 ] } },
-{ "type": "Feature", "properties": { "year": "1915", "Date": "1915", "Descript": "Lightning-caused explosion of tank (coal tar) spreads to city\u0019s gas works; four-alarm fire.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic (Standard), UGI", "AOI_ID": "AOI-2", "name": "Point Breeze Processing Area", "Count": "1", "Street_D": "3100 Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.199920762166101, 39.920788958365904 ] } },
-{ "type": "Feature", "properties": { "year": "1924", "Date": "1924", "Descript": "Explosion of still (crude oil).", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-2", "name": "Point Breeze Processing Area", "Count": "1", "Street_D": "32nd St and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.1990502, 39.9180841 ] } },
-{ "type": "Feature", "properties": { "year": "1929", "Date": "1929", "Descript": "Explosion of tank (oil).", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-2", "name": "Point Point Breeze Processing Area", "Count": "1", "Street_D": "32nd St and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.1990502, 39.9180841 ] } },
-{ "type": "Feature", "properties": { "year": "1933", "Date": "1933", "Descript": "Explosion of still.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-2", "name": "Point Point Breeze Processing Area", "Count": "1", "Street_D": "Point Breeze Ave near Schuylkill River" }, "geometry": { "type": "Point", "coordinates": [ -75.199044610032786, 39.916461648082212 ] } },
-{ "type": "Feature", "properties": { "year": "1976", "Date": "1976", "Descript": "Five-alarm fire at asphalt storage tank.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "ARCO", "AOI_ID": "AOI-2", "name": "Point Breeze Processing Area", "Count": "1", "Street_D": "Passyunk Avenue and River Rd" }, "geometry": { "type": "Point", "coordinates": [ -75.199044610032786, 39.916461648082212 ] } },
-{ "type": "Feature", "properties": { "year": "1988", "Date": "1988", "Descript": "Explosion of tank (waste chemicals).", "Injury": "Y", "Dead": "N", "NumInjur": "2", "NumDead": "0", "Responsi": "ARCO", "AOI_ID": "AOI-2", "name": "Point Breeze Processing Area", "Count": "1", "Street_D": "Passyunk Ave and Schuykill Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.199215, 39.9194206 ] } },
-{ "type": "Feature", "properties": { "year": "1922", "Date": "1922", "Descript": "Explosion of tank (gasoline).", "Injury": "Y", "Dead": "N", "NumInjur": "3", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-4", "name": "No. 4 Tank Farm", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.19688638832119, 39.909634057424093 ] } },
-{ "type": "Feature", "properties": { "year": "1922", "Date": "1922", "Descript": "Explosion of tank (gasoline).", "Injury": "Y", "Dead": "N", "NumInjur": "3", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-4", "name": "No. 4 Tank Farm", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.19688638832119, 39.909634057424093 ] } },
-{ "type": "Feature", "properties": { "year": "1962", "Date": "1962", "Descript": "Explosion of storm sewer tunnel infused with refinery leakage.", "Injury": "Y", "Dead": "Y", "NumInjur": "0", "NumDead": "4", "Responsi": "Driscoll Construction Company", "AOI_ID": "AOI-4", "name": "No. 4 Tank Farm", "Count": "1", "Street_D": "26th St and Hartranft St" }, "geometry": { "type": "Point", "coordinates": [ -75.192947756967499, 39.912243028750225 ] } },
-{ "type": "Feature", "properties": { "year": "1930", "Date": "1930", "Descript": "Fire in shanty by pier leads to fire in warehouse storing kerosene; loss of some 70,000 barrels of fuel.", "Injury": "Y", "Dead": "N", "NumInjur": "5", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "100 feet south of Penrose Ave (Platt) Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.2101928, 39.8980387 ] } },
-{ "type": "Feature", "properties": { "year": "1930", "Date": "1930", "Descript": "Three-alarm fire", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1941", "Date": "1941", "Descript": "Explosion of still.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1941", "Date": "1941", "Descript": "Explosion of tanker ship carrying crude oil from Venezuela.", "Injury": "Y", "Dead": "N", "NumInjur": "5", "NumDead": "0", "Responsi": "Mene Grand Oil Company", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "Gulf Refinery Pier" }, "geometry": { "type": "Point", "coordinates": [ -75.19841, 39.8942171 ] } },
-{ "type": "Feature", "properties": { "year": "1947", "Date": "1947", "Descript": "Explosion of tank (crude oil)", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "34th St and Penrose Ave (Platt) Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.2086507, 39.899028 ] } },
-{ "type": "Feature", "properties": { "year": "1950", "Date": "1950", "Descript": "Explosion of experimental still.", "Injury": "Y", "Dead": "Y", "NumInjur": "0", "NumDead": "1", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1950", "Date": "1950", "Descript": "Explosion of still.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1960", "Date": "1960", "Descript": "Lightning-caused accident destroys twenty tanks; eight-alarm fire lasts at least seven hours, and causes about $1 million in property loss.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1961", "Date": "1961", "Descript": "Explosion of cracking still (crude oil); four-alarm fire lasts 2.5 hours.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1966", "Date": "1966", "Descript": "Explosion of distillation tower (benzene and cumene); five-alarm fire lasts 3.5 hours.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1967", "Date": "1967", "Descript": "Explosion of fuel line in boiler room; four-alarm fire lasts three hours.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1967", "Date": "1967", "Descript": "Explosion of still after failure of heat exchanger; three-alarm fire.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1967", "Date": "1967", "Descript": "Explosion of tank (sulphuric acid); four-alarm fire.", "Injury": "Y", "Dead": "N", "NumInjur": "6", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "Near Penrose Ave (Platt) Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.209277, 39.897998 ] } },
-{ "type": "Feature", "properties": { "year": "1969", "Date": "1969", "Descript": "Explosion of pipeline and some 70 drums (naphtha); seven-alarm fire.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1975", "Date": "1975", "Descript": "Failure of pump in distillery (crude oil) that had been inspected days before; six-alarm fire lasts about nine hours.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1976", "Date": "1976", "Descript": "Two-alarm fire at ruptured line (crude oil) leading to cracking unit.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "30th St and Penrose Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.2011016, 39.9021739 ] } },
-{ "type": "Feature", "properties": { "year": "1977", "Date": "1977", "Descript": "Explosion of oil barge leads to six-alarm fire on both sides of Schuylkill; river on fire.", "Injury": "Y", "Dead": "Y", "NumInjur": "1", "NumDead": "1", "Responsi": "Interstate Oil Company", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "Between Penrose Ave (Platt) Bridge and Girard Point Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.2029259, 39.8948902 ] } },
-{ "type": "Feature", "properties": { "year": "1985", "Date": "1985", "Descript": "Three-alarm fire.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Chevron", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "2000", "Date": "2000", "Descript": "Two-alarm fire in hydrogen unit.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "AOI-5", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.204361692403609, 39.898522645872667 ] } },
-{ "type": "Feature", "properties": { "year": "1969", "Date": "1969", "Descript": "Explosion of pipe ignites large still (high-octane gas); five-alarm fire causes about $1 million in property loss.", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-6", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "30th St and Penrose Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.195421732547501, 39.904742018767472 ] } },
-{ "type": "Feature", "properties": { "year": "1975", "Date": "1975", "Descript": "Explosion of pipes (crude oil); eleven-alarm fire over ten days causes about $11 million in property loss.", "Injury": "Y", "Dead": "Y", "NumInjur": "17", "NumDead": "8", "Responsi": "Gulf", "AOI_ID": "AOI-6", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.20872068734117, 39.902393799958396 ] } },
-{ "type": "Feature", "properties": { "year": "1969", "Date": "1969", "Descript": "Explosion of pipe ignites large still (high-octane gas); five-alarm fire causes about $1 million in property damage.", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Chevron", "AOI_ID": "AOI-6", "name": "Girard Point South Tank Field", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.20872068734117, 39.902393799958396 ] } },
-{ "type": "Feature", "properties": { "year": "2019", "Date": "2019", "Descript": "Ignition of flammable vapor in alkylation unit leads to fire and explosions, and approximately $750 million in property loss.", "Injury": "Y", "Dead": "N", "NumInjur": "5", "NumDead": "0", "Responsi": "Philadelphia Energy", "AOI_ID": "AOI-7", "name": "Girard Point Fuels Area", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.209051491968268, 39.90548557880836 ] } },
-{ "type": "Feature", "properties": { "year": "1879", "Date": "1879", "Descript": "Explosion of still (petroleum).", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Philadelphia Refinery (Standard)", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202185237929768, 39.926052053366959 ] } },
-{ "type": "Feature", "properties": { "year": "1884", "Date": "1884", "Descript": "Lightning-caused explosion of tank becomes major conflagration.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Philadelphia Refinery (Standard)", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202185237929768, 39.926052053366959 ] } },
-{ "type": "Feature", "properties": { "year": "1886", "Date": "1886", "Descript": "Explosion of tank.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Philadelphia Refinery (Standard)", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202185237929768, 39.926052053366959 ] } },
-{ "type": "Feature", "properties": { "year": "1887", "Date": "1887", "Descript": "Lightning-caused explosion of tank (distilled oil)\u0014same tank that attracted lightning in 1884\u0014leads to fire that lasts about five hours.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic (Standard)", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202185237929768, 39.926052053366959 ] } },
-{ "type": "Feature", "properties": { "year": "1895", "Date": "1895", "Descript": "Explosion of escaped gas destroys receiving department building.", "Injury": "Y", "Dead": "N", "NumInjur": "3", "NumDead": "0", "Responsi": "Philadelphia Refinery (Standard)", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202185237929768, 39.926052053366959 ] } },
-{ "type": "Feature", "properties": { "year": "1898", "Date": "1898", "Descript": "Refinery fire.", "Injury": "Y", "Dead": "N", "NumInjur": "2", "NumDead": "0", "Responsi": "Philadelphia Refinery (Standard)", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "35th St and Mifflin St" }, "geometry": { "type": "Point", "coordinates": [ -75.202834613633584, 39.931029998904606 ] } },
-{ "type": "Feature", "properties": { "year": "1900", "Date": "1900", "Descript": "Explosion of tank (kerosense) leads to fire in illuminating gas factory.", "Injury": "Y", "Dead": "Y", "NumInjur": "3", "NumDead": "3", "Responsi": "Philadelphia Refinery (Standard)", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202185237929768, 39.926052053366959 ] } },
-{ "type": "Feature", "properties": { "year": "1901", "Date": "1901", "Descript": "Explosion of stills (hot tar).", "Injury": "Y", "Dead": "N", "NumInjur": "5", "NumDead": "0", "Responsi": "Atlantic (Standard)", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202185237929768, 39.926052053366959 ] } },
-{ "type": "Feature", "properties": { "year": "1904", "Date": "1904", "Descript": "Still (crude oil) catches on fire.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic (Standard)", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202185237929768, 39.926052053366959 ] } },
-{ "type": "Feature", "properties": { "year": "1912", "Date": "1912", "Descript": "Explosion of still destroying many tanks; four-alarm fire lasts about 15 hours, causes $500,000 in property loss.", "Injury": "Y", "Dead": "N", "NumInjur": "4", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "35th St and Ritner St" }, "geometry": { "type": "Point", "coordinates": [ -75.2076188, 39.9251593 ] } },
-{ "type": "Feature", "properties": { "year": "1921", "Date": "1921", "Descript": "Explosion of five tanks threatens city gas works; five-alarm fire.", "Injury": "Y", "Dead": "N", "NumInjur": "15", "NumDead": "0", "Responsi": "Philadelphia Refinery (Standard)", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "35th St and River Rd" }, "geometry": { "type": "Point", "coordinates": [ -75.2071396, 39.9277031 ] } },
-{ "type": "Feature", "properties": { "year": "1921", "Date": "1921", "Descript": "Explosion of still (naphta).", "Injury": "Y", "Dead": "Y", "NumInjur": "40", "NumDead": "15", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202185237929768, 39.926052053366959 ] } },
-{ "type": "Feature", "properties": { "year": "1926", "Date": "1926", "Descript": "Explosion of still (oil) spreads flames to numerous other stills, fire lasts about 4 hours.", "Injury": "Y", "Dead": "N", "NumInjur": "20", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "32nd St and Ritner St" }, "geometry": { "type": "Point", "coordinates": [ -75.1998153, 39.9242454 ] } },
-{ "type": "Feature", "properties": { "year": "1931", "Date": "1931", "Descript": "Explosion of gas stabilization plant causes about $900,000 in property loss.", "Injury": "Y", "Dead": "Y", "NumInjur": "9", "NumDead": "8", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "33rd St and Wolf St" }, "geometry": { "type": "Point", "coordinates": [ -75.2011812, 39.9256276 ] } },
-{ "type": "Feature", "properties": { "year": "1913", "Date": "1913", "Descript": "Explosion of still.", "Injury": "Y", "Dead": "N", "NumInjur": "2", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "34th St and Point Breeze Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.2022326, 39.9283897 ] } },
-{ "type": "Feature", "properties": { "year": "1934", "Date": "1934", "Descript": "Explosion of stills and tanks; the blast, felt in Camden, New Jersey, breaks windows and doors in South Philadelphia", "Injury": "Y", "Dead": "N", "NumInjur": "7", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "Jackson St and River Rd" }, "geometry": { "type": "Point", "coordinates": [ -75.208563, 39.927789 ] } },
-{ "type": "Feature", "properties": { "year": "1931", "Date": "1931", "Descript": "Explosion of gas stabilization plant causes about $900,000 in property loss.", "Injury": "Y", "Dead": "Y", "NumInjur": "9", "NumDead": "8", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "33rd St and Wolf St" }, "geometry": { "type": "Point", "coordinates": [ -75.2011812, 39.9256276 ] } },
-{ "type": "Feature", "properties": { "year": "1944", "Date": "1944", "Descript": "Explosion of pumping unit; five-alarm fire.", "Injury": "Y", "Dead": "Y", "NumInjur": "2", "NumDead": "4", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "32nd St and Maiden Ln" }, "geometry": { "type": "Point", "coordinates": [ -75.2016822, 39.9302705 ] } },
-{ "type": "Feature", "properties": { "year": "1969", "Date": "1969", "Descript": "Five-alarm fire destroys three phenol tanks and five extractor towers.", "Injury": "Y", "Dead": "Y", "NumInjur": "2", "NumDead": "1", "Responsi": "ARCO", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "28th St and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.1939249, 39.9212013 ] } },
-{ "type": "Feature", "properties": { "year": "1970", "Date": "1970", "Descript": "Explosion of 13-story catalytic cracking unit leads to conflagration and general destruction, about $900,000 in property loss.", "Injury": "Y", "Dead": "Y", "NumInjur": "37", "NumDead": "7", "Responsi": "ARCO", "AOI_ID": "AOI-8", "name": "North Yard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202185237929768, 39.926052053366959 ] } },
-{ "type": "Feature", "properties": { "year": "1987", "Date": "1987", "Descript": "Lightning-caused explosion and collapse of tank (gasoline); five-alarm fire lasts two days, burns some 25,000 barrels of fuel worth about $2 million.", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Chevron", "AOI_ID": "AOI-9", "name": "Schuylkill River Tank Farm", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.2243006, 39.8978611 ] } },
-{ "type": "Feature", "properties": { "year": "1994", "Date": "1994", "Descript": "Three-alarm fire at reformer unit (naphtha and hydrogen) lasts five hours.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Chevron", "AOI_ID": "AOI-9", "name": "Schuylkill River Tank Farm", "Count": "1", "Street_D": "Penrose Ave and Fort Mifflin Rd" }, "geometry": { "type": "Point", "coordinates": [ -75.2144303, 39.8966555 ] } },
-{ "type": "Feature", "properties": { "year": "1910", "Date": "1910", "Descript": "Explosion in oil testing room.", "Injury": "Y", "Dead": "N", "NumInjur": "2", "NumDead": "0", "Responsi": "Atlantic (Standard)", "AOI_ID": "AOI-2", "name": "Atlantic at Point Breeze", "Count": "1", "Street_D": "Breeze" }, "geometry": { "type": "Point", "coordinates": [ -75.198287256569543, 39.917973624095879 ] } },
-{ "type": "Feature", "properties": { "year": "1973", "Date": "1973", "Descript": "Small fire (gasoline additives).\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "ARCO", "AOI_ID": "AOI-2", "name": "Atlantic at Point Breeze", "Count": "1", "Street_D": "Breeze" }, "geometry": { "type": "Point", "coordinates": [ -75.19656792697026, 39.918833668822181 ] } },
-{ "type": "Feature", "properties": { "year": { }, "Date": { }, "Descript": "Seal failure in a pump at oil-processing still leads to two-alarm fire.\n", "Injury": "N", "Dead": "N", "NumInjur": { }, "NumDead": { }, "Responsi": "ARCO", "AOI_ID": "AOI-1", "name": "Atlantic at Point Breeze", "Count": { }, "Street_D": "Breeze" }, "geometry": { "type": "Point", "coordinates": [ -75.195190013539104, 39.919040355836856 ] } },
-{ "type": "Feature", "properties": { "year": "1983", "Date": "1983", "Descript": "Six-alarm fire.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "ARCO", "AOI_ID": "AOI-2", "name": "Atlantic at Point Breeze", "Count": "1", "Street_D": "Breeze" }, "geometry": { "type": "Point", "coordinates": [ -75.195741178911575, 39.919729312552434 ] } },
-{ "type": "Feature", "properties": { "year": "1983", "Date": { }, "Descript": "Explosion of storage tank (naphtha); five-alarm fire\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "ARCO", "AOI_ID": "AOI-1", "name": "Atlantic at Point Breeze", "Count": "1", "Street_D": "Breeze" }, "geometry": { "type": "Point", "coordinates": [ -75.195568939732681, 39.917834681584594 ] } },
-{ "type": "Feature", "properties": { "year": "1994", "Date": { }, "Descript": "Faulty valve in cracking unit releases three yellow clouds of silica alumina coated with oil.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "AOI-1", "name": "Atlantic at Point Breeze", "Count": "1", "Street_D": "Breeze" }, "geometry": { "type": "Point", "coordinates": [ -75.194393301600371, 39.919701840065343 ] } },
-{ "type": "Feature", "properties": { "year": "1999", "Date": "1999", "Descript": "Four-alarm fire in sulfur removal unit leads to large release of silica alumina catalyst.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "AOI-2", "name": "Atlantic at Point Breeze", "Count": "1", "Street_D": "Breeze" }, "geometry": { "type": "Point", "coordinates": [ -75.196187146024371, 39.917011073429336 ] } },
-{ "type": "Feature", "properties": { "year": "2000", "Date": "2000", "Descript": "Malfunction causes release of substantial amount of silica alumina catalyst.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "AOI-2", "name": "Pt Breeze", "Count": "1", "Street_D": "Breeze" }, "geometry": { "type": "Point", "coordinates": [ -75.196636822641821, 39.917903577256155 ] } },
-{ "type": "Feature", "properties": { "year": "1983", "Date": "1983", "Descript": "", "Injury": "", "Dead": "", "NumInjur": "", "NumDead": "", "Responsi": "", "AOI_ID": "", "name": "", "Count": "", "Street_D": "" }, "geometry": null },
-{ "type": "Feature", "properties": { "year": "1974", "Date": "1974", "Descript": "Explosion of tanker ship Elias and loss of about 12,000 barrels of Venezuelan crude oil (burned off rather than spilled).", "Injury": "Y", "Dead": "Y", "NumInjur": "14", "NumDead": "13", "Responsi": "Eletson Maritime, Inc. (Greece)", "AOI_ID": "Fort Mifflin", "name": "Fort Mifflin", "Count": "1", "Street_D": "4 Hog Island Rd" }, "geometry": { "type": "Point", "coordinates": [ -75.21790106496924, 39.869677093422624 ] } },
-{ "type": "Feature", "properties": { "year": "1874", "Date": "1874", "Descript": "Lightning-caused explosion of two tanks (kerosene).", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "H. W. Harkins", "AOI_ID": "Gibson Point", "name": "Gibson Point", "Count": "1", "Street_D": "West Bank" }, "geometry": { "type": "Point", "coordinates": [ -75.2145363, 39.92571449735928 ] } },
-{ "type": "Feature", "properties": { "year": "1971", "Date": "1971", "Descript": "Explosion of still (gasoline); two-alarm fire lasts 90 minutes.", "Injury": "Y", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-5", "name": "Girard", "Count": "1", "Street_D": "Near Penrose Ferry Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.208026139022138, 39.896779880488928 ] } },
-{ "type": "Feature", "properties": { "year": "1974", "Date": "1974", "Descript": "Two-alarm fire destroys cooling tower.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "Girard", "name": "Girard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.2022479, 39.895989016591678 ] } },
-{ "type": "Feature", "properties": { "year": "1975", "Date": "1975", "Descript": "Explosion of fuel line; six-alarm fire burns for 2.5 hours.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "Girard", "name": "Girard", "Count": "1", "Street_D": "Near Penrose Ferry Bridge, near east bank of river" }, "geometry": { "type": "Point", "coordinates": [ -75.2069268, 39.896221 ] } },
-{ "type": "Feature", "properties": { "year": "1986", "Date": "1986", "Descript": "Explosion of fuel line; six-alarm fire burns for 2.5 hours.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Chevron", "AOI_ID": "Girard", "name": "Girard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.197355370367788, 39.898407416965632 ] } },
-{ "type": "Feature", "properties": { "year": "1986", "Date": "1986", "Descript": "Lightning-caused explosion of tank (gasoline); eight-alarm fire lasts about 31 hours; loss of some 20,000 barrels.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Chevron", "AOI_ID": "Girard", "name": "Girard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202658046391534, 39.899348731615511 ] } },
-{ "type": "Feature", "properties": { "year": "1993", "Date": "1993", "Descript": "Four-alarm propane fire lasts three hours.", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Chevron", "AOI_ID": "Girard", "name": "Girard", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.2036751, 39.8964844 ] } },
-{ "type": "Feature", "properties": { "year": "1885", "Date": "1885", "Descript": "Fire destroys alum and acid buildings at chemical works.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Harrison Brothers", "AOI_ID": "Grays", "name": "Grays", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.2009638, 39.940558269222876 ] } },
-{ "type": "Feature", "properties": { "year": "1887", "Date": "1887", "Descript": "Fire at sulfur acid building at chemical works.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Bowers", "AOI_ID": "Grays", "name": "Grays", "Count": "1", "Street_D": "30th St and Grays Ferry Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.192405330777135, 39.9397298 ] } },
-{ "type": "Feature", "properties": { "year": "1904", "Date": "1904", "Descript": "Fire in asphalt plant.", "Injury": "Y", "Dead": "N", "NumInjur": "3", "NumDead": "0", "Responsi": "Barber Asphalt Company", "AOI_ID": "Grays", "name": "Grays", "Count": "1", "Street_D": "Grays Ferry Ave and east bank" }, "geometry": { "type": "Point", "coordinates": [ -75.2030941, 39.9402608 ] } },
-{ "type": "Feature", "properties": { "year": "1916", "Date": "1916", "Descript": "Break in pipe (nitric acid) at chemical works leads to 15-alarm fire.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Harrison Brothers", "AOI_ID": "Grays", "name": "Grays", "Count": "1", "Street_D": "35th St and Grays Ferry Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.19929145388565, 39.9404953231085 ] } },
-{ "type": "Feature", "properties": { "year": "1929", "Date": "1929", "Descript": "Four-alarm fire causes general damage to coal tar distillery.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Barrett Company", "AOI_ID": "Grays", "name": "Grays", "Count": "1", "Street_D": "37th St and Grays Ferry Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.20275481976239, 39.939533648174702 ] } },
-{ "type": "Feature", "properties": { "year": "1935", "Date": "1935", "Descript": "Explosion of still (coal tar).", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Barrett Company", "AOI_ID": "Grays", "name": "Grays", "Count": "1", "Street_D": "36th St and Grays Ferry Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.202499170414995, 39.939807485621657 ] } },
-{ "type": "Feature", "properties": { "year": "1938", "Date": "1938", "Descript": "Small coal tar fire", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Barrett Company", "AOI_ID": "Grays", "name": "Grays", "Count": "1", "Street_D": "36th St and Grays Ferry Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.20328358408068, 39.939770398706123 ] } },
-{ "type": "Feature", "properties": { "year": "1938", "Date": "1938", "Descript": "Two-alarm coal tar fire.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Barrett Company", "AOI_ID": "Grays", "name": "Grays", "Count": "1", "Street_D": "36th St and Grays Ferry Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.202908650605764, 39.940245924088948 ] } },
-{ "type": "Feature", "properties": { "year": "1941", "Date": "1941", "Descript": "Explosion of vat in varnish distillery.", "Injury": "Y", "Dead": "Y", "NumInjur": "2", "NumDead": "1", "Responsi": "DuPont", "AOI_ID": "Grays", "name": "Grays", "Count": "1", "Street_D": "35th St and Grays Ferry Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.199334006847494, 39.940346731825109 ] } },
-{ "type": "Feature", "properties": { "year": "1879", "Date": "1879", "Descript": "Explosion of leaking sill (kerosene).", "Injury": "Y", "Dead": "Y", "NumInjur": "2", "NumDead": "1", "Responsi": "Belmont (Standard)", "AOI_ID": "Passyunk", "name": "Passyunk", "Count": "1", "Street_D": "24th St and Miffilin St" }, "geometry": { "type": "Point", "coordinates": [ -75.185367490512277, 39.928704951753339 ] } },
-{ "type": "Feature", "properties": { "year": "1881", "Date": "1881", "Descript": "Explosion of tank (benzene) spreads fire throughout refinery.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Belmont (Standard)", "AOI_ID": "Passyunk", "name": "Passyunk", "Count": "1", "Street_D": "24th St and Miffilin St" }, "geometry": { "type": "Point", "coordinates": [ -75.185864400000014, 39.928415 ] } },
-{ "type": "Feature", "properties": { "year": "1891", "Date": "1891", "Descript": "Three tanks (oil, benzene) catch on fire, which spreads to buildings", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Belmont (Standard)", "AOI_ID": "Passyunk", "name": "Passyunk", "Count": "1", "Street_D": "24th St and Mifflin St" }, "geometry": { "type": "Point", "coordinates": [ -75.186339767397186, 39.928055634794376 ] } },
-{ "type": "Feature", "properties": { "year": "1905", "Date": "1905", "Descript": "Explosion of gas holder.", "Injury": "Y", "Dead": "Y", "NumInjur": "50", "NumDead": "5", "Responsi": "Gas Works (UGI)", "AOI_ID": "", "name": "PGW", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.197852400000016, 39.922898723848483 ] } },
-{ "type": "Feature", "properties": { "year": "1894", "Date": "1894", "Descript": "Explosion of purifying house.", "Injury": "Y", "Dead": "Y", "NumInjur": "0", "NumDead": "1", "Responsi": "Gas Works (UGI)", "AOI_ID": "", "name": "PGW", "Count": "1", "Street_D": "3101 W Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.199647584571892, 39.92243085146724 ] } },
-{ "type": "Feature", "properties": { "year": "1905", "Date": "1905", "Descript": "Fire in coal gas plant.", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Gas Works (UGI)", "AOI_ID": "", "name": "PGW", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.200334812201902, 39.921787406100961 ] } },
-{ "type": "Feature", "properties": { "year": "1925", "Date": "1925", "Descript": "Explosion in engine room of tugboat VanDyke sinks the craft.", "Injury": "Y", "Dead": "Y", "NumInjur": "0", "NumDead": "1", "Responsi": "Atlantic Refining", "AOI_ID": "", "name": "River", "Count": "1", "Street_D": "Atlantic wharves" }, "geometry": { "type": "Point", "coordinates": [ -75.205333529819598, 39.92162699573074 ] } },
-{ "type": "Feature", "properties": { "year": "1926", "Date": "1926", "Descript": "Explosion of barge carrying gasoline.", "Injury": "Y", "Dead": "Y", "NumInjur": "4", "NumDead": "1", "Responsi": "Atlantic Refining", "AOI_ID": "", "name": "River", "Count": "1", "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.202173529139202, 39.9169328 ] } },
-{ "type": "Feature", "properties": { "year": "1890", "Date": "1890", "Descript": "Explosion on tanker ship during loading of refined oil.", "Injury": "Y", "Dead": "Y", "NumInjur": "11", "NumDead": "1", "Responsi": "Atlantic (Standard)", "AOI_ID": "", "name": "Schuylkill", "Count": "1", "Street_D": "Below Passyunk Bridgge" }, "geometry": { "type": "Point", "coordinates": [ -75.201742782784081, 39.917635596684676 ] } },
-{ "type": "Feature", "properties": { "year": "1891", "Date": "1891", "Descript": "Explosion of tanker ship carrying refined oil.", "Injury": "Y", "Dead": "N", "NumInjur": "7", "NumDead": "0", "Responsi": "Atlantic (Standard)", "AOI_ID": "", "name": "Schuylkill", "Count": "1", "Street_D": "Below Passyunk Bridge\n" }, "geometry": { "type": "Point", "coordinates": [ -75.20190147880966, 39.917431558937508 ] } },
-{ "type": "Feature", "properties": { "year": "1892", "Date": "1892", "Descript": "Explosion of leaking oil pipes burns wharves, boats, and threatens gas works; river catches on fire.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic (Standard)", "AOI_ID": "", "name": "Schuylkill", "Count": "1", "Street_D": "Below Passyunk Bridge\n" }, "geometry": { "type": "Point", "coordinates": [ -75.201652099340905, 39.917839634431836 ] } },
-{ "type": "Feature", "properties": { "year": "1892", "Date": "1892", "Descript": "River catches on fire after continued oil spill from leaking pipes.", "Injury": "Y", "Dead": "Y", "NumInjur": "2", "NumDead": "1", "Responsi": "Atlantic (Standard)", "AOI_ID": "", "name": "Schuylkill", "Count": "1", "Street_D": "Below Passyunk Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.202150858278415, 39.917839634431836 ] } },
-{ "type": "Feature", "properties": { "year": "1919", "Date": "1919", "Descript": "Tanker ship fire spreads to wharves and neighboring vessels, causes about $1 million in property loss.", "Injury": "Y", "Dead": "Y", "NumInjur": "12", "NumDead": "1", "Responsi": "Atlantic Refining; Anglo-American Oil Company", "AOI_ID": "", "name": "Schuylkill\n", "Count": "1", "Street_D": "Below Passyunk Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.201697441062493, 39.917431558937508 ] } },
-{ "type": "Feature", "properties": { "year": "1866", "Date": "1866", "Descript": "Spontaneous combustion at coal sheds consumes nearly 6,000 tons of fuel.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "PGW", "AOI_ID": "PGW at Point Breeze", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.198311135226106, 39.921779796804621 ] } },
-{ "type": "Feature", "properties": { "year": "1870", "Date": "1870", "Descript": "Refinery fire.", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Phoenix Refinery (Malcolm Lloyd)", "AOI_ID": "Bartram South", "name": "", "Count": "", "Street_D": "End of 58th St" }, "geometry": { "type": "Point", "coordinates": [ -75.216032776290845, 39.92666447110954 ] } },
-{ "type": "Feature", "properties": { "year": "1880", "Date": "1880", "Descript": "Explosion of tank (benzene) spreads fire throughout refinery.", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "Phoenix Refinery (Malcolm Lloyd)", "AOI_ID": "Bartram South", "name": null, "Count": "", "Street_D": "End of 58th St" }, "geometry": { "type": "Point", "coordinates": [ -75.215292718413679, 39.927377928184363 ] } },
-{ "type": "Feature", "properties": { "year": "1881", "Date": "1881", "Descript": "Berge carrying kerosene sinks, spilling contents, and covering surface of river from its mouth to Vine Street.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Unknown", "AOI_ID": "Schuylkill River", "name": null, "Count": null, "Street_D": "Christian Street Wharf" }, "geometry": { "type": "Point", "coordinates": [ -75.191096411877851, 39.943223123967002 ] } },
-{ "type": "Feature", "properties": { "year": "1882", "Date": "1882", "Descript": "Lightning-caused explosion of tank (kerosene).", "Injury": "Y", "Dead": "Y", "NumInjur": "0", "NumDead": "1", "Responsi": "Phoenix Refinery (Malcolm Lloyd)", "AOI_ID": "Bartram South", "name": null, "Count": null, "Street_D": "End of 58th St" }, "geometry": { "type": "Point", "coordinates": [ -75.21430011768993, 39.926720302819014 ] } },
-{ "type": "Feature", "properties": { "year": "1884", "Date": "1884", "Descript": "Fire at kerosene storage warehouse. ", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Phoenix Refinery (Malcolm Lloyd)", "AOI_ID": "Bartram South", "name": null, "Count": null, "Street_D": "End of 58th St" }, "geometry": { "type": "Point", "coordinates": [ -75.214241125217526, 39.927248092814331 ] } },
-{ "type": "Feature", "properties": { "year": "1885", "Date": "1885", "Descript": "Fire destroys alum and acid buildings at chemical works.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Harrison Brothers Chemical Works", "AOI_ID": "Grays Ferry Crescent", "name": null, "Count": null, "Street_D": "" }, "geometry": { "type": "Point", "coordinates": [ -75.201140339868473, 39.942022971716092 ] } },
-{ "type": "Feature", "properties": { "year": "1885", "Date": "1885", "Descript": "Lightning-caused explosion of tank (benzene).", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Phoenix Refinery (Malcolm Lloyd)", "AOI_ID": "Bartram South", "name": null, "Count": null, "Street_D": "End of 58th St" }, "geometry": { "type": "Point", "coordinates": [ -75.214823329285053, 39.928317567797322 ] } },
-{ "type": "Feature", "properties": { "year": "1889", "Date": "1889", "Descript": "British tanker ship Thordisa catches fire while loading kerosene bound for France. ", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic (Standard); Continental Oil Shipping Company", "AOI_ID": "Schuylkill River", "name": null, "Count": null, "Street_D": "Atlantic wharves near Passyunk Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.201412978887745, 39.918453884941847 ] } },
-{ "type": "Feature", "properties": { "year": "1890", "Date": "1890", "Descript": "Explosion on tanker ship Hans und Kurt (refined oil) during loading.", "Injury": "Y", "Dead": "Y", "NumInjur": "16", "NumDead": "1", "Responsi": "Atlantic (Standard)", "AOI_ID": "Schuylkill River", "name": null, "Count": null, "Street_D": "Below Passyunk Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.201609163180336, 39.919898335755903 ] } },
-{ "type": "Feature", "properties": { "year": "1892", "Date": "1892", "Descript": "Explosion of leaking oil pipes burns wharves, boats, and threatens gas works; river catches fire.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic (Standard)", "AOI_ID": "Schuylkill River", "name": null, "Count": null, "Street_D": "Below Passyunk Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.201569926321824, 39.920229351442856 ] } },
-{ "type": "Feature", "properties": { "year": "1892", "Date": "1892", "Descript": "River catches fire after continued oil spill from leaking pipes.", "Injury": "Y", "Dead": "Y", "NumInjur": "2", "NumDead": "1", "Responsi": "Atlantic (Standard)", "AOI_ID": "Schuylkill River\n", "name": null, "Count": null, "Street_D": "Below Passyunk Bridge\n" }, "geometry": { "type": "Point", "coordinates": [ -75.201256031453681, 39.919838150913634 ] } },
-{ "type": "Feature", "properties": { "year": "1894", "Date": "1894", "Descript": "Explosion of purifying house", "Injury": "Y", "Dead": "Y", "NumInjur": "3", "NumDead": "1", "Responsi": "PGW (UGI)", "AOI_ID": "PGW at Point Breeze", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.195959055553871, 39.922335777414325 ] } },
-{ "type": "Feature", "properties": { "year": "1898", "Date": "1898", "Descript": "Fire burns paraffin works, wharves, and one vessel.\n", "Injury": "Y", "Dead": "N", "NumInjur": "2", "NumDead": "0", "Responsi": "Philadelphia Refinery (Standard)\n", "AOI_ID": "AOI-8", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.204355743276523, 39.922185320565326 ] } },
-{ "type": "Feature", "properties": { "year": "1904", "Date": "1904", "Descript": "Still (crude oil) catches fire.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic (Standard)", "AOI_ID": "Atlantic at Point Breeze\n", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.204041848408394, 39.924472228990318 ] } },
-{ "type": "Feature", "properties": { "year": "1905", "Date": "1905", "Descript": "Explosion of 2.5-million-cubic-foot gas holder.\n", "Injury": "Y", "Dead": "Y", "NumInjur": "30", "NumDead": "5", "Responsi": "PGW (UGI)", "AOI_ID": "PGW at Point Breeze", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.19391873891098, 39.922877419333247 ] } },
-{ "type": "Feature", "properties": { "year": "1905", "Date": "1905", "Descript": "Fire in coal gas plant.\n", "Injury": "Y", "Dead": "N", "NumInjur": "1", "NumDead": "0", "Responsi": "PGW (UGI)", "AOI_ID": "PGW at Point Breeze", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.198234793347865, 39.922395960061351 ] } },
-{ "type": "Feature", "properties": { "year": "1906", "Date": "1906", "Descript": "Collision of train carrying oil with trolley carrying refinery workers.\n", "Injury": "Y", "Dead": "Y", "NumInjur": "20", "NumDead": "3", "Responsi": "Pennsylvania Railroad", "AOI_ID": "Passyunk", "name": null, "Count": null, "Street_D": "25th Street and Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.188865075253176, 39.921942758028266 ] } },
-{ "type": "Feature", "properties": { "year": "1911", "Date": "1911", "Descript": "Workplace accident (chemical burn).\n", "Injury": "Y", "Dead": "N", "NumInjur": "2", "NumDead": "0", "Responsi": "Harrison Brothers Chemical Works", "AOI_ID": "Grays Ferry Crescent", "name": "35th and Grays Ferry Ave", "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.20166809405859, 39.941625549547531 ] } },
-{ "type": "Feature", "properties": { "year": "1915", "Date": "1915", "Descript": "Lightning-caused explosion of tank (coal tar) spreads to city’s gas works; four-alarm fire.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic Refining; PGW (UGI)", "AOI_ID": "AOI-2 at Point Breeze", "name": "3100 Passyunk Ave", "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.198877558588791, 39.92040255056537 ] } },
-{ "type": "Feature", "properties": { "year": "1916", "Date": "1916", "Descript": "Break in pipe (nitric acid) at chemical works leads to 15-alarm fire.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Harrison Brothers Chemical Works", "AOI_ID": "Grays Ferry Crescent", "name": "35th St and River Rd", "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.201427204538277, 39.941281755837871 ] } },
-{ "type": "Feature", "properties": { "year": "1924", "Date": "1924", "Descript": "Still (crude oil) catches fire.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "Atlantic at Point Breeze", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.198219845101249, 39.921983543174278 ] } },
-{ "type": "Feature", "properties": { "year": "1924", "Date": "1924", "Descript": "Oil-drenched riverbank, site of a dump, catches fire.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic Refining", "AOI_ID": "AOI-10", "name": null, "Count": null, "Street_D": "Passyunk Ave Bridge at west bank\n" }, "geometry": { "type": "Point", "coordinates": [ -75.203035327502434, 39.918684307890288 ] } },
-{ "type": "Feature", "properties": { "year": "1926", "Date": "1926", "Descript": "Explosion of barge carrying gasoline.\n", "Injury": "Y", "Dead": "Y", "NumInjur": "4", "NumDead": "1", "Responsi": "Atlantic Refining", "AOI_ID": "Schuylkill River", "name": "", "Count": null, "Street_D": "Near Passyunk Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.202842708206376, 39.916911518802138 ] } },
-{ "type": "Feature", "properties": { "year": "1941", "Date": "1941", "Descript": "Explosion of tanker ship (crude oil) from Venezuela.\n", "Injury": "Y", "Dead": "N", "NumInjur": "5", "NumDead": "0", "Responsi": "Mene Grande Oil Company (Venezuela)\n", "AOI_ID": "AOI-5", "name": null, "Count": null, "Street_D": "Gulf refinery pier" }, "geometry": { "type": "Point", "coordinates": [ -75.202008024590185, 39.894797043922836 ] } },
-{ "type": "Feature", "properties": { "year": "1961", "Date": "1961", "Descript": "Puncture of pipeline (crude oil) on bed of Schuylkill River near Penrose Ferry Bridge leads of escape of 28,000 barrels.", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic Pipeline; Dredge Philadelphia", "AOI_ID": "Schuylkill River", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.201567643126126, 39.919359579375417 ] } },
-{ "type": "Feature", "properties": { "year": "1964", "Date": "1964", "Descript": "Spill of 700,000 gallons (gasoline) around tank farm and into Schuylkill River.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Humble", "AOI_ID": "AOI-9", "name": null, "Count": null, "Street_D": "Near 70th St and Essington Ave\n" }, "geometry": { "type": "Point", "coordinates": [ -75.223865714414814, 39.90156432520056 ] } },
-{ "type": "Feature", "properties": { "year": "1965", "Date": "1965", "Descript": "Lightning-caused explosion of 100,000-gallon tank (butane).\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "AOI-9", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.221714753426625, 39.901998561888327 ] } },
-{ "type": "Feature", "properties": { "year": "1973", "Date": "1973", "Descript": "Spill of 3,000 barrels (crude oil) into Delaware River from tanker ship William Larimer Mellon.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "Fort Mifflin", "name": null, "Count": null, "Street_D": "4 Hog Island Rd" }, "geometry": { "type": "Point", "coordinates": [ -75.230697134071221, 39.863492383930343 ] } },
-{ "type": "Feature", "properties": { "year": "1973", "Date": "1973", "Descript": "Spill of 200,000 gallons (heating oil) into Schuylkill River from tank farm.\n", "Injury": "Gray's Ferry Oil Company", "Dead": "Gray's Ferry Crescent", "NumInjur": "N", "NumDead": "N", "Responsi": "0", "AOI_ID": "0", "name": null, "Count": null, "Street_D": "31st St and Grays Ferry Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.194905498380123, 39.93927352382007 ] } },
-{ "type": "Feature", "properties": { "year": "1975", "Date": "1975", "Descript": "Spill of 50,000 gallons (crude oil) into Schuylkill River from refinery.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Gulf", "AOI_ID": "Schuylkill River", "name": null, "Count": null, "Street_D": "Between Penrose Ave (Platt) Bridge and Girard Point (I-95) Bridge" }, "geometry": { "type": "Point", "coordinates": [ -75.205147001757439, 39.894602277428859 ] } },
-{ "type": "Feature", "properties": { "year": "1977", "Date": "1977", "Descript": "Explosion of oil barge leads to six-alarm fire on both sides of Schuylkill; river catches fire.\n", "Injury": "Y", "Dead": "Y", "NumInjur": "1", "NumDead": "1", "Responsi": "Interstate Oil Company", "AOI_ID": "AOI-5", "name": "", "Count": null, "Street_D": "Between Penrose Ave (Platt) Bridge and Girard Point (I-95) Bridge\n" }, "geometry": { "type": "Point", "coordinates": [ -75.203953311863003, 39.894308581231776 ] } },
-{ "type": "Feature", "properties": { "year": "1978", "Date": "1978", "Descript": "Spill of 20,000 gallons (heating oil) into Schuylkill River from tank farm.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "National Heating and Power Company", "AOI_ID": "Bartram North", "name": null, "Count": null, "Street_D": "49th St and Schuylkill River\n" }, "geometry": { "type": "Point", "coordinates": [ -75.206629972118265, 39.93732439128577 ] } },
-{ "type": "Feature", "properties": { "year": "1988", "Date": "1988", "Descript": "Malfunction causes release of some five tons of silica alumina catalyst.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Atlantic Refining and Marketing\n", "AOI_ID": "Atlantic at Point Breeze", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.197767521255869, 39.922426415426941 ] } },
-{ "type": "Feature", "properties": { "year": "1991", "Date": "1991", "Descript": "Spill of 1,000 gallons (vacuum gas oil) from barge being loaded.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Chevron; Maritime Transport Company\n", "AOI_ID": "AOI-5", "name": null, "Count": null, "Street_D": "30th St and Penrose Ave\n" }, "geometry": { "type": "Point", "coordinates": [ -75.206366877789023, 39.895739489400498 ] } },
-{ "type": "Feature", "properties": { "year": "1993", "Date": "1993", "Descript": "Hundreds of used tires stacked by oil storage tanks catch fire.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "Atlantic at Point Breeze", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.197475477054837, 39.921858058050546 ] } },
-{ "type": "Feature", "properties": { "year": "1996", "Date": "1996", "Descript": "Heavy snow and ice tips the roofs of two storage tanks (one naphtha, one crude), releasing noxious odors into surrounding neighborhoods for days.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "AOI-1", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.191783491681733, 39.920977013242066 ] } },
-{ "type": "Feature", "properties": { "year": "2000", "Date": "2000", "Descript": "Leak of 192,000 gallons (crude oil) into John Heinz National Wildlife Refuge from ruptured pipeline.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "Tinicum", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.261355090695929, 39.89489821682762 ] } },
-{ "type": "Feature", "properties": { "year": "2000", "Date": "2000", "Descript": "PGW at Point Breeze", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "PGW", "AOI_ID": "PGW at Point Breeze", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.198720542158014, 39.921333037218901 ] } },
-{ "type": "Feature", "properties": { "year": "2006", "Date": "2006", "Descript": "Spill of some 5,000 barrels (crude oil) onto ground at tank farm.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "Sunoco", "AOI_ID": "Atlantic at Point Breeze", "name": null, "Count": null, "Street_D": null }, "geometry": { "type": "Point", "coordinates": [ -75.198012716830576, 39.921270400670743 ] } },
-{ "type": "Feature", "properties": { "year": "2021", "Date": "2021", "Descript": "Unused fuel storage tank being dismantled by welders catches fire.\n", "Injury": "N", "Dead": "N", "NumInjur": "0", "NumDead": "0", "Responsi": "HRP", "AOI_ID": "AOI-4", "name": null, "Count": null, "Street_D": "26th St and Penrose Ave" }, "geometry": { "type": "Point", "coordinates": [ -75.194991915709267, 39.906750502029844 ] } }
-]
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1891",
+        "Date": "1871",
+        "Descript": "Explosion of tank (kerosene).",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1900",
+        "Date": "1900",
+        "Descript": "Explosion of tanks and pipes (benzene).",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "4",
+        "NumDead": "1",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": "29th St and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1906",
+        "Date": "1906",
+        "Descript": "Explosion of tank (oil).",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "4",
+        "NumDead": "1",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": "28th St and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1907",
+        "Date": "1907",
+        "Descript": "Fire in compounding room of chemical building.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "3",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": "Passyunk Ave and League Island Rd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1917",
+        "Date": "1917",
+        "Descript": "Multi-day fire causes widespread damage.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "10",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": "27th St and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1925",
+        "Date": "1925",
+        "Descript": "Explosion of tank (gasoline); fire lasts about two hours.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "3",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": "28th St and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1975",
+        "Date": "1975",
+        "Descript": "Nine-alarm fire lasts about 34 hours.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "6",
+        "NumDead": "0",
+        "Responsi": "ARCO",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": "26th St and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1983",
+        "Date": "1983",
+        "Descript": "Blown valve leads to leakage of tank (butane); Tasker Homes evacuated.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "ARCO",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": "26th St and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1995",
+        "Date": "1995",
+        "Descript": "Small fire (butane and propane).",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Sunoco",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": "Schuylkill Expressway and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "2000",
+        "Date": "2000",
+        "Descript": "Explosion of pipe (gasoline).",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Sunoco",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": "2800 W Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "2000",
+        "Date": "2000",
+        "Descript": "Ignition of flammable vapor.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "5",
+        "NumDead": "0",
+        "Responsi": "Sunoco",
+        "AOI_ID": "AOI-1",
+        "name": "Point Breeze No. 1 Tank Farm",
+        "Count": "1",
+        "Street_D": "2800 W Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19383962751627,
+          39.91667047548673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1875",
+        "Date": "1875",
+        "Descript": "Lightning-caused explosion of tank (benzene) becomes conflagration, causes about $500,000 in property loss, including some 150,000 barrels of oil.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Stewart, Matthews, and Pennington",
+        "AOI_ID": "AOI-2",
+        "name": "Point Breeze Processing Area",
+        "Count": "1",
+        "Street_D": "Magazine Lane and river"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19904461003279,
+          39.91646164808221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1901",
+        "Date": "1901",
+        "Descript": "Lightning-caused explosion of tank (benzene) becomes conflagration, causes about $500,000 in property loss, including some 150,000 barrels of oil.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "100",
+        "NumDead": "5",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "AOI-2",
+        "name": "Point Breeze Processing Area",
+        "Count": "1",
+        "Street_D": "Just south of Passyunk Ave, opposite UGI office"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19904461003279,
+          39.91646164808221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1915",
+        "Date": "1915",
+        "Descript": "Lightning-caused explosion of tank (coal tar) spreads to city\u0019s gas works; four-alarm fire.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard), UGI",
+        "AOI_ID": "AOI-2",
+        "name": "Point Breeze Processing Area",
+        "Count": "1",
+        "Street_D": "3100 Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1999207621661,
+          39.920788958365904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1924",
+        "Date": "1924",
+        "Descript": "Explosion of still (crude oil).",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-2",
+        "name": "Point Breeze Processing Area",
+        "Count": "1",
+        "Street_D": "32nd St and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1990502,
+          39.9180841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1929",
+        "Date": "1929",
+        "Descript": "Explosion of tank (oil).",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-2",
+        "name": "Point Point Breeze Processing Area",
+        "Count": "1",
+        "Street_D": "32nd St and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1990502,
+          39.9180841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1933",
+        "Date": "1933",
+        "Descript": "Explosion of still.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-2",
+        "name": "Point Point Breeze Processing Area",
+        "Count": "1",
+        "Street_D": "Point Breeze Ave near Schuylkill River"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19904461003279,
+          39.91646164808221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1976",
+        "Date": "1976",
+        "Descript": "Five-alarm fire at asphalt storage tank.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "ARCO",
+        "AOI_ID": "AOI-2",
+        "name": "Point Breeze Processing Area",
+        "Count": "1",
+        "Street_D": "Passyunk Avenue and River Rd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19904461003279,
+          39.91646164808221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1988",
+        "Date": "1988",
+        "Descript": "Explosion of tank (waste chemicals).",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "2",
+        "NumDead": "0",
+        "Responsi": "ARCO",
+        "AOI_ID": "AOI-2",
+        "name": "Point Breeze Processing Area",
+        "Count": "1",
+        "Street_D": "Passyunk Ave and Schuykill Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.199215,
+          39.9194206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1922",
+        "Date": "1922",
+        "Descript": "Explosion of tank (gasoline).",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "3",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-4",
+        "name": "No. 4 Tank Farm",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19688638832119,
+          39.90963405742409
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1922",
+        "Date": "1922",
+        "Descript": "Explosion of tank (gasoline).",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "3",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-4",
+        "name": "No. 4 Tank Farm",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19688638832119,
+          39.90963405742409
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1962",
+        "Date": "1962",
+        "Descript": "Explosion of storm sewer tunnel infused with refinery leakage.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "0",
+        "NumDead": "4",
+        "Responsi": "Driscoll Construction Company",
+        "AOI_ID": "AOI-4",
+        "name": "No. 4 Tank Farm",
+        "Count": "1",
+        "Street_D": "26th St and Hartranft St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1929477569675,
+          39.912243028750225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1930",
+        "Date": "1930",
+        "Descript": "Fire in shanty by pier leads to fire in warehouse storing kerosene; loss of some 70,000 barrels of fuel.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "5",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": "100 feet south of Penrose Ave (Platt) Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2101928,
+          39.8980387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1930",
+        "Date": "1930",
+        "Descript": "Three-alarm fire",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1941",
+        "Date": "1941",
+        "Descript": "Explosion of still.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1941",
+        "Date": "1941",
+        "Descript": "Explosion of tanker ship carrying crude oil from Venezuela.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "5",
+        "NumDead": "0",
+        "Responsi": "Mene Grand Oil Company",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": "Gulf Refinery Pier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19841,
+          39.8942171
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1947",
+        "Date": "1947",
+        "Descript": "Explosion of tank (crude oil)",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": "34th St and Penrose Ave (Platt) Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2086507,
+          39.899028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1950",
+        "Date": "1950",
+        "Descript": "Explosion of experimental still.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "0",
+        "NumDead": "1",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1950",
+        "Date": "1950",
+        "Descript": "Explosion of still.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1960",
+        "Date": "1960",
+        "Descript": "Lightning-caused accident destroys twenty tanks; eight-alarm fire lasts at least seven hours, and causes about $1 million in property loss.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1961",
+        "Date": "1961",
+        "Descript": "Explosion of cracking still (crude oil); four-alarm fire lasts 2.5 hours.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1966",
+        "Date": "1966",
+        "Descript": "Explosion of distillation tower (benzene and cumene); five-alarm fire lasts 3.5 hours.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1967",
+        "Date": "1967",
+        "Descript": "Explosion of fuel line in boiler room; four-alarm fire lasts three hours.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1967",
+        "Date": "1967",
+        "Descript": "Explosion of still after failure of heat exchanger; three-alarm fire.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1967",
+        "Date": "1967",
+        "Descript": "Explosion of tank (sulphuric acid); four-alarm fire.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "6",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": "Near Penrose Ave (Platt) Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.209277,
+          39.897998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1969",
+        "Date": "1969",
+        "Descript": "Explosion of pipeline and some 70 drums (naphtha); seven-alarm fire.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1975",
+        "Date": "1975",
+        "Descript": "Failure of pump in distillery (crude oil) that had been inspected days before; six-alarm fire lasts about nine hours.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1976",
+        "Date": "1976",
+        "Descript": "Two-alarm fire at ruptured line (crude oil) leading to cracking unit.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": "30th St and Penrose Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2011016,
+          39.9021739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1977",
+        "Date": "1977",
+        "Descript": "Explosion of oil barge leads to six-alarm fire on both sides of Schuylkill; river on fire.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "1",
+        "NumDead": "1",
+        "Responsi": "Interstate Oil Company",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": "Between Penrose Ave (Platt) Bridge and Girard Point Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2029259,
+          39.8948902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1985",
+        "Date": "1985",
+        "Descript": "Three-alarm fire.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Chevron",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "2000",
+        "Date": "2000",
+        "Descript": "Two-alarm fire in hydrogen unit.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Sunoco",
+        "AOI_ID": "AOI-5",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20436169240361,
+          39.89852264587267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1969",
+        "Date": "1969",
+        "Descript": "Explosion of pipe ignites large still (high-octane gas); five-alarm fire causes about $1 million in property loss.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-6",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": "30th St and Penrose Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1954217325475,
+          39.90474201876747
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1975",
+        "Date": "1975",
+        "Descript": "Explosion of pipes (crude oil); eleven-alarm fire over ten days causes about $11 million in property loss.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "17",
+        "NumDead": "8",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-6",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20872068734117,
+          39.902393799958396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1969",
+        "Date": "1969",
+        "Descript": "Explosion of pipe ignites large still (high-octane gas); five-alarm fire causes about $1 million in property damage.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Chevron",
+        "AOI_ID": "AOI-6",
+        "name": "Girard Point South Tank Field",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20872068734117,
+          39.902393799958396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "2019",
+        "Date": "2019",
+        "Descript": "Ignition of flammable vapor in alkylation unit leads to fire and explosions, and approximately $750 million in property loss.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "5",
+        "NumDead": "0",
+        "Responsi": "Philadelphia Energy",
+        "AOI_ID": "AOI-7",
+        "name": "Girard Point Fuels Area",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20905149196827,
+          39.90548557880836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1879",
+        "Date": "1879",
+        "Descript": "Explosion of still (petroleum).",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Philadelphia Refinery (Standard)",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20218523792977,
+          39.92605205336696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1884",
+        "Date": "1884",
+        "Descript": "Lightning-caused explosion of tank becomes major conflagration.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Philadelphia Refinery (Standard)",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20218523792977,
+          39.92605205336696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1886",
+        "Date": "1886",
+        "Descript": "Explosion of tank.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Philadelphia Refinery (Standard)",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20218523792977,
+          39.92605205336696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1887",
+        "Date": "1887",
+        "Descript": "Lightning-caused explosion of tank (distilled oil)\u0014same tank that attracted lightning in 1884\u0014leads to fire that lasts about five hours.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20218523792977,
+          39.92605205336696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1895",
+        "Date": "1895",
+        "Descript": "Explosion of escaped gas destroys receiving department building.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "3",
+        "NumDead": "0",
+        "Responsi": "Philadelphia Refinery (Standard)",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20218523792977,
+          39.92605205336696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1898",
+        "Date": "1898",
+        "Descript": "Refinery fire.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "2",
+        "NumDead": "0",
+        "Responsi": "Philadelphia Refinery (Standard)",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": "35th St and Mifflin St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20283461363358,
+          39.931029998904606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1900",
+        "Date": "1900",
+        "Descript": "Explosion of tank (kerosense) leads to fire in illuminating gas factory.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "3",
+        "NumDead": "3",
+        "Responsi": "Philadelphia Refinery (Standard)",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20218523792977,
+          39.92605205336696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1901",
+        "Date": "1901",
+        "Descript": "Explosion of stills (hot tar).",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "5",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20218523792977,
+          39.92605205336696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1904",
+        "Date": "1904",
+        "Descript": "Still (crude oil) catches on fire.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20218523792977,
+          39.92605205336696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1912",
+        "Date": "1912",
+        "Descript": "Explosion of still destroying many tanks; four-alarm fire lasts about 15 hours, causes $500,000 in property loss.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "4",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": "35th St and Ritner St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2076188,
+          39.9251593
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1921",
+        "Date": "1921",
+        "Descript": "Explosion of five tanks threatens city gas works; five-alarm fire.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "15",
+        "NumDead": "0",
+        "Responsi": "Philadelphia Refinery (Standard)",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": "35th St and River Rd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2071396,
+          39.9277031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1921",
+        "Date": "1921",
+        "Descript": "Explosion of still (naphta).",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "40",
+        "NumDead": "15",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20218523792977,
+          39.92605205336696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1926",
+        "Date": "1926",
+        "Descript": "Explosion of still (oil) spreads flames to numerous other stills, fire lasts about 4 hours.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "20",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": "32nd St and Ritner St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1998153,
+          39.9242454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1931",
+        "Date": "1931",
+        "Descript": "Explosion of gas stabilization plant causes about $900,000 in property loss.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "9",
+        "NumDead": "8",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": "33rd St and Wolf St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2011812,
+          39.9256276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1913",
+        "Date": "1913",
+        "Descript": "Explosion of still.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "2",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": "34th St and Point Breeze Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2022326,
+          39.9283897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1934",
+        "Date": "1934",
+        "Descript": "Explosion of stills and tanks; the blast, felt in Camden, New Jersey, breaks windows and doors in South Philadelphia",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "7",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": "Jackson St and River Rd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.208563,
+          39.927789
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1931",
+        "Date": "1931",
+        "Descript": "Explosion of gas stabilization plant causes about $900,000 in property loss.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "9",
+        "NumDead": "8",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": "33rd St and Wolf St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2011812,
+          39.9256276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1944",
+        "Date": "1944",
+        "Descript": "Explosion of pumping unit; five-alarm fire.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "2",
+        "NumDead": "4",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": "32nd St and Maiden Ln"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2016822,
+          39.9302705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1969",
+        "Date": "1969",
+        "Descript": "Five-alarm fire destroys three phenol tanks and five extractor towers.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "2",
+        "NumDead": "1",
+        "Responsi": "ARCO",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": "28th St and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1939249,
+          39.9212013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1970",
+        "Date": "1970",
+        "Descript": "Explosion of 13-story catalytic cracking unit leads to conflagration and general destruction, about $900,000 in property loss.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "37",
+        "NumDead": "7",
+        "Responsi": "ARCO",
+        "AOI_ID": "AOI-8",
+        "name": "North Yard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20218523792977,
+          39.92605205336696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1987",
+        "Date": "1987",
+        "Descript": "Lightning-caused explosion and collapse of tank (gasoline); five-alarm fire lasts two days, burns some 25,000 barrels of fuel worth about $2 million.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Chevron",
+        "AOI_ID": "AOI-9",
+        "name": "Schuylkill River Tank Farm",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2243006,
+          39.8978611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1994",
+        "Date": "1994",
+        "Descript": "Three-alarm fire at reformer unit (naphtha and hydrogen) lasts five hours.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Chevron",
+        "AOI_ID": "AOI-9",
+        "name": "Schuylkill River Tank Farm",
+        "Count": "1",
+        "Street_D": "Penrose Ave and Fort Mifflin Rd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2144303,
+          39.8966555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1910",
+        "Date": "1910",
+        "Descript": "Explosion in oil testing room.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "2",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "AOI-2",
+        "name": "Atlantic at Point Breeze",
+        "Count": "1",
+        "Street_D": "Breeze"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19828725656954,
+          39.91797362409588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1973",
+        "Date": "1973",
+        "Descript": "Small fire (gasoline additives).\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "ARCO",
+        "AOI_ID": "AOI-2",
+        "name": "Atlantic at Point Breeze",
+        "Count": "1",
+        "Street_D": "Breeze"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19656792697026,
+          39.91883366882218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": {},
+        "Date": {},
+        "Descript": "Seal failure in a pump at oil-processing still leads to two-alarm fire.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": {},
+        "NumDead": {},
+        "Responsi": "ARCO",
+        "AOI_ID": "AOI-1",
+        "name": "Atlantic at Point Breeze",
+        "Count": {},
+        "Street_D": "Breeze"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1951900135391,
+          39.919040355836856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1983",
+        "Date": "1983",
+        "Descript": "Six-alarm fire.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "ARCO",
+        "AOI_ID": "AOI-2",
+        "name": "Atlantic at Point Breeze",
+        "Count": "1",
+        "Street_D": "Breeze"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19574117891158,
+          39.919729312552434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1983",
+        "Date": {},
+        "Descript": "Explosion of storage tank (naphtha); five-alarm fire\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "ARCO",
+        "AOI_ID": "AOI-1",
+        "name": "Atlantic at Point Breeze",
+        "Count": "1",
+        "Street_D": "Breeze"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19556893973268,
+          39.917834681584594
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1994",
+        "Date": {},
+        "Descript": "Faulty valve in cracking unit releases three yellow clouds of silica alumina coated with oil.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Sunoco",
+        "AOI_ID": "AOI-1",
+        "name": "Atlantic at Point Breeze",
+        "Count": "1",
+        "Street_D": "Breeze"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19439330160037,
+          39.91970184006534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1999",
+        "Date": "1999",
+        "Descript": "Four-alarm fire in sulfur removal unit leads to large release of silica alumina catalyst.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Sunoco",
+        "AOI_ID": "AOI-2",
+        "name": "Atlantic at Point Breeze",
+        "Count": "1",
+        "Street_D": "Breeze"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19618714602437,
+          39.917011073429336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "2000",
+        "Date": "2000",
+        "Descript": "Malfunction causes release of substantial amount of silica alumina catalyst.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Sunoco",
+        "AOI_ID": "AOI-2",
+        "name": "Pt Breeze",
+        "Count": "1",
+        "Street_D": "Breeze"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19663682264182,
+          39.917903577256155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1983",
+        "Date": "1983",
+        "Descript": "",
+        "Injury": "",
+        "Dead": "",
+        "NumInjur": "",
+        "NumDead": "",
+        "Responsi": "",
+        "AOI_ID": "",
+        "name": "",
+        "Count": "",
+        "Street_D": ""
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1974",
+        "Date": "1974",
+        "Descript": "Explosion of tanker ship Elias and loss of about 12,000 barrels of Venezuelan crude oil (burned off rather than spilled).",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "14",
+        "NumDead": "13",
+        "Responsi": "Eletson Maritime, Inc. (Greece)",
+        "AOI_ID": "Fort Mifflin",
+        "name": "Fort Mifflin",
+        "Count": "1",
+        "Street_D": "4 Hog Island Rd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21790106496924,
+          39.869677093422624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1874",
+        "Date": "1874",
+        "Descript": "Lightning-caused explosion of two tanks (kerosene).",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "H. W. Harkins",
+        "AOI_ID": "Gibson Point",
+        "name": "Gibson Point",
+        "Count": "1",
+        "Street_D": "West Bank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2145363,
+          39.92571449735928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1971",
+        "Date": "1971",
+        "Descript": "Explosion of still (gasoline); two-alarm fire lasts 90 minutes.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-5",
+        "name": "Girard",
+        "Count": "1",
+        "Street_D": "Near Penrose Ferry Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20802613902214,
+          39.89677988048893
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1974",
+        "Date": "1974",
+        "Descript": "Two-alarm fire destroys cooling tower.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "Girard",
+        "name": "Girard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2022479,
+          39.89598901659168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1975",
+        "Date": "1975",
+        "Descript": "Explosion of fuel line; six-alarm fire burns for 2.5 hours.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "Girard",
+        "name": "Girard",
+        "Count": "1",
+        "Street_D": "Near Penrose Ferry Bridge, near east bank of river"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2069268,
+          39.896221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1986",
+        "Date": "1986",
+        "Descript": "Explosion of fuel line; six-alarm fire burns for 2.5 hours.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Chevron",
+        "AOI_ID": "Girard",
+        "name": "Girard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19735537036779,
+          39.89840741696563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1986",
+        "Date": "1986",
+        "Descript": "Lightning-caused explosion of tank (gasoline); eight-alarm fire lasts about 31 hours; loss of some 20,000 barrels.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Chevron",
+        "AOI_ID": "Girard",
+        "name": "Girard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20265804639153,
+          39.89934873161551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1993",
+        "Date": "1993",
+        "Descript": "Four-alarm propane fire lasts three hours.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Chevron",
+        "AOI_ID": "Girard",
+        "name": "Girard",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2036751,
+          39.8964844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1885",
+        "Date": "1885",
+        "Descript": "Fire destroys alum and acid buildings at chemical works.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Harrison Brothers",
+        "AOI_ID": "Grays",
+        "name": "Grays",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2009638,
+          39.940558269222876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1887",
+        "Date": "1887",
+        "Descript": "Fire at sulfur acid building at chemical works.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Bowers",
+        "AOI_ID": "Grays",
+        "name": "Grays",
+        "Count": "1",
+        "Street_D": "30th St and Grays Ferry Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19240533077713,
+          39.9397298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1904",
+        "Date": "1904",
+        "Descript": "Fire in asphalt plant.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "3",
+        "NumDead": "0",
+        "Responsi": "Barber Asphalt Company",
+        "AOI_ID": "Grays",
+        "name": "Grays",
+        "Count": "1",
+        "Street_D": "Grays Ferry Ave and east bank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2030941,
+          39.9402608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1916",
+        "Date": "1916",
+        "Descript": "Break in pipe (nitric acid) at chemical works leads to 15-alarm fire.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Harrison Brothers",
+        "AOI_ID": "Grays",
+        "name": "Grays",
+        "Count": "1",
+        "Street_D": "35th St and Grays Ferry Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19929145388565,
+          39.9404953231085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1929",
+        "Date": "1929",
+        "Descript": "Four-alarm fire causes general damage to coal tar distillery.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Barrett Company",
+        "AOI_ID": "Grays",
+        "name": "Grays",
+        "Count": "1",
+        "Street_D": "37th St and Grays Ferry Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20275481976239,
+          39.9395336481747
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1935",
+        "Date": "1935",
+        "Descript": "Explosion of still (coal tar).",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Barrett Company",
+        "AOI_ID": "Grays",
+        "name": "Grays",
+        "Count": "1",
+        "Street_D": "36th St and Grays Ferry Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.202499170415,
+          39.93980748562166
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1938",
+        "Date": "1938",
+        "Descript": "Small coal tar fire",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Barrett Company",
+        "AOI_ID": "Grays",
+        "name": "Grays",
+        "Count": "1",
+        "Street_D": "36th St and Grays Ferry Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20328358408068,
+          39.93977039870612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1938",
+        "Date": "1938",
+        "Descript": "Two-alarm coal tar fire.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Barrett Company",
+        "AOI_ID": "Grays",
+        "name": "Grays",
+        "Count": "1",
+        "Street_D": "36th St and Grays Ferry Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20290865060576,
+          39.94024592408895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1941",
+        "Date": "1941",
+        "Descript": "Explosion of vat in varnish distillery.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "2",
+        "NumDead": "1",
+        "Responsi": "DuPont",
+        "AOI_ID": "Grays",
+        "name": "Grays",
+        "Count": "1",
+        "Street_D": "35th St and Grays Ferry Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1993340068475,
+          39.94034673182511
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1879",
+        "Date": "1879",
+        "Descript": "Explosion of leaking sill (kerosene).",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "2",
+        "NumDead": "1",
+        "Responsi": "Belmont (Standard)",
+        "AOI_ID": "Passyunk",
+        "name": "Passyunk",
+        "Count": "1",
+        "Street_D": "24th St and Miffilin St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18536749051228,
+          39.92870495175334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1881",
+        "Date": "1881",
+        "Descript": "Explosion of tank (benzene) spreads fire throughout refinery.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Belmont (Standard)",
+        "AOI_ID": "Passyunk",
+        "name": "Passyunk",
+        "Count": "1",
+        "Street_D": "24th St and Miffilin St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18586440000001,
+          39.928415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1891",
+        "Date": "1891",
+        "Descript": "Three tanks (oil, benzene) catch on fire, which spreads to buildings",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Belmont (Standard)",
+        "AOI_ID": "Passyunk",
+        "name": "Passyunk",
+        "Count": "1",
+        "Street_D": "24th St and Mifflin St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18633976739719,
+          39.928055634794376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1905",
+        "Date": "1905",
+        "Descript": "Explosion of gas holder.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "50",
+        "NumDead": "5",
+        "Responsi": "Gas Works (UGI)",
+        "AOI_ID": "",
+        "name": "PGW",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19785240000002,
+          39.92289872384848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1894",
+        "Date": "1894",
+        "Descript": "Explosion of purifying house.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "0",
+        "NumDead": "1",
+        "Responsi": "Gas Works (UGI)",
+        "AOI_ID": "",
+        "name": "PGW",
+        "Count": "1",
+        "Street_D": "3101 W Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19964758457189,
+          39.92243085146724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1905",
+        "Date": "1905",
+        "Descript": "Fire in coal gas plant.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Gas Works (UGI)",
+        "AOI_ID": "",
+        "name": "PGW",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2003348122019,
+          39.92178740610096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1925",
+        "Date": "1925",
+        "Descript": "Explosion in engine room of tugboat VanDyke sinks the craft.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "0",
+        "NumDead": "1",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "",
+        "name": "River",
+        "Count": "1",
+        "Street_D": "Atlantic wharves"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2053335298196,
+          39.92162699573074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1926",
+        "Date": "1926",
+        "Descript": "Explosion of barge carrying gasoline.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "4",
+        "NumDead": "1",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "",
+        "name": "River",
+        "Count": "1",
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2021735291392,
+          39.9169328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1890",
+        "Date": "1890",
+        "Descript": "Explosion on tanker ship during loading of refined oil.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "11",
+        "NumDead": "1",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "",
+        "name": "Schuylkill",
+        "Count": "1",
+        "Street_D": "Below Passyunk Bridgge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20174278278408,
+          39.917635596684676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1891",
+        "Date": "1891",
+        "Descript": "Explosion of tanker ship carrying refined oil.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "7",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "",
+        "name": "Schuylkill",
+        "Count": "1",
+        "Street_D": "Below Passyunk Bridge\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20190147880966,
+          39.91743155893751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1892",
+        "Date": "1892",
+        "Descript": "Explosion of leaking oil pipes burns wharves, boats, and threatens gas works; river catches on fire.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "",
+        "name": "Schuylkill",
+        "Count": "1",
+        "Street_D": "Below Passyunk Bridge\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2016520993409,
+          39.917839634431836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1892",
+        "Date": "1892",
+        "Descript": "River catches on fire after continued oil spill from leaking pipes.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "2",
+        "NumDead": "1",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "",
+        "name": "Schuylkill",
+        "Count": "1",
+        "Street_D": "Below Passyunk Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20215085827842,
+          39.917839634431836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1919",
+        "Date": "1919",
+        "Descript": "Tanker ship fire spreads to wharves and neighboring vessels, causes about $1 million in property loss.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "12",
+        "NumDead": "1",
+        "Responsi": "Atlantic Refining; Anglo-American Oil Company",
+        "AOI_ID": "",
+        "name": "Schuylkill\n",
+        "Count": "1",
+        "Street_D": "Below Passyunk Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20169744106249,
+          39.91743155893751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1866",
+        "Date": "1866",
+        "Descript": "Spontaneous combustion at coal sheds consumes nearly 6,000 tons of fuel.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "PGW",
+        "AOI_ID": "PGW at Point Breeze",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1983111352261,
+          39.92177979680462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1870",
+        "Date": "1870",
+        "Descript": "Refinery fire.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Phoenix Refinery (Malcolm Lloyd)",
+        "AOI_ID": "Bartram South",
+        "name": "",
+        "Count": "",
+        "Street_D": "End of 58th St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21603277629085,
+          39.92666447110954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1880",
+        "Date": "1880",
+        "Descript": "Explosion of tank (benzene) spreads fire throughout refinery.",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "Phoenix Refinery (Malcolm Lloyd)",
+        "AOI_ID": "Bartram South",
+        "name": null,
+        "Count": "",
+        "Street_D": "End of 58th St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21529271841368,
+          39.92737792818436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1881",
+        "Date": "1881",
+        "Descript": "Berge carrying kerosene sinks, spilling contents, and covering surface of river from its mouth to Vine Street.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Unknown",
+        "AOI_ID": "Schuylkill River",
+        "name": null,
+        "Count": null,
+        "Street_D": "Christian Street Wharf"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19109641187785,
+          39.943223123967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1882",
+        "Date": "1882",
+        "Descript": "Lightning-caused explosion of tank (kerosene).",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "0",
+        "NumDead": "1",
+        "Responsi": "Phoenix Refinery (Malcolm Lloyd)",
+        "AOI_ID": "Bartram South",
+        "name": null,
+        "Count": null,
+        "Street_D": "End of 58th St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21430011768993,
+          39.926720302819014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1884",
+        "Date": "1884",
+        "Descript": "Fire at kerosene storage warehouse. ",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Phoenix Refinery (Malcolm Lloyd)",
+        "AOI_ID": "Bartram South",
+        "name": null,
+        "Count": null,
+        "Street_D": "End of 58th St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21424112521753,
+          39.92724809281433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1885",
+        "Date": "1885",
+        "Descript": "Fire destroys alum and acid buildings at chemical works.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Harrison Brothers Chemical Works",
+        "AOI_ID": "Grays Ferry Crescent",
+        "name": null,
+        "Count": null,
+        "Street_D": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20114033986847,
+          39.94202297171609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1885",
+        "Date": "1885",
+        "Descript": "Lightning-caused explosion of tank (benzene).",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Phoenix Refinery (Malcolm Lloyd)",
+        "AOI_ID": "Bartram South",
+        "name": null,
+        "Count": null,
+        "Street_D": "End of 58th St"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21482332928505,
+          39.92831756779732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1889",
+        "Date": "1889",
+        "Descript": "British tanker ship Thordisa catches fire while loading kerosene bound for France. ",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard); Continental Oil Shipping Company",
+        "AOI_ID": "Schuylkill River",
+        "name": null,
+        "Count": null,
+        "Street_D": "Atlantic wharves near Passyunk Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20141297888775,
+          39.91845388494185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1890",
+        "Date": "1890",
+        "Descript": "Explosion on tanker ship Hans und Kurt (refined oil) during loading.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "16",
+        "NumDead": "1",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "Schuylkill River",
+        "name": null,
+        "Count": null,
+        "Street_D": "Below Passyunk Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20160916318034,
+          39.9198983357559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1892",
+        "Date": "1892",
+        "Descript": "Explosion of leaking oil pipes burns wharves, boats, and threatens gas works; river catches fire.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "Schuylkill River",
+        "name": null,
+        "Count": null,
+        "Street_D": "Below Passyunk Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20156992632182,
+          39.920229351442856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1892",
+        "Date": "1892",
+        "Descript": "River catches fire after continued oil spill from leaking pipes.",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "2",
+        "NumDead": "1",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "Schuylkill River\n",
+        "name": null,
+        "Count": null,
+        "Street_D": "Below Passyunk Bridge\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20125603145368,
+          39.919838150913634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1894",
+        "Date": "1894",
+        "Descript": "Explosion of purifying house",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "3",
+        "NumDead": "1",
+        "Responsi": "PGW (UGI)",
+        "AOI_ID": "PGW at Point Breeze",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19595905555387,
+          39.922335777414325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1898",
+        "Date": "1898",
+        "Descript": "Fire burns paraffin works, wharves, and one vessel.\n",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "2",
+        "NumDead": "0",
+        "Responsi": "Philadelphia Refinery (Standard)\n",
+        "AOI_ID": "AOI-8",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20435574327652,
+          39.922185320565326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1904",
+        "Date": "1904",
+        "Descript": "Still (crude oil) catches fire.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic (Standard)",
+        "AOI_ID": "Atlantic at Point Breeze\n",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2040418484084,
+          39.92447222899032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1905",
+        "Date": "1905",
+        "Descript": "Explosion of 2.5-million-cubic-foot gas holder.\n",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "30",
+        "NumDead": "5",
+        "Responsi": "PGW (UGI)",
+        "AOI_ID": "PGW at Point Breeze",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19391873891098,
+          39.92287741933325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1905",
+        "Date": "1905",
+        "Descript": "Fire in coal gas plant.\n",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "1",
+        "NumDead": "0",
+        "Responsi": "PGW (UGI)",
+        "AOI_ID": "PGW at Point Breeze",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19823479334786,
+          39.92239596006135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1906",
+        "Date": "1906",
+        "Descript": "Collision of train carrying oil with trolley carrying refinery workers.\n",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "20",
+        "NumDead": "3",
+        "Responsi": "Pennsylvania Railroad",
+        "AOI_ID": "Passyunk",
+        "name": null,
+        "Count": null,
+        "Street_D": "25th Street and Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18886507525318,
+          39.921942758028266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1911",
+        "Date": "1911",
+        "Descript": "Workplace accident (chemical burn).\n",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "2",
+        "NumDead": "0",
+        "Responsi": "Harrison Brothers Chemical Works",
+        "AOI_ID": "Grays Ferry Crescent",
+        "name": "35th and Grays Ferry Ave",
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20166809405859,
+          39.94162554954753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1915",
+        "Date": "1915",
+        "Descript": "Lightning-caused explosion of tank (coal tar) spreads to city’s gas works; four-alarm fire.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining; PGW (UGI)",
+        "AOI_ID": "AOI-2 at Point Breeze",
+        "name": "3100 Passyunk Ave",
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19887755858879,
+          39.92040255056537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1916",
+        "Date": "1916",
+        "Descript": "Break in pipe (nitric acid) at chemical works leads to 15-alarm fire.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Harrison Brothers Chemical Works",
+        "AOI_ID": "Grays Ferry Crescent",
+        "name": "35th St and River Rd",
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20142720453828,
+          39.94128175583787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1924",
+        "Date": "1924",
+        "Descript": "Still (crude oil) catches fire.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "Atlantic at Point Breeze",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19821984510125,
+          39.92198354317428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1924",
+        "Date": "1924",
+        "Descript": "Oil-drenched riverbank, site of a dump, catches fire.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "AOI-10",
+        "name": null,
+        "Count": null,
+        "Street_D": "Passyunk Ave Bridge at west bank\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20303532750243,
+          39.91868430789029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1926",
+        "Date": "1926",
+        "Descript": "Explosion of barge carrying gasoline.\n",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "4",
+        "NumDead": "1",
+        "Responsi": "Atlantic Refining",
+        "AOI_ID": "Schuylkill River",
+        "name": "",
+        "Count": null,
+        "Street_D": "Near Passyunk Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20284270820638,
+          39.91691151880214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1941",
+        "Date": "1941",
+        "Descript": "Explosion of tanker ship (crude oil) from Venezuela.\n",
+        "Injury": "Y",
+        "Dead": "N",
+        "NumInjur": "5",
+        "NumDead": "0",
+        "Responsi": "Mene Grande Oil Company (Venezuela)\n",
+        "AOI_ID": "AOI-5",
+        "name": null,
+        "Count": null,
+        "Street_D": "Gulf refinery pier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20200802459019,
+          39.894797043922836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1961",
+        "Date": "1961",
+        "Descript": "Puncture of pipeline (crude oil) on bed of Schuylkill River near Penrose Ferry Bridge leads of escape of 28,000 barrels.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic Pipeline; Dredge Philadelphia",
+        "AOI_ID": "Schuylkill River",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20156764312613,
+          39.91935957937542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1964",
+        "Date": "1964",
+        "Descript": "Spill of 700,000 gallons (gasoline) around tank farm and into Schuylkill River.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Humble",
+        "AOI_ID": "AOI-9",
+        "name": null,
+        "Count": null,
+        "Street_D": "Near 70th St and Essington Ave\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.22386571441481,
+          39.90156432520056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1965",
+        "Date": "1965",
+        "Descript": "Lightning-caused explosion of 100,000-gallon tank (butane).\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "AOI-9",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.22171475342662,
+          39.90199856188833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1973",
+        "Date": "1973",
+        "Descript": "Spill of 3,000 barrels (crude oil) into Delaware River from tanker ship William Larimer Mellon.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "Fort Mifflin",
+        "name": null,
+        "Count": null,
+        "Street_D": "4 Hog Island Rd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.23069713407122,
+          39.86349238393034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1973",
+        "Date": "1973",
+        "Descript": "Spill of 200,000 gallons (heating oil) into Schuylkill River from tank farm.\n",
+        "Injury": "Gray's Ferry Oil Company",
+        "Dead": "Gray's Ferry Crescent",
+        "NumInjur": "N",
+        "NumDead": "N",
+        "Responsi": "0",
+        "AOI_ID": "0",
+        "name": null,
+        "Count": null,
+        "Street_D": "31st St and Grays Ferry Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19490549838012,
+          39.93927352382007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1975",
+        "Date": "1975",
+        "Descript": "Spill of 50,000 gallons (crude oil) into Schuylkill River from refinery.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Gulf",
+        "AOI_ID": "Schuylkill River",
+        "name": null,
+        "Count": null,
+        "Street_D": "Between Penrose Ave (Platt) Bridge and Girard Point (I-95) Bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20514700175744,
+          39.89460227742886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1977",
+        "Date": "1977",
+        "Descript": "Explosion of oil barge leads to six-alarm fire on both sides of Schuylkill; river catches fire.\n",
+        "Injury": "Y",
+        "Dead": "Y",
+        "NumInjur": "1",
+        "NumDead": "1",
+        "Responsi": "Interstate Oil Company",
+        "AOI_ID": "AOI-5",
+        "name": "",
+        "Count": null,
+        "Street_D": "Between Penrose Ave (Platt) Bridge and Girard Point (I-95) Bridge\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.203953311863,
+          39.894308581231776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1978",
+        "Date": "1978",
+        "Descript": "Spill of 20,000 gallons (heating oil) into Schuylkill River from tank farm.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "National Heating and Power Company",
+        "AOI_ID": "Bartram North",
+        "name": null,
+        "Count": null,
+        "Street_D": "49th St and Schuylkill River\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20662997211826,
+          39.93732439128577
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1988",
+        "Date": "1988",
+        "Descript": "Malfunction causes release of some five tons of silica alumina catalyst.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Atlantic Refining and Marketing\n",
+        "AOI_ID": "Atlantic at Point Breeze",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19776752125587,
+          39.92242641542694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1991",
+        "Date": "1991",
+        "Descript": "Spill of 1,000 gallons (vacuum gas oil) from barge being loaded.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Chevron; Maritime Transport Company\n",
+        "AOI_ID": "AOI-5",
+        "name": null,
+        "Count": null,
+        "Street_D": "30th St and Penrose Ave\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20636687778902,
+          39.8957394894005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1993",
+        "Date": "1993",
+        "Descript": "Hundreds of used tires stacked by oil storage tanks catch fire.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Sunoco",
+        "AOI_ID": "Atlantic at Point Breeze",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19747547705484,
+          39.921858058050546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "1996",
+        "Date": "1996",
+        "Descript": "Heavy snow and ice tips the roofs of two storage tanks (one naphtha, one crude), releasing noxious odors into surrounding neighborhoods for days.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Sunoco",
+        "AOI_ID": "AOI-1",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19178349168173,
+          39.920977013242066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "2000",
+        "Date": "2000",
+        "Descript": "Leak of 192,000 gallons (crude oil) into John Heinz National Wildlife Refuge from ruptured pipeline.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "Sunoco",
+        "AOI_ID": "Tinicum",
+        "name": null,
+        "Count": null,
+        "Street_D": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.26135509069593,
+          39.89489821682762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": 2000,
+        "Date": 2000,
+        "Descript": "PGW at Point Breeze",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": 0,
+        "NumDead": 0,
+        "Responsi": "PGW",
+        "AOI_ID": "PGW at Point Breeze",
+        "name": "null",
+        "Count": "null",
+        "Street_D": "null"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19872054215801,
+          39.9213330372189
+        ]
+      },
+      "id": 144
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": 2006,
+        "Date": 2006,
+        "Descript": "Spill of some 5,000 barrels (crude oil) onto ground at tank farm.",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": 0,
+        "NumDead": 0,
+        "Responsi": "Sunoco",
+        "AOI_ID": "Atlantic at Point Breeze",
+        "name": "null",
+        "Count": "null",
+        "Street_D": "null"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19801271683058,
+          39.92127040067074
+        ]
+      },
+      "id": 145
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "year": "2021",
+        "Date": "2021",
+        "Descript": "Unused fuel storage tank being dismantled by welders catches fire.\n",
+        "Injury": "N",
+        "Dead": "N",
+        "NumInjur": "0",
+        "NumDead": "0",
+        "Responsi": "HRP",
+        "AOI_ID": "AOI-4",
+        "name": null,
+        "Count": null,
+        "Street_D": "26th St and Penrose Ave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19499191570927,
+          39.906750502029844
+        ]
+      }
+    }
+  ]
 }
