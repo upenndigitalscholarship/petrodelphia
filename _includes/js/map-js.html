@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <title>Historical Map Collection</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,28 @@
         }
         #map {
             width: 100%;
-            height: 80vh;
+            height: 75vh;
+        }
+        .aoi-multiline-label {
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .label-container {
+            background: rgba(255,255,255,0);
+            padding: 2px 5px;
+            border-radius: 1px;
+        }
+
+        .aoi-number {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .area-name {
+            font-size: 10px;
+            font-weight: 800;
+            font-style: oblique;
         }
         .leaflet-control {
             background: white;
@@ -20,12 +42,112 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
+
+        /* Right control (top position) */
+        .leaflet-right .leaflet-control {
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        /* Left control (positioned below right control) */
+        .leaflet-left .leaflet-control {
+            margin-right: 50px;
+            margin-top: 10px; /* Adjust this value based on right control's height */
+            clear: both; /* Ensures it stays below */
+        }
+        /*
         .leaflet-left .leaflet-control {
             margin-left: 10px;
         }
         .leaflet-right .leaflet-control {
             margin-right: 10px;
-        }
+        }*/
+        /* Add a scrollbar and limit the size of the basemap control. */
+        
+.scrollable-basemap-control {
+  /* Parent container - NO overflow here */
+  overflow: visible;
+}
+
+.scrollable-basemap-control .leaflet-control-layers-list {
+  max-height: 80vh;
+  overflow-y: scroll;
+  padding-right: 5px; /* Prevent text clipping */
+
+  /* WebKit Scrollbar */
+  &::-webkit-scrollbar {
+    width: 12px;
+    background: rgba(0,0,0,0.05);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 8px;
+    border: 2px solid #f1f1f1;
+  }
+}
+
+/* Firefox fallback */
+/*@supports (scrollbar-width: auto) {
+  .scrollable-basemap-control .leaflet-control-layers-list {
+    scrollbar-width: auto;
+    scrollbar-color: #666 #f1f1f1;
+  }
+}*/
+        
+    
+/* Ensure the control header stays fixed */
+.scrollable-basemap-control .leaflet-control-layers-list {
+    max-height: calc(300px - 40px); /* Account for header */
+    overflow-y: scroll;
+}
+
+/* Keep the expand/collapse button accessible */
+.scrollable-basemap-control .leaflet-control-layers-toggle {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+}
+.aoi-label {
+        color: black;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        /* White text stroke */
+        -webkit-text-stroke: .3px white;
+        text-stroke: .3px white;
+        /* Fallback for browsers that don't support text-stroke */
+        text-shadow: 
+            -.3px -.3px 0 white,
+             0   -.3px 0 white,
+             .3px -.3px 0 white,
+            -.3px  0   0 white,
+             .3px  0   0 white,
+            -.3px  .3px 0 white,
+             0    .3px 0 white,
+             .3px  .3px 0 white;
+    }
+.aoi-label-name {
+        color: black;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        text-style: oblique;
+        /* White text stroke */
+        -webkit-text-stroke: .5px white;
+        text-stroke: .5px white;
+        /* Fallback for browsers that don't support text-stroke */
+        text-shadow: 
+            -.5px -.5px 0 white,
+             0   -.5px 0 white,
+             .5px -.5px 0 white,
+            -.5px  0   0 white,
+             .5px  0   0 white,
+            -.5px  .5px 0 white,
+             0    .5px 0 white,
+             .5px  .5px 0 white;
+    }
+
     </style>
 </head>
 <body>
@@ -33,9 +155,9 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // Initialize the map centered on Philadelphia
-        const map = L.map('map').setView([39.9526, -75.1652], 12);
-        //create a top pane for the AOI labels
+        // Initialize the map on the lower schuylkill river
+        const map = L.map('map').setView([39.917359, -75.204920], 14);
+        //create a top pane for the AOI labels,
         map.createPane('topPane').style.zIndex = 650;
 
         const historicalMap = L.tileLayer('https://mapwarper.net/maps/tile/94844/{z}/{x}/{y}.png', {
@@ -65,16 +187,13 @@
             }), year: 1920 },
             { name: "Aerial 1928", layer: L.tileLayer('https://mapwarper.net/maps/tile/88306/{z}/{x}/{y}.png'), year: 1928 },
             { name: "HOLC 1937", layer: L.tileLayer('https://mapwarper.net/maps/tile/90758/{z}/{x}/{y}.png'), year: 1937 },
-            { name: "Landuse 1942", layer: L.tileLayer('https://mapwarper.net/maps/tile/94403/{z}/{x}/{y}.png'), year: 1942 },
+            { name: "Land use 1942", layer: L.tileLayer('https://mapwarper.net/maps/tile/94403/{z}/{x}/{y}.png'), year: 1942 },
             { name: "USGS 1949", layer: L.tileLayer('https://mapwarper.net/maps/tile/88564/{z}/{x}/{y}.png', {
                 attribution: '1949 USGS Map courtesy of USGS'
             }), year: 1949 },
             { name: "Aerial 1959", layer: L.tileLayer('https://mapwarper.net/maps/tile/88304/{z}/{x}/{y}.png'), year: 1959 },
-            { name: "Landuse 1962", layer: L.tileLayer('https://mapwarper.net/maps/tile/94678/{z}/{x}/{y}.png'), year: 1962 },
+            { name: "Land use 1962", layer: L.tileLayer('https://mapwarper.net/maps/tile/94678/{z}/{x}/{y}.png'), year: 1962 },
             { name: "Aerial 1965", layer: L.tileLayer('https://mapwarper.net/maps/tile/88299/{z}/{x}/{y}.png'), year: 1965 },
-            { name: "Petro 1965", layer: L.tileLayer('https://mapwarper.net/maps/tile/83445/{z}/{x}/{y}.png', {
-                maxZoom: 19
-            }), year: 1965 },
             { name: "USGS 1967", layer: L.tileLayer('https://mapwarper.net/maps/tile/88567/{z}/{x}/{y}.png', {
                 attribution: '1967 USGS Map courtesy of USGS'
             }), year: 1967 },
@@ -85,7 +204,7 @@
             { name: "USGS 1995", layer: L.tileLayer('https://mapwarper.net/maps/tile/88568/{z}/{x}/{y}.png', {
                 attribution: '1995 USGS Map courtesy of USGS'
             }), year: 1995 },
-            { name: "Philadelphia 2019 Imagery", layer: L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
+            { name: "Satellite 2019", layer: L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
                 layers: '1',
                 format: 'image/png',
                 transparent: true
@@ -103,10 +222,10 @@
             { name: "ESRI Imagery", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}') },
             { name: "Google Satellite", layer: L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}') },
             { name: "ESRI NatGeo", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}') },
-            { name: "Army Plume 1", layer: L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png') },
-            { name: "Army Plume 2", layer: L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png') },
-            { name: "Army Plume 3", layer: L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png') },
-            { name: "Army Plume 4", layer: L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png') },
+            { name: "LNAPL Plume 1", layer: L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png') },
+            { name: "LNAPL Plume 2", layer: L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png') },
+            { name: "LNAPL Plume 3", layer: L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png') },
+            { name: "LNAPL Plume 4", layer: L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png') },
         ];
 
         // Sort basemaps by year (those without years at the bottom)
@@ -130,7 +249,10 @@
         const overlays = {
             "AOI Boundaries": L.layerGroup(),
             "FEMA 100-year flood zone": L.layerGroup(),
-            "Census tracts predominantly zoned for industrial use, 2025": L.layerGroup()
+            "Census tracts predominantly zoned for industrial use, 2025": L.layerGroup(),
+            "ZIP codes, 2025": L.layerGroup(),
+            "Keystone Opprotunity Zones": L.layerGroup(),
+            "Census tracts predominantly African American": L.layerGroup(),
         };
 
         // Function to load GeoJSON data
@@ -161,56 +283,271 @@
                    );
                 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/FEMA_100yr_floodplain.geojson', 
-                   overlays["FEMA 100-year flood zone"], {color: 'blue', radius: 1, fillOpacity: 0.3});
+                   overlays["FEMA 100-year flood zone"], {color: 'blue', radius: .5, fillOpacity: 0.1});
         
-        loadGeoJSON('https://opendata.arcgis.com/datasets/b54ec5210cee41c3a884c9086f7af1be_0.geojson', 
-                   overlays["Census tracts predominantly zoned for industrial use, 2025"], {color: 'red', weight: 2});
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.geojson', 
+                   overlays["Census tracts predominantly zoned for industrial use, 2025"], {color: 'gray', weight: 2});
+        
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
+                    overlays["ZIP codes, 2025"], {color: 'black', weight:1});
 
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/KOZ_parcels.geojson',
+                    overlays["Keystone Opprotunity Zones"], {color: 'black', weight:1});
+
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/1960_predominantly_AfAm.geojson',
+                    overlays["Census tracts predominantly African American"], {color: 'black', weight:1});
+        
         // Create overlay control (left side)
-            const aoiLabel = L.marker([39.9210070, -75.1928358], {
+        const aoiLabels = L.layerGroup();
+        //labels with only area names, no AOI label
+        const Belmont = L.marker([39.921308, -75.192636], {
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label-name',/*not an actual AOI label, we are just using inherited properties for area-name
+            html: '<div style="position:relative; top:-10px;">AOI-1</div>', // Adjust vertical position
+            iconSize: [40, 20]*/
+                
+            html: `<div class="label-container">
+            <div class="area-name">Belmont Terminal</div>
+            </div>`,
+        iconSize: [100, 10]  
+            
+        }),
+        interactive: false
+        });
+        
+        const PGW = L.marker([39.921957, -75.197372], {//-75.197626,39.921957
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label-name',/*not an actual AOI label, we are just using inherited properties for area-name
+            html: '<div style="position:relative; top:-10px;">AOI-1</div>', // Adjust vertical position
+            iconSize: [40, 20]*/
+                
+            html: `<div class="label-container">
+            <div class="area-name">PGW Property</div>
+            </div>`,
+        iconSize: [100, 20]  
+            
+        }),
+        interactive: false
+        });
+
+        const aoi1 = L.marker([39.915600, -75.193862], {
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label',/*
+            html: '<div style="position:relative; top:-10px;">AOI-1</div>', // Adjust vertical position
+            iconSize: [40, 20]*/
+                
+            html: `<div class="label-container">
+            <div class="aoi-number">AOI-1</div>
+            <div class="area-name">Point Breeze tank farms <br>1 & 2</div>
+            </div>`,
+        iconSize: [60, 120]  
+            
+        }),
+        interactive: false
+        });
+        
+        const aoi2 = L.marker([39.915279, -75.199142], {  // Fixed coordinate order-75.199142,39.915279
         pane: 'labelPane',
         icon: L.divIcon({
             className: 'aoi-label',
-            html: '<div>AOI-1</div>',
-            iconSize: [40, 20]  // Width, height
+            
+            html: `<div class="label-container">
+            <div class="aoi-number">AOI-2</div>
+            <div class="area-name">Point Breeze processing area</div>
+            </div>`,
+        iconSize: [60, 120]  
         }),
-        interactive: false  // Makes the label non-clickable
-    })//.addTo(map);
-        
+        interactive: false
+        });
 
+        const aoi3 = L.marker([39.909995, -75.202350], {  // Fixed coordinate order-75.202350,39.909995
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label',
+            html: `<div class="label-container">
+            <div class="aoi-number">AOI-3</div>
+            <div class="area-name">Point Breeze impoundment area</div>
+            </div>`,
+        iconSize: [60, 120]  
+        }),
+        interactive: false
+        });
+        
+        const aoi4 = L.marker([39.907964, -75.197192], {  // Fixed coordinate order-75.202350,39.909995
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label',
+            html: `<div class="label-container">
+            <div class="aoi-number">AOI-4</div>
+            <div class="area-name">Point Breeze tank farm 4</div>
+            </div>`,
+        iconSize: [60, 120]  
+        }),
+        interactive: false
+        });
+
+        const aoi5 = L.marker([39.898970, -75.204967], {  // Fixed coordinate order
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label',
+            html: `<div class="label-container">
+            <div class="aoi-number">AOI-5</div>
+            <div class="area-name">Girard Point, south tank field</div>
+            </div>`,
+        iconSize: [100, 120]  
+        }),
+        interactive: false
+        });
+        
+        const aoi6 = L.marker([39.902663, -75.208978], {  // Fixed coordinate order
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label',
+            html: `<div class="label-container">
+            <div class="aoi-number">AOI-6</div>
+            <div class="area-name">Girard Point, chemicals processing area</div>
+            </div>`,
+        iconSize: [100, 120]  
+        }),
+        interactive: false
+        });
+        
+        const aoi7 = L.marker([39.907680, -75.209039], {  // Fixed coordinate order
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label',
+            html: `<div class="label-container">
+            <div class="aoi-number">AOI-7</div>
+            <div class="area-name">Girard Point, fuels processing area</div>
+            </div>`,
+        iconSize: [100, 120]  
+        }),
+        interactive: false
+        });
+
+        const aoi8 = L.marker([39.926270, -75.202180], {  // Fixed coordinate order
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label',
+            html: `<div class="label-container">
+            <div class="aoi-number">AOI-9</div>
+            <div class="area-name">Point Breeze, North Yard</div>
+            </div>`,
+        iconSize: [200, 20]  
+        }),
+        interactive: false
+        });
+
+        const aoi9 = L.marker([39.900134, -75.220973], {  // Fixed coordinate order
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label',
+            html: `<div class="label-container">
+            <div class="aoi-number">AOI-9</div>
+            <div class="area-name">Schuylkill River tank farm</div>
+            </div>`,
+        iconSize: [200, 20]  
+        }),
+        interactive: false
+        });
+
+        const aoi10 = L.marker([39.917825, -75.205526], {  // Fixed coordinate order
+        pane: 'labelPane',
+        icon: L.divIcon({
+            className: 'aoi-label',
+            html: `<div class="label-container">
+            <div class="aoi-number">AOI-10</div>
+            <div class="area-name">Point Breeze, west yard</div>
+            </div>`,
+        iconSize: [200, 20]  
+        }),
+        interactive: false
+        });
+
+        //add the labels to the map
+        aoiLabels.addLayer(PGW);
+        aoiLabels.addLayer(Belmont);
+        aoiLabels.addLayer(aoi1);
+        aoiLabels.addLayer(aoi2);
+        aoiLabels.addLayer(aoi3);
+        aoiLabels.addLayer(aoi4);
+        aoiLabels.addLayer(aoi5);
+        aoiLabels.addLayer(aoi6);
+        aoiLabels.addLayer(aoi7);
+        aoiLabels.addLayer(aoi8);
+        aoiLabels.addLayer(aoi9);
+        aoiLabels.addLayer(aoi10);
+                
         overlays["AOI Boundaries"].on('add', function() {
-            if (!map.hasLayer(aoiLabel)) {
-                aoiLabel.addTo(map);
+            if (!map.hasLayer(aoiLabels)) {
+                aoiLabels.addTo(map);
                 // More aggressive refresh approach
                 setTimeout(() => {
                     map.invalidateSize({animate: false});
-                    aoiLabel._reset();
-                    aoiLabel.redraw();
+                    aoiLabels._reset();
+                    aoiLabels.redraw();
                     map.fire('moveend');
                 }, 300);
             }
         });
         
         overlays["AOI Boundaries"].on('remove', function() {
-            if (map.hasLayer(aoiLabel)) {
-                aoiLabel.removeFrom(map);
+            if (map.hasLayer(aoiLabels)) {
+                aoiLabels.removeFrom(map);
             }
         });
         
     map.createPane('labelPane').style.zIndex = 700; // Higher than tile layers
     
     // Create the label
-
+        // Create basemap control (right side)        
         const overlayControl = L.control.layers(null, overlays, {
-            collapsed: false,
-            position: 'topleft'
-        }).addTo(map);
-
-        // Create basemap control (right side)
-        const basemapControl = L.control.layers(baseLayers, null, {
             collapsed: false,
             position: 'topright'
         }).addTo(map);
+        
+        const basemapControl = L.control.layers(baseLayers, null, {
+            collapsed: false,
+            position: 'topright',
+            autoZIndex: false // Prevents z-index shuffling
+        }).addTo(map);
+        const basemapContainer = basemapControl.getContainer();
+        L.DomUtil.addClass(basemapContainer, 'scrollable-basemap-control');   
+        
+        function addControlLabel(control, title) {
+            const container = control.getContainer();
+            const label = L.DomUtil.create('h4', 'control-label', container);
+            label.textContent = title;
+            L.DomUtil.addClass(container, 'labeled-control');
+    
+    // Move the label to be the first child of the container
+            container.insertBefore(label, container.firstChild);
+    
+        return container;
+        }
+// 
+        addControlLabel(overlayControl, 'Overlays');
+        addControlLabel(basemapControl, 'Base Maps');
+
+// Add corresponding CSS (move to top eventually)
+const labelStyle = document.createElement('style');
+labelStyle.textContent = `
+    .labeled-control {
+        margin-bottom: 20px;
+    }
+    
+    .control-label {
+        margin: 0 0 8px 0;
+        font-size: 14px;
+        font-weight: bold;
+        color: #444;
+    }
+`;
+document.head.appendChild(labelStyle);
+
     </script>
 </body>
 </html>
