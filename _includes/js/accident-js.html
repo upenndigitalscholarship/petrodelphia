@@ -42,18 +42,13 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
     
-    <link rel="stylesheet" href="Control.FullScreen.css" />
-    <script src="Control.FullScreen.js"></script>
-    
     <script>
         // Initialize map with a view that will fit the GeoJSON data
         const map = L.map('map').setView([39.918624, -75.197141], 13); // Centered on Philadelphia-75.197141,39.918624
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-        
-        map.addControl(new L.Control.Fullscreen({ position: 'topleft' })); // Example: position the button at the top left
-        
+                
         // Create a layer group for our points
         const pointsLayer = L.layerGroup().addTo(map);
 
