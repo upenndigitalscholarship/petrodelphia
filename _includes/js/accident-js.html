@@ -13,7 +13,7 @@
         .slider-container {
             position: absolute;
             top: 400px;
-            left: 400px;
+            left: 380px;
             z-index: 1000;
             background: white;
             padding: 15px;
@@ -32,7 +32,7 @@
 <body>
     <div id="map"></div>
     <div class="slider-container">
-        <center><h3>Filter by Year</h3></center>
+        <h3>Filter by Year</h3>
         <div id="year-slider"></div>
         <div id="year-value">Year range: <span id="min-year"></span> - <span id="max-year"></span>
             <span id="loading" class="loading">Loading data...</span>
@@ -42,18 +42,23 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
     
+    <link rel="stylesheet" href="Control.FullScreen.css" />
+    <script src="Control.FullScreen.js"></script>
+    
     <script>
         // Initialize map with a view that will fit the GeoJSON data
-        const map = L.map('map').setView([39.9526, -75.1652], 11); // Centered on Philadelphia
+        const map = L.map('map').setView([39.918624, -75.197141], 13); // Centered on Philadelphia-75.197141,39.918624
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-
+        
+        map.addControl(new L.Control.Fullscreen({ position: 'topleft' })); // Example: position the button at the top left
+        
         // Create a layer group for our points
         const pointsLayer = L.layerGroup().addTo(map);
 
         // Fetch the external GeoJSON
-        fetch('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/main/_includes/js/AOIgeoData.geojson')
+        fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
             .then(response => response.json())
             .then(data => {
                 document.getElementById('loading').style.display = 'none';
