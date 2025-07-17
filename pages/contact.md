@@ -5,7 +5,7 @@ permalink: /contact.html
 ---
 <div class="contactForm">
 <h2>Contact Us</h2>
- <form action="mailto:libraryrdds@pobox.upenn.edu?cc=jfarm@upenn.edu&subject=Petrosylvania Site Contact" method="get" enctype="text/plain">
+ <form action="mailto:libraryrdds@pobox.upenn.edu?cc=jfarm@upenn.edu, &subject=Petrosylvania" method="get" enctype="text/plain">
 
     Name:<br>
 
@@ -24,3 +24,4 @@ permalink: /contact.html
   </form>
 
 
+<a href="mailto:email@example.com?cc=secondemail@example.com, anotheremail@example.com, &bcc=lastemail@example.com&subject=Mail from our Website&body=Some body text here">Send Email</a>
