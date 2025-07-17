@@ -4,6 +4,8 @@
     <title>Accident Sites Year Filter</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.css" />
+    
     <style>
         #map { height: 600px; }
         #year-slider {
@@ -26,6 +28,16 @@
         }
         .leaflet-popup-content {
             max-width: 300px;
+        }
+        .custom-fullscreen {
+            background: white;
+            padding: 5px;
+            border-radius: 4px;
+            border: 2px solid rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        .custom-fullscreen:hover {
+            background: #f4f4f4;
         }
     </style>
 </head>
@@ -54,7 +66,12 @@
         
         //Reinsert the Leaflet text to the top left of the screen, other attribution should show up here too
         map.attributionControl.setPrefix(false)
-        
+        map.addControl(new L.Control.Fullscreen({
+            position: 'topleft', // Position in the top-left corner
+            title: 'View Fullscreen', // Tooltip text
+            titleCancel: 'Exit Fullscreen' // Tooltip text when in fullscreen
+        }));
+
         // Create a layer group for our points
         const pointsLayer = L.layerGroup().addTo(map);
 
