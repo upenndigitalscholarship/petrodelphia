@@ -24,7 +24,7 @@ permalink: /contact.html
   </form>
   -->
   
-  <form action="mailto:email1@email.com?cc=email2@email.com&subject=Feedback%20form" method="GET" enctype="text/plain">
+ <!--- <form action="mailto:email1@email.com?cc=email2@email.com&subject=Feedback%20form" method="GET" enctype="text/plain">
 
   <!-- Label and input field for the user's name -->
   <label for="name">Name:</label><br>
@@ -39,6 +39,27 @@ permalink: /contact.html
   <textarea id="feedback" name="Feedback" rows="4" cols="50"></textarea><br><br>
 
   <!-- Submit button that triggers the mailto link -->
+  <input type="submit" value="Send Feedback">
+
+</form>
+-->
+
+<!-- This form opens the user's email client with pre-filled subject and cc -->
+<form action="mailto:email1@email.com?cc=email2@email.com&subject=Feedback%20form" method="GET" enctype="text/plain">
+
+  <!-- User's Name input -->
+  <label for="name">Name17:</label><br>
+  <input type="text" id="name" name="Name"><br><br>
+
+  <!-- User's Email input -->
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="Email"><br><br>
+
+  <!-- Feedback textarea -->
+  <label for="feedback">Feedback:</label><br>
+  <textarea id="feedback" name="Feedback" rows="4" cols="50"></textarea><br><br>
+
+  <!-- Submit button -->
   <input type="submit" value="Send Feedback">
 
 </form>
