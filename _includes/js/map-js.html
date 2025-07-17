@@ -14,9 +14,9 @@
         }
         #map {
             width: 100%;
-            height: 75vh;
+            height: 90vh;
         }
-         .leaflet-control-attribution svg {
+         .leaflet-control-attribution svg { /* Hides Ukraine flag, attempt to hide attribution */
              width:0
          }
         .aoi-multiline-label {
@@ -272,6 +272,7 @@
             "1980 census >50% Black": L.layerGroup(),
             "2000 census >50% Black": L.layerGroup(),
             "2020 census >50% Black": L.layerGroup(),
+            "LNAPL Plume 4": L.layerGroup(),
 
         };
         
