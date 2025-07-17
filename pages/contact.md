@@ -5,13 +5,13 @@ permalink: /contact.html
 ---
 <div class="contactForm">
 <h2>Contact Us</h2>
- <form action="mailto:mhunter2@upenn.edu" method="get" enctype="text/plain">
+ <form action="mailto:libraryrdds@pobox.upenn.edu?cc=jaredfarmer@sas.upenn.edu,&subject=Petrosylvania Site Contact" method="get" enctype="text/plain">
 
-    Subject:<br>
+    Your Name:<br>
 
-    <input type="text" name="subject" placeholder="Your Name"><br>
+    <input type="text" name="Name" placeholder="Your Name"><br>
 
-    Email:<br>
+    Your Email:<br>
 
     <input type="email" name="email" placeholder="Your Email"><br>
 
