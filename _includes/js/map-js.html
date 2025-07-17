@@ -279,7 +279,7 @@
             "LNAPL Plume 4": L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png'),
             "ZIP codes, 2025": L.layerGroup(),
             "Keystone Opprotunity Zones": L.layerGroup(),
-            "Census tracts predominantly zoned for industrial use, 2025": L.layerGroup(),
+            "2020 tracts >50% industrial, 2025": L.layerGroup(),
             "1960 census >50% Black": L.layerGroup(),
             "1980 census >50% Black": L.layerGroup(),
             "1980 census >25% under the poverty line": L.layerGroup(),
@@ -320,7 +320,7 @@
                    overlays["FEMA 1% annual chance of flooding, 2020"], {color: 'blue', radius: .5, fillOpacity: 0.1});
         
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.geojson', 
-                   overlays["Census tracts predominantly zoned for industrial use, 2025"], {color: 'gray', weight: 2});
+                   overlays["2020 tracts >50% industrial, 2025"], {color: 'gray', weight: 2});
         
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
                     overlays["ZIP codes, 2025"], {color: 'black', weight:1});
