@@ -258,10 +258,10 @@
             "Census tracts predominantly zoned for industrial use, 2025": L.layerGroup(),
             "ZIP codes, 2025": L.layerGroup(),
             "Keystone Opprotunity Zones": L.layerGroup(),
-            "1960 census tracts predominantly African American": L.layerGroup(),
-            "1980 census tracts predominantly African American": L.layerGroup(),
-            "2000 census tracts predominantly African American": L.layerGroup(),
-            "2020 census tracts predominantly African American": L.layerGroup(),
+            "1960 census >50% Black": L.layerGroup(),
+            "1980 census >50% Black": L.layerGroup(),
+            "2000 census >50% Black": L.layerGroup(),
+            "2020 census >50% Black": L.layerGroup(),
 
         };
         
@@ -305,16 +305,16 @@
                     overlays["Keystone Opprotunity Zones"], {color: 'black', weight:1});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/1960_predominantly_AfAm.geojson',
-                    overlays["1960 census tracts predominantly African American"], {color: 'black', weight:1});
+                    overlays["1960 census >50% Black"], {color: 'black', weight:1});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/1980_predominant_afam.geojson',
-                    overlays["1980 census tracts predominantly African American"], {color: 'black', weight:1});
+                    overlays["1980 census >50% Black"], {color: 'black', weight:1});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/predominantAfam_2000.geojson',
-                    overlays["2000 census tracts predominantly African American"], {color: 'black', weight:1});
+                    overlays["2000 census >50% Black"], {color: 'black', weight:1});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/2020_pct_Afam.geojson',
-                    overlays["2020 census tracts predominantly African American"], {color: 'black', weight:1});
+                    overlays["2020 census >50% Black"], {color: 'black', weight:1});
         
         // Create overlay control (left side)
         const aoiLabels = L.layerGroup();
