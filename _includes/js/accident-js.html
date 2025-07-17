@@ -40,7 +40,10 @@
     </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- NoUI control JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+    <!-- Fullscreen control JS (optional) -->
+    <script src="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.js"></script>
     
     <script>
         // Initialize map with a view that will fit the GeoJSON data
@@ -48,9 +51,15 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-
+        
+        //Reinsert the Leaflet text to the top left of the screen, other attribution should show up here too
         map.attributionControl.setPrefix(false)
         
+        map.addControl(new L.Control.Fullscreen({ //fullscreen button, optional
+            position: 'topleft', // Position in the top-left corner
+            title: 'View Fullscreen', // Tooltip text for screenreaders
+            titleCancel: 'Exit Fullscreen' // Tooltip text when in fullscreen
+        }));
         // Create a layer group for our points
         const pointsLayer = L.layerGroup().addTo(map);
 
