@@ -66,12 +66,13 @@
         
         //Reinsert the Leaflet text to the top left of the screen, other attribution should show up here too
         map.attributionControl.setPrefix(false)
+        /*
         map.addControl(new L.Control.Fullscreen({
             position: 'topleft', // Position in the top-left corner
             title: 'View Fullscreen', // Tooltip text
             titleCancel: 'Exit Fullscreen' // Tooltip text when in fullscreen
         }));
-
+*/
         // Create a layer group for our points
         const pointsLayer = L.layerGroup().addTo(map);
 
