@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" /> <!-- For the fullscreen effekt (optional) -->
     <style>
         body {
             margin: 0;
@@ -157,12 +158,21 @@
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
+
     <script>
         // Initialize the map on the lower schuylkill river
         const map = L.map('map',{attributionControl: false}).setView([39.917359, -75.204920], 14);
         //create a top pane for the AOI labels,
         L.control.attribution({position: 'bottomleft'}).addTo(map);
-
+        
+        map.addControl(new L.Control.FullScreen({ // Add the button for fullscreen
+            position: 'topleft',
+            title: {
+                'false': 'View Fullscreen',
+                'true': 'Exit Fullscreen'
+            }
+        }));
 
         map.createPane('topPane').style.zIndex = 650;
         //map.attributionControl.setPrefix(false)
