@@ -5,7 +5,7 @@ permalink: /contact.html
 ---
 <div class="contactForm">
 <h2>Contact Us</h2>
- <form action="mailto:libraryrdds@pobox.upenn.edu?cc=jfarm@upenn.edu &subject=Petrosylvania" method="get" enctype="text/plain">
+ <form action= "mailto:libraryrdds@pobox.upenn.edu?subject=Petrosylvania" method="get" enctype="text/plain">
 
     Name:<br>
 
