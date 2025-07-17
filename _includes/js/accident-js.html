@@ -75,14 +75,6 @@
                 'true': 'Exit Fullscreen'
             }
         }));
-        
-        map.on('enterFullscreen', function() {
-            document.querySelector('.slider-container').style.zIndex = '10000';
-        });
-
-        map.on('exitFullscreen', function() {
-            document.querySelector('.slider-container').style.zIndex = '1000';
-        });
 
         // Create a layer group for our points
         const pointsLayer = L.layerGroup().addTo(map);
