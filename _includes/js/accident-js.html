@@ -187,23 +187,22 @@
             // Function to create popup content
             function createPopupContent(feature) {
                 const props = feature.properties;
-                let content = `<b>${props.name || 'Unnamed Location'}</b><br>`;
-                content += `<small>AOI ID: ${props.AOI_ID}</small><hr>`;
-                
-                content += `<b>Date:</b> ${props.Date} (Year: ${props.year})<br>`;
+                let content = `<b>Date:</b> ${props.Date} (Year: ${props.year})<br>`;
                 content += `<b>Description:</b> ${props.Descript || 'No description'}<br>`;
-                
-                // Add casualty information
-                if (props.Dead === "Y" || props.NumDead > 0) {
-                    content += `<b style="color:red">Fatalities:</b> ${props.NumDead || 'Yes'}<br>`;
-                }
-                if (props.Injury === "Y" || props.NumInjur > 0) {
-                    content += `<b style="color:orange">Injuries:</b> ${props.NumInjur || 'Yes'}<br>`;
-                }
-                
-                content += `<b>Responsible Party:</b> ${props.Responsi || 'Unknown'}<br>`;
                 if (props.Street_D) {
                     content += `<b>Street Address:</b> ${props.Street_D}<br>`;
+                }
+                content += `<b>Responsible Party:</b> ${props.Responsi || 'Unknown'}<br>`;
+
+                //content += `<b>${props.name || 'Unnamed Location'}</b><br>`;
+                //content += `<small>AOI ID: ${props.AOI_ID}</small><hr>`;
+                
+                //content += `<b>Date:</b> ${props.Date} (Year: ${props.year})<br>`;
+                if (props.Injury === "Y" || props.NumInjur > 0) {
+                    content += `<b style="color:orange">Non-fatal injured:</b> ${props.NumInjur || 'Yes'}<br>`;
+                }                // Add casualty information
+                if (props.Dead === "Y" || props.NumDead > 0) {
+                    content += `<b style="color:red">Fatalities:</b> ${props.NumDead || 'Yes'}<br>`;
                 }
                 
                 return content;
