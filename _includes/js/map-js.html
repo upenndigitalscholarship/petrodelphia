@@ -271,9 +271,8 @@
             "1960 census >50% Black": L.layerGroup(),
             "1980 census >50% Black": L.layerGroup(),
             "2000 census >50% Black": L.layerGroup(),
+            "2000 census >25% under the poverty line": L.layerGroup(),
             "2020 census >50% Black": L.layerGroup(),
-            "LNAPL Plume 4": L.layerGroup(),
-
         };
         
         // Function to load GeoJSON data
@@ -323,10 +322,12 @@
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/predominantAfam_2000.geojson',
                     overlays["2000 census >50% Black"], {color: 'black', weight:1});
-
+        
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/2000_%3E25pctPoverty.geojson',
+                    overlays["2000 census >25% under the poverty line"], {color: 'green', weight:1});
+        
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/2020_pct_Afam.geojson',
                     overlays["2020 census >50% Black"], {color: 'black', weight:1});
-        
         // Create overlay control (left side)
         const aoiLabels = L.layerGroup();
         //labels with only area names, no AOI label
