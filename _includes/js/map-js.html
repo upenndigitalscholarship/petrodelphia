@@ -282,9 +282,11 @@
             "Census tracts predominantly zoned for industrial use, 2025": L.layerGroup(),
             "1960 census >50% Black": L.layerGroup(),
             "1980 census >50% Black": L.layerGroup(),
+            "1980 census >25% under the poverty line": L.layerGroup(),
             "2000 census >50% Black": L.layerGroup(),
             "2000 census >25% under the poverty line": L.layerGroup(),
             "2020 census >50% Black": L.layerGroup(),
+            "2020 census >25% under the poverty line": L.layerGroup(),
         };
         
         // Function to load GeoJSON data
@@ -315,7 +317,7 @@
                    );
                 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/FEMA_100yr_floodplain.geojson', 
-                   overlays["FEMA 100-year flood zone"], {color: 'blue', radius: .5, fillOpacity: 0.1});
+                   overlays["FEMA 1% annual chance of flooding, 2020"], {color: 'blue', radius: .5, fillOpacity: 0.1});
         
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.geojson', 
                    overlays["Census tracts predominantly zoned for industrial use, 2025"], {color: 'gray', weight: 2});
@@ -331,6 +333,9 @@
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/1980_predominant_afam.geojson',
                     overlays["1980 census >50% Black"], {color: 'black', weight:1});
+
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/1980_%3E25pctPoverty.geojson',
+                    overlays["2000 census >25% under the poverty line"], {color: 'green', weight:1});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/predominantAfam_2000.geojson',
                     overlays["2000 census >50% Black"], {color: 'black', weight:1});
