@@ -238,10 +238,10 @@
             { name: "ESRI Imagery", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}') },
             { name: "Google Satellite", layer: L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}') },
             { name: "ESRI NatGeo", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}') },
-            { name: "LNAPL Plume 1", layer: L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png') },
-            { name: "LNAPL Plume 2", layer: L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png') },
-            { name: "LNAPL Plume 3", layer: L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png') },
-            { name: "LNAPL Plume 4", layer: L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png') },
+//            { name: "LNAPL Plume 1", layer: L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png') },
+//            { name: "LNAPL Plume 2", layer: L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png') },
+//            { name: "LNAPL Plume 3", layer: L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png') },
+//            { name: "LNAPL Plume 4", layer: L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png') },
         ];
 
         // Sort basemaps by year (those without years at the bottom)
@@ -262,13 +262,24 @@
         baseLayers["OSM Streets"].addTo(map);
 
         // Create overlay layers
+        //1
+        //https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png
+        //2
+        //https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png
+        //3
+        //https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png
+        //4
+        //https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png
         const overlays = {
-            "LNAPL Plume": L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png'),
             "AOI Boundaries": L.layerGroup(),
-            "FEMA 100-year flood zone": L.layerGroup(),
-            "Census tracts predominantly zoned for industrial use, 2025": L.layerGroup(),
+            "FEMA 1% annual chance of flooding, 2020": L.layerGroup(),
+            "LNAPL Plume 1": L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png'),
+            "LNAPL Plume 2": L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png'),
+            "LNAPL Plume 3": L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png'),
+            "LNAPL Plume 4": L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png'),
             "ZIP codes, 2025": L.layerGroup(),
             "Keystone Opprotunity Zones": L.layerGroup(),
+            "Census tracts predominantly zoned for industrial use, 2025": L.layerGroup(),
             "1960 census >50% Black": L.layerGroup(),
             "1980 census >50% Black": L.layerGroup(),
             "2000 census >50% Black": L.layerGroup(),
@@ -329,6 +340,9 @@
         
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/2020_pct_Afam.geojson',
                     overlays["2020 census >50% Black"], {color: 'black', weight:1});
+
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/2020_%3E25pct%20under%20poverty%20line.geojson',
+                    overlays["2020 census >25% under the poverty line"], {color: 'green', weight:1});
         // Create overlay control (left side)
         const aoiLabels = L.layerGroup();
         //labels with only area names, no AOI label
