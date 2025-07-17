@@ -329,6 +329,9 @@
         
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/2020_pct_Afam.geojson',
                     overlays["2020 census >50% Black"], {color: 'black', weight:1});
+
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/2020_%3E25pct%20under%20poverty%20line.geojson',
+                    overlays["2020 census >25% under the poverty line"], {color: 'green', weight:1});
         // Create overlay control (left side)
         const aoiLabels = L.layerGroup();
         //labels with only area names, no AOI label
