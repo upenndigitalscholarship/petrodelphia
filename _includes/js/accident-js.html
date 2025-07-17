@@ -189,7 +189,7 @@
             // Function to create popup content
             function createPopupContent(feature) {
                 const props = feature.properties;
-                let content = `<b>Date:</b> ${props.Date} (Year: ${props.year})<br>`;
+                let content = `<b>Year:</b> ${props.Date}<br>`;
                 content += `<b>Description:</b> ${props.Descript || 'No description'}<br>`;
                 if (props.Street_D) {
                     content += `<b>Street Address:</b> ${props.Street_D}<br>`;
