@@ -162,7 +162,7 @@
         const map = L.map('map').setView([39.917359, -75.204920], 14);
         //create a top pane for the AOI labels,
         map.createPane('topPane').style.zIndex = 650;
-
+        map.attributionControl.setPrefix(false)
         const historicalMap = L.tileLayer('https://mapwarper.net/maps/tile/94844/{z}/{x}/{y}.png', {
             attribution: 'Historical map from <a href="https://mapwarper.net">MapWarper</a>',
             maxZoom: 18,
@@ -261,7 +261,7 @@
             "2020 census tracts predominantly African American": L.layerGroup(),
 
         };
-
+        
         // Function to load GeoJSON data
         async function loadGeoJSON(url, layerGroup, style) {
             try {
