@@ -4,7 +4,7 @@
     <title>Accident Sites Year Filter</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" />
     
     <style>
         #map { height: 600px; }
@@ -55,7 +55,7 @@
     <!-- NoUI control JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
     <!-- Fullscreen control JS (optional) -->
-    <script src="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
     
     <script>
         // Initialize map with a view that will fit the GeoJSON data
@@ -67,10 +67,12 @@
         //Reinsert the Leaflet text to the top left of the screen, other attribution should show up here too
         map.attributionControl.setPrefix(false);
         
-        map.addControl(new L.Control.Fullscreen({
-            position: 'topleft', // Position in the top-left corner
-            title: 'View Fullscreen', // Tooltip text
-            titleCancel: 'Exit Fullscreen' // Tooltip text when in fullscreen
+        map.addControl(new L.Control.FullScreen({
+            position: 'topleft',
+            title: {
+                'false': 'View Fullscreen',
+                'true': 'Exit Fullscreen'
+            }
         }));
 
         // Create a layer group for our points
