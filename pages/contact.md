@@ -7,7 +7,7 @@ permalink: /contact.html
 <h2>Contact Us</h2>
  <form action= "mailto:libraryrdds@pobox.upenn.edu,jfarm@upenn.edu?&subject=Petrosylvania" method="get" enctype="text/plain">
 
-    Name11:<br>
+    Name12:<br>
 
     <input type="text" name="Name" placeholder="Your Name"><br>
 
