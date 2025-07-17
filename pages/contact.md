@@ -22,6 +22,3 @@ permalink: /contact.html
     <input type="submit" value="Send">
 
   </form>
-
-
-<a href="mailto:email@example.com?cc=secondemail@example.com, anotheremail@example.com, &bcc=lastemail@example.com&subject=Mail from our Website&body=Some body text here">Send Email</a>
