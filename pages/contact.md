@@ -17,7 +17,7 @@ permalink: /contact.html
     
     Subject:<br>
     
-    <input type="subject" name="Subject" placeholder="Petrosylvania Site Comments"><br>
+    <input type="subject" name="Subject" placeholder="Site Comments" value="Petrosylvania Site Comments"><br>
 
     Message:<br>
 
