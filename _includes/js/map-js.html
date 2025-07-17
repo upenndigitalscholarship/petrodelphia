@@ -161,7 +161,7 @@
         // Initialize the map on the lower schuylkill river
         const map = L.map('map',{attributionControl: false}).setView([39.917359, -75.204920], 14);
         //create a top pane for the AOI labels,
-        L.control.attribution({position: 'topright'}).addTo(map);
+        L.control.attribution({position: 'bottomleft'}).addTo(map);
 
 
         map.createPane('topPane').style.zIndex = 650;
