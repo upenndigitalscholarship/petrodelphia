@@ -301,7 +301,42 @@
                 console.error('Error loading GeoJSON:', error);
             }
         }
-
+        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson')
+            overlays["ZIP codes, 2025"], 
+            {
+                color: 'black', 
+                weight: 1,
+                fillOpacity: 0.2  // Make polygons slightly transparent
+            },
+    function(feature, layer) {
+        // Add click event to each ZIP code polygon
+        layer.on('click', function(e) {
+            // Remove any existing labels
+            map.eachLayer(function(layer) {
+                if (layer._zipLabel) {
+                    map.removeLayer(layer);
+                }
+            });
+            
+            // Get the polygon's center point
+            const center = e.target.getBounds().getCenter();
+            
+            // Create and add the label at the center
+            const label = L.marker(center, {
+                icon: L.divIcon({
+                    className: 'zip-code-label',
+                    html: `<div>${feature.properties.CODE}</div>`,
+                    iconSize: null
+                }),
+                interactive: false  // Make label non-clickable
+            }).addTo(map);
+            
+            // Mark this layer as a ZIP code label
+            label._zipLabel = true;
+        });
+    }
+);
+        
         // Load sample Philadelphia GeoJSON data
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson', 
                     overlays["AOI Boundaries"], 
@@ -322,8 +357,8 @@
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.geojson', 
                    overlays["2020 tracts >50% industrial, 2025"], {color: 'gray', weight: 2});
         
-        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
-                    overlays["ZIP codes, 2025"], {color: 'black', weight:1});
+//        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
+//                    overlays["ZIP codes, 2025"], {color: 'black', weight:1});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/KOZ_parcels.geojson',
                     overlays["Keystone Opprotunity Zones"], {color: 'black', weight:1});
