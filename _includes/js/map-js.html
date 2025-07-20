@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>Historical Map Collection</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,18 +22,15 @@
             text-align: center;
             line-height: 1.2;
         }
-        
         .label-container {
             background: rgba(255,255,255,0);
             padding: 2px 5px;
             border-radius: 1px;
         }
-
         .aoi-number {
             font-weight: 700;
             font-size: 14px;
         }
-
         .area-name {
             font-size: 10px;
             font-weight: 800;
@@ -46,84 +42,72 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
-
         /* Right control (top position) */
         .leaflet-right .leaflet-control {
             margin-right: 10px;
             margin-top: 10px;
         }
-
         /* Left control (positioned below right control) */
         .leaflet-left .leaflet-control {
             margin-right: 50px;
             margin-top: 10px; /* Adjust this value based on right control's height */
             clear: both; /* Ensures it stays below */
         }
-        /*
-        .leaflet-left .leaflet-control {
-            margin-left: 10px;
-        }
-        .leaflet-right .leaflet-control {
-            margin-right: 10px;
-        }*/
         /* Add a scrollbar and limit the size of the basemap control. */
-        
-.scrollable-basemap-control {
-  /* Parent container - NO overflow here */
-  overflow: visible;
-}
+        .scrollable-basemap-control {
+            /* Parent container - NO overflow here */
+            overflow: visible;
+        }
+        .scrollable-basemap-control .leaflet-control-layers-list {
+          max-height: 80vh;
+          overflow-y: scroll;
+          padding-right: 5px; /* Prevent text clipping */
+            /* Chrome WebKit Scrollbar */
+            &::-webkit-scrollbar {
+            width: 12px;
+            background: rgba(0,0,0,0.05);
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #666;
+                border-radius: 8px;
+                border: 2px solid #f1f1f1;
+            }
+        }
 
-.scrollable-basemap-control .leaflet-control-layers-list {
-  max-height: 80vh;
-  overflow-y: scroll;
-  padding-right: 5px; /* Prevent text clipping */
-
-  /* WebKit Scrollbar */
-  &::-webkit-scrollbar {
-    width: 12px;
-    background: rgba(0,0,0,0.05);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #666;
-    border-radius: 8px;
-    border: 2px solid #f1f1f1;
-  }
-}
-
-/* Firefox fallback */
-/*@supports (scrollbar-width: auto) {
-  .scrollable-basemap-control .leaflet-control-layers-list {
-    scrollbar-width: auto;
-    scrollbar-color: #666 #f1f1f1;
-  }
-}*/
+        /* Firefox fallback makes a second scrollbar which is not needed */
+        /*@supports (scrollbar-width: auto) {
+          .scrollable-basemap-control .leaflet-control-layers-list {
+            scrollbar-width: auto;
+            scrollbar-color: #666 #f1f1f1;
+          }
+        }*/
         
     
-/* Ensure the control header stays fixed */
-.scrollable-basemap-control .leaflet-control-layers-list {
-    max-height: calc(500px - 40px); /* Account for header */
-    overflow-y: scroll;
-}
+        /* Ensure the control header stays fixed */
+        .scrollable-basemap-control .leaflet-control-layers-list {
+            max-height: calc(500px - 40px); /* Account for header */
+            overflow-y: scroll;
+        }
 
-/* Keep the expand/collapse button accessible */
-.scrollable-basemap-control .leaflet-control-layers-toggle {
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 1;
-}
-.aoi-label {
-        color: black;
-        font-weight: bold;
-        font-size: 14px;
-        text-align: center;
-        /* White text stroke */
-        -webkit-text-stroke: .3px white;
-        text-stroke: .3px white;
-        /* Fallback for browsers that don't support text-stroke */
-        text-shadow: 
-            -.3px -.3px 0 white,
-             0   -.3px 0 white,
+        /* Keep the expand/collapse button accessible */
+        .scrollable-basemap-control .leaflet-control-layers-toggle {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+        }
+        .aoi-label {
+                color: black;
+                font-weight: bold;
+                font-size: 14px;
+                text-align: center;
+                /* White text stroke */
+                -webkit-text-stroke: .3px white;
+                text-stroke: .3px white;
+                /* Fallback for browsers that don't support text-stroke */
+                text-shadow: 
+                    -.3px -.3px 0 white,
+                     0   -.3px 0 white,
              .3px -.3px 0 white,
             -.3px  0   0 white,
              .3px  0   0 white,
@@ -151,6 +135,22 @@
              0    .5px 0 white,
              .5px  .5px 0 white;
     }
+
+.zip-code-label {
+    background: white;
+    padding: 3px 8px;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    text-shadow: 
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+}
 
     </style>
 </head>
@@ -301,23 +301,39 @@
                 console.error('Error loading GeoJSON:', error);
             }
         }
-        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson')
-            overlays["ZIP codes, 2025"], 
-            {
-                color: 'black', 
-                weight: 1,
-                fillOpacity: 0.2  // Make polygons slightly transparent
-            },
+        // Update the loadGeoJSON function to accept onEachFeature callback
+        async function loadZipGeoJSON(url, layerGroup, style, onEachFeature) {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                L.geoJSON(data, {
+                    style: style,
+                    onEachFeature: onEachFeature
+                }).addTo(layerGroup);
+            } catch (error) {
+                console.error('Error loading GeoJSON:', error);
+            }
+        }
+        
+loadGeoJSON(
+    'https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
+    overlays["ZIP codes, 2025"], 
+    {
+        color: 'black', 
+        weight: 1,
+        fillOpacity: 0.2
+    },
     function(feature, layer) {
         // Add click event to each ZIP code polygon
         layer.on('click', function(e) {
+            console.log('ZIP code clicked', feature.properties.CODE);
             // Remove any existing labels
             map.eachLayer(function(layer) {
                 if (layer._zipLabel) {
                     map.removeLayer(layer);
                 }
             });
-            
+
             // Get the polygon's center point
             const center = e.target.getBounds().getCenter();
             
@@ -326,19 +342,21 @@
                 icon: L.divIcon({
                     className: 'zip-code-label',
                     html: `<div>${feature.properties.CODE}</div>`,
-                    iconSize: null
+                    iconSize: [50, 20] // Set a fixed size
                 }),
-                interactive: false  // Make label non-clickable
+                interactive: false,
+                zIndexOffset: 1000 // Ensure it appears above other layers
             }).addTo(map);
             
             // Mark this layer as a ZIP code label
             label._zipLabel = true;
         });
     }
-);
-        
+);        
         // Load sample Philadelphia GeoJSON data
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson', 
+                    
+            
                     overlays["AOI Boundaries"], 
                     function(feature) {
                         return {
@@ -357,8 +375,8 @@
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.geojson', 
                    overlays["2020 tracts >50% industrial, 2025"], {color: 'gray', weight: 2});
         
-        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
-                    overlays["ZIP codes, 2025"], {color: 'black', weight:1});
+      //  loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
+      //              overlays["ZIP codes, 2025"], {color: 'black', weight:1});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/KOZ_parcels.geojson',
                     overlays["Keystone Opprotunity Zones"], {color: 'black', weight:1});
