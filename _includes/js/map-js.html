@@ -18,7 +18,7 @@
             width: 100%;
             height: 90vh;
         }
-         .leaflet-control-attribution svg { /* Hides Ukraine flag */
+         .leaflet-control-attribution svg { /* Hides Ukraine flag, attempt to hide attribution */
              width:0
          }
         .aoi-multiline-label {
@@ -51,23 +51,33 @@
             background: #f4f4f4;
         }
         
+/*        .leaflet-control {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }*/
+        /* Right control (top position) */
         .leaflet-right .leaflet-control {
             margin-right: 10px;
             margin-top: 10px;
         }
+        /* Left control (positioned below right control) */
         .leaflet-left .leaflet-control {
             margin-right: 50px;
-            margin-top: 10px; 
+            margin-top: 10px; /* Adjust this value based on right control's height */
             clear: both; /* Ensures it stays below */
         }
         /* Add a scrollbar and limit the size of the basemap control. */
         .scrollable-basemap-control {
+            /* Parent container - NO overflow here */
             overflow: visible;
         }
         .scrollable-basemap-control .leaflet-control-layers-list {
           max-height: 80vh;
           overflow-y: scroll;
-          padding-right: 5px;
+          padding-right: 5px; /* Prevent text clipping */
+            /* Chrome WebKit Scrollbar */
             &::-webkit-scrollbar {
             width: 12px;
             background: rgba(0,0,0,0.05);
@@ -79,6 +89,13 @@
             }
         }
 
+        /* Firefox fallback makes a second scrollbar which is not needed */
+        /*@supports (scrollbar-width: auto) {
+          .scrollable-basemap-control .leaflet-control-layers-list {
+            scrollbar-width: auto;
+            scrollbar-color: #666 #f1f1f1;
+          }
+        }*/
         /* Ensure the control header stays fixed */
         .scrollable-basemap-control .leaflet-control-layers-list {
             max-height: calc(80vh - 40px); /* Account for header */
@@ -91,7 +108,27 @@
             background: white;
             z-index: 1;
         }
-
+        /*
+        .aoi-label {
+            font-family: 'Roboto', sans-serif; /* Google fonts sans-serif *
+            color: black;
+            font-weight: 800;
+            font-size: 14px;
+            text-align: center;
+            /* White text stroke *
+            -webkit-text-stroke: .65px white;
+            text-stroke: .65px white;
+            /* Fallback for browsers that don't support text-stroke *
+            text-shadow: 
+            -.65px -.65px 0 rgba(255,255,255,.75),
+             0   -.65px 0 rgba(255,255,255,.75),
+             .65px -.65px 0 rgba(255,255,255,.75),
+            -.65px  0   0 rgba(255,255,255,.75),
+             .65px  0   0 rgba(255,255,255,.75),
+            -.65px  .65px 0 rgba(255,255,255,.75),
+             0    .65px 0 rgba(255,255,255,.75),
+             .65px  .65px 0 rgba(255,255,255,.75);
+        }*/
         .aoi-label {      
           position: absolute;
           text-align: center;
@@ -103,7 +140,7 @@
         }
         
         .aoi-label-name {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto', sans-serif; /* Google fonts sans-serif */
             color: black;
             font-weight: 800;
             font-size: 14px;
@@ -112,15 +149,15 @@
             -webkit-text-stroke: 1px white;
         }    
         .zip-code-label {
-            font-family: 'Roboto', sans-serif; 
+            font-family: 'Roboto', sans-serif; /* Google fonts sans-serif */
             font-size: 14px;
             font-weight: 500;
-            color: #333;
-            background: rgba(255, 255, 255, 0.9); 
+            color: #333; /* Dark gray for better contrast */
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
             padding: 4px 6px;
-            border-radius: 6px; /* pill shape */
+            border-radius: 6px; /* Pill shape */
             text-align: center;
-            letter-spacing: 0.5px; 
+            letter-spacing: 0.5px; /* Better readability */
             line-height: 1.3; /* Adjust this value (1.2-1.5) */
             display: flex;
             align-items: center;
@@ -168,6 +205,7 @@
             attribution: 'OSM contributors',
             minZoom: 0,
             maxZoom: 19,
+            // Keep this layer at the very bottom
             pane: 'tilePane' // Leaflet's lowest-level pane
         }).addTo(map);
         
@@ -235,6 +273,7 @@
             return a.name.localeCompare(b.name);
         });
 
+        // Create an object for the layer control
         const baseLayers = {};
         basemaps.forEach(bm => {
             baseLayers[bm.name] = bm.layer;
@@ -267,12 +306,15 @@
           //  "2025 ZIP codes": L.layerGroup(), // see 2025 ZIP Code, below, group "zipCodeLayers"  // added elsewhere!
         };
 
+// function to fix styling using geoJSON defined styles
 function getStyle(feature) {
+    // Custom logic per feature
     return {
         color: feature.properties.color || 'gray',
         weight: feature.properties.weight || 2
     };
 }
+        // Function to load GeoJSON data
 async function loadGeoJSON(url, targetLayer, options = {}) {
   try {
     const response = await fetch(url);
@@ -319,9 +361,9 @@ async function loadZIPLayers() {
       //add ZIP code blue lines (on top) 
     const blueLines = await loadGeoJSON(
       'https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
-      null, // 
+      null, // Don't auto-add to layer
       {
-        style: { // Explicit 
+        style: { // Explicit style object
           color: '#002F6C',
           weight: 2,
           fillOpacity: 0
@@ -373,7 +415,7 @@ loadGeoJSON(
   'https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson',
   aoiBoundaries,
   {
-    style: function(feature) {  // 
+    style: function(feature) {  // Added 'style:' prefix
       return {
         color: feature.properties.stroke || '#555555',
         weight: feature.properties['stroke-width'] || 2,
@@ -400,7 +442,7 @@ loadGeoJSON(
       // Add label immediately
       label.addTo(aoiLabels);
       
-      // Cleanup handler 
+      // Cleanup handler (fixed typo from 'remote' to 'remove')
       layer.on('remove', () => aoiLabels.removeLayer(label));
       
       // Store reference
@@ -411,7 +453,7 @@ loadGeoJSON(
 
 overlays["Areas of Interest (AOI)"] = L.layerGroup([aoiBoundaries, aoiLabels]);
 
-        // Define color mapping (keep existing)
+        // 1. Define color mapping (keep existing)
 const redliningGrades = {
     'A - Best': '#76a865',
     'B - Still Desirable': '#7cb5bd',
@@ -420,7 +462,7 @@ const redliningGrades = {
     'Commercial or Industrial': '#000000'
 };
 
-//Create style function that matches grades to colors
+// 2. Create style function that matches grades to colors
 function getRedliningStyle(feature) {
     const gradeColor = feature.properties.fill || '#cab2d6';
     //console.log("feature: ", feature, " gradeColor: ", gradeColor, " feature.properties.fill: ", feature.properties.fill);
