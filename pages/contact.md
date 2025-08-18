@@ -17,7 +17,7 @@ permalink: /contact.html
 
     Message:<br>
 
-    <textarea name="body" rows="5" cols="30" placeholder="Your Message"></textarea><br>
+    <textarea name="body" rows="5" cols="50" placeholder="Your Message"></textarea><br>
 
     <input type="submit" value="Send">
 
