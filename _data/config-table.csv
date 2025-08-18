@@ -2,5 +2,5 @@ field,display_name
 title,Title
 date,Date
 description,Description
-subject,Subjects
-keyword,Keywords
+collection_type,Collection
+genre_type,Genre

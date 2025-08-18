@@ -8,6 +8,6 @@ permalink: /data.html
 
 ## Collection Metadata
 
-The table below provides sorting and basic search of the collection contents. 
-Use the "CSV" or "Excel" button below to download the filtered metadata you see on the page in your preferred format. 
-Alternatively, click the "Download" button at the top right to view the full collection metadata in various export formats. 
+This table provides the ability to view, sort, and search the collection contents. 
+Use the “Excel” or “CSV” button below to download filtered metadata in either of those formats. 
+Alternatively, click the “Download” button at top right to export the full metadata in other formats.
