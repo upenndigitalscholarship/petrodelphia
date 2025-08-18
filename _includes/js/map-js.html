@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" /> <!-- For the fullscreen effekt (optional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> <!-- readable map font !-->
     <style>
         body {
             margin: 0;
@@ -24,45 +27,47 @@
         }
         .label-container {
             background: rgba(255,255,255,0);
-            padding: 2px 5px;
+            padding: 2px 4px;
             border-radius: 1px;
         }
         .aoi-number {
-            font-weight: 700;
-            font-size: 14px;
+            font-weight: 800;
+            font-size: 16px;
         }
         .area-name {
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 800;
-            font-style: oblique;
         }
-        .leaflet-control {
+        
+        .custom-fullscreen {
             background: white;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            padding: 5px;
+            border-radius: 4px;
+            border: 2px solid rgba(0,0,0,0.2);
+            cursor: pointer;
         }
-        /* Right control (top position) */
+        
+        .custom-fullscreen:hover {
+            background: #f4f4f4;
+        }
+        
         .leaflet-right .leaflet-control {
             margin-right: 10px;
             margin-top: 10px;
         }
-        /* Left control (positioned below right control) */
         .leaflet-left .leaflet-control {
             margin-right: 50px;
-            margin-top: 10px; /* Adjust this value based on right control's height */
+            margin-top: 10px; 
             clear: both; /* Ensures it stays below */
         }
         /* Add a scrollbar and limit the size of the basemap control. */
         .scrollable-basemap-control {
-            /* Parent container - NO overflow here */
             overflow: visible;
         }
         .scrollable-basemap-control .leaflet-control-layers-list {
           max-height: 80vh;
           overflow-y: scroll;
-          padding-right: 5px; /* Prevent text clipping */
-            /* Chrome WebKit Scrollbar */
+          padding-right: 5px;
             &::-webkit-scrollbar {
             width: 12px;
             background: rgba(0,0,0,0.05);
@@ -74,21 +79,11 @@
             }
         }
 
-        /* Firefox fallback makes a second scrollbar which is not needed */
-        /*@supports (scrollbar-width: auto) {
-          .scrollable-basemap-control .leaflet-control-layers-list {
-            scrollbar-width: auto;
-            scrollbar-color: #666 #f1f1f1;
-          }
-        }*/
-        
-    
         /* Ensure the control header stays fixed */
         .scrollable-basemap-control .leaflet-control-layers-list {
-            max-height: calc(500px - 40px); /* Account for header */
+            max-height: calc(80vh - 40px); /* Account for header */
             overflow-y: scroll;
         }
-
         /* Keep the expand/collapse button accessible */
         .scrollable-basemap-control .leaflet-control-layers-toggle {
             position: sticky;
@@ -96,61 +91,41 @@
             background: white;
             z-index: 1;
         }
-        .aoi-label {
-                color: black;
-                font-weight: bold;
-                font-size: 14px;
-                text-align: center;
-                /* White text stroke */
-                -webkit-text-stroke: .3px white;
-                text-stroke: .3px white;
-                /* Fallback for browsers that don't support text-stroke */
-                text-shadow: 
-                    -.3px -.3px 0 white,
-                     0   -.3px 0 white,
-             .3px -.3px 0 white,
-            -.3px  0   0 white,
-             .3px  0   0 white,
-            -.3px  .3px 0 white,
-             0    .3px 0 white,
-             .3px  .3px 0 white;
-    }
-.aoi-label-name {
-        color: black;
-        font-weight: bold;
-        font-size: 14px;
-        text-align: center;
-        text-style: oblique;
-        /* White text stroke */
-        -webkit-text-stroke: .5px white;
-        text-stroke: .5px white;
-        /* Fallback for browsers that don't support text-stroke */
-        text-shadow: 
-            -.5px -.5px 0 white,
-             0   -.5px 0 white,
-             .5px -.5px 0 white,
-            -.5px  0   0 white,
-             .5px  0   0 white,
-            -.5px  .5px 0 white,
-             0    .5px 0 white,
-             .5px  .5px 0 white;
-    }
 
-.zip-code-label {
-    background: white;
-    padding: 3px 8px;
-    border: 1px solid black;
-    border-radius: 3px;
-    font-weight: bold;
-    font-size: 14px;
-    text-align: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    text-shadow: 
-        -1px -1px 0 white,
-        1px -1px 0 white,
-        -1px 1px 0 white,
-        1px 1px 0 white;
-}
+        .aoi-label {      
+          position: absolute;
+          text-align: center;
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 800;
+          text-shadow: 0 0 2px white; /* Improves readability */
+        }
+        
+        .aoi-label-name {
+            font-family: 'Roboto', sans-serif;
+            color: black;
+            font-weight: 800;
+            font-size: 14px;
+            text-align: center;
+            /* White text stroke */
+            -webkit-text-stroke: 1px white;
+        }    
+        .zip-code-label {
+            font-family: 'Roboto', sans-serif; 
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 4px 6px;
+            border-radius: 6px; /* pill shape */
+            text-align: center;
+            letter-spacing: 0.5px; 
+            line-height: 1.3; /* Adjust this value (1.2-1.5) */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
 
     </style>
 </head>
@@ -161,12 +136,15 @@
     <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
 
     <script>
+        console.log("170s");
         // Initialize the map on the lower schuylkill river
         const map = L.map('map',{attributionControl: false}).setView([39.917359, -75.204920], 14);
         //create a top pane for the AOI labels,
-        L.control.attribution({position: 'bottomleft'}).addTo(map);
+        L.control.attribution({position: 'bottomright'}).addTo(map);
+
+        map.attributionControl.setPrefix()
         
-        map.addControl(new L.Control.FullScreen({ // Add the button for fullscreen
+        map.addControl(new L.Control.FullScreen({
             position: 'topleft',
             title: {
                 'false': 'View Fullscreen',
@@ -186,62 +164,67 @@
             detectRetina: false,
             noWrap: true
         });
+        var permanentOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'OSM contributors',
+            minZoom: 0,
+            maxZoom: 19,
+            pane: 'tilePane' // Leaflet's lowest-level pane
+        }).addTo(map);
+        
         // Define all basemaps with year information
         const basemaps = [
             // Historical maps sorted by year
-            { name: "Barnes 1867", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2278/{z}/{x}/{y}.png'), year: 1867 },
-            { name: "Hopkins 1876", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png'), year: 1876 },
-            { name: "Waterfront 1892", layer: L.tileLayer('https://mapwarper.net/maps/tile/91523/{z}/{x}/{y}.png'), year: 1892 },
-            { name: "USGS 1894", layer: L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png', {
+            { name: "1867 Barnes", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2278/{z}/{x}/{y}.png'), year: 1867 },
+            { name: "1876 Hopkins", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png'), year: 1876 },
+            { name: "1892 Waterfront", layer: L.tileLayer('https://mapwarper.net/maps/tile/91523/{z}/{x}/{y}.png'), year: 1892 },
+            { name: "1894 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88560/{z}/{x}/{y}.png', {
                 attribution: '1894 USGS Map courtesy of USGS'
             }), year: 1894 },
-            { name: "Bromley 1895", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2184/{z}/{x}/{y}.png'), year: 1895 },
-            { name: "Bromley 1901", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png'), year: 1901 },
-            { name: "Bromley 1910", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2271/{z}/{x}/{y}.png'), year: 1910 },
-            { name: "USGS 1920", layer: L.tileLayer('https://mapwarper.net/maps/tile/88561/{z}/{x}/{y}.png', {
+            { name: "1895 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2184/{z}/{x}/{y}.png'), year: 1895 },
+            { name: "1901 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png'), year: 1901 },
+            { name: "1910 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2271/{z}/{x}/{y}.png'), year: 1910 },
+            { name: "1920 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88561/{z}/{x}/{y}.png', {
                 attribution: '1920 USGS Map courtesy of USGS'
             }), year: 1920 },
-            { name: "Aerial 1928", layer: L.tileLayer('https://mapwarper.net/maps/tile/88306/{z}/{x}/{y}.png'), year: 1928 },
-            { name: "HOLC 1937", layer: L.tileLayer('https://mapwarper.net/maps/tile/90758/{z}/{x}/{y}.png'), year: 1937 },
-            { name: "Land use 1942", layer: L.tileLayer('https://mapwarper.net/maps/tile/94403/{z}/{x}/{y}.png'), year: 1942 },
-            { name: "USGS 1949", layer: L.tileLayer('https://mapwarper.net/maps/tile/88564/{z}/{x}/{y}.png', {
+            { name: "1928 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88306/{z}/{x}/{y}.png'), year: 1928 },
+            { name: "1937 HOLC", layer: L.tileLayer('https://mapwarper.net/maps/tile/90758/{z}/{x}/{y}.png'), year: 1937 },
+            { name: "1942 land use", layer: L.tileLayer('https://mapwarper.net/maps/tile/94403/{z}/{x}/{y}.png'), year: 1942 },
+            { name: "1949 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88564/{z}/{x}/{y}.png', {
                 attribution: '1949 USGS Map courtesy of USGS'
             }), year: 1949 },
-            { name: "Aerial 1959", layer: L.tileLayer('https://mapwarper.net/maps/tile/88304/{z}/{x}/{y}.png'), year: 1959 },
-            { name: "Land use 1962", layer: L.tileLayer('https://mapwarper.net/maps/tile/94678/{z}/{x}/{y}.png'), year: 1962 },
-            { name: "Aerial 1965", layer: L.tileLayer('https://mapwarper.net/maps/tile/88299/{z}/{x}/{y}.png'), year: 1965 },
-            { name: "USGS 1967", layer: L.tileLayer('https://mapwarper.net/maps/tile/88567/{z}/{x}/{y}.png', {
+            { name: "1959 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88304/{z}/{x}/{y}.png'), year: 1959 },
+            { name: "1962 land use", layer: L.tileLayer('https://mapwarper.net/maps/tile/94678/{z}/{x}/{y}.png'), year: 1962 },
+            { name: "1965 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88299/{z}/{x}/{y}.png'), year: 1965 },
+            { name: "1967 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88567/{z}/{x}/{y}.png', {
                 attribution: '1967 USGS Map courtesy of USGS'
             }), year: 1967 },
-            { name: "Aerial 1975", layer: L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png'), year: 1975 },
-            { name: "Aerial 1980", layer: L.tileLayer('https://mapwarper.net/maps/tile/88301/{z}/{x}/{y}.png'), year: 1980 },
-            { name: "Aerial 1985", layer: L.tileLayer('https://mapwarper.net/maps/tile/88295/{z}/{x}/{y}.png'), year: 1985 },
-            { name: "Aerial 1990", layer: L.tileLayer('https://mapwarper.net/maps/tile/90707/{z}/{x}/{y}.png'), year: 1990 },
-            { name: "USGS 1995", layer: L.tileLayer('https://mapwarper.net/maps/tile/88568/{z}/{x}/{y}.png', {
+            { name: "1975 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png'), year: 1975 },
+            { name: "1980 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88301/{z}/{x}/{y}.png'), year: 1980 },
+            { name: "1985 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88295/{z}/{x}/{y}.png'), year: 1985 },
+            { name: "1990 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/90707/{z}/{x}/{y}.png'), year: 1990 },
+            { name: "1995 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/95829/{z}/{x}/{y}.png'), year: 1995 },
+            { name: "1995 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88568/{z}/{x}/{y}.png', {
                 attribution: '1995 USGS Map courtesy of USGS'
             }), year: 1995 },
-            { name: "Satellite 2019", layer: L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
+            { name: "2019 satellite", layer: L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
                 layers: '1',
                 format: 'image/png',
                 transparent: true
             }), year: 2019 },
-            { name: "USGS 2019", layer: L.tileLayer('https://mapwarper.net/maps/tile/88569/{z}/{x}/{y}.png', {
+            { name: "2019 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88569/{z}/{x}/{y}.png', {
                 attribution: '2019 USGS Map courtesy of USGS'
             }), year: 2019 },
-            { name: "USGS 2023", layer: L.tileLayer('https://mapwarper.net/maps/tile/88570/{z}/{x}/{y}.png', {
+            { name: "2023 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88570/{z}/{x}/{y}.png', {
                 attribution: '2023 USGS Map courtesy of USGS'
             }), year: 2023 },
             
             // Modern reference maps (no year)
-            { name: "OSM Streets", layer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png') },
-            { name: "ESRI StreetMap", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}') },
-            { name: "ESRI Imagery", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}') },
-            { name: "Google Satellite", layer: L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}') },
+            { name: "Google Earth", layer: L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}') },
+            { name: "ESRI satellite", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}') },
             { name: "ESRI NatGeo", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}') },
-//            { name: "LNAPL Plume 1", layer: L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png') },
-//            { name: "LNAPL Plume 2", layer: L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png') },
-//            { name: "LNAPL Plume 3", layer: L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png') },
-//            { name: "LNAPL Plume 4", layer: L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png') },
+            { name: "ESRI StreetMap", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}') },
+            { name: "OpenStreetMap", layer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png') },
+// Make OSM Streets a base-base map with no off option? Make it a base-base map somehow... Maybe a second OSM layer that turns on? check performance.
         ];
 
         // Sort basemaps by year (those without years at the bottom)
@@ -252,115 +235,285 @@
             return a.name.localeCompare(b.name);
         });
 
-        // Create an object for the layer control
         const baseLayers = {};
         basemaps.forEach(bm => {
             baseLayers[bm.name] = bm.layer;
         });
 
         // Add default basemap
-        baseLayers["OSM Streets"].addTo(map);
-
-        // Create overlay layers
-        //1
-        //https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png
-        //2
-        //https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png
-        //3
-        //https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png
-        //4
-        //https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png
+        baseLayers["OpenStreetMap"].addTo(map);
+        
         const overlays = {
-            "AOI Boundaries": L.layerGroup(),
-            "FEMA 1% annual chance of flooding, 2020": L.layerGroup(),
-            "LNAPL Plume 1": L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png'),
-            "LNAPL Plume 2": L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png'),
-            "LNAPL Plume 3": L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png'),
-            "LNAPL Plume 4": L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png'),
-            "ZIP codes, 2025": L.layerGroup(),
-            "Keystone Opprotunity Zones": L.layerGroup(),
-            "2020 tracts >50% industrial, 2025": L.layerGroup(),
-            "1960 census >50% Black": L.layerGroup(),
-            "1980 census >50% Black": L.layerGroup(),
-            "1980 census >25% under the poverty line": L.layerGroup(),
-            "2000 census >50% Black": L.layerGroup(),
-            "2000 census >25% under the poverty line": L.layerGroup(),
-            "2020 census >50% Black": L.layerGroup(),
-            "2020 census >25% under the poverty line": L.layerGroup(),
+            "Areas of Interest (AOI)": L.layerGroup(),
+            "Philadelphia County": L.layerGroup(),
+            "ZIP Codes, 2025": L.layerGroup(),
+            "Zoning, 50+ percent industrial, 2025": L.layerGroup(),
+            "Keystone Opportunity Zones, 2025": L.layerGroup(),
+            'HOLC "redlining map," 1937': L.layerGroup(),
+            "LNAPL plume, 1996A": L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png'),
+            "LNAPL plume, 1996B": L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png'),
+            "LNAPL plume, 1996C": L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png'),
+            "LNAPL plume, 1996D": L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png'),
+            "Census, 50+ percent Black, 1960": L.layerGroup(),
+            "Census, 50+ percent Black, 1980": L.layerGroup(),
+            "Census, 50+ percent Black, 2000": L.layerGroup(),
+            "Census, 50+ percent Black, 2020": L.layerGroup(),
+            "Census, 25+ percent children in poverty, 1980": L.layerGroup(),
+            "Census, 25+ percent children in poverty, 2000": L.layerGroup(),
+            "Census, 25+ percent children in poverty, 2020": L.layerGroup(),
+            "FEMA, 100-year flood zone, 2025": L.layerGroup(),
+            "NOAA, 2-foot rise in sea level": L.layerGroup(),
+            "NOAA, 4-foot rise in sea level": L.layerGroup(),
+          //  "2025 ZIP codes": L.layerGroup(), // see 2025 ZIP Code, below, group "zipCodeLayers"  // added elsewhere!
         };
-        
-        // Function to load GeoJSON data
-        async function loadGeoJSON(url, layerGroup, style) {
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                L.geoJSON(data, {
-                    style: style
-                }).addTo(layerGroup);
-            } catch (error) {
-                console.error('Error loading GeoJSON:', error);
-            }
-        }
-        // Update the loadGeoJSON function to accept onEachFeature callback
-        async function loadZipGeoJSON(url, layerGroup, style, onEachFeature) {
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                L.geoJSON(data, {
-                    style: style,
-                    onEachFeature: onEachFeature
-                }).addTo(layerGroup);
-            } catch (error) {
-                console.error('Error loading GeoJSON:', error);
-            }
-        }
-        
-loadGeoJSON(
-    'https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
-    overlays["ZIP codes, 2025"], 
-    {
-        color: 'black', 
-        weight: 1,
-        fillOpacity: 0.2
-    },
-    function(feature, layer) {
-        // Add click event to each ZIP code polygon
-        layer.on('click', function(e) {
-            console.log('ZIP code clicked', feature.properties.CODE);
-            // Remove any existing labels
-            map.eachLayer(function(layer) {
-                if (layer._zipLabel) {
-                    map.removeLayer(layer);
-                }
-            });
 
-            // Get the polygon's center point
-            const center = e.target.getBounds().getCenter();
-            
-            // Create and add the label at the center
-            const label = L.marker(center, {
-                icon: L.divIcon({
-                    className: 'zip-code-label',
-                    html: `<div>${feature.properties.CODE}</div>`,
-                    iconSize: [50, 20] // Set a fixed size
-                }),
-                interactive: false,
-                zIndexOffset: 1000 // Ensure it appears above other layers
-            }).addTo(map);
-            
-            // Mark this layer as a ZIP code label
-            label._zipLabel = true;
-        });
+function getStyle(feature) {
+    return {
+        color: feature.properties.color || 'gray',
+        weight: feature.properties.weight || 2
+    };
+}
+async function loadGeoJSON(url, targetLayer, options = {}) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    const geoJsonLayer = L.geoJSON(data, {
+      style: options.style || {}, // Ensure style object exists
+      onEachFeature: options.onEachFeature
+    });
+    
+    if (targetLayer && targetLayer.addLayer) {
+      targetLayer.addLayer(geoJsonLayer);
     }
-);        
-        // Load sample Philadelphia GeoJSON data
-        loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson', 
-                    
+    
+    return geoJsonLayer;
+  } catch (error) {
+    console.error('Error loading GeoJSON:', error);
+    return null;
+  }
+}
+console.log('reached zipcodelabels part');
+
+        // section for rendering ZIP lines (blue lines with white buffer)
+const zipCodeLabels = L.layerGroup();//.addTo(map); // Add to map immediately
+const zipCodeLayers = L.layerGroup();//.addTo(map);
+
+async function loadZIPLayers() {
+  try {
+    // add ZIP code white lines (on bottom)
+    const whiteOutlines = await loadGeoJSON(
+      'https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
+      null,
+      {
+        style: {
+        color: 'white',
+        weight: 5,
+        fillOpacity: 0
+        }
+      }
+    );
+    zipCodeLayers.addLayer(whiteOutlines); // 
+    console.log('added whiteOutlines');
+
+      //add ZIP code blue lines (on top) 
+    const blueLines = await loadGeoJSON(
+      'https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
+      null, // 
+      {
+        style: { // Explicit 
+          color: '#002F6C',
+          weight: 2,
+          fillOpacity: 0
+        },
+        onEachFeature: function(feature, layer) {
+          const label = L.marker(layer.getBounds().getCenter(), {
+            pane: 'labelPane',
+            icon: L.divIcon({
+              className: 'zip-code-label',
+              html: `<div>${feature.properties.CODE}</div>`,
+              iconSize: [50, 20]
+            }),
+            interactive: false
+          });
+          zipCodeLabels.addLayer(label);
+          layer._label = label;
+        }
+      }
+    );
+    zipCodeLayers.addLayer(blueLines);
+    console.log('added blueLines');
+    
+  } catch (error) {
+    console.error("ZIP code loading failed:", error);
+  }
+}
+
+// execute after map is ready
+map.whenReady(function() {
+  loadZIPLayers();
+  overlays["ZIP Codes, 2025"] = L.layerGroup([zipCodeLayers, zipCodeLabels]);
+});
+
+map.on('zoomend', function() { // make ZIP code labels disappear when zooming out past 12 (city-scale)
+    const zoom = map.getZoom();
+    document.querySelectorAll('.zip-code-label')
+        .forEach(label => {
+            label.style.display = zoom >= 12 ? 'block' : 'none';
+        });
+});
+
+
+        //create AOI layers for areas of interest. Label layer + boundary layer
+        
+const aoiLabels = L.layerGroup().addTo(map);
+const aoiBoundaries = L.layerGroup().addTo(map);
+
+loadGeoJSON(
+  'https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson',
+  aoiBoundaries,
+  {
+    style: function(feature) {  // 
+      return {
+        color: feature.properties.stroke || '#555555',
+        weight: feature.properties['stroke-width'] || 2,
+        opacity: feature.properties['stroke-opacity'] || 1,
+        fillColor: feature.properties.fill || '#cab2d6',
+        fillOpacity: feature.properties['fill-opacity'] || 0.3
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      const coords = feature.properties.label_position 
+        ? L.latLng(feature.properties.label_position[0], feature.properties.label_position[1])
+        : layer.getBounds().getCenter();
+
+      const label = L.marker(coords, {
+        pane: 'labelPane',
+        interactive: false,
+        icon: L.divIcon({
+          className: 'aoi-label',
+          html: `<div>${feature.properties.AOI_ID}</div>`,
+          iconSize: [20, 20]
+        })
+      });
+      
+      // Add label immediately
+      label.addTo(aoiLabels);
+      
+      // Cleanup handler 
+      layer.on('remove', () => aoiLabels.removeLayer(label));
+      
+      // Store reference
+      layer._label = label;
+    }
+  }
+);
+
+overlays["Areas of Interest (AOI)"] = L.layerGroup([aoiBoundaries, aoiLabels]);
+
+        // Define color mapping (keep existing)
+const redliningGrades = {
+    'A - Best': '#76a865',
+    'B - Still Desirable': '#7cb5bd',
+    'C - Definitely Declining': '#ffff00',
+    'D - Hazardous': '#d9838d',
+    'Commercial or Industrial': '#000000'
+};
+
+//Create style function that matches grades to colors
+function getRedliningStyle(feature) {
+    const gradeColor = feature.properties.fill || '#cab2d6';
+    //console.log("feature: ", feature, " gradeColor: ", gradeColor, " feature.properties.fill: ", feature.properties.fill);
+
+    return {
+        color: '#555555',
+        weight: feature.properties['stroke-width'] || 2,
+        opacity: feature.properties['stroke-opacity'] || 1,
+        fillColor: gradeColor, // Use mapped color
+        fillOpacity: feature.properties['fill-opacity'] || 0.5
+    };
+}
+
+const legend = L.control({position: 'bottomleft'});
+legend.onAdd = function(map) {
+    var div = L.DomUtil.create('div', 'info legend');
+    var labels = ['<strong>Redlining Grades</strong>'];
+
+    //make color squares and print text
+    for (var grade in redliningGrades) {
+        labels.push(
+            '<i style="background:' + redliningGrades[grade] + '; width: 18px; height: 18px; display: inline-block; margin-left: 5px;"></i> ' +
+            grade
+        );
+    }
+    
+    div.innerHTML = labels.join('<br>');
+    return div;
+};
+loadGeoJSON(
+    'https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/redlining.geojson',
+    overlays['HOLC "redlining map," 1937'],
+    {
+        style: getRedliningStyle, // Applies the color coding
+        onEachFeature: function(feature, layer) {
+            // Toggle legend with layer visibility
+            overlays['HOLC "redlining map," 1937'].on('add', function() {
+                legend.addTo(map);
+            });
+            overlays['HOLC "redlining map," 1937'].on('remove', function() {
+                map.removeControl(legend);
+            });
+        }
+    }
+);
+        
+        /*
+        // Create the control for the legend
+        var legend = L.control({position: 'bottomleft'});
+
+        // Define color codes and labels
+        var redliningGrades = {
+            'A - Best': '#76a865',  // Green
+            'B - Still Desirable': '#7cb5bd',  // blue
+            'C - Definitely Declining': '#ffff00',  //  yellow
+            'D - Hazardous': '#d9838d',  // reddish orange
+            'Commercial or Industrial': '#000000',
+            //other hatchures or cross hatch?
+        };
+
+        // When the legend is added to the map
+
+        legend.onAdd = function(map) {
+            var div = L.DomUtil.create('div', 'info legend');
+            var labels = ['<strong>Redlining Grades</strong>'];
+    
+        // Loop through the HOLC grades and generate a label with a colored square
+            for (var grade in redliningGrades) {
+                labels.push(
+                    '<i style="background:' + redliningGrades[grade] + '; width: 18px; height: 18px; display: inline-block; margin-left: 5px;"></i> ' +
+                    grade
+                );
+            }
             
-                    overlays["AOI Boundaries"], 
+            div.innerHTML = labels.join('<br>');
+            return div;
+        };*/
+        
+        loadGeoJSON('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/redlining.geojson',
+                    overlays['HOLC "redlining map," 1937'], 
                     function(feature) {
+//                        legend.addTo(map);
+                        overlays['HOLC "redlining map," 1937'].on('add', function() {
+                            legend.addTo(map);
+                        });
+                        
+                        overlays['HOLC "redlining map," 1937'].on('remove', function() {
+                            map.removeControl(legend);
+                        });
+                        
                         return {
-                            color: feature.properties.stroke || '#555555', // Default color if not specified
+//                            color: feature.properties.stroke || '#555555', // Default color if not specified
+                            color: '#555555',
                             weight: feature.properties['stroke-width'] || 2,
                             opacity: feature.properties['stroke-opacity'] || 1,
                             fillColor: feature.properties.fill || '#cab2d6',
@@ -368,48 +521,62 @@ loadGeoJSON(
                         };
                     }
                    );
-                
+        console.log("470s");
+        
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/FEMA_100yr_floodplain.geojson', 
-                   overlays["FEMA 1% annual chance of flooding, 2020"], {color: 'blue', radius: .5, fillOpacity: 0.1});
+                   overlays["FEMA, 100-year flood zone, 2025"], { 
+                       style: {
+                           color: 'blue', fillOpacity: 0.1
+                       }
+                   });
         
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/industrial_tracts.geojson', 
-                   overlays["2020 tracts >50% industrial, 2025"], {color: 'gray', weight: 2});
+                   overlays["Zoning, 50+ percent industrial, 2025"], { 
+                       style: {
+                           color: 'gray', weight: 2
+                       }
+                   });
         
-      //  loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/zip_codes.geojson',
-      //              overlays["ZIP codes, 2025"], {color: 'black', weight:1});
-
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/KOZ_parcels.geojson',
-                    overlays["Keystone Opprotunity Zones"], {color: 'black', weight:1});
+                    overlays["Keystone Opportunity Zones, 2025"], {style: {color: 'black', weight:1}});
 
+        loadGeoJSON('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/2Ft_SLR.geojson',
+                    overlays["NOAA, 2-foot rise in sea level"], {style: {color: 'blue', weight:1}});
+
+        loadGeoJSON('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/4ftSLR.geojson',
+                    overlays["NOAA, 4-foot rise in sea level"], {style: {color: 'blue', weight:1}});
+        
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/1960_predominantly_AfAm.geojson',
-                    overlays["1960 census >50% Black"], {color: 'black', weight:1});
+                    overlays["Census, 50+ percent Black, 1960"], {style: {color: 'black', weight:1}});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/1980_predominant_afam.geojson',
-                    overlays["1980 census >50% Black"], {color: 'black', weight:1});
+                    overlays["Census, 50+ percent Black, 1980"], {style: {color: 'black', weight:1}});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/1980_%3E25pctPoverty.geojson',
-                    overlays["2000 census >25% under the poverty line"], {color: 'green', weight:1});
+                    overlays["Census, 25+ percent children in poverty, 1980"], {style: {color: 'green', weight:1}});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/predominantAfam_2000.geojson',
-                    overlays["2000 census >50% Black"], {color: 'black', weight:1});
+                    overlays["Census, 50+ percent Black, 2000"], {style: {color: 'black', weight:1}});
         
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/2000_%3E25pctPoverty.geojson',
-                    overlays["2000 census >25% under the poverty line"], {color: 'green', weight:1});
+                    overlays["Census, 25+ percent children in poverty, 2000"], {style: {color: 'green', weight:1}});
         
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/2020_pct_Afam.geojson',
-                    overlays["2020 census >50% Black"], {color: 'black', weight:1});
+                    overlays["Census, 50+ percent Black, 2020"], {style: {color: 'black', weight:1}});
 
         loadGeoJSON('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/2020_%3E25pct%20under%20poverty%20line.geojson',
-                    overlays["2020 census >25% under the poverty line"], {color: 'green', weight:1});
+                    overlays["Census, 25+ percent children in poverty, 2020"], {style: {color: 'green', weight:1}});
+
+        loadGeoJSON('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/city_limits.geojson',
+                    overlays["Philadelphia County"], {style: {color: 'black', weight:4, fillOpacity: 0}});
         // Create overlay control (left side)
-        const aoiLabels = L.layerGroup();
         //labels with only area names, no AOI label
-        const Belmont = L.marker([39.921308, -75.192636], {
+    /*    const Belmont = L.marker([39.921308, -75.192636], {
         pane: 'labelPane',
         icon: L.divIcon({
             className: 'aoi-label-name',/*not an actual AOI label, we are just using inherited properties for area-name
             html: '<div style="position:relative; top:-10px;">AOI-1</div>', // Adjust vertical position
-            iconSize: [40, 20]*/
+        //    iconSize: [40, 20] 
                 
             html: `<div class="label-container">
             <div class="area-name">Belmont Terminal</div>
@@ -418,163 +585,52 @@ loadGeoJSON(
             
         }),
         interactive: false
-        });
-        
+        });*/
+/*        
         const PGW = L.marker([39.921957, -75.197372], {//-75.197626,39.921957
         pane: 'labelPane',
         icon: L.divIcon({
             className: 'aoi-label-name',/*not an actual AOI label, we are just using inherited properties for area-name
             html: '<div style="position:relative; top:-10px;">AOI-1</div>', // Adjust vertical position
-            iconSize: [40, 20]*/
-                
+      //      iconSize: [40, 20]
             html: `<div class="label-container">
             <div class="area-name">PGW Property</div>
             </div>`,
-        iconSize: [100, 20]  
+        iconSize: [100, 10]  
             
         }),
         interactive: false
         });
-
+*/
+//        const aoi1 = L.marker([39.915600, -75.193862], {
+        
+/*        
         const aoi1 = L.marker([39.915600, -75.193862], {
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label',/*
-            html: '<div style="position:relative; top:-10px;">AOI-1</div>', // Adjust vertical position
-            iconSize: [40, 20]*/
-                
-            html: `<div class="label-container">
-            <div class="aoi-number">AOI-1</div>
-            <div class="area-name">Point Breeze tank farms <br>1 & 2</div>
-            </div>`,
-        iconSize: [60, 120]  
-            
-        }),
-        interactive: false
-        });
-        
-        const aoi2 = L.marker([39.915279, -75.199142], {  // Fixed coordinate order-75.199142,39.915279
-        pane: 'labelPane',
-        icon: L.divIcon({
+          pane: 'labelPane',
+          icon: L.divIcon({
             className: 'aoi-label',
-            
-            html: `<div class="label-container">
-            <div class="aoi-number">AOI-2</div>
-            <div class="area-name">Point Breeze processing area</div>
-            </div>`,
-        iconSize: [60, 120]  
-        }),
-        interactive: false
+            html: `<div data-text="${feature.properties.AOI_ID}">
+                     <div>${feature.properties.AOI_ID}</div>
+                   </div>`,
+            iconSize: [auto, 20]
+          }),
         });
-
-        const aoi3 = L.marker([39.909995, -75.202350], {  // Fixed coordinate order-75.202350,39.909995
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label',
-            html: `<div class="label-container">
-            <div class="aoi-number">AOI-3</div>
-            <div class="area-name">Point Breeze impoundment area</div>
-            </div>`,
-        iconSize: [60, 120]  
-        }),
-        interactive: false
-        });
-        
-        const aoi4 = L.marker([39.907964, -75.197192], {  // Fixed coordinate order-75.202350,39.909995
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label',
-            html: `<div class="label-container">
-            <div class="aoi-number">AOI-4</div>
-            <div class="area-name">Point Breeze tank farm 4</div>
-            </div>`,
-        iconSize: [60, 120]  
-        }),
-        interactive: false
-        });
-
-        const aoi5 = L.marker([39.898970, -75.204967], {  // Fixed coordinate order
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label',
-            html: `<div class="label-container">
-            <div class="aoi-number">AOI-5</div>
-            <div class="area-name">Girard Point, south tank field</div>
-            </div>`,
-        iconSize: [100, 120]  
-        }),
-        interactive: false
-        });
-        
-        const aoi6 = L.marker([39.902663, -75.208978], {  // Fixed coordinate order
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label',
-            html: `<div class="label-container">
-            <div class="aoi-number">AOI-6</div>
-            <div class="area-name">Girard Point, chemicals processing area</div>
-            </div>`,
-        iconSize: [100, 120]  
-        }),
-        interactive: false
-        });
-        
-        const aoi7 = L.marker([39.907680, -75.209039], {  // Fixed coordinate order
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label',
-            html: `<div class="label-container">
-            <div class="aoi-number">AOI-7</div>
-            <div class="area-name">Girard Point, fuels processing area</div>
-            </div>`,
-        iconSize: [100, 120]  
-        }),
-        interactive: false
-        });
-
-        const aoi8 = L.marker([39.926270, -75.202180], {  // Fixed coordinate order
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label',
-            html: `<div class="label-container">
-            <div class="aoi-number">AOI-9</div>
-            <div class="area-name">Point Breeze, North Yard</div>
-            </div>`,
-        iconSize: [200, 20]  
-        }),
-        interactive: false
-        });
-
-        const aoi9 = L.marker([39.900134, -75.220973], {  // Fixed coordinate order
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label',
-            html: `<div class="label-container">
-            <div class="aoi-number">AOI-9</div>
-            <div class="area-name">Schuylkill River tank farm</div>
-            </div>`,
-        iconSize: [200, 20]  
-        }),
-        interactive: false
-        });
-
-        const aoi10 = L.marker([39.917825, -75.205526], {  // Fixed coordinate order
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label',
-            html: `<div class="label-container">
-            <div class="aoi-number">AOI-10</div>
-            <div class="area-name">Point Breeze, west yard</div>
-            </div>`,
-        iconSize: [200, 20]  
-        }),
-        interactive: false
-        });
-
+*//*
+1 | 39.915600, -75.193862
+2 | 39.915279, -75.199142
+3 | 39.909995, -75.202350
+4 | 39.907964, -75.197192
+5 | 39.898970, -75.204967
+6 | 39.902663, -75.208978
+7 | 39.907680, -75.209039
+8 | 39.926270, -75.202180
+9 | 39.900134, -75.220973
+10| 39.917825, -75.205526
+*/
         //add the labels to the map
-        aoiLabels.addLayer(PGW);
-        aoiLabels.addLayer(Belmont);
-        aoiLabels.addLayer(aoi1);
+     //   aoiLabels.addLayer(PGW);
+     //   aoiLabels.addLayer(Belmont);
+/*        aoiLabels.addLayer(aoi1);/*
         aoiLabels.addLayer(aoi2);
         aoiLabels.addLayer(aoi3);
         aoiLabels.addLayer(aoi4);
@@ -583,8 +639,8 @@ loadGeoJSON(
         aoiLabels.addLayer(aoi7);
         aoiLabels.addLayer(aoi8);
         aoiLabels.addLayer(aoi9);
-        aoiLabels.addLayer(aoi10);
-                
+        aoiLabels.addLayer(aoi10);*/
+/*                
         overlays["AOI Boundaries"].on('add', function() {
             if (!map.hasLayer(aoiLabels)) {
                 aoiLabels.addTo(map);
@@ -603,14 +659,13 @@ loadGeoJSON(
                 aoiLabels.removeFrom(map);
             }
         });
-        
+  */      
     map.createPane('labelPane').style.zIndex = 700; // Higher than tile layers
     
-    // Create the label
         // Create basemap control (right side)        
         const overlayControl = L.control.layers(null, overlays, {
             collapsed: false,
-            position: 'topright'
+            position: 'topleft'
         }).addTo(map);
         
         const basemapControl = L.control.layers(baseLayers, null, {
@@ -635,6 +690,10 @@ loadGeoJSON(
 // 
         addControlLabel(overlayControl, 'Overlays');
         addControlLabel(basemapControl, 'Base Maps');
+
+        map.on('baselayerchange', function() {
+            permanentOSM.bringToBack(); // Force OSM behind current basemap
+        });
 
 // Add corresponding CSS (move to top eventually)
 const labelStyle = document.createElement('style');
