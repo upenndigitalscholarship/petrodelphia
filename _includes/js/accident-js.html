@@ -5,12 +5,16 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     
     <style>
-        #map { height: 80vh; }
+        #map { height: 100vh; }
+        #year-value {
+            display: none !important; /* we only want years showing on the sliders */
+        }
         #year-slider {
-            margin: 10px;
             width: 400px;
+            margin: 10px;
         }
         .noUi-horizontal .noUi-tooltip {
             bottom: -32px;  /* Position below the handle */
@@ -19,31 +23,27 @@
 
 /* Adjust slider container height to accommodate tooltips */
         .slider-container {
-            padding-bottom: 30px; /* Make room for tooltips below */
-        }
-
-/* Optional: Improve tooltip appearance */
-        .noUi-tooltip {
-            background: #333;
-            color: white;
-            padding: 3px 6px;
-            border-radius: 3px;
-            font-size: 12px;
-        }
-        .slider-container {
             position: absolute;
             top: 410px;
             right: 380px;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.5); 
-            padding: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 5px 5px 30px 5px; /* Combined padding (top right bottom left) */
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
-        .loading {
-            display: inline-block;
-            margin-left: 10px;
+/* Optional: Improve tooltip appearance */
+        .noUi-tooltip {
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            background: #333;
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            bottom: -32px;
+            top: auto;
         }
+        
         .leaflet-popup-content {
             max-width: 300px;
         }
@@ -61,16 +61,10 @@
 </head>
 <body>
     <div id="map"></div>
-    <div class="slider-container">
-        <div id="year-slider"></div>
-        <div id="year-value" style="display: none;"> <!-- Remove the text but retain the elements -->
-            <span id="min-year"></span>
-            <span id="max-year"></span>
-            <span id="loading" class="loading">Loading data...</span>
+<!-- In the slider-container div, keep the loading message but remove the initial year display -->
+        <div class="slider-container">
+            <div id="year-slider"></div>
         </div>
-        <h4><p style="text-align: center;">Filter by year</p></h4>
-
-    </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- NoUI control JS -->
@@ -99,20 +93,20 @@
         // Create a layer group for our points
         const pointsLayer = L.layerGroup().addTo(map);
 
-        // Fetch the external GeoJSON
-        fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('loading').style.display = 'none';
-                
-                // Process the GeoJSON data
-                processGeoJSON(data);
-            })
-            .catch(error => {
-                console.error('Error loading GeoJSON:', error);
-                document.getElementById('loading').textContent = 'Error loading data';
-            });
-
+fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
+    .then(response => {
+        if (!response.ok) throw new Error('Network response failed');
+        return response.json();
+    })
+    .then(data => processGeoJSON(data))
+    .catch(error => {
+        console.error('Error loading GeoJSON:', error);
+        L.popup()
+            .setLatLng(map.getCenter())
+            .setContent('Error loading accident data')
+            .openOn(map);
+    });
+        
         function processGeoJSON(geojsonData) {
             // Extract all valid years from features
             const years = [];
@@ -140,6 +134,8 @@
                 return;
             }
 
+                // Remove loading message and display years
+
             // Initialize slider with numeric values
             const slider = document.getElementById('year-slider');
             noUiSlider.create(slider, {
@@ -160,12 +156,7 @@
                     }
                 }
             });
-            document.getElementById('loading').style.display = 'none';
             
-            // Display current year range
-//            document.getElementById('min-year').textContent = minYear;
-//            document.getElementById('max-year').textContent = maxYear;
-
             // Function to filter and display points
             function updatePointsByYear(yearRange) {
                 // Clear existing points
@@ -233,13 +224,14 @@
             updatePointsByYear([minYear, maxYear]);
 
             // Update display when slider changes
-            slider.noUiSlider.on('update', function(values) {
-                const yearRange = values.map(Number);
-  //              document.getElementById('min-year').textContent = yearRange[0];
-  //              document.getElementById('max-year').textContent = yearRange[1];
-                updatePointsByYear(yearRange);
-            });
+        slider.noUiSlider.on('update', function(values) {
+            const yearRange = values.map(Number);
+         //   document.getElementById('min-year').textContent = yearRange[0];
+         //   document.getElementById('max-year').textContent = yearRange[1];
+            updatePointsByYear(yearRange);
+        });
         }
     </script>
 </body>
 </html>
+
