@@ -16,7 +16,6 @@
         "Year": "1866",
         "Month": "01",
         "Day": "04",
-        "Year-Month-Day": "1866-01-04",
         "Description": "Spontaneous combustion at coal sheds consumes nearly 6,000 tons of fuel.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -24,7 +23,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "PGW",
         "General location": "PGW at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1866-01-04"
       },
       "geometry": {
         "type": "Point",
@@ -42,7 +42,6 @@
         "Year": "1870",
         "Month": "08",
         "Day": "18",
-        "Year-Month-Day": "1870-08-18",
         "Description": "Refinery fire.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -50,7 +49,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Phoenix Refinery (Malcolm Lloyd)",
         "General location": "Gibson Point",
-        "Street coordinates": "End of 58th St"
+        "Street coordinates": "End of 58th St",
+        "Year-Month-Day": "1870-08-18"
       },
       "geometry": {
         "type": "Point",
@@ -68,7 +68,6 @@
         "Year": "1871",
         "Month": "06",
         "Day": "22",
-        "Year-Month-Day": "1871-06-22",
         "Description": "Explosion of tank (kerosene).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -76,7 +75,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic",
         "General location": "AOI-1",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1871-06-22"
       },
       "geometry": {
         "type": "Point",
@@ -94,7 +94,6 @@
         "Year": "1872",
         "Month": "04",
         "Day": "01",
-        "Year-Month-Day": "1872-04-01",
         "Description": "Explosion of still (crude oil).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -102,7 +101,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Franklin Coal Oil Works",
         "General location": "Gibson Point",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1872-04-01"
       },
       "geometry": {
         "type": "Point",
@@ -120,7 +120,6 @@
         "Year": "1874",
         "Month": "06",
         "Day": "13",
-        "Year-Month-Day": "1874-06-13",
         "Description": "Lightning-caused explosion of two tanks (kerosene).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -128,7 +127,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "H. W. Harkins",
         "General location": "Gibson Point",
-        "Street coordinates": "West bank of Schuylkill River"
+        "Street coordinates": "West bank of Schuylkill River",
+        "Year-Month-Day": "1874-06-13"
       },
       "geometry": {
         "type": "Point",
@@ -146,7 +146,6 @@
         "Year": "1875",
         "Month": "07",
         "Day": "20",
-        "Year-Month-Day": "1875-07-20",
         "Description": "Explosion of agitator at small refinery.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -154,7 +153,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Stewart, Matthews, and Pennington",
         "General location": "AOI-2",
-        "Street coordinates": "Magazine Ln and Schuylkill River"
+        "Street coordinates": "Magazine Ln and Schuylkill River",
+        "Year-Month-Day": "1875-07-20"
       },
       "geometry": {
         "type": "Point",
@@ -172,7 +172,6 @@
         "Year": "1879",
         "Month": "03",
         "Day": "31",
-        "Year-Month-Day": "1879-03-31",
         "Description": "Explosion of leaking sill (kerosene).",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -180,7 +179,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Belmont (Standard)",
         "General location": "Lower Passyunk",
-        "Street coordinates": "24th St and Mifflin St"
+        "Street coordinates": "24th St and Mifflin St",
+        "Year-Month-Day": "1879-03-31"
       },
       "geometry": {
         "type": "Point",
@@ -198,7 +198,6 @@
         "Year": "1879",
         "Month": "05",
         "Day": "20",
-        "Year-Month-Day": "1879-05-20",
         "Description": "Explosion of still (petroleum).",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -206,7 +205,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Philadelphia Refinery (Standard)",
         "General location": "AOI-8",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1879-05-20"
       },
       "geometry": {
         "type": "Point",
@@ -224,7 +224,6 @@
         "Year": "1879",
         "Month": "06",
         "Day": "11",
-        "Year-Month-Day": "1879-06-11",
         "Description": "Lightning-caused conflagration destroys refinery, storage facilities, wharves, and several vessels, burning up tens of thousands of barrels of fuel, at a loss of hundreds of thousands of dollars.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -232,7 +231,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1879-06-11"
       },
       "geometry": {
         "type": "Point",
@@ -250,7 +250,6 @@
         "Year": "1880",
         "Month": "03",
         "Day": "26",
-        "Year-Month-Day": "1880-03-26",
         "Description": "Workplace accident inside still (explosion of kerosene lamp).",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -258,7 +257,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1880-03-26"
       },
       "geometry": {
         "type": "Point",
@@ -276,7 +276,6 @@
         "Year": "1880",
         "Month": "06",
         "Day": "19",
-        "Year-Month-Day": "1880-06-19",
         "Description": "Explosion of tank (benzene) spreads fire throughout refinery.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -284,7 +283,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Phoenix Refinery (Malcolm Lloyd)",
         "General location": "Gibson Point",
-        "Street coordinates": "End of 58th St"
+        "Street coordinates": "End of 58th St",
+        "Year-Month-Day": "1880-06-19"
       },
       "geometry": {
         "type": "Point",
@@ -302,7 +302,6 @@
         "Year": "1880",
         "Month": "07",
         "Day": "08",
-        "Year-Month-Day": "1880-07-08",
         "Description": "Explosion of still (kerosene).",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -310,7 +309,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1880-07-08"
       },
       "geometry": {
         "type": "Point",
@@ -328,7 +328,6 @@
         "Year": "1881",
         "Month": "01",
         "Day": "18",
-        "Year-Month-Day": "1881-01-18",
         "Description": "Explosion of tank spreads fire throughout refinery.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -336,7 +335,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1881-01-18"
       },
       "geometry": {
         "type": "Point",
@@ -354,7 +354,6 @@
         "Year": "1881",
         "Month": "03",
         "Day": "09",
-        "Year-Month-Day": "1881-03-09",
         "Description": "Explosion of tank (benzene) spreads fire throughout refinery.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -362,7 +361,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Belmont (Standard)",
         "General location": "Lower Passyunk",
-        "Street coordinates": "24th St and Mifflin St"
+        "Street coordinates": "24th St and Mifflin St",
+        "Year-Month-Day": "1881-03-09"
       },
       "geometry": {
         "type": "Point",
@@ -380,7 +380,6 @@
         "Year": "1881",
         "Month": "07",
         "Day": "26",
-        "Year-Month-Day": "1881-07-26",
         "Description": "Explosion of still under repair.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -388,7 +387,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1881-07-26"
       },
       "geometry": {
         "type": "Point",
@@ -406,7 +406,6 @@
         "Year": "1881",
         "Month": "08",
         "Day": "05",
-        "Year-Month-Day": "1881-08-05",
         "Description": "Barge carrying kerosene sinks, spilling contents, and covering surface of river from its mouth to Vine Street.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -414,7 +413,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Unknown",
         "General location": "Schuylkill River",
-        "Street coordinates": "Christian Street wharf"
+        "Street coordinates": "Christian Street wharf",
+        "Year-Month-Day": "1881-08-05"
       },
       "geometry": {
         "type": "Point",
@@ -432,7 +432,6 @@
         "Year": "1881",
         "Month": "09",
         "Day": "09",
-        "Year-Month-Day": "1881-09-09",
         "Description": "Explosion of magazine.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -440,7 +439,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1881-09-09"
       },
       "geometry": {
         "type": "Point",
@@ -458,7 +458,6 @@
         "Year": "1882",
         "Month": "06",
         "Day": "20",
-        "Year-Month-Day": "1882-06-20",
         "Description": "Lightning-caused explosion of tank (kerosene).",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -466,7 +465,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Phoenix Refinery (Malcolm Lloyd)",
         "General location": "Gibson Point",
-        "Street coordinates": "End of 58th St"
+        "Street coordinates": "End of 58th St",
+        "Year-Month-Day": "1882-06-20"
       },
       "geometry": {
         "type": "Point",
@@ -484,7 +484,6 @@
         "Year": "1884",
         "Month": "05",
         "Day": "23",
-        "Year-Month-Day": "1884-05-23",
         "Description": "Lightning-caused explosion of tank becomes major conflagration.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -492,7 +491,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Philadelphia Refinery (Standard)",
         "General location": "AOI-8",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1884-05-23"
       },
       "geometry": {
         "type": "Point",
@@ -510,7 +510,6 @@
         "Year": "1884",
         "Month": "06",
         "Day": "05",
-        "Year-Month-Day": "1884-06-05",
         "Description": "Fire at kerosene storage warehouse. ",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -518,7 +517,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Phoenix Refinery (Malcolm Lloyd)",
         "General location": "Gibson Point",
-        "Street coordinates": "End of 58th St"
+        "Street coordinates": "End of 58th St",
+        "Year-Month-Day": "1884-06-05"
       },
       "geometry": {
         "type": "Point",
@@ -536,7 +536,6 @@
         "Year": "1885",
         "Month": "05",
         "Day": "24",
-        "Year-Month-Day": "1885-05-24",
         "Description": "Fire destroys alum and acid buildings at chemical works.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -544,7 +543,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Harrison Brothers Chemical Works",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1885-05-24"
       },
       "geometry": {
         "type": "Point",
@@ -562,7 +562,6 @@
         "Year": "1885",
         "Month": "10",
         "Day": "29",
-        "Year-Month-Day": "1885-10-29",
         "Description": "Lightning-caused explosion of tank (benzene).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -570,7 +569,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Phoenix Refinery (Malcolm Lloyd)",
         "General location": "Gibson Point",
-        "Street coordinates": "End of 58th St"
+        "Street coordinates": "End of 58th St",
+        "Year-Month-Day": "1885-10-29"
       },
       "geometry": {
         "type": "Point",
@@ -588,7 +588,6 @@
         "Year": "1886",
         "Month": "06",
         "Day": "06",
-        "Year-Month-Day": "1886-06-06",
         "Description": "Explosion of tank.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -596,7 +595,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Philadelphia Refinery (Standard)",
         "General location": "AOI-8",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1886-06-06"
       },
       "geometry": {
         "type": "Point",
@@ -614,7 +614,6 @@
         "Year": "1887",
         "Month": "02",
         "Day": "19",
-        "Year-Month-Day": "1887-02-19",
         "Description": "Fire at sulphur acid building at chemical works.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -622,7 +621,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Henry Bower Chemical Works",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "30th St and Grays Ferry Ave"
+        "Street coordinates": "30th St and Grays Ferry Ave",
+        "Year-Month-Day": "1887-02-19"
       },
       "geometry": {
         "type": "Point",
@@ -640,7 +640,6 @@
         "Year": "1887",
         "Month": "07",
         "Day": "13",
-        "Year-Month-Day": "1887-07-13",
         "Description": "Explosion of still spreads fire to other stills. ",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -648,7 +647,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1887-07-13"
       },
       "geometry": {
         "type": "Point",
@@ -666,7 +666,6 @@
         "Year": "1887",
         "Month": "07",
         "Day": "31",
-        "Year-Month-Day": "1887-07-31",
         "Description": "Lightning-caused explosion of tank (distilled oil)â€”same tank that attracted lightning in 1884â€”leads to fire that lasts about five hours.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -674,7 +673,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "AOI-8",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1887-07-31"
       },
       "geometry": {
         "type": "Point",
@@ -692,7 +692,6 @@
         "Year": "1888",
         "Month": "11",
         "Day": "29",
-        "Year-Month-Day": "1888-11-29",
         "Description": "Explosion of naphtha.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -700,7 +699,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gibson Point Oil Warehouse (Bosshardt and Wilson)",
         "General location": "Gibson Point",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1888-11-29"
       },
       "geometry": {
         "type": "Point",
@@ -718,7 +718,6 @@
         "Year": "1889",
         "Month": "07",
         "Day": "13",
-        "Year-Month-Day": "1889-07-13",
         "Description": "Explosion of still (steam and oil).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -726,7 +725,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1889-07-13"
       },
       "geometry": {
         "type": "Point",
@@ -744,7 +744,6 @@
         "Year": "1889",
         "Month": "07",
         "Day": "29",
-        "Year-Month-Day": "1889-07-29",
         "Description": "British tanker ship Thordisa catches fire while loading kerosene bound for France. ",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -752,7 +751,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard); Continental Oil Shipping Company",
         "General location": "Schuylkill River",
-        "Street coordinates": "Atlantic wharves near Passyunk Bridge"
+        "Street coordinates": "Atlantic wharves near Passyunk Bridge",
+        "Year-Month-Day": "1889-07-29"
       },
       "geometry": {
         "type": "Point",
@@ -770,7 +770,6 @@
         "Year": "1889",
         "Month": "11",
         "Day": "07",
-        "Year-Month-Day": "1889-11-07",
         "Description": "Explosion of still.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -778,7 +777,8 @@
         "Dead (minimum)": "2",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1889-11-07"
       },
       "geometry": {
         "type": "Point",
@@ -796,7 +796,6 @@
         "Year": "1890",
         "Month": "06",
         "Day": "05",
-        "Year-Month-Day": "1890-06-05",
         "Description": "Explosion on tanker ship Hans und Kurt (refined oil) during loading.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -804,7 +803,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Schuylkill River",
-        "Street coordinates": "Below Passyunk Bridge"
+        "Street coordinates": "Below Passyunk Bridge",
+        "Year-Month-Day": "1890-06-05"
       },
       "geometry": {
         "type": "Point",
@@ -822,7 +822,6 @@
         "Year": "1891",
         "Month": "05",
         "Day": "14",
-        "Year-Month-Day": "1891-05-14",
         "Description": "Three tanks (oil, benzene) catch on fire, which spreads to buildings.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -830,7 +829,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Belmont (Standard)",
         "General location": "Lower Passyunk",
-        "Street coordinates": "24th St and Mifflin St"
+        "Street coordinates": "24th St and Mifflin St",
+        "Year-Month-Day": "1891-05-14"
       },
       "geometry": {
         "type": "Point",
@@ -848,7 +848,6 @@
         "Year": "1891",
         "Month": "07",
         "Day": "03",
-        "Year-Month-Day": "1891-07-03",
         "Description": "Explosion of tanker ship Standard (refined oil).",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -856,7 +855,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Schuylkill River",
-        "Street coordinates": "Below Passyunk Bridge"
+        "Street coordinates": "Below Passyunk Bridge",
+        "Year-Month-Day": "1891-07-03"
       },
       "geometry": {
         "type": "Point",
@@ -874,7 +874,6 @@
         "Year": "1891",
         "Month": "08",
         "Day": "11",
-        "Year-Month-Day": "1891-08-11",
         "Description": "Workplace accident (explosion of air pressure device).",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -882,7 +881,8 @@
         "Dead (minimum)": "2",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1891-08-11"
       },
       "geometry": {
         "type": "Point",
@@ -900,7 +900,6 @@
         "Year": "1892",
         "Month": "10",
         "Day": "30",
-        "Year-Month-Day": "1892-10-30",
         "Description": "Explosion of leaking oil pipes burns wharves, boats, and threatens gas works; river catches fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -908,7 +907,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Schuylkill River",
-        "Street coordinates": "Below Passyunk Bridge"
+        "Street coordinates": "Below Passyunk Bridge",
+        "Year-Month-Day": "1892-10-30"
       },
       "geometry": {
         "type": "Point",
@@ -926,7 +926,6 @@
         "Year": "1892",
         "Month": "11",
         "Day": "01",
-        "Year-Month-Day": "1892-11-01",
         "Description": "River catches fire after continued oil spill from leaking pipes.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -934,7 +933,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Schuylkill River",
-        "Street coordinates": "Below Passyunk Bridge"
+        "Street coordinates": "Below Passyunk Bridge",
+        "Year-Month-Day": "1892-11-01"
       },
       "geometry": {
         "type": "Point",
@@ -952,7 +952,6 @@
         "Year": "1893",
         "Month": "12",
         "Day": "29",
-        "Year-Month-Day": "1893-12-29",
         "Description": "Explosion of boiler.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -960,7 +959,8 @@
         "Dead (minimum)": "2",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1893-12-29"
       },
       "geometry": {
         "type": "Point",
@@ -978,7 +978,6 @@
         "Year": "1894",
         "Month": "02",
         "Day": "27",
-        "Year-Month-Day": "1894-02-27",
         "Description": "Explosion of purifying house.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -986,7 +985,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "PGW (UGI)",
         "General location": "PGW at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1894-02-27"
       },
       "geometry": {
         "type": "Point",
@@ -1004,7 +1004,6 @@
         "Year": "1894",
         "Month": "06",
         "Day": "04",
-        "Year-Month-Day": "1894-06-04",
         "Description": "Explosion of tank.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -1012,7 +1011,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1894-06-04"
       },
       "geometry": {
         "type": "Point",
@@ -1030,7 +1030,6 @@
         "Year": "1895",
         "Month": "07",
         "Day": "22",
-        "Year-Month-Day": "1895-07-22",
         "Description": "Explosion of escaped gas destroys receiving department building.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1038,7 +1037,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Philadelphia Refinery (Standard)",
         "General location": "AOI-8",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1895-07-22"
       },
       "geometry": {
         "type": "Point",
@@ -1056,7 +1056,6 @@
         "Year": "1896",
         "Month": "08",
         "Day": "02",
-        "Year-Month-Day": "1896-08-02",
         "Description": "Fire in asphalt plant.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -1064,7 +1063,8 @@
         "Dead (minimum)": "3",
         "Responsible corporate entity": "Philadelphia Paving Company",
         "General location": "Gibson Point",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1896-08-02"
       },
       "geometry": {
         "type": "Point",
@@ -1082,7 +1082,6 @@
         "Year": "1898",
         "Month": "06",
         "Day": "13",
-        "Year-Month-Day": "1898-06-13",
         "Description": "Fire burns paraffin works, wharves, and one vessel.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1090,7 +1089,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Philadelphia Refinery (Standard)",
         "General location": "AOI-8",
-        "Street coordinates": "35th St and Mifflin St"
+        "Street coordinates": "35th St and Mifflin St",
+        "Year-Month-Day": "1898-06-13"
       },
       "geometry": {
         "type": "Point",
@@ -1108,7 +1108,6 @@
         "Year": "1898",
         "Month": "08",
         "Day": "04",
-        "Year-Month-Day": "1898-08-04",
         "Description": "Lightning-caused explosion of tanks.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -1116,7 +1115,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Gibson Point",
-        "Street coordinates": "58th St and Schuylkill River"
+        "Street coordinates": "58th St and Schuylkill River",
+        "Year-Month-Day": "1898-08-04"
       },
       "geometry": {
         "type": "Point",
@@ -1134,7 +1134,6 @@
         "Year": "1898",
         "Month": "11",
         "Day": "04",
-        "Year-Month-Day": "1898-11-04",
         "Description": "Large fire at naphtha soap plant.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -1142,7 +1141,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Fels & Company",
         "General location": "Elmwood",
-        "Street coordinates": "Island Ave and Paschall Ave"
+        "Street coordinates": "Island Ave and Paschall Ave",
+        "Year-Month-Day": "1898-11-04"
       },
       "geometry": {
         "type": "Point",
@@ -1160,7 +1160,6 @@
         "Year": "1899",
         "Month": "09",
         "Day": "09",
-        "Year-Month-Day": "1899-09-09",
         "Description": "Four-alarm fire destroys small refinery.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1168,7 +1167,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Beardsley and Murphy (Lucent Company)",
         "General location": "Gibson Point",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1899-09-09"
       },
       "geometry": {
         "type": "Point",
@@ -1186,7 +1186,6 @@
         "Year": "1899",
         "Month": "09",
         "Day": "22",
-        "Year-Month-Day": "1899-09-22",
         "Description": "Oil from ruptured pipeline threatens Mingo Creek; workers divert spill into a diked meadow, then light on fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -1194,7 +1193,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Elmwood",
-        "Street coordinates": "63rd St near Woodland Ave"
+        "Street coordinates": "63rd St near Woodland Ave",
+        "Year-Month-Day": "1899-09-22"
       },
       "geometry": {
         "type": "Point",
@@ -1202,7 +1202,8 @@
           -75.232785,
           39.919674
         ]
-      }
+      },
+      "id": 45
     },
     {
       "type": "Feature",
@@ -1212,15 +1213,15 @@
         "Year": "1900",
         "Month": "02",
         "Day": "11",
-        "Year-Month-Day": "1900-02-11",
-        "Description": null,
-        "Injurious?": null,
-        "Deadly?": null,
-        "Injured (minimum)": null,
-        "Dead (minimum)": null,
-        "Responsible corporate entity": null,
-        "General location": null,
-        "Street coordinates": null
+        "Description": "Explosion of pipes and tanks (benzene).",
+        "Injurious?": "Y",
+        "Deadly?": "Y",
+        "Injured (minimum)": "4",
+        "Dead (minimum)": "1",
+        "Responsible corporate entity": "Atlantic (Standard)",
+        "General location": "AOI-1",
+        "Street coordinates": "29th St and Passyunk Ave\n",
+        "Year-Month-Day": "1900-02-11"
       },
       "geometry": {
         "type": "Point",
@@ -1238,7 +1239,6 @@
         "Year": "1900",
         "Month": "06",
         "Day": "01",
-        "Year-Month-Day": "1900-06-01",
         "Description": "Fire in stable.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1246,7 +1246,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Henry Bower Chemical Works",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "28th St and Grays Ferry Ave"
+        "Street coordinates": "28th St and Grays Ferry Ave",
+        "Year-Month-Day": "1900-06-01"
       },
       "geometry": {
         "type": "Point",
@@ -1264,7 +1265,6 @@
         "Year": "1900",
         "Month": "08",
         "Day": "16",
-        "Year-Month-Day": "1900-08-16",
         "Description": "Explosion of tank (kerosene) leads to fire in illuminating gas factory.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -1272,7 +1272,8 @@
         "Dead (minimum)": "3",
         "Responsible corporate entity": "Philadelphia Refinery (Standard)",
         "General location": "AOI-8",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1900-08-16"
       },
       "geometry": {
         "type": "Point",
@@ -1290,7 +1291,6 @@
         "Year": "1900",
         "Month": "11",
         "Day": "10",
-        "Year-Month-Day": "1900-11-10",
         "Description": "Fire in still (hot tar).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -1298,7 +1298,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1900-11-10"
       },
       "geometry": {
         "type": "Point",
@@ -1316,7 +1317,6 @@
         "Year": "1901",
         "Month": "04",
         "Day": "12",
-        "Year-Month-Day": "1901-04-12",
         "Description": "Explosion of stills (hot tar).",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1324,7 +1324,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "AOI-8",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1901-04-12"
       },
       "geometry": {
         "type": "Point",
@@ -1342,7 +1343,6 @@
         "Year": "1901",
         "Month": "08",
         "Day": "19",
-        "Year-Month-Day": "1901-08-19",
         "Description": "Lightning-caused explosion of tank (benzene) becomes conflagration, causes about $500,000 in property loss, including some 150,000 barrels of oil.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -1350,7 +1350,8 @@
         "Dead (minimum)": "5",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "AOI-2",
-        "Street coordinates": "Just south of Passyunk Ave, opposite UGI office"
+        "Street coordinates": "Just south of Passyunk Ave, opposite UGI office",
+        "Year-Month-Day": "1901-08-19"
       },
       "geometry": {
         "type": "Point",
@@ -1368,7 +1369,6 @@
         "Year": "1902",
         "Month": "07",
         "Day": "25",
-        "Year-Month-Day": "1902-07-25",
         "Description": "Lightning-caused explosion of tank (naphtha); fire lasts 3 hours.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1376,7 +1376,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1902-07-25"
       },
       "geometry": {
         "type": "Point",
@@ -1394,7 +1395,6 @@
         "Year": "1902",
         "Month": "11",
         "Day": "03",
-        "Year-Month-Day": "1902-11-03",
         "Description": "Explosion of pipe (boiling water).",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1402,7 +1402,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1902-11-03"
       },
       "geometry": {
         "type": "Point",
@@ -1420,7 +1421,6 @@
         "Year": "1903",
         "Month": "04",
         "Day": "11",
-        "Year-Month-Day": "1903-04-11",
         "Description": "Match-lit explosion of railroad tank car (benzene).",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -1428,7 +1428,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "B&O Railroad",
         "General location": "Lower Passyunk",
-        "Street coordinates": "Along 25th St railroad tracks"
+        "Street coordinates": "Along 25th St railroad tracks",
+        "Year-Month-Day": "1903-04-11"
       },
       "geometry": {
         "type": "Point",
@@ -1446,7 +1447,6 @@
         "Year": "1904",
         "Month": "02",
         "Day": "16",
-        "Year-Month-Day": "1904-02-16",
         "Description": "Still (crude oil) catches fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -1454,7 +1454,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "AOI-8",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1904-02-16"
       },
       "geometry": {
         "type": "Point",
@@ -1472,7 +1473,6 @@
         "Year": "1904",
         "Month": "08",
         "Day": "16",
-        "Year-Month-Day": "1904-08-16",
         "Description": "Fire in asphalt plant.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1480,7 +1480,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Barber Asphalt Company",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "Grays Ferry Ave Bridge at east bank"
+        "Street coordinates": "Grays Ferry Ave Bridge at east bank",
+        "Year-Month-Day": "1904-08-16"
       },
       "geometry": {
         "type": "Point",
@@ -1498,7 +1499,6 @@
         "Year": "1904",
         "Month": "08",
         "Day": "21",
-        "Year-Month-Day": "1904-08-21",
         "Description": "Fire in can and box factory lasts 3 hours.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1506,7 +1506,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1904-08-21"
       },
       "geometry": {
         "type": "Point",
@@ -1524,7 +1525,6 @@
         "Year": "1905",
         "Month": "01",
         "Day": "08",
-        "Year-Month-Day": "1905-01-08",
         "Description": "Fire in lubricating oil plant.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1532,7 +1532,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1905-01-08"
       },
       "geometry": {
         "type": "Point",
@@ -1550,7 +1551,6 @@
         "Year": "1905",
         "Month": "05",
         "Day": "12",
-        "Year-Month-Day": "1905-05-12",
         "Description": "Explosion of 2.5-million-cubic-foot gas holder.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -1558,7 +1558,8 @@
         "Dead (minimum)": "5",
         "Responsible corporate entity": "PGW (UGI)",
         "General location": "PGW at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1905-05-12"
       },
       "geometry": {
         "type": "Point",
@@ -1576,7 +1577,6 @@
         "Year": "1905",
         "Month": "08",
         "Day": "23",
-        "Year-Month-Day": "1905-08-23",
         "Description": "Fire in coal gas plant.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1584,7 +1584,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "PGW (UGI)",
         "General location": "PGW at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1905-08-23"
       },
       "geometry": {
         "type": "Point",
@@ -1602,7 +1603,6 @@
         "Year": "1905",
         "Month": "10",
         "Day": "23",
-        "Year-Month-Day": "1905-10-23",
         "Description": "Fire in lubricating oil plant.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1610,7 +1610,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1905-10-23"
       },
       "geometry": {
         "type": "Point",
@@ -1628,7 +1629,6 @@
         "Year": "1906",
         "Month": "07",
         "Day": "28",
-        "Year-Month-Day": "1906-07-28",
         "Description": "Explosion of tank (oil).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -1636,7 +1636,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "AOI-1",
-        "Street coordinates": "28th St and Passyunk Ave"
+        "Street coordinates": "28th St and Passyunk Ave",
+        "Year-Month-Day": "1906-07-28"
       },
       "geometry": {
         "type": "Point",
@@ -1654,7 +1655,6 @@
         "Year": "1906",
         "Month": "09",
         "Day": "07",
-        "Year-Month-Day": "1906-09-07",
         "Description": "Explosion of safety valve causes feed pipe to fall in paraffin plant.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -1662,7 +1662,8 @@
         "Dead (minimum)": "2",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1906-09-07"
       },
       "geometry": {
         "type": "Point",
@@ -1680,7 +1681,6 @@
         "Year": "1906",
         "Month": "09",
         "Day": "07",
-        "Year-Month-Day": "1906-09-07",
         "Description": "Explosion of safety valve causes feed pipe to fall in paraffin plant.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -1688,7 +1688,8 @@
         "Dead (minimum)": "2",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1906-09-07"
       },
       "geometry": {
         "type": "Point",
@@ -1706,7 +1707,6 @@
         "Year": "1907",
         "Month": "03",
         "Day": "21",
-        "Year-Month-Day": "1907-03-21",
         "Description": "Conflagration leads to general destruction, lasts 12 hours, causes about $400,000 in property loss.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1714,7 +1714,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1907-03-21"
       },
       "geometry": {
         "type": "Point",
@@ -1732,7 +1733,6 @@
         "Year": "1907",
         "Month": "05",
         "Day": "03",
-        "Year-Month-Day": "1907-05-03",
         "Description": "Fire in compounding room of chemical building.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1740,7 +1740,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "AOI-1",
-        "Street coordinates": "Passyunk Ave and League Island Rd"
+        "Street coordinates": "Passyunk Ave and League Island Rd",
+        "Year-Month-Day": "1907-05-03"
       },
       "geometry": {
         "type": "Point",
@@ -1758,7 +1759,6 @@
         "Year": "1908",
         "Month": "08",
         "Day": "19",
-        "Year-Month-Day": "1908-08-19",
         "Description": "Explosion of two tanks (oil) becomes large fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -1766,7 +1766,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1908-08-19"
       },
       "geometry": {
         "type": "Point",
@@ -1784,7 +1785,6 @@
         "Year": "1910",
         "Month": "12",
         "Day": "19",
-        "Year-Month-Day": "1910-12-19",
         "Description": "Explosion in oil testing room.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1792,7 +1792,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic (Standard)",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1910-12-19"
       },
       "geometry": {
         "type": "Point",
@@ -1810,7 +1811,6 @@
         "Year": "1911",
         "Month": "07",
         "Day": "06",
-        "Year-Month-Day": "1911-07-06",
         "Description": "Workplace accident (chemical burn).",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1818,7 +1818,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Harrison Brothers Chemical Works",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "35th St and Grays Ferry Ave"
+        "Street coordinates": "35th St and Grays Ferry Ave",
+        "Year-Month-Day": "1911-07-06"
       },
       "geometry": {
         "type": "Point",
@@ -1836,7 +1837,6 @@
         "Year": "1912",
         "Month": "02",
         "Day": "18",
-        "Year-Month-Day": "1912-02-18",
         "Description": "Explosion of still destroying many tanks; four-alarm fire lasts about 15 hours, causes about $500,000 in property loss.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1844,7 +1844,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-8",
-        "Street coordinates": "35th St and Ritner St"
+        "Street coordinates": "35th St and Ritner St",
+        "Year-Month-Day": "1912-02-18"
       },
       "geometry": {
         "type": "Point",
@@ -1862,15 +1863,15 @@
         "Year": "1913",
         "Month": "07",
         "Day": "20",
-        "Year-Month-Day": "1913-07-20",
-        "Description": null,
-        "Injurious?": null,
-        "Deadly?": null,
-        "Injured (minimum)": null,
-        "Dead (minimum)": null,
-        "Responsible corporate entity": null,
-        "General location": null,
-        "Street coordinates": null
+        "Description": "Lightning-caused explosion of mixing tank becomes large fire.",
+        "Injurious?": "N",
+        "Deadly?": "N",
+        "Injured (minimum)": "0",
+        "Dead (minimum)": "0",
+        "Responsible corporate entity": "Atlantic Refining",
+        "General location": "Atlantic at Point Breeze",
+        "Street coordinates": null,
+        "Year-Month-Day": "1913-07-20"
       },
       "geometry": {
         "type": "Point",
@@ -1888,7 +1889,6 @@
         "Year": "1915",
         "Month": "04",
         "Day": "30",
-        "Year-Month-Day": "1915-04-30",
         "Description": "Lightning-caused explosion of tank (coal tar) spreads to cityâ€™s gas works; four-alarm fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -1896,7 +1896,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining; PGW (UGI)",
         "General location": "AOI-2; PGW at Point Breeze",
-        "Street coordinates": "3100 Passyunk Ave"
+        "Street coordinates": "3100 Passyunk Ave",
+        "Year-Month-Day": "1915-04-30"
       },
       "geometry": {
         "type": "Point",
@@ -1914,7 +1915,6 @@
         "Year": "1916",
         "Month": "02",
         "Day": "15",
-        "Year-Month-Day": "1916-02-15",
         "Description": "Break in pipe (nitric acid) at chemical works leads to 15-alarm fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -1922,7 +1922,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Harrison Brothers Chemical Works",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "35th St and Grays Ferry Ave"
+        "Street coordinates": "35th St and Grays Ferry Ave",
+        "Year-Month-Day": "1916-02-15"
       },
       "geometry": {
         "type": "Point",
@@ -1940,7 +1941,6 @@
         "Year": "1917",
         "Month": "07",
         "Day": "24",
-        "Year-Month-Day": "1917-07-24",
         "Description": "Multi-day fire causes widespread damage.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -1948,7 +1948,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-1",
-        "Street coordinates": "27th St and Passyunk Ave"
+        "Street coordinates": "27th St and Passyunk Ave",
+        "Year-Month-Day": "1917-07-24"
       },
       "geometry": {
         "type": "Point",
@@ -1966,7 +1967,6 @@
         "Year": "1919",
         "Month": "01",
         "Day": "16",
-        "Year-Month-Day": "1919-01-16",
         "Description": "Tanker ship fire spreads to wharves and neighboring vessels, causes about $1 million in property loss.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -1974,7 +1974,8 @@
         "Dead (minimum)": "3",
         "Responsible corporate entity": "Atlantic Refining; Anglo-American Oil Company",
         "General location": "Schuylkill River",
-        "Street coordinates": "Below Passyunk Bridge"
+        "Street coordinates": "Below Passyunk Bridge",
+        "Year-Month-Day": "1919-01-16"
       },
       "geometry": {
         "type": "Point",
@@ -1992,7 +1993,6 @@
         "Year": "1921",
         "Month": "02",
         "Day": "17",
-        "Year-Month-Day": "1921-02-17",
         "Description": "Explosion of five tanks threatens city gas works; five-alarm fire.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2000,7 +2000,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-8",
-        "Street coordinates": "35th St and River Rd"
+        "Street coordinates": "35th St and River Rd",
+        "Year-Month-Day": "1921-02-17"
       },
       "geometry": {
         "type": "Point",
@@ -2018,7 +2019,6 @@
         "Year": "1921",
         "Month": "08",
         "Day": "14",
-        "Year-Month-Day": "1921-08-14",
         "Description": "Explosion of still (steam) leads to explosion of tanks (refined oil); six-alarm fire lasts for days, causes about $1 million in property loss.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -2026,7 +2026,8 @@
         "Dead (minimum)": "7",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1921-08-14"
       },
       "geometry": {
         "type": "Point",
@@ -2039,20 +2040,20 @@
     {
       "type": "Feature",
       "properties": {
-        "x": "-75.19825853",
-        "y": "39.91056007",
-        "Year": "1921",
+        "x": -75.19825853,
+        "y": 39.91056007,
+        "Year": 1921,
         "Month": "09",
-        "Day": "04",
-        "Year-Month-Day": "1921-09-04",
-        "Description": null,
-        "Injurious?": null,
-        "Deadly?": null,
-        "Injured (minimum)": null,
-        "Dead (minimum)": null,
-        "Responsible corporate entity": null,
-        "General location": null,
-        "Street coordinates": null
+        "Day": 11,
+        "Description": "Lightning-caused explosion of tank (gasoline).",
+        "Injurious?": "Y",
+        "Deadly?": "N",
+        "Injured (minimum)": 3,
+        "Dead (minimum)": 0,
+        "Responsible corporate entity": "Gulf",
+        "General location": "Gibson Point",
+        "Street coordinates": "58th St and Schuylkill River",
+        "Year-Month-Day": "1921-09-11"
       },
       "geometry": {
         "type": "Point",
@@ -2060,7 +2061,8 @@
           -75.19825853,
           39.91056007
         ]
-      }
+      },
+      "id": 78
     },
     {
       "type": "Feature",
@@ -2070,7 +2072,6 @@
         "Year": "1921",
         "Month": "09",
         "Day": "14",
-        "Year-Month-Day": "1921-09-14",
         "Description": "Explosion of still (naphtha).",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -2078,7 +2079,8 @@
         "Dead (minimum)": "11",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-8",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1921-09-14"
       },
       "geometry": {
         "type": "Point",
@@ -2096,7 +2098,6 @@
         "Year": "1922",
         "Month": "07",
         "Day": "01",
-        "Year-Month-Day": "1922-07-01",
         "Description": "Lightning-caused explosion of tank (gasoline).",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2104,7 +2105,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-4",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1922-07-01"
       },
       "geometry": {
         "type": "Point",
@@ -2122,7 +2124,6 @@
         "Year": "1923",
         "Month": "05",
         "Day": "07",
-        "Year-Month-Day": "1923-05-07",
         "Description": "Refinery fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2130,7 +2131,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1923-05-07"
       },
       "geometry": {
         "type": "Point",
@@ -2148,7 +2150,6 @@
         "Year": "1924",
         "Month": "01",
         "Day": "01",
-        "Year-Month-Day": "1924-01-01",
         "Description": "Two stills (crude oil) catch on fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2156,7 +2157,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1924-01-01"
       },
       "geometry": {
         "type": "Point",
@@ -2174,7 +2176,6 @@
         "Year": "1924",
         "Month": "04",
         "Day": "09",
-        "Year-Month-Day": "1924-04-09",
         "Description": "Explosion of still (coke).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2182,7 +2183,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1924-04-09"
       },
       "geometry": {
         "type": "Point",
@@ -2200,7 +2202,6 @@
         "Year": "1924",
         "Month": "04",
         "Day": "25",
-        "Year-Month-Day": "1924-04-25",
         "Description": "Still (crude oil) catches fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2208,7 +2209,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1924-04-25"
       },
       "geometry": {
         "type": "Point",
@@ -2226,7 +2228,6 @@
         "Year": "1924",
         "Month": "04",
         "Day": "28",
-        "Year-Month-Day": "1924-04-28",
         "Description": "Oil-drenched riverbank, site of a dump, catches fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2234,7 +2235,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-10",
-        "Street coordinates": "Passyunk Ave Bridge at west bank"
+        "Street coordinates": "Passyunk Ave Bridge at west bank",
+        "Year-Month-Day": "1924-04-28"
       },
       "geometry": {
         "type": "Point",
@@ -2252,7 +2254,6 @@
         "Year": "1924",
         "Month": "11",
         "Day": "07",
-        "Year-Month-Day": "1924-11-07",
         "Description": "Explosion of still (crude oil).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2260,7 +2261,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-2",
-        "Street coordinates": "32nd St and Passyunk Ave"
+        "Street coordinates": "32nd St and Passyunk Ave",
+        "Year-Month-Day": "1924-11-07"
       },
       "geometry": {
         "type": "Point",
@@ -2278,7 +2280,6 @@
         "Year": "1925",
         "Month": "08",
         "Day": "30",
-        "Year-Month-Day": "1925-08-30",
         "Description": "Explosion of tank (gasoline); fire lasts about two hours.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2286,7 +2287,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-1",
-        "Street coordinates": "28th St and Passyunk Ave"
+        "Street coordinates": "28th St and Passyunk Ave",
+        "Year-Month-Day": "1925-08-30"
       },
       "geometry": {
         "type": "Point",
@@ -2304,7 +2306,6 @@
         "Year": "1925",
         "Month": "10",
         "Day": "14",
-        "Year-Month-Day": "1925-10-14",
         "Description": "Explosion in engine room of tugboat VanDyke sinks the craft.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -2312,7 +2313,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Schuylkill River",
-        "Street coordinates": "Atlantic wharves near Passyunk Bridge"
+        "Street coordinates": "Atlantic wharves near Passyunk Bridge",
+        "Year-Month-Day": "1925-10-14"
       },
       "geometry": {
         "type": "Point",
@@ -2330,7 +2332,6 @@
         "Year": "1926",
         "Month": "02",
         "Day": "01",
-        "Year-Month-Day": "1926-02-01",
         "Description": "Explosion of still (oil) spreads flames to numerous other stills; fire lasts about 4 hours.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2338,7 +2339,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-8",
-        "Street coordinates": "32nd St and Ritner St"
+        "Street coordinates": "32nd St and Ritner St",
+        "Year-Month-Day": "1926-02-01"
       },
       "geometry": {
         "type": "Point",
@@ -2356,7 +2358,6 @@
         "Year": "1926",
         "Month": "11",
         "Day": "18",
-        "Year-Month-Day": "1926-11-18",
         "Description": "Explosion of barge carrying gasoline.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -2364,7 +2365,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Schuylkill River",
-        "Street coordinates": "Near Passyunk Ave"
+        "Street coordinates": "Near Passyunk Ave",
+        "Year-Month-Day": "1926-11-18"
       },
       "geometry": {
         "type": "Point",
@@ -2382,7 +2384,6 @@
         "Year": "1927",
         "Month": "01",
         "Day": "09",
-        "Year-Month-Day": "1927-01-09",
         "Description": "Two separate explosions of tanks (sulphur) on same day.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2390,7 +2391,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1927-01-09"
       },
       "geometry": {
         "type": "Point",
@@ -2408,7 +2410,6 @@
         "Year": "1929",
         "Month": "12",
         "Day": "13",
-        "Year-Month-Day": "1929-12-13",
         "Description": "Four-alarm fire causes general damage to coal tar distillery.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2416,7 +2417,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Barrett Company (Allied Chemical & Dye Corporation)",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "37th St and Grays Ferry Ave"
+        "Street coordinates": "37th St and Grays Ferry Ave",
+        "Year-Month-Day": "1929-12-13"
       },
       "geometry": {
         "type": "Point",
@@ -2434,7 +2436,6 @@
         "Year": "1929",
         "Month": "12",
         "Day": "27",
-        "Year-Month-Day": "1929-12-27",
         "Description": "Explosion of tank (oil).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2442,7 +2443,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-2",
-        "Street coordinates": "32nd St and Passyunk Ave"
+        "Street coordinates": "32nd St and Passyunk Ave",
+        "Year-Month-Day": "1929-12-27"
       },
       "geometry": {
         "type": "Point",
@@ -2460,7 +2462,6 @@
         "Year": "1930",
         "Month": "03",
         "Day": "19",
-        "Year-Month-Day": "1930-03-19",
         "Description": "Fire in shanty by pier leads to fire in warehouse storing kerosene; loss of some 70,000 barrels of fuel.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2468,7 +2469,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": "100 feet south of Penrose Ave (Platt) Bridge"
+        "Street coordinates": "100 feet south of Penrose Ave (Platt) Bridge",
+        "Year-Month-Day": "1930-03-19"
       },
       "geometry": {
         "type": "Point",
@@ -2486,7 +2488,6 @@
         "Year": "1930",
         "Month": "07",
         "Day": "12",
-        "Year-Month-Day": "1930-07-12",
         "Description": "Three-alarm fire.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2494,7 +2495,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1930-07-12"
       },
       "geometry": {
         "type": "Point",
@@ -2512,7 +2514,6 @@
         "Year": "1931",
         "Month": "09",
         "Day": "12",
-        "Year-Month-Day": "1931-09-12",
         "Description": "Explosion of gas stabilization plant causes about $900,000 in property loss.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -2520,7 +2521,8 @@
         "Dead (minimum)": "8",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-8",
-        "Street coordinates": "33rd St and Wolf St"
+        "Street coordinates": "33rd St and Wolf St",
+        "Year-Month-Day": "1931-09-12"
       },
       "geometry": {
         "type": "Point",
@@ -2538,7 +2540,6 @@
         "Year": "1931",
         "Month": "09",
         "Day": "14",
-        "Year-Month-Day": "1931-09-14",
         "Description": "Explosion of still.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2546,7 +2547,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-8",
-        "Street coordinates": "34th St and Point Breeze Ave"
+        "Street coordinates": "34th St and Point Breeze Ave",
+        "Year-Month-Day": "1931-09-14"
       },
       "geometry": {
         "type": "Point",
@@ -2564,7 +2566,6 @@
         "Year": "1932",
         "Month": "03",
         "Day": "06",
-        "Year-Month-Day": "1932-03-06",
         "Description": "Explosion of tank (crude oil); two-alarm fire.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2572,7 +2573,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1932-03-06"
       },
       "geometry": {
         "type": "Point",
@@ -2590,7 +2592,6 @@
         "Year": "1932",
         "Month": "12",
         "Day": "18",
-        "Year-Month-Day": "1932-12-18",
         "Description": "Explosion of tank.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2598,7 +2599,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1932-12-18"
       },
       "geometry": {
         "type": "Point",
@@ -2616,7 +2618,6 @@
         "Year": "1933",
         "Month": "06",
         "Day": "27",
-        "Year-Month-Day": "1933-06-27",
         "Description": "Explosion of still.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2624,7 +2625,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-2",
-        "Street coordinates": "Point Breeze Ave near Schuylkill River"
+        "Street coordinates": "Point Breeze Ave near Schuylkill River",
+        "Year-Month-Day": "1933-06-27"
       },
       "geometry": {
         "type": "Point",
@@ -2642,7 +2644,6 @@
         "Year": "1934",
         "Month": "01",
         "Day": "06",
-        "Year-Month-Day": "1934-01-06",
         "Description": "Explosion of stills and tanks; the blast, felt in Camden, New Jersey, breaks windows and doors in South Philadelphia; resulting four-alarm fire lasts about two hours.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2650,7 +2651,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-8",
-        "Street coordinates": "Jackson St and River Rd"
+        "Street coordinates": "Jackson St and River Rd",
+        "Year-Month-Day": "1934-01-06"
       },
       "geometry": {
         "type": "Point",
@@ -2668,7 +2670,6 @@
         "Year": "1935",
         "Month": "07",
         "Day": "16",
-        "Year-Month-Day": "1935-07-16",
         "Description": "Explosion of still (coal tar).",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2676,7 +2677,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Barrett Company (Allied Chemical & Dye Corporation)",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "36th St and Grays Ferry Ave"
+        "Street coordinates": "36th St and Grays Ferry Ave",
+        "Year-Month-Day": "1935-07-16"
       },
       "geometry": {
         "type": "Point",
@@ -2694,7 +2696,6 @@
         "Year": "1938",
         "Month": "02",
         "Day": "14",
-        "Year-Month-Day": "1938-02-14",
         "Description": "Small coal tar fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2702,7 +2703,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Barrett Company (Allied Chemical & Dye Corporation)",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "36th St and Grays Ferry Ave"
+        "Street coordinates": "36th St and Grays Ferry Ave",
+        "Year-Month-Day": "1938-02-14"
       },
       "geometry": {
         "type": "Point",
@@ -2720,7 +2722,6 @@
         "Year": "1938",
         "Month": "04",
         "Day": "24",
-        "Year-Month-Day": "1938-04-24",
         "Description": "Two-alarm coal tar fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2728,7 +2729,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Barrett Company (Allied Chemical & Dye Corporation)",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "36th St and Grays Ferry Ave"
+        "Street coordinates": "36th St and Grays Ferry Ave",
+        "Year-Month-Day": "1938-04-24"
       },
       "geometry": {
         "type": "Point",
@@ -2746,7 +2748,6 @@
         "Year": "1939",
         "Month": "12",
         "Day": "08",
-        "Year-Month-Day": "1939-12-08",
         "Description": "Four-alarm fire at soap factory causes explosions and thick black smoke; 30 fire companies work for hours to keep flames away from tanks of naphtha.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2754,7 +2755,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Fels & Company",
         "General location": "Elmwood",
-        "Street coordinates": "Island Ave and Paschall Ave"
+        "Street coordinates": "Island Ave and Paschall Ave",
+        "Year-Month-Day": "1939-12-08"
       },
       "geometry": {
         "type": "Point",
@@ -2772,7 +2774,6 @@
         "Year": "1941",
         "Month": "03",
         "Day": "24",
-        "Year-Month-Day": "1941-03-24",
         "Description": "Explosion of still.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2780,7 +2781,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1941-03-24"
       },
       "geometry": {
         "type": "Point",
@@ -2798,7 +2800,6 @@
         "Year": "1941",
         "Month": "05",
         "Day": "07",
-        "Year-Month-Day": "1941-05-07",
         "Description": "Explosion of vat in varnish distillery.",
         "Injurious?": "N",
         "Deadly?": "Y",
@@ -2806,7 +2807,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "DuPont",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "35th St and Grays Ferry Ave"
+        "Street coordinates": "35th St and Grays Ferry Ave",
+        "Year-Month-Day": "1941-05-07"
       },
       "geometry": {
         "type": "Point",
@@ -2824,7 +2826,6 @@
         "Year": "1941",
         "Month": "06",
         "Day": "14",
-        "Year-Month-Day": "1941-06-14",
         "Description": "Explosion of tanker ship (crude oil) from Venezuela.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -2832,7 +2833,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Mene Grande Oil Company (Venezuela)",
         "General location": "AOI-5",
-        "Street coordinates": "Gulf refinery pier"
+        "Street coordinates": "Gulf refinery pier",
+        "Year-Month-Day": "1941-06-14"
       },
       "geometry": {
         "type": "Point",
@@ -2850,7 +2852,6 @@
         "Year": "1941",
         "Month": "11",
         "Day": "30",
-        "Year-Month-Day": "1941-11-30",
         "Description": "Explosion of cracking unit.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2858,7 +2859,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1941-11-30"
       },
       "geometry": {
         "type": "Point",
@@ -2876,7 +2878,6 @@
         "Year": "1944",
         "Month": "04",
         "Day": "12",
-        "Year-Month-Day": "1944-04-12",
         "Description": "Explosion of pumping unit; five-alarm fire.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -2884,7 +2885,8 @@
         "Dead (minimum)": "4",
         "Responsible corporate entity": "Atlantic Refining",
         "General location": "AOI-8",
-        "Street coordinates": "32nd St and Maiden Ln"
+        "Street coordinates": "32nd St and Maiden Ln",
+        "Year-Month-Day": "1944-04-12"
       },
       "geometry": {
         "type": "Point",
@@ -2902,7 +2904,6 @@
         "Year": "1945",
         "Month": "11",
         "Day": "01",
-        "Year-Month-Day": "1945-11-01",
         "Description": "Explosion of gas generator.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -2910,7 +2911,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "PGW (UGI)",
         "General location": "PGW at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1945-11-01"
       },
       "geometry": {
         "type": "Point",
@@ -2928,7 +2930,6 @@
         "Year": "1947",
         "Month": "12",
         "Day": "28",
-        "Year-Month-Day": "1947-12-28",
         "Description": "Explosion of tank (crude oil).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2936,7 +2937,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": "34th St and Penrose Ave (Platt) Bridge"
+        "Street coordinates": "34th St and Penrose Ave (Platt) Bridge",
+        "Year-Month-Day": "1947-12-28"
       },
       "geometry": {
         "type": "Point",
@@ -2954,7 +2956,6 @@
         "Year": "1950",
         "Month": "05",
         "Day": "06",
-        "Year-Month-Day": "1950-05-06",
         "Description": "Explosion of experimental still.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -2962,7 +2963,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1950-05-06"
       },
       "geometry": {
         "type": "Point",
@@ -2980,7 +2982,6 @@
         "Year": "1950",
         "Month": "11",
         "Day": "10",
-        "Year-Month-Day": "1950-11-10",
         "Description": "Explosion of still.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -2988,7 +2989,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1950-11-10"
       },
       "geometry": {
         "type": "Point",
@@ -3006,7 +3008,6 @@
         "Year": "1960",
         "Month": "09",
         "Day": "09",
-        "Year-Month-Day": "1960-09-09",
         "Description": "Lightning-caused accident destroys twenty tanks; eight-alarm fire lasts at least seven hours, and causes about $1 million in property loss.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3014,7 +3015,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1960-09-09"
       },
       "geometry": {
         "type": "Point",
@@ -3032,7 +3034,6 @@
         "Year": "1961",
         "Month": "01",
         "Day": "22",
-        "Year-Month-Day": "1961-01-22",
         "Description": "Puncture of pipeline (crude oil) on bed of Schuylkill River near Penrose Ferry Bridge leads of escape of 28,000 barrels.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3040,7 +3041,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Pipeline; Dredge Philadelphia",
         "General location": "Schuylkill River",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1961-01-22"
       },
       "geometry": {
         "type": "Point",
@@ -3058,7 +3060,6 @@
         "Year": "1961",
         "Month": "02",
         "Day": "02",
-        "Year-Month-Day": "1961-02-02",
         "Description": "Explosion of cracking still (crude oil); four-alarm fire lasts 2.5 hours.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3066,7 +3067,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1961-02-02"
       },
       "geometry": {
         "type": "Point",
@@ -3084,7 +3086,6 @@
         "Year": "1962",
         "Month": "08",
         "Day": "23",
-        "Year-Month-Day": "1962-08-23",
         "Description": "Explosion of storm sewer tunnel infused with refinery leakage.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -3092,7 +3093,8 @@
         "Dead (minimum)": "4",
         "Responsible corporate entity": "Driscoll Construction Company",
         "General location": "AOI-4",
-        "Street coordinates": "26th St and Hartranft St"
+        "Street coordinates": "26th St and Hartranft St",
+        "Year-Month-Day": "1962-08-23"
       },
       "geometry": {
         "type": "Point",
@@ -3110,7 +3112,6 @@
         "Year": "1964",
         "Month": "04",
         "Day": "13",
-        "Year-Month-Day": "1964-04-13",
         "Description": "Spill of 700,000 gallons (gasoline) around tank farm and into Schuylkill River.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3118,7 +3119,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Humble",
         "General location": "AOI-9",
-        "Street coordinates": "Near 70th St and Essington Ave"
+        "Street coordinates": "Near 70th St and Essington Ave",
+        "Year-Month-Day": "1964-04-13"
       },
       "geometry": {
         "type": "Point",
@@ -3136,7 +3138,6 @@
         "Year": "1965",
         "Month": "08",
         "Day": "09",
-        "Year-Month-Day": "1965-08-09",
         "Description": "Lightning-caused explosion of 100,000-gallon tank (butane).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3144,7 +3145,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-9",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1965-08-09"
       },
       "geometry": {
         "type": "Point",
@@ -3162,7 +3164,6 @@
         "Year": "1966",
         "Month": "05",
         "Day": "23",
-        "Year-Month-Day": "1966-05-23",
         "Description": "Explosion of distillation tower (benzene and cumene); five-alarm fire lasts 3.5 hours.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3170,7 +3171,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1966-05-23"
       },
       "geometry": {
         "type": "Point",
@@ -3188,7 +3190,6 @@
         "Year": "1967",
         "Month": "04",
         "Day": "22",
-        "Year-Month-Day": "1967-04-22",
         "Description": "Explosion of fuel line in boiler room; four-alarm fire lasts three hours.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3196,7 +3197,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1967-04-22"
       },
       "geometry": {
         "type": "Point",
@@ -3214,7 +3216,6 @@
         "Year": "1967",
         "Month": "08",
         "Day": "21",
-        "Year-Month-Day": "1967-08-21",
         "Description": "Explosion of still after failure of heat exchanger; three-alarm fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3222,7 +3223,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1967-08-21"
       },
       "geometry": {
         "type": "Point",
@@ -3240,7 +3242,6 @@
         "Year": "1967",
         "Month": "12",
         "Day": "26",
-        "Year-Month-Day": "1967-12-26",
         "Description": "Explosion of tank (sulphuric acid); four-alarm fire.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -3248,7 +3249,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": "Near Penrose Ave (Platt) Bridge"
+        "Street coordinates": "Near Penrose Ave (Platt) Bridge",
+        "Year-Month-Day": "1967-12-26"
       },
       "geometry": {
         "type": "Point",
@@ -3266,7 +3268,6 @@
         "Year": "1969",
         "Month": "01",
         "Day": "03",
-        "Year-Month-Day": "1969-01-03",
         "Description": "Explosion of pipe ignites large still (high-octane gasoline); five-alarm five causes about $1 million in property loss.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -3274,7 +3275,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-6",
-        "Street coordinates": "30th St and Penrose Ave"
+        "Street coordinates": "30th St and Penrose Ave",
+        "Year-Month-Day": "1969-01-03"
       },
       "geometry": {
         "type": "Point",
@@ -3292,7 +3294,6 @@
         "Year": "1969",
         "Month": "09",
         "Day": "06",
-        "Year-Month-Day": "1969-09-06",
         "Description": "Explosion of two gasoline tanks; six-alarm fire last about 14 hours.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3300,7 +3301,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Getty",
         "General location": "Bartrams North",
-        "Street coordinates": "49th St and Grays Ave"
+        "Street coordinates": "49th St and Grays Ave",
+        "Year-Month-Day": "1969-09-06"
       },
       "geometry": {
         "type": "Point",
@@ -3318,7 +3320,6 @@
         "Year": "1969",
         "Month": "09",
         "Day": "07",
-        "Year-Month-Day": "1969-09-07",
         "Description": "Five-alarm fire destroys three phenol tanks and five extractor towers.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -3326,7 +3327,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "ARCO",
         "General location": "AOI-8",
-        "Street coordinates": "28th St and Passyunk Ave"
+        "Street coordinates": "28th St and Passyunk Ave",
+        "Year-Month-Day": "1969-09-07"
       },
       "geometry": {
         "type": "Point",
@@ -3344,7 +3346,6 @@
         "Year": "1969",
         "Month": "11",
         "Day": "28",
-        "Year-Month-Day": "1969-11-28",
         "Description": "Explosion of pipeline and some 70 drums (naphtha); seven-alarm fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3352,7 +3353,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1969-11-28"
       },
       "geometry": {
         "type": "Point",
@@ -3370,7 +3372,6 @@
         "Year": "1970",
         "Month": "05",
         "Day": "11",
-        "Year-Month-Day": "1970-05-11",
         "Description": "Explosion of 13-story catalytic cracking unit leads to conflagration and general destruction, about $900,000 in property loss.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -3378,7 +3379,8 @@
         "Dead (minimum)": "7",
         "Responsible corporate entity": "ARCO",
         "General location": "AOI-8",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1970-05-11"
       },
       "geometry": {
         "type": "Point",
@@ -3396,7 +3398,6 @@
         "Year": "1971",
         "Month": "09",
         "Day": "10",
-        "Year-Month-Day": "1971-09-10",
         "Description": "Explosion of still (gasoline); two-alarm fire lasts 90 minutes.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -3404,7 +3405,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "Girard Point",
-        "Street coordinates": "Near Penrose Ave (Platt) Bridge"
+        "Street coordinates": "Near Penrose Ave (Platt) Bridge",
+        "Year-Month-Day": "1971-09-10"
       },
       "geometry": {
         "type": "Point",
@@ -3422,7 +3424,6 @@
         "Year": "1973",
         "Month": "11",
         "Day": "05",
-        "Year-Month-Day": "1973-11-05",
         "Description": "Small fire (gasoline additives).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3430,7 +3431,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "ARCO",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1973-11-05"
       },
       "geometry": {
         "type": "Point",
@@ -3448,7 +3450,6 @@
         "Year": "1973",
         "Month": "12",
         "Day": "26",
-        "Year-Month-Day": "1973-12-26",
         "Description": "Spill of 3,000 barrels (crude oil) into Delaware River from tanker ship William Larimer Mellon.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3456,7 +3457,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "Fort Mifflin",
-        "Street coordinates": "4 Hog Island Rd"
+        "Street coordinates": "4 Hog Island Rd",
+        "Year-Month-Day": "1973-12-26"
       },
       "geometry": {
         "type": "Point",
@@ -3474,7 +3476,6 @@
         "Year": "1973",
         "Month": "12",
         "Day": "28",
-        "Year-Month-Day": "1973-12-28",
         "Description": "Spill of 200,000 gallons (heating oil) into Schuylkill River from tank farm.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3482,7 +3483,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Grayâ€™s Ferry Oil Company",
         "General location": "Grays Ferry Crescent",
-        "Street coordinates": "31st St and Grays Ferry Ave"
+        "Street coordinates": "31st St and Grays Ferry Ave",
+        "Year-Month-Day": "1973-12-28"
       },
       "geometry": {
         "type": "Point",
@@ -3500,7 +3502,6 @@
         "Year": "1974",
         "Month": "04",
         "Day": "09",
-        "Year-Month-Day": "1974-04-09",
         "Description": "Explosion of tanker ship Elias and loss of about 12,000 barrels of Venezuelan crude oil (mostly burned off rather than spilled); 13 people killed.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -3508,7 +3509,8 @@
         "Dead (minimum)": "13",
         "Responsible corporate entity": "Eletson Maritime, Inc. (Greece)",
         "General location": "Fort Mifflin",
-        "Street coordinates": "4 Hog Island Rd"
+        "Street coordinates": "4 Hog Island Rd",
+        "Year-Month-Day": "1974-04-09"
       },
       "geometry": {
         "type": "Point",
@@ -3526,7 +3528,6 @@
         "Year": "1974",
         "Month": "10",
         "Day": "11",
-        "Year-Month-Day": "1974-10-11",
         "Description": "Two-alarm fire destroys cooling tower.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3534,7 +3535,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "Girard Point",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1974-10-11"
       },
       "geometry": {
         "type": "Point",
@@ -3542,7 +3544,8 @@
           -75.21790107,
           39.86967709
         ]
-      }
+      },
+      "id": 135
     },
     {
       "type": "Feature",
@@ -3552,7 +3555,6 @@
         "Year": "1975",
         "Month": "05",
         "Day": "17",
-        "Year-Month-Day": "1975-05-17",
         "Description": "Explosion of fuel line; six-alarm fire burns for 2.5 hours.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3560,7 +3562,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "Girard Point",
-        "Street coordinates": "Near Penrose Ave (Platt) Bridge, east side"
+        "Street coordinates": "Near Penrose Ave (Platt) Bridge, east side",
+        "Year-Month-Day": "1975-05-17"
       },
       "geometry": {
         "type": "Point",
@@ -3578,7 +3581,6 @@
         "Year": "1975",
         "Month": "08",
         "Day": "17",
-        "Year-Month-Day": "1975-08-17",
         "Description": "Explosion of pipes (crude oil); eleven-alarm fire over ten days causes about $11 million in property loss, including some 200,000 barrels of fuel; eight city firefighters killed.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -3586,7 +3588,8 @@
         "Dead (minimum)": "8",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-6",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1975-08-17"
       },
       "geometry": {
         "type": "Point",
@@ -3604,7 +3607,6 @@
         "Year": "1975",
         "Month": "09",
         "Day": "18",
-        "Year-Month-Day": "1975-09-18",
         "Description": "Spill of 50,000 gallons (crude oil) into Schuylkill River from refinery.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3612,7 +3614,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "Schuylkill River",
-        "Street coordinates": "Between Penrose Ave (Platt) Bridge and Girard Point (I-95) Bridge"
+        "Street coordinates": "Between Penrose Ave (Platt) Bridge and Girard Point (I-95) Bridge",
+        "Year-Month-Day": "1975-09-18"
       },
       "geometry": {
         "type": "Point",
@@ -3630,7 +3633,6 @@
         "Year": "1975",
         "Month": "10",
         "Day": "12",
-        "Year-Month-Day": "1975-10-12",
         "Description": "Explosion of pump and pipe (tertiary butyl alcohol); nine-alarm fire lasts 34 hours.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -3638,7 +3640,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "ARCO",
         "General location": "AOI-1",
-        "Street coordinates": "26th St and Passyunk Ave"
+        "Street coordinates": "26th St and Passyunk Ave",
+        "Year-Month-Day": "1975-10-12"
       },
       "geometry": {
         "type": "Point",
@@ -3656,7 +3659,6 @@
         "Year": "1975",
         "Month": "10",
         "Day": "20",
-        "Year-Month-Day": "1975-10-20",
         "Description": "Failure of pump in distillery (crude oil) that had been inspected days before; six-alarm fire lasts about nine hours.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3664,7 +3666,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1975-10-20"
       },
       "geometry": {
         "type": "Point",
@@ -3682,7 +3685,6 @@
         "Year": "1976",
         "Month": "04",
         "Day": "25",
-        "Year-Month-Day": "1976-04-25",
         "Description": "Five-alarm fire at 45,000-barrel asphalt storage tank.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3690,7 +3692,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "ARCO",
         "General location": "AOI-2",
-        "Street coordinates": "Passyunk Ave and River Rd"
+        "Street coordinates": "Passyunk Ave and River Rd",
+        "Year-Month-Day": "1976-04-25"
       },
       "geometry": {
         "type": "Point",
@@ -3708,7 +3711,6 @@
         "Year": "1976",
         "Month": "11",
         "Day": "21",
-        "Year-Month-Day": "1976-11-21",
         "Description": "Two-alarm fire at ruptured line (crude oil) leading to cracking unit.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3716,7 +3718,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-5",
-        "Street coordinates": "30th St and Penrose Ave"
+        "Street coordinates": "30th St and Penrose Ave",
+        "Year-Month-Day": "1976-11-21"
       },
       "geometry": {
         "type": "Point",
@@ -3734,7 +3737,6 @@
         "Year": "1977",
         "Month": "01",
         "Day": "24",
-        "Year-Month-Day": "1977-01-24",
         "Description": "Explosion of tanks (heavy gas oil), which shakes and damages thousands of homes; five-alarm fire lasts two hours.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -3742,7 +3744,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "ARCO",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1977-01-24"
       },
       "geometry": {
         "type": "Point",
@@ -3760,7 +3763,6 @@
         "Year": "1977",
         "Month": "04",
         "Day": "09",
-        "Year-Month-Day": "1977-04-09",
         "Description": "Explosion of oil barge leads to six-alarm fire on both sides of Schuylkill; river catches fire.",
         "Injurious?": "Y",
         "Deadly?": "Y",
@@ -3768,7 +3770,8 @@
         "Dead (minimum)": "1",
         "Responsible corporate entity": "Interstate Oil Company",
         "General location": "AOI-5",
-        "Street coordinates": "Between Penrose Ave (Platt) Bridge and Girard Point (I-95) Bridge"
+        "Street coordinates": "Between Penrose Ave (Platt) Bridge and Girard Point (I-95) Bridge",
+        "Year-Month-Day": "1977-04-09"
       },
       "geometry": {
         "type": "Point",
@@ -3786,7 +3789,6 @@
         "Year": "1978",
         "Month": "02",
         "Day": "04",
-        "Year-Month-Day": "1978-02-04",
         "Description": "Spill of 20,000 gallons (heating oil) into Schuylkill River from tank farm.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3794,7 +3796,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "National Heating and Power Company",
         "General location": "Bartrams North",
-        "Street coordinates": "49th St and Schuylkill River"
+        "Street coordinates": "49th St and Schuylkill River",
+        "Year-Month-Day": "1978-02-04"
       },
       "geometry": {
         "type": "Point",
@@ -3812,7 +3815,6 @@
         "Year": "1978",
         "Month": "03",
         "Day": "18",
-        "Year-Month-Day": "1978-03-18",
         "Description": "Seal failure in a pump at oil-processing still leads to two-alarm fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3820,7 +3822,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "ARCO",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1978-03-18"
       },
       "geometry": {
         "type": "Point",
@@ -3838,7 +3841,6 @@
         "Year": "1983",
         "Month": "06",
         "Day": "29",
-        "Year-Month-Day": "1983-06-29",
         "Description": "Six-alarm fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3846,7 +3848,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "ARCO",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1983-06-29"
       },
       "geometry": {
         "type": "Point",
@@ -3864,7 +3867,6 @@
         "Year": "1983",
         "Month": "08",
         "Day": "07",
-        "Year-Month-Day": "1983-08-07",
         "Description": "Blown valve leads to leakage of tank (butane); Tasker Homes evacuated.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3872,7 +3874,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "ARCO",
         "General location": "AOI-1",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1983-08-07"
       },
       "geometry": {
         "type": "Point",
@@ -3890,7 +3893,6 @@
         "Year": "1983",
         "Month": "10",
         "Day": "05",
-        "Year-Month-Day": "1983-10-05",
         "Description": "Explosion of storage tank (naphtha); five-alarm fire",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3898,7 +3900,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "ARCO",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1983-10-05"
       },
       "geometry": {
         "type": "Point",
@@ -3916,7 +3919,6 @@
         "Year": "1983",
         "Month": "12",
         "Day": "28",
-        "Year-Month-Day": "1983-12-28",
         "Description": "Spill of crude ignites; one-alarm fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3924,7 +3926,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "ARCO",
         "General location": "AOI-2",
-        "Street coordinates": "3100 Passyunk Ave"
+        "Street coordinates": "3100 Passyunk Ave",
+        "Year-Month-Day": "1983-12-28"
       },
       "geometry": {
         "type": "Point",
@@ -3942,7 +3945,6 @@
         "Year": "1985",
         "Month": "04",
         "Day": "14",
-        "Year-Month-Day": "1985-04-14",
         "Description": "Broken refining pump seal triggers explosion; three-alarm fire last 1.5 hours.N",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -3950,7 +3952,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Gulf",
         "General location": "AOI-6",
-        "Street coordinates": "East bank of Schuylkill River upstream of Penrose Ave (Platt) Bridge"
+        "Street coordinates": "East bank of Schuylkill River upstream of Penrose Ave (Platt) Bridge",
+        "Year-Month-Day": "1985-04-14"
       },
       "geometry": {
         "type": "Point",
@@ -3963,20 +3966,20 @@
     {
       "type": "Feature",
       "properties": {
-        "x": "-75.209019",
-        "y": "39.900907",
-        "Year": "1985",
-        "Month": "12",
-        "Day": "27",
-        "Year-Month-Day": "1985-12-27",
+        "x": -75.209019,
+        "y": 39.900907,
+        "Year": 1985,
+        "Month": 12,
+        "Day": 27,
         "Description": "Three-alarm fire.",
         "Injurious?": "N",
         "Deadly?": "N",
-        "Injured (minimum)": "0",
-        "Dead (minimum)": "0",
+        "Injured (minimum)": 0,
+        "Dead (minimum)": 0,
         "Responsible corporate entity": "Chevron",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1985-12-27"
       },
       "geometry": {
         "type": "Point",
@@ -3984,7 +3987,8 @@
           -75.209019,
           39.900907
         ]
-      }
+      },
+      "id": 152
     },
     {
       "type": "Feature",
@@ -3994,7 +3998,6 @@
         "Year": "1986",
         "Month": "08",
         "Day": "10",
-        "Year-Month-Day": "1986-08-10",
         "Description": "Lightning-caused explosion of tank (gasoline); eight-alarm fire lasts about 31 hours; loss of some 20,000 barrels.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4002,7 +4005,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Chevron",
         "General location": "Girard Point",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1986-08-10"
       },
       "geometry": {
         "type": "Point",
@@ -4020,7 +4024,6 @@
         "Year": "1987",
         "Month": "08",
         "Day": "09",
-        "Year-Month-Day": "1987-08-09",
         "Description": "Lightning-caused explosion and collapse of tank (gasoline); five-alarm fire lasts two days, burns some 25,000 barrels of fuel worth about $2 million.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -4028,7 +4031,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Chevron",
         "General location": "AOI-9",
-        "Street coordinates": "Near southern end of Essington Ave"
+        "Street coordinates": "Near southern end of Essington Ave",
+        "Year-Month-Day": "1987-08-09"
       },
       "geometry": {
         "type": "Point",
@@ -4036,25 +4040,26 @@
           -75.2243006,
           39.8978611
         ]
-      }
+      },
+      "id": 154
     },
     {
       "type": "Feature",
       "properties": {
-        "x": -75.199215,
-        "y": 39.9194206,
-        "Year": 1988,
+        "x": "-75.199215",
+        "y": "39.9194206",
+        "Year": "1988",
         "Month": "01",
-        "Day": 11,
-        "Year-Month-Day": "1988-01-11",
+        "Day": "11",
         "Description": "Explosion of tank (waste chemicals).",
         "Injurious?": "Y",
         "Deadly?": "N",
-        "Injured (minimum)": 2,
-        "Dead (minimum)": 0,
+        "Injured (minimum)": "2",
+        "Dead (minimum)": "0",
         "Responsible corporate entity": "ARCO",
         "General location": "AOI-2",
-        "Street coordinates": "Passyunk Ave and Schuykill Ave"
+        "Street coordinates": "Passyunk Ave and Schuykill Ave",
+        "Year-Month-Day": "1988-01-11"
       },
       "geometry": {
         "type": "Point",
@@ -4062,8 +4067,7 @@
           -75.199215,
           39.9194206
         ]
-      },
-      "id": 155
+      }
     },
     {
       "type": "Feature",
@@ -4073,7 +4077,6 @@
         "Year": "1988",
         "Month": "09",
         "Day": "20",
-        "Year-Month-Day": "1988-09-20",
         "Description": "Malfunction causes release of some five tons of silica alumina catalyst.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4081,7 +4084,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining and Marketing",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1988-09-20"
       },
       "geometry": {
         "type": "Point",
@@ -4099,7 +4103,6 @@
         "Year": "1989",
         "Month": "07",
         "Day": "21",
-        "Year-Month-Day": "1989-07-21",
         "Description": "Explosion of tank (waste chemicals) heard as far away as Bucks County; five-alarm fire lasts about two hours.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4107,7 +4110,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining and Marketing",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1989-07-21"
       },
       "geometry": {
         "type": "Point",
@@ -4125,7 +4129,6 @@
         "Year": "1989",
         "Month": "07",
         "Day": "28",
-        "Year-Month-Day": "1989-07-28",
         "Description": "Explosion in cracking unit; one-alarm fire last one hour.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4133,7 +4136,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Atlantic Refining and Marketing",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1989-07-28"
       },
       "geometry": {
         "type": "Point",
@@ -4151,7 +4155,6 @@
         "Year": "1991",
         "Month": "09",
         "Day": "18",
-        "Year-Month-Day": "1991-09-18",
         "Description": "Spill of 1,000 gallons (vacuum gas oil) from barge being loaded.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4159,7 +4162,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Chevron; Maritime Transport Company",
         "General location": "AOI-5",
-        "Street coordinates": "30th St and Penrose Ave"
+        "Street coordinates": "30th St and Penrose Ave",
+        "Year-Month-Day": "1991-09-18"
       },
       "geometry": {
         "type": "Point",
@@ -4177,7 +4181,6 @@
         "Year": "1991",
         "Month": "10",
         "Day": "03",
-        "Year-Month-Day": "1991-10-03",
         "Description": "Explosion of broken tube in naphtha processor; four-alarm fire.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -4185,7 +4188,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Chevron",
         "General location": "AOI-6",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1991-10-03"
       },
       "geometry": {
         "type": "Point",
@@ -4202,16 +4206,16 @@
         "y": "39.904047",
         "Year": "1992",
         "Month": "09",
-        "Day": "15",
-        "Year-Month-Day": "1992-09-15",
-        "Description": null,
-        "Injurious?": null,
-        "Deadly?": null,
-        "Injured (minimum)": null,
-        "Dead (minimum)": null,
-        "Responsible corporate entity": null,
-        "General location": null,
-        "Street coordinates": null
+        "Day": "01",
+        "Description": "Release of 4,000 gallons (jet fuel) from underground line sometime in September (exact date unknown).",
+        "Injurious?": "N",
+        "Deadly?": "N",
+        "Injured (minimum)": "0",
+        "Dead (minimum)": "0",
+        "Responsible corporate entity": "Chevron",
+        "General location": "AOI-6",
+        "Street coordinates": null,
+        "Year-Month-Day": "1992-09-01"
       },
       "geometry": {
         "type": "Point",
@@ -4229,7 +4233,6 @@
         "Year": "1993",
         "Month": "04",
         "Day": "15",
-        "Year-Month-Day": "1993-04-15",
         "Description": "Hundreds of used tires stacked by oil storage tanks catch fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4237,7 +4240,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1993-04-15"
       },
       "geometry": {
         "type": "Point",
@@ -4255,7 +4259,6 @@
         "Year": "1993",
         "Month": "09",
         "Day": "03",
-        "Year-Month-Day": "1993-09-03",
         "Description": "Release of 1,300 gallons (fuel oil) from transfer line.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4263,7 +4266,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Chevron",
         "General location": "AOI-6",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1993-09-03"
       },
       "geometry": {
         "type": "Point",
@@ -4281,7 +4285,6 @@
         "Year": "1993",
         "Month": "10",
         "Day": "21",
-        "Year-Month-Day": "1993-10-21",
         "Description": "Four-alarm propane fire lasts three hours.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -4289,7 +4292,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Chevron",
         "General location": "Girard Point",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1993-10-21"
       },
       "geometry": {
         "type": "Point",
@@ -4307,7 +4311,6 @@
         "Year": "1994",
         "Month": "02",
         "Day": "02",
-        "Year-Month-Day": "1994-02-02",
         "Description": "Release of 4,400 gallons (naphtha) from 8-inch line.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4315,7 +4318,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Chevron",
         "General location": "AOI-6",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1994-02-02"
       },
       "geometry": {
         "type": "Point",
@@ -4333,7 +4337,6 @@
         "Year": "1994",
         "Month": "08",
         "Day": "02",
-        "Year-Month-Day": "1994-08-02",
         "Description": "Three-alarm fire at reformer unit (naphtha and hydrogen) lasts five hours.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4341,7 +4344,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Chevron",
         "General location": "AOI-9",
-        "Street coordinates": "Penrose Ave and Fort Mifflin Rd"
+        "Street coordinates": "Penrose Ave and Fort Mifflin Rd",
+        "Year-Month-Day": "1994-08-02"
       },
       "geometry": {
         "type": "Point",
@@ -4359,7 +4363,6 @@
         "Year": "1994",
         "Month": "09",
         "Day": "20",
-        "Year-Month-Day": "1994-09-20",
         "Description": "Faulty valve in cracking unit releases three yellow clouds of silica alumina coated with oil.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4367,7 +4370,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1994-09-20"
       },
       "geometry": {
         "type": "Point",
@@ -4385,7 +4389,6 @@
         "Year": "1995",
         "Month": "01",
         "Day": "18",
-        "Year-Month-Day": "1995-01-18",
         "Description": "Release of 21,000 gallons (gasoline) from Tank 38.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4393,7 +4396,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-1",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1995-01-18"
       },
       "geometry": {
         "type": "Point",
@@ -4411,7 +4415,6 @@
         "Year": "1995",
         "Month": "07",
         "Day": "18",
-        "Year-Month-Day": "1995-07-18",
         "Description": "Small fire (butane and propane).",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4419,7 +4422,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-1",
-        "Street coordinates": "Schuylkill Expressway and Passyunk Ave"
+        "Street coordinates": "Schuylkill Expressway and Passyunk Ave",
+        "Year-Month-Day": "1995-07-18"
       },
       "geometry": {
         "type": "Point",
@@ -4437,7 +4441,6 @@
         "Year": "1996",
         "Month": "02",
         "Day": "09",
-        "Year-Month-Day": "1996-02-09",
         "Description": "Heavy snow and ice tips the roofs of two storage tanks (one naphtha, one crude), releasing noxious odors into surrounding neighborhoods for days.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4445,7 +4448,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-1",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1996-02-09"
       },
       "geometry": {
         "type": "Point",
@@ -4463,7 +4467,6 @@
         "Year": "1998",
         "Month": "08",
         "Day": "27",
-        "Year-Month-Day": "1998-08-27",
         "Description": "Release of 5,040 gallons (diesel fuel) from Tank 253.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4471,7 +4474,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-4",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1998-08-27"
       },
       "geometry": {
         "type": "Point",
@@ -4489,7 +4493,6 @@
         "Year": "1999",
         "Month": "06",
         "Day": "21",
-        "Year-Month-Day": "1999-06-21",
         "Description": "Four-alarm fire in sulfur removal unit leads to large release of silica alumina catalyst.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4497,7 +4500,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1999-06-21"
       },
       "geometry": {
         "type": "Point",
@@ -4515,7 +4519,6 @@
         "Year": "1999",
         "Month": "09",
         "Day": "17",
-        "Year-Month-Day": "1999-09-17",
         "Description": "Release of 8,400 gallons (light naphtha) from Tank 181.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4523,7 +4526,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-1",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "1999-09-17"
       },
       "geometry": {
         "type": "Point",
@@ -4541,7 +4545,6 @@
         "Year": "2000",
         "Month": "02",
         "Day": "02",
-        "Year-Month-Day": "2000-02-02",
         "Description": "Leak of 192,000 gallons (crude oil) into John Heinz National Wildlife Refuge from ruptured pipeline.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4549,7 +4552,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "Tinicum",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "2000-02-02"
       },
       "geometry": {
         "type": "Point",
@@ -4567,7 +4571,6 @@
         "Year": "2000",
         "Month": "06",
         "Day": "21",
-        "Year-Month-Day": "2000-06-21",
         "Description": "Malfunction causes release of substantial amount of silica alumina catalyst.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4575,7 +4578,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "2000-06-21"
       },
       "geometry": {
         "type": "Point",
@@ -4593,7 +4597,6 @@
         "Year": "2000",
         "Month": "06",
         "Day": "30",
-        "Year-Month-Day": "2000-06-30",
         "Description": "Explosion of pipe (gasoline).",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -4601,7 +4604,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-1",
-        "Street coordinates": "2800 W Passyunk Ave"
+        "Street coordinates": "2800 W Passyunk Ave",
+        "Year-Month-Day": "2000-06-30"
       },
       "geometry": {
         "type": "Point",
@@ -4619,7 +4623,6 @@
         "Year": "2000",
         "Month": "09",
         "Day": "07",
-        "Year-Month-Day": "2000-09-07",
         "Description": "Ignition of flammable vapor.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -4627,7 +4630,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-1",
-        "Street coordinates": "2800 W Passyunk Ave"
+        "Street coordinates": "2800 W Passyunk Ave",
+        "Year-Month-Day": "2000-09-07"
       },
       "geometry": {
         "type": "Point",
@@ -4645,7 +4649,6 @@
         "Year": "2000",
         "Month": "09",
         "Day": "29",
-        "Year-Month-Day": "2000-09-29",
         "Description": "Release of 15,000 gallons (fuel oil) from product line near Tank 676.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4653,7 +4656,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-6",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "2000-09-29"
       },
       "geometry": {
         "type": "Point",
@@ -4671,7 +4675,6 @@
         "Year": "2000",
         "Month": "12",
         "Day": "22",
-        "Year-Month-Day": "2000-12-22",
         "Description": "Explosion of high-pressure 20-inch pipe (natural gas) causes entire plant to suspend service.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4679,7 +4682,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "PGW",
         "General location": "PGW at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "2000-12-22"
       },
       "geometry": {
         "type": "Point",
@@ -4697,7 +4701,6 @@
         "Year": "2000",
         "Month": "12",
         "Day": "23",
-        "Year-Month-Day": "2000-12-23",
         "Description": "Two-alarm fire in hydrogen unit.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4705,7 +4708,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-5",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "2000-12-23"
       },
       "geometry": {
         "type": "Point",
@@ -4723,7 +4727,6 @@
         "Year": "2002",
         "Month": "04",
         "Day": "17",
-        "Year-Month-Day": "2002-04-17",
         "Description": "One-alarm fire in cooling tower; black smoke visible for miles.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4731,7 +4734,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-2",
-        "Street coordinates": "3144 W Passyunk Avenue"
+        "Street coordinates": "3144 W Passyunk Avenue",
+        "Year-Month-Day": "2002-04-17"
       },
       "geometry": {
         "type": "Point",
@@ -4749,7 +4753,6 @@
         "Year": "2006",
         "Month": "10",
         "Day": "15",
-        "Year-Month-Day": "2006-10-15",
         "Description": "Release of 239,000 gallons (crude oil) from Tank 885.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4757,7 +4760,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "AOI-4",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "2006-10-15"
       },
       "geometry": {
         "type": "Point",
@@ -4775,7 +4779,6 @@
         "Year": "2011",
         "Month": "08",
         "Day": "24",
-        "Year-Month-Day": "2011-08-24",
         "Description": "Small fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4783,7 +4786,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Sunoco",
         "General location": "Atlantic at Point Breeze",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "2011-08-24"
       },
       "geometry": {
         "type": "Point",
@@ -4801,7 +4805,6 @@
         "Year": "2015",
         "Month": "05",
         "Day": "22",
-        "Year-Month-Day": "2015-05-22",
         "Description": "Small fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4809,7 +4812,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Philadelphia Energy Solutions",
         "General location": "Girard Point",
-        "Street coordinates": "3000 Penrose Ave"
+        "Street coordinates": "3000 Penrose Ave",
+        "Year-Month-Day": "2015-05-22"
       },
       "geometry": {
         "type": "Point",
@@ -4827,7 +4831,6 @@
         "Year": "2016",
         "Month": "12",
         "Day": "10",
-        "Year-Month-Day": "2016-12-10",
         "Description": "One-alarm fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4835,7 +4838,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Philadelphia Energy Solutions",
         "General location": "AOI-2",
-        "Street coordinates": "3144 W Passyunk Avenue"
+        "Street coordinates": "3144 W Passyunk Avenue",
+        "Year-Month-Day": "2016-12-10"
       },
       "geometry": {
         "type": "Point",
@@ -4853,7 +4857,6 @@
         "Year": "2019",
         "Month": "06",
         "Day": "21",
-        "Year-Month-Day": "2019-06-21",
         "Description": "Ignition of flammable vapor in alkylation unit leads to fire and explosions, and approximately $750 million in property loss.",
         "Injurious?": "Y",
         "Deadly?": "N",
@@ -4861,7 +4864,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "Philadelphia Energy Solutions",
         "General location": "AOI-7",
-        "Street coordinates": ""
+        "Street coordinates": "",
+        "Year-Month-Day": "2019-06-21"
       },
       "geometry": {
         "type": "Point",
@@ -4879,7 +4883,6 @@
         "Year": "2021",
         "Month": "08",
         "Day": "23",
-        "Year-Month-Day": "2021-08-23",
         "Description": "Unused fuel storage tank being dismantled by welders catches fire.",
         "Injurious?": "N",
         "Deadly?": "N",
@@ -4887,7 +4890,8 @@
         "Dead (minimum)": "0",
         "Responsible corporate entity": "HRP",
         "General location": "AOI-4",
-        "Street coordinates": "26th St and Penrose Ave"
+        "Street coordinates": "26th St and Penrose Ave",
+        "Year-Month-Day": "2021-08-23"
       },
       "geometry": {
         "type": "Point",
