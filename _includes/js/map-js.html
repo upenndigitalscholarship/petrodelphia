@@ -26,9 +26,16 @@
             line-height: 1.2;
         }
         .label-container {
-            background: rgba(255,255,255,0);
+            background: rgba(255,255,255,.5);
             padding: 2px 4px;
             border-radius: 1px;
+        }
+        .info.legend {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.4);
         }
         .aoi-number {
             font-weight: 800;
@@ -51,12 +58,6 @@
             background: #f4f4f4;
         }
         
-/*        .leaflet-control {
-            background: white;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }*/
         /* Right control (top position) */
         .leaflet-right .leaflet-control {
             margin-right: 10px;
@@ -88,14 +89,6 @@
                 border: 2px solid #f1f1f1;
             }
         }
-
-        /* Firefox fallback makes a second scrollbar which is not needed */
-        /*@supports (scrollbar-width: auto) {
-          .scrollable-basemap-control .leaflet-control-layers-list {
-            scrollbar-width: auto;
-            scrollbar-color: #666 #f1f1f1;
-          }
-        }*/
         /* Ensure the control header stays fixed */
         .scrollable-basemap-control .leaflet-control-layers-list {
             max-height: calc(80vh - 40px); /* Account for header */
@@ -108,27 +101,6 @@
             background: white;
             z-index: 1;
         }
-        /*
-        .aoi-label {
-            font-family: 'Roboto', sans-serif; /* Google fonts sans-serif *
-            color: black;
-            font-weight: 800;
-            font-size: 14px;
-            text-align: center;
-            /* White text stroke *
-            -webkit-text-stroke: .65px white;
-            text-stroke: .65px white;
-            /* Fallback for browsers that don't support text-stroke *
-            text-shadow: 
-            -.65px -.65px 0 rgba(255,255,255,.75),
-             0   -.65px 0 rgba(255,255,255,.75),
-             .65px -.65px 0 rgba(255,255,255,.75),
-            -.65px  0   0 rgba(255,255,255,.75),
-             .65px  0   0 rgba(255,255,255,.75),
-            -.65px  .65px 0 rgba(255,255,255,.75),
-             0    .65px 0 rgba(255,255,255,.75),
-             .65px  .65px 0 rgba(255,255,255,.75);
-        }*/
         .aoi-label {      
           position: absolute;
           text-align: center;
@@ -182,7 +154,7 @@
         map.attributionControl.setPrefix()
         
         map.addControl(new L.Control.FullScreen({
-            position: 'topleft',
+            position: 'bottomleft',
             title: {
                 'false': 'View Fullscreen',
                 'true': 'Exit Fullscreen'
@@ -202,7 +174,6 @@
             noWrap: true
         });
         var permanentOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'OSM contributors',
             minZoom: 0,
             maxZoom: 19,
             // Keep this layer at the very bottom
@@ -212,56 +183,93 @@
         // Define all basemaps with year information
         const basemaps = [
             // Historical maps sorted by year
-            { name: "1867 Barnes", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2278/{z}/{x}/{y}.png'), year: 1867 },
-            { name: "1876 Hopkins", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png'), year: 1876 },
-            { name: "1892 Waterfront", layer: L.tileLayer('https://mapwarper.net/maps/tile/91523/{z}/{x}/{y}.png'), year: 1892 },
+            { name: "1867 Barnes", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2278/{z}/{x}/{y}.png', {
+                 attribution: 'Free Library of Philadelphia'
+            }), year: 1867 },
+            { name: "1876 Hopkins", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png', {
+                 attribution: 'Free Library of Philadelphia'
+            }), year: 1876 },
+            { name: "1892 Waterfront", layer: L.tileLayer('https://mapwarper.net/maps/tile/91523/{z}/{x}/{y}.png', {
+                 attribution: 'Free Library of Philadelphia'
+            }), year: 1892 },
             { name: "1894 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88560/{z}/{x}/{y}.png', {
-                attribution: '1894 USGS Map courtesy of USGS'
+                attribution: 'USGS'
             }), year: 1894 },
-            { name: "1895 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2184/{z}/{x}/{y}.png'), year: 1895 },
-            { name: "1901 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png'), year: 1901 },
-            { name: "1910 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2271/{z}/{x}/{y}.png'), year: 1910 },
+            { name: "1895 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2184/{z}/{x}/{y}.png', {
+                 attribution: 'Free Library of Philadelphia'
+            }), year: 1895 },
+            { name: "1901 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png', {
+                 attribution: 'Free Library of Philadelphia'
+            }), year: 1901 },
+            { name: "1910 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2271/{z}/{x}/{y}.png', {
+                 attribution: 'Free Library of Philadelphia'
+            }), year: 1910 },
             { name: "1920 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88561/{z}/{x}/{y}.png', {
-                attribution: '1920 USGS Map courtesy of USGS'
+                attribution: 'USGS'
             }), year: 1920 },
-            { name: "1928 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88306/{z}/{x}/{y}.png'), year: 1928 },
-            { name: "1937 HOLC", layer: L.tileLayer('https://mapwarper.net/maps/tile/90758/{z}/{x}/{y}.png'), year: 1937 },
-            { name: "1942 land use", layer: L.tileLayer('https://mapwarper.net/maps/tile/94403/{z}/{x}/{y}.png'), year: 1942 },
+            { name: "1928 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88306/{z}/{x}/{y}.png', {
+                 attribution: 'Delaware Valley Regional Planning Comission'
+            }), year: 1928 },
+            { name: "1937 HOLC", layer: L.tileLayer('https://mapwarper.net/maps/tile/90758/{z}/{x}/{y}.png', {
+                 attribution: 'Mapping Inequality'
+            }), year: 1937 },
+            { name: "1942 land use", layer: L.tileLayer('https://mapwarper.net/maps/tile/94403/{z}/{x}/{y}.png', {
+                 attribution: 'Free Library of Philadelphia'
+            }), year: 1942 },
             { name: "1949 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88564/{z}/{x}/{y}.png', {
-                attribution: '1949 USGS Map courtesy of USGS'
+                attribution: 'USGS'
             }), year: 1949 },
-            { name: "1959 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88304/{z}/{x}/{y}.png'), year: 1959 },
-            { name: "1962 land use", layer: L.tileLayer('https://mapwarper.net/maps/tile/94678/{z}/{x}/{y}.png'), year: 1962 },
-            { name: "1965 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88299/{z}/{x}/{y}.png'), year: 1965 },
+            { name: "1959 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88304/{z}/{x}/{y}.png', {
+                 attribution: 'Delaware Valley Regional Planning Comission'
+            }), year: 1959 },
+            { name: "1962 land use", layer: L.tileLayer('https://mapwarper.net/maps/tile/94678/{z}/{x}/{y}.png', {
+                 attribution: 'Free Library of Philadelphia'
+            }), year: 1962 },
+            { name: "1965 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88299/{z}/{x}/{y}.png', {
+                 attribution: 'Delaware Valley Regional Planning Comission'
+            }), year: 1965 },
             { name: "1967 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88567/{z}/{x}/{y}.png', {
-                attribution: '1967 USGS Map courtesy of USGS'
+                attribution: 'USGS'
             }), year: 1967 },
-            { name: "1975 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png'), year: 1975 },
-            { name: "1980 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88301/{z}/{x}/{y}.png'), year: 1980 },
-            { name: "1985 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88295/{z}/{x}/{y}.png'), year: 1985 },
-            { name: "1990 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/90707/{z}/{x}/{y}.png'), year: 1990 },
-            { name: "1995 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/95829/{z}/{x}/{y}.png'), year: 1995 },
+            { name: "1975 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88571/{z}/{x}/{y}.png', {
+                 attribution: 'Delaware Valley Regional Planning Comission'
+            }), year: 1975 },
+            { name: "1980 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88301/{z}/{x}/{y}.png', {
+                 attribution: 'Delaware Valley Regional Planning Comission'
+            }), year: 1980 },
+            { name: "1985 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/88295/{z}/{x}/{y}.png', {
+                 attribution: 'Delaware Valley Regional Planning Comission'
+            }), year: 1985 },
+            { name: "1990 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/90707/{z}/{x}/{y}.png', {
+                 attribution: 'Delaware Valley Regional Planning Comission'
+            }), year: 1990 },
+            { name: "1995 aerial", layer: L.tileLayer('https://mapwarper.net/maps/tile/95829/{z}/{x}/{y}.png', {
+                 attribution: 'Delaware Valley Regional Planning Comission'
+            }), year: 1995 },
             { name: "1995 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88568/{z}/{x}/{y}.png', {
-                attribution: '1995 USGS Map courtesy of USGS'
+                attribution: 'USGS'
             }), year: 1995 },
             { name: "2019 satellite", layer: L.tileLayer.wms('https://imagery.pasda.psu.edu/arcgis/services/pasda/PhiladelphiaImagery2019/MapServer/WMSServer?', {
                 layers: '1',
                 format: 'image/png',
-                transparent: true
+                transparent: true,
+                attribution: 'Delaware Valley Regional Planning Comission',
             }), year: 2019 },
             { name: "2019 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88569/{z}/{x}/{y}.png', {
-                attribution: '2019 USGS Map courtesy of USGS'
+                attribution: 'USGS'
             }), year: 2019 },
             { name: "2023 USGS", layer: L.tileLayer('https://mapwarper.net/maps/tile/88570/{z}/{x}/{y}.png', {
-                attribution: '2023 USGS Map courtesy of USGS'
+                attribution: 'USGS'
             }), year: 2023 },
             
             // Modern reference maps (no year)
-            { name: "Google Earth", layer: L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}') },
-            { name: "ESRI satellite", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}') },
-            { name: "ESRI NatGeo", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}') },
-            { name: "ESRI StreetMap", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}') },
-            { name: "OpenStreetMap", layer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png') },
+            { name: "Google Earth", layer: L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                 attribution: 'Google'
+            }) },
+            { name: "ESRI satellite", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {attribution: 'ESRI'}) },
+            { name: "ESRI NatGeo", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {attribution: 'ESRI'}) },
+            { name: "ESRI StreetMap", layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {attribution: 'ESRI'}) },
+            { name: "OpenStreetMap", layer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'OSM Contributors'}) },
 // Make OSM Streets a base-base map with no off option? Make it a base-base map somehow... Maybe a second OSM layer that turns on? check performance.
         ];
 
@@ -279,17 +287,22 @@
             baseLayers[bm.name] = bm.layer;
         });
 
+        
+        const aoiLabels = L.layerGroup()
+        const aoiBoundaries = L.layerGroup()
+
         // Add default basemap
         baseLayers["OpenStreetMap"].addTo(map);
         
         const overlays = {
-            "Areas of Interest (AOI)": L.layerGroup(),
-            "Philadelphia County": L.layerGroup(),
+            "Street labels": L.tileLayer('https://a.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {pane: 'topPane', attribution: 'CartoDB'}),
+            "Areas of Interest (AOI)": L.layerGroup([aoiBoundaries, aoiLabels]),
+            "Philadelphia County": L.layerGroup({attribution:'Open Data Philly'}),
             "ZIP Codes, 2025": L.layerGroup(),
             "Zoning, 50+ percent industrial, 2025": L.layerGroup(),
             "Keystone Opportunity Zones, 2025": L.layerGroup(),
             'HOLC "redlining map," 1937': L.layerGroup(),
-            "LNAPL plume, 1996A": L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png'),
+            "LNAPL plume, 1996A": L.tileLayer('https://mapwarper.net/maps/tile/88772/{z}/{x}/{y}.png', {attribution: 'US Army Corps of Engineers'}),
             "LNAPL plume, 1996B": L.tileLayer('https://mapwarper.net/maps/tile/88779/{z}/{x}/{y}.png'),
             "LNAPL plume, 1996C": L.tileLayer('https://mapwarper.net/maps/tile/88816/{z}/{x}/{y}.png'),
             "LNAPL plume, 1996D": L.tileLayer('https://mapwarper.net/maps/tile/88817/{z}/{x}/{y}.png'),
@@ -408,58 +421,56 @@ map.on('zoomend', function() { // make ZIP code labels disappear when zooming ou
 
         //create AOI layers for areas of interest. Label layer + boundary layer
         
-const aoiLabels = L.layerGroup().addTo(map);
-const aoiBoundaries = L.layerGroup().addTo(map);
 
 loadGeoJSON(
-  'https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson',
-  aoiBoundaries,
-  {
-    style: function(feature) {  // Added 'style:' prefix
-      return {
-        color: feature.properties.stroke || '#555555',
-        weight: feature.properties['stroke-width'] || 2,
-        opacity: feature.properties['stroke-opacity'] || 1,
-        fillColor: feature.properties.fill || '#cab2d6',
-        fillOpacity: feature.properties['fill-opacity'] || 0.3
-      };
-    },
-    onEachFeature: function(feature, layer) {
-      const coords = feature.properties.label_position 
-        ? L.latLng(feature.properties.label_position[0], feature.properties.label_position[1])
-        : layer.getBounds().getCenter();
+    'https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOI_features_01.geojson',
+    aoiBoundaries,
+    {
+        style: function(feature) {
+            return {
+                color: feature.properties.stroke || '#555555',
+                weight: feature.properties['stroke-width'] || 2,
+                opacity: feature.properties['stroke-opacity'] || 1,
+                fillColor: feature.properties.fill || '#cab2d6',
+                fillOpacity: feature.properties['fill-opacity'] || 0.3
+            };
+        },
+        onEachFeature: function(feature, layer) {
+            const coords = feature.properties.label_position 
+                ? L.latLng(feature.properties.label_position)
+                : layer.getBounds().getCenter();
 
-      const label = L.marker(coords, {
-        pane: 'labelPane',
-        interactive: false,
-        icon: L.divIcon({
-          className: 'aoi-label',
-          html: `<div>${feature.properties.AOI_ID}</div>`,
-          iconSize: [20, 20]
-        })
-      });
-      
-      // Add label immediately
-      label.addTo(aoiLabels);
-      
-      // Cleanup handler (fixed typo from 'remote' to 'remove')
-      layer.on('remove', () => aoiLabels.removeLayer(label));
-      
-      // Store reference
-      layer._label = label;
+            const label = L.marker(coords, {
+                pane: 'labelPane',
+                icon: L.divIcon({
+                    className: 'aoi-label',
+                    html: `<div>${feature.properties.AOI_ID}</div>`,
+                    iconSize: [20, 20]
+                }),
+                interactive: false
+            });
+
+            // Sync label visibility with parent layer
+            layer.on('add', () => label.addTo(aoiLabels));
+            layer.on('remove', () => label.remove());
+            layer._label = label;
+        }
     }
-  }
-);
+).then(() => {
+    // 5. Add to map AFTER loading (triggers proper control state)
+    //aoiBoundaries.addTo(map);
+    //aoiLabels.addTo(map);
+});
 
-overlays["Areas of Interest (AOI)"] = L.layerGroup([aoiBoundaries, aoiLabels]);
+overlays["Areas of Interest (AOI)"] = L.layerGroup([aoiBoundaries, aoiLabels]).addTo(map);
 
         // 1. Define color mapping (keep existing)
 const redliningGrades = {
-    'A - "Best"': '#76a865',
-    'B - "Still Desirable"': '#7cb5bd',
-    'C - "Definitely Declining"': '#ffff00',
-    'D - "Hazardous"': '#d9838d',
-    '(Commercial or industrial)': '#000000'
+    'A - Best': '#76a865',
+    'B - Still Desirable': '#7cb5bd',
+    'C - Definitely Declining': '#ffff00',
+    'D - Hazardous': '#d9838d',
+    'Commercial or Industrial': '#000000'
 };
 
 // 2. Create style function that matches grades to colors
@@ -509,37 +520,6 @@ loadGeoJSON(
     }
 );
         
-        /*
-        // Create the control for the legend
-        var legend = L.control({position: 'bottomleft'});
-
-        // Define color codes and labels
-        var redliningGrades = {
-            'A - Best': '#76a865',  // Green
-            'B - Still Desirable': '#7cb5bd',  // blue
-            'C - Definitely Declining': '#ffff00',  //  yellow
-            'D - Hazardous': '#d9838d',  // reddish orange
-            'Commercial or Industrial': '#000000',
-            //other hatchures or cross hatch?
-        };
-
-        // When the legend is added to the map
-
-        legend.onAdd = function(map) {
-            var div = L.DomUtil.create('div', 'info legend');
-            var labels = ['<strong>Redlining Grades</strong>'];
-    
-        // Loop through the HOLC grades and generate a label with a colored square
-            for (var grade in redliningGrades) {
-                labels.push(
-                    '<i style="background:' + redliningGrades[grade] + '; width: 18px; height: 18px; display: inline-block; margin-left: 5px;"></i> ' +
-                    grade
-                );
-            }
-            
-            div.innerHTML = labels.join('<br>');
-            return div;
-        };*/
         
         loadGeoJSON('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/redlining.geojson',
                     overlays['HOLC "redlining map," 1937'], 
@@ -611,101 +591,11 @@ loadGeoJSON(
 
         loadGeoJSON('https://raw.githubusercontent.com/benliebersohn/petrosylvania-collection-builder/refs/heads/main/_includes/js/city_limits.geojson',
                     overlays["Philadelphia County"], {style: {color: 'black', weight:4, fillOpacity: 0}});
-        // Create overlay control (left side)
-        //labels with only area names, no AOI label
-    /*    const Belmont = L.marker([39.921308, -75.192636], {
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label-name',/*not an actual AOI label, we are just using inherited properties for area-name
-            html: '<div style="position:relative; top:-10px;">AOI-1</div>', // Adjust vertical position
-        //    iconSize: [40, 20] 
-                
-            html: `<div class="label-container">
-            <div class="area-name">Belmont Terminal</div>
-            </div>`,
-        iconSize: [100, 10]  
-            
-        }),
-        interactive: false
-        });*/
-/*        
-        const PGW = L.marker([39.921957, -75.197372], {//-75.197626,39.921957
-        pane: 'labelPane',
-        icon: L.divIcon({
-            className: 'aoi-label-name',/*not an actual AOI label, we are just using inherited properties for area-name
-            html: '<div style="position:relative; top:-10px;">AOI-1</div>', // Adjust vertical position
-      //      iconSize: [40, 20]
-            html: `<div class="label-container">
-            <div class="area-name">PGW Property</div>
-            </div>`,
-        iconSize: [100, 10]  
-            
-        }),
-        interactive: false
-        });
-*/
-//        const aoi1 = L.marker([39.915600, -75.193862], {
-        
-/*        
-        const aoi1 = L.marker([39.915600, -75.193862], {
-          pane: 'labelPane',
-          icon: L.divIcon({
-            className: 'aoi-label',
-            html: `<div data-text="${feature.properties.AOI_ID}">
-                     <div>${feature.properties.AOI_ID}</div>
-                   </div>`,
-            iconSize: [auto, 20]
-          }),
-        });
-*//*
-1 | 39.915600, -75.193862
-2 | 39.915279, -75.199142
-3 | 39.909995, -75.202350
-4 | 39.907964, -75.197192
-5 | 39.898970, -75.204967
-6 | 39.902663, -75.208978
-7 | 39.907680, -75.209039
-8 | 39.926270, -75.202180
-9 | 39.900134, -75.220973
-10| 39.917825, -75.205526
-*/
-        //add the labels to the map
-     //   aoiLabels.addLayer(PGW);
-     //   aoiLabels.addLayer(Belmont);
-/*        aoiLabels.addLayer(aoi1);/*
-        aoiLabels.addLayer(aoi2);
-        aoiLabels.addLayer(aoi3);
-        aoiLabels.addLayer(aoi4);
-        aoiLabels.addLayer(aoi5);
-        aoiLabels.addLayer(aoi6);
-        aoiLabels.addLayer(aoi7);
-        aoiLabels.addLayer(aoi8);
-        aoiLabels.addLayer(aoi9);
-        aoiLabels.addLayer(aoi10);*/
-/*                
-        overlays["AOI Boundaries"].on('add', function() {
-            if (!map.hasLayer(aoiLabels)) {
-                aoiLabels.addTo(map);
-                // More aggressive refresh approach
-                setTimeout(() => {
-                    map.invalidateSize({animate: false});
-                    aoiLabels._reset();
-                    aoiLabels.redraw();
-                    map.fire('moveend');
-                }, 300);
-            }
-        });
-        
-        overlays["AOI Boundaries"].on('remove', function() {
-            if (map.hasLayer(aoiLabels)) {
-                aoiLabels.removeFrom(map);
-            }
-        });
-  */      
+
     map.createPane('labelPane').style.zIndex = 700; // Higher than tile layers
     
         // Create basemap control (right side)        
-        const overlayControl = L.control.layers(null, overlays, {
+        L.control.layers(null, overlays, {
             collapsed: false,
             position: 'topleft'
         }).addTo(map);
