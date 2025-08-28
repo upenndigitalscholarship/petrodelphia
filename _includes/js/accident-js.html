@@ -61,20 +61,20 @@
 </head>
 <body>
     <div id="map"></div>
-<!-- In the slider-container div, keep the loading message but remove the initial year display -->
+<!-- keep the loading message but remove the initial year display -->
         <div class="slider-container">
             <div id="year-slider"></div>
         </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <!-- NoUI control JS -->
+    <!-- NoUI JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
-    <!-- Fullscreen control JS (optional) -->
+    <!-- Fullscreen  JS -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
     
     <script>
-        // Initialize map with a view that will fit the GeoJSON data
-        const map = L.map('map').setView([39.918624, -75.197141], 13); // Centered on Philadelphia-75.197141,39.918624
+        // Initialize map with a view set to S Philly and Philadelphia Quadrangle
+        const map = L.map('map').setView([39.921276,-75.189891], 13); // Centered on Philadelphia-75.197141,39.918624
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
@@ -112,8 +112,8 @@ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-c
             const years = [];
             
             geojsonData.features.forEach(feature => {
-                if (feature.properties.year && !isNaN(feature.properties.year)) {
-                    years.push(Number(feature.properties.year));
+                if (feature.properties.Year && !isNaN(feature.properties.Year)) {
+                    years.push(Number(feature.properties.Year));
                 }
             });
             
@@ -164,10 +164,10 @@ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-c
                 
                 // Filter features by year
                 const filteredFeatures = geojsonData.features.filter(feature => {
-                    return feature.properties.year && 
-                           !isNaN(feature.properties.year) &&
-                           feature.properties.year >= yearRange[0] && 
-                           feature.properties.year <= yearRange[1];
+                    return feature.properties.Year && 
+                           !isNaN(feature.properties.Year) &&
+                           feature.properties.Year >= yearRange[0] && 
+                           feature.properties.Year <= yearRange[1];
                 });
                 
                 // Add filtered features to map
@@ -178,9 +178,9 @@ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-c
                     pointToLayer: function(feature, latlng) {
                         // Customize marker color based on casualties
                         let color = "#3388ff"; // Default blue
-                        if (feature.properties.Dead === "Y" || feature.properties.NumDead > 0) {
+                        if (feature.properties["Deadly?"] === "Y" || parseInt(feature.properties["Dead (minimum)"]) > 0) {
                             color = "#ff0000"; // Red for fatal accidents
-                        } else if (feature.properties.Injury === "Y" || feature.properties.NumInjur > 0) {
+                        } else if (feature.properties["Injurious?"] === "Y" || parseInt(feature.properties["Injured (minimum)"]) > 0) {
                             color = "#ff7800"; // Orange for injuries
                         }
                         
@@ -199,22 +199,20 @@ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-c
             // Function to create popup content
             function createPopupContent(feature) {
                 const props = feature.properties;
-                let content = `<b>Year:</b> ${props.Date}<br>`;
-                content += `<b>Description:</b> ${props.Descript || 'No description'}<br>`;
-                if (props.Street_D) {
-                    content += `<b>Street Address:</b> ${props.Street_D}<br>`;
+                let content = `<b>Date:</b> ${props["Year-Month-Day"] || 'Unknown date'}<br>`;
+                content += `<b>Description:</b> ${props.Description || 'No description'}<br>`;
+                content += `<b>General location:</b> ${props["General location"] || 'Unknown'}<br>`;
+                if (props["Street coordinates"]) {
+                    content += `<b>Street coordinates:</b> ${props["Street coordinates"]}<br>`;
                 }
-                content += `<b>Responsible Party:</b> ${props.Responsi || 'Unknown'}<br>`;
+                content += `<b>Responsible entity:</b> ${props["Responsible corporate entity"] || 'Unknown'}<br>`;
 
-                //content += `<b>${props.name || 'Unnamed Location'}</b><br>`;
-                //content += `<small>AOI ID: ${props.AOI_ID}</small><hr>`;
-                
-                //content += `<b>Date:</b> ${props.Date} (Year: ${props.year})<br>`;
-                if (props.Injury === "Y" || props.NumInjur > 0) {
-                    content += `<b style="color:orange">Non-fatal injured:</b> ${props.NumInjur || 'Yes'}<br>`;
-                }                // Add casualty information
-                if (props.Dead === "Y" || props.NumDead > 0) {
-                    content += `<b style="color:red">Fatalities:</b> ${props.NumDead || 'Yes'}<br>`;
+                // Add casualty information
+                if (props["Injurious?"] === "Y" || parseInt(props["Injured (minimum)"]) > 0) {
+                    content += `<b style="color:orange">Non-fatal injured:</b> ${props["Injured (minimum)"] || 'Yes'}<br>`;
+                }
+                if (props["Deadly?"] === "Y" || parseInt(props["Dead (minimum)"]) > 0) {
+                    content += `<b style="color:red">Fatalities:</b> ${props["Dead (minimum)"] || 'Yes'}<br>`;
                 }
                 
                 return content;
@@ -226,12 +224,9 @@ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-c
             // Update display when slider changes
         slider.noUiSlider.on('update', function(values) {
             const yearRange = values.map(Number);
-         //   document.getElementById('min-year').textContent = yearRange[0];
-         //   document.getElementById('max-year').textContent = yearRange[1];
             updatePointsByYear(yearRange);
         });
         }
     </script>
 </body>
 </html>
-
