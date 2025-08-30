@@ -8,31 +8,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     
     <style>
-        #map { height: 100vh; }
-        #year-value {
-            display: none !important; /* we only want years showing on the sliders */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
         }
+        
+        #map { 
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        
+        /* Custom control for the slider */
+        .slider-control {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 5px 5px 30px 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        
         #year-slider {
             width: 400px;
             margin: 10px;
         }
+        
         .noUi-horizontal .noUi-tooltip {
-            bottom: -32px;  /* Position below the handle */
-            top: auto;      /* Override default top positioning */
+            bottom: -32px;
+            top: auto;
         }
 
-/* Adjust slider container height to accommodate tooltips */
-        .slider-container {
-            position: absolute;
-            top: 410px;
-            right: 380px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.6);
-            padding: 5px 5px 30px 5px; /* Combined padding (top right bottom left) */
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        }
-/* Optional: Improve tooltip appearance */
         .noUi-tooltip {
             font-family: 'Roboto', sans-serif;
             font-size: 12px;
@@ -47,6 +52,7 @@
         .leaflet-popup-content {
             max-width: 300px;
         }
+        
         .custom-fullscreen {
             background: white;
             padding: 5px;
@@ -54,6 +60,7 @@
             border: 2px solid rgba(0,0,0,0.2);
             cursor: pointer;
         }
+        
         .custom-fullscreen:hover {
             background: #f4f4f4;
         }
@@ -61,27 +68,24 @@
 </head>
 <body>
     <div id="map"></div>
-<!-- keep the loading message but remove the initial year display -->
-        <div class="slider-container">
-            <div id="year-slider"></div>
-        </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <!-- NoUI JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
-    <!-- Fullscreen  JS -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
     
     <script>
         // Initialize map with a view set to S Philly and Philadelphia Quadrangle
-        const map = L.map('map').setView([39.921276,-75.189891], 13); // Centered on Philadelphia-75.197141,39.918624
+        const map = L.map('map').setView([39.921276, -75.189891], 13);
+        
+        // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         
-        //Reinsert the Leaflet text to the top left of the screen, other attribution should show up here too
+        // Set attribution control
         map.attributionControl.setPrefix(false);
         
+        // Add fullscreen control
         map.addControl(new L.Control.FullScreen({
             position: 'topleft',
             title: {
@@ -92,21 +96,47 @@
 
         // Create a layer group for our points
         const pointsLayer = L.layerGroup().addTo(map);
-
-fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
-    .then(response => {
-        if (!response.ok) throw new Error('Network response failed');
-        return response.json();
-    })
-    .then(data => processGeoJSON(data))
-    .catch(error => {
-        console.error('Error loading GeoJSON:', error);
-        L.popup()
-            .setLatLng(map.getCenter())
-            .setContent('Error loading accident data')
-            .openOn(map);
-    });
         
+        // Create a custom control for the slider
+        const SliderControl = L.Control.extend({
+            options: {
+                position: 'topright'
+            },
+            
+            onAdd: function(map) {
+                const container = L.DomUtil.create('div', 'slider-control');
+                
+                // Prevent map click events from being intercepted by the slider
+                L.DomEvent.disableClickPropagation(container);
+                
+                // Add content to the control
+                container.innerHTML = `
+                    <div id="year-slider"></div>
+                `;
+                
+                return container;
+            }
+        });
+        
+        // Add the custom control to the map
+        const sliderControl = new SliderControl();
+        map.addControl(sliderControl);
+
+        // Fetch the external GeoJSON
+        fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response failed');
+                return response.json();
+            })
+            .then(data => processGeoJSON(data))
+            .catch(error => {
+                console.error('Error loading GeoJSON:', error);
+                L.popup()
+                    .setLatLng(map.getCenter())
+                    .setContent('Error loading accident data')
+                    .openOn(map);
+            });
+
         function processGeoJSON(geojsonData) {
             // Extract all valid years from features
             const years = [];
@@ -119,7 +149,6 @@ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-c
             
             if (years.length === 0) {
                 console.error('No valid years found in GeoJSON properties');
-                document.getElementById('loading').textContent = 'No valid year data found';
                 return;
             }
             
@@ -130,11 +159,8 @@ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-c
             // Only proceed if we have valid numeric values
             if (isNaN(minYear) || isNaN(maxYear)) {
                 console.error('Invalid year range values');
-                document.getElementById('loading').textContent = 'Invalid year data';
                 return;
             }
-
-                // Remove loading message and display years
 
             // Initialize slider with numeric values
             const slider = document.getElementById('year-slider');
@@ -222,10 +248,10 @@ fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-c
             updatePointsByYear([minYear, maxYear]);
 
             // Update display when slider changes
-        slider.noUiSlider.on('update', function(values) {
-            const yearRange = values.map(Number);
-            updatePointsByYear(yearRange);
-        });
+            slider.noUiSlider.on('update', function(values) {
+                const yearRange = values.map(Number);
+                updatePointsByYear(yearRange);
+            });
         }
     </script>
 </body>
