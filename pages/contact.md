@@ -5,6 +5,7 @@ permalink: /contact.html
 ---
 <div class="contactForm">
 <h2>Contact Us</h2>
+
 <form action="mailto:libraryrdds@pobox.upenn.edu,jfarm@upenn.edu" method="get" enctype="text/plain">
 
     Name:<br>
@@ -22,3 +23,4 @@ permalink: /contact.html
     <input type="submit" value="Send">
 
   </form>
+This form will generate an email in your computer's default mail platform with the responses submitted.
