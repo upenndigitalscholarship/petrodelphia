@@ -8,6 +8,5 @@ permalink: /data.html
 
 ## Collection Metadata
 
-This table provides the ability to view, sort, and search the collection contents. 
-Use the “Excel” or “CSV” button below to download filtered metadata in either of those formats. 
-Alternatively, click the “Download” button at top right to export the full metadata in other formats.
+This table provides the ability to view, sort, and search the collection contents.
+Click the “Download” button at top right to export the full metadata in CSV, JSON, or other formats.
