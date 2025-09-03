@@ -75,6 +75,25 @@ custom-foot: js/browse-js.html
                       {% endfor %}
                 </div>
             </div>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button bg-white text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
+                           Location
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            {% assign mapped_ltypes = site.data[site.metadata] | map: "place_type" | compact | uniq %}{% capture included_ltypes %}{% for s in mapped_ltypes %}{{s}}  {% endfor %}{% endcapture %}
+            
+                              {% for ltype in site.data.place-types%} {% if included_ltypes contains ltype.title %}
+                              <a href="#{{ltype.short}}" class="btn btn-outline-secondary btn-sm m-1">{{ltype.title}}</a>
+                              {% endif %}
+            
+                              {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
