@@ -1,5 +1,5 @@
 ---
-title: Historic Maps
+title: Historical Maps
 layout: map
 permalink: /layered-map.html
 ---
