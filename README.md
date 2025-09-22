@@ -8,6 +8,6 @@ This project was created by Jared Farmer and staff in the Research Data and Digi
 This project was created using [CollectionBuilder CSV](https://github.com/CollectionBuilder/collectionbuilder-csv). It may have additional software dependencies. Maps were created using [LeafletJS](https://leafletjs.com/).
 
 ## Preferred citation
-Jared Farmer et al., "America's First Petrochemical Corridor," Penn Libraries, 2025, https://petrosylvania.org.
+Jared Farmer et al., "America's First Petrochemical Corridor," Penn Libraries, 2025, https://petrodelphia.org.
 
 

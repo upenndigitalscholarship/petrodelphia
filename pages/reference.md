@@ -11,10 +11,10 @@ credits: true
 ## Reckoning with Fossil Fuel in Philadelphia
 Author: Jared Farmer
 
-This document summarizes key findings of the multi-year collaborative research project “Petrosylvania” that resulted in the website _America’s First Petrochemical Corridor_. It comprises six parts: 1) Executive Summary, 2) Interpretive Framework, 3) Major Takeaways, 4) Accident Statistics, 5) Remarkable Facts, and 6) Historical Chronology.
+This document summarizes key findings of the multi-year collaborative research project “Petrodelphia” that resulted in the website _America’s First Petrochemical Corridor_. It comprises six parts: 1) Executive Summary, 2) Interpretive Framework, 3) Major Takeaways, 4) Accident Statistics, 5) Remarkable Facts, and 6) Historical Chronology.
 
 <div class="btn-group" role="group" aria-label="Item options">
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrosylvania.pennds.org/storage/2025--Farmer--Reckoning_Fossil_Fuel_Philadelphia.pdf">View or download PDF</a>
+    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrodelphia.pennds.org/storage/2025--Farmer--Reckoning_Fossil_Fuel_Philadelphia.pdf">View or download PDF</a>
 
 </div>
 
@@ -24,7 +24,7 @@ This document summarizes key findings of the multi-year collaborative research p
 Authors: Gustave Lester, Jake Wolff, and Jared Farmer
 
 <div class="btn-group" role="group" aria-label="Item options">
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrosylvania.pennds.org/storage/2025--Lester_Wolff_Farmer--Pennsylvania_Coal_Philadelphia.pdf">View or download PDF</a>
+    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrodelphia.pennds.org/storage/2025--Lester_Wolff_Farmer--Pennsylvania_Coal_Philadelphia.pdf">View or download PDF</a>
 </div>
 
 ---
@@ -34,7 +34,7 @@ Authors: Gustave Lester, Jake Wolff, and Jared Farmer
 Author: Nolan Varee
 
 <div class="btn-group" role="group" aria-label="Item options">
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrosylvania.pennds.org/storage/2025--Varee--Petroleum_Industry_Philadelphia.pdf">View or download PDF</a>
+    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrodelphia.pennds.org/storage/2025--Varee--Petroleum_Industry_Philadelphia.pdf">View or download PDF</a>
 </div>
 
 ---
@@ -43,7 +43,7 @@ Author: Nolan Varee
 Author: Aislinn E. Pentecost-Farren 
 
 <div class="btn-group" role="group" aria-label="Item options">
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrosylvania.pennds.org/storage/2025--Pentecost-Farren--Lower_Schuylkill_River.pdf">View or download PDF</a>
+    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrodelphia.pennds.org/storage/2025--Pentecost-Farren--Lower_Schuylkill_River.pdf">View or download PDF</a>
 </div>
 
 ---
@@ -53,7 +53,7 @@ Author: Aislinn E. Pentecost-Farren
 Authors: Angus McLeod IV and Jared Farmer
 
 <div class="btn-group" role="group" aria-label="Item options">
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrosylvania.pennds.org/storage/2025--McLeod_Farmer--Philadelphia_PGW_Gas_Works_Point_Breeze.pdf">View or download PDF</a>
+    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrodelphia.pennds.org/storage/2025--McLeod_Farmer--Philadelphia_PGW_Gas_Works_Point_Breeze.pdf">View or download PDF</a>
 </div>
 
 ---
@@ -63,7 +63,7 @@ Authors: Angus McLeod IV and Jared Farmer
 Author: Claire Sasko
 
 <div class="btn-group" role="group" aria-label="Item options">
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrosylvania.pennds.org/storage/2025--Sasko--South_Philadelphia_Refinery_Complex.pdf">View or download PDF</a>
+    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrodelphia.pennds.org/storage/2025--Sasko--South_Philadelphia_Refinery_Complex.pdf">View or download PDF</a>
 </div>
 
 
@@ -73,7 +73,7 @@ Author: Claire Sasko
 Author: Jon Hurdle
 
 <div class="btn-group" role="group" aria-label="Item options">
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrosylvania.pennds.org/storage/2025--Hurdle--Fenceline_Risk_Environmental_Justice_South_Southwest_Philadelphia.pdf">View or download PDF</a>
+    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrodelphia.pennds.org/storage/2025--Hurdle--Fenceline_Risk_Environmental_Justice_South_Southwest_Philadelphia.pdf">View or download PDF</a>
 </div>
 
 ---

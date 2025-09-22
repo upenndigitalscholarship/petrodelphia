@@ -123,7 +123,7 @@
         map.addControl(sliderControl);
 
         // Fetch the external GeoJSON
-        fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrosylvania-collection-builder/refs/heads/main/_includes/js/AOIgeoData.geojson')
+        fetch('https://raw.githubusercontent.com/upenndigitalscholarship/petrodelphia/refs/heads/main/_includes/js/AOIgeoData.geojson')
             .then(response => {
                 if (!response.ok) throw new Error('Network response failed');
                 return response.json();

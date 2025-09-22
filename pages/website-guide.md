@@ -5,12 +5,12 @@ permalink: /website-guide.html
 credits: true
 ---
 
-## Guide to Petrosylvania website work
+## Guide to Petrodelphia website work
 <hr />
 
 ### Downloading the spreadsheet
 
-1. Log into GitHub and navigate to [https://github.com/upenndigitalscholarship/petrosylvania-collection-builder](https://github.com/upenndigitalscholarship/petrosylvania-collection-builder).
+1. Log into GitHub and navigate to [https://github.com/upenndigitalscholarship/petrodelphia](https://github.com/upenndigitalscholarship/petrodelphia).
 2. In the _data folder, click on petro-metadata.csv.
 3. Click the button with three dots at the upper right of the screen and select "Download."
 4. Note where the file saved on your computer and open it in Google Sheets (or Excel?)
@@ -36,7 +36,7 @@ Always save changes to the spreadsheet by saving it as a Comma Separated Values 
 
 ### Uploading the updated spreadsheet to the website
 
-1. Log into GitHub and navigate to [https://github.com/upenndigitalscholarship/petrosylvania-collection-builder/_data](https://github.com/upenndigitalscholarship/petrosylvania-collection-builder/_data).
+1. Log into GitHub and navigate to [https://github.com/upenndigitalscholarship/petrodelphia_data](https://github.com/upenndigitalscholarship/petrodelphia/_data).
 2. At the upper right, click the "Add file" button and "Upload files"
 3. Find the file where you saved it on your computer and either drag it to the upload box or click "Choose your files" to select it.
 4. Write a short but informative message in the "Commit changes" box to keep a record of the upload you are making.
