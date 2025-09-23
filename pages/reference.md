@@ -11,7 +11,7 @@ credits: true
 ## Reckoning with Fossil Fuel in Philadelphia
 Author: Jared Farmer
 
-This document summarizes key findings of the multi-year collaborative research project “Petrodelphia” that resulted in the website _America’s First Petrochemical Corridor_. It comprises six parts: 1) Executive Summary, 2) Interpretive Framework, 3) Major Takeaways, 4) Accident Statistics, 5) Remarkable Facts, and 6) Historical Chronology.
+This reference work condenses the key findings of the multi-year collaborative research project “Petrodelphia” that resulted in the website _America’s First Petrochemical Corridor_. The document comprises six parts: 1) Executive Summary, 2) Interpretive Framework, 3) Major Takeaways, 4) Accident Statistics, 5) Remarkable Facts, and 6) Historical Chronology, 1821–2025.
 
 <div class="btn-group" role="group" aria-label="Item options">
     <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="https://petrodelphia.pennds.org/storage/2025--Farmer--Reckoning_Fossil_Fuel_Philadelphia.pdf">View or download PDF</a>
