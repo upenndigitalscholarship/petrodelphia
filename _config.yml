@@ -10,9 +10,9 @@
 # site domain, full URL to the production location of your collection
 url: https://upenndigitalscholarship.github.io
 # path to location on the domain if necessary e.g. /digital/hjccc
-baseurl: /petrosylvania-collection-builder
+baseurl: /petrodelphia
 # location of code, the full url to your github repository
-source-code: https://github.com/upenndigitalscholarship/petrosylvania-collection-builder
+source-code: https://github.com/upenndigitalscholarship/petrodelphia
 
 ##########
 # SITE SETTINGS
@@ -35,7 +35,7 @@ author: Jared Farmer + Penn Libraries RDDS
 #
 # Set the metadata for your collection (the name of the CSV file in your _data directory that describes the objects in your collection) 
 # Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
-metadata: 2025-09-03_Petro-Metadata
+metadata: 2025-09-23_Petro-Metadata
 # page generation settings [optional!]
 # [optional: only used if you need to tweak CB defaults or generate from more than one data file]
 # page_gen:

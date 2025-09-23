@@ -1,5 +1,5 @@
 # America's First Petrochemical Corridor
-This website provides you—and others who care about the past and future of Philadelphia—a rich collection of sources about the South Philadelphia refinery complex and other petrochemical facilities along the lower Schuylkill River. Fundamentally, this website is a research tool: a digital archive accompanied by reference works and maps. Stakeholders at various levels—neighborhood, municipal, Commonwealth, business, non-profit—should find information of interest among the articles, primary sources, data sheets, and “grey literature” (such as government documents and corporate reports) curated here. Whether you’re a student, teacher, planner, designer, developer, activist, journalist, or simply an infrastructure geek, you are invited to use this website to learn, to share, and to tell stories about fossil fuel legacies in South and Southwest Philadelphia.
+This website provides you—and others who care about the past and future of Philadelphia—a rich collection of sources about the South Philadelphia refinery complex and other petrochemical sites along the lower Schuylkill River. Fundamentally, this website is a research tool: a digital archive accompanied by reference works and maps. Stakeholders at various levels—neighborhood, municipal, commonwealth, business, non-profit—should find information of interest among the articles, primary sources, data sheets, and “grey literature” (such as government documents and corporate reports) curated here. Whether you’re a student, teacher, planner, designer, developer, resident, activist, journalist, or simply an infrastructure nerd, you are invited to use this website to learn, to share, and to tell stories about fossil fuel legacies in South and Southwest Philadelphia.
 
 ## About
 This project was created by Jared Farmer and staff in the Research Data and Digital Scholarship department at Penn Libraries. For a full list of project contributors along with their roles, see the site's "Credits" page. The site's code is licensed under [CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/).
@@ -8,6 +8,6 @@ This project was created by Jared Farmer and staff in the Research Data and Digi
 This project was created using [CollectionBuilder CSV](https://github.com/CollectionBuilder/collectionbuilder-csv). It may have additional software dependencies. Maps were created using [LeafletJS](https://leafletjs.com/).
 
 ## Preferred citation
-Jared Farmer et al., "America's First Petrochemical Corridor," Penn Libraries, 2025, https://petrosylvania.org.
+Jared Farmer et al., "America's First Petrochemical Corridor," Penn Libraries, 2025, https://petrodelphia.org.
 
 
