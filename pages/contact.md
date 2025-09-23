@@ -3,8 +3,9 @@ title: contact
 layout: page
 permalink: /contact.html
 ---
+# Contact us
+
 <div class="contactForm">
-<h2>Contact Us</h2>
 
 <form action="mailto:libraryrdds@pobox.upenn.edu,jfarm@upenn.edu" method="get" enctype="text/plain">
 
@@ -14,7 +15,7 @@ permalink: /contact.html
   
     Subject:<br>
     
-    <input type="subject" name="Subject" value="Petrosylvania"><br>
+    <input type="subject" name="Subject" value="Petrodelphia"><br>
 
     Message:<br>
 
@@ -23,4 +24,6 @@ permalink: /contact.html
     <input type="submit" value="Send">
 
   </form>
+</div>
+
 This form will generate an email in your computer's default mail platform with the responses submitted.
