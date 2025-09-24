@@ -1,7 +1,7 @@
 ---
 title: Lessons
 layout: page
-permalink: /lessons.html
+permalink: /lesson-plans.html
 credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
