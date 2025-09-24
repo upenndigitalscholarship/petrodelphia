@@ -10,7 +10,7 @@
 # site domain, full URL to the production location of your collection
 url: https://upenndigitalscholarship.github.io
 # path to location on the domain if necessary e.g. /digital/hjccc
-baseurl: /petrodelphia
+# baseurl: 
 # location of code, the full url to your github repository
 source-code: https://github.com/upenndigitalscholarship/petrodelphia
 
