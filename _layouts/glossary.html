@@ -1,0 +1,17 @@
+---
+layout: page
+---
+
+<ul>
+{% for glossary in site.data.glossary %}
+
+    <h2 id="{{ glossary.id }}">{{ glossary.term }}</h2>
+    {{ glossary.def }}
+
+{% endfor %}
+</ul>
+
+I have been thinking about the <a href="#" data-bs-toggle="tooltip" data-original-title="{{ glossary.id.25th-Street-Viaduct }}">25th Street Viaduct</a>.
+I have been thinking about a <a href="#" data-bs-toggle="tooltip" data-bs-title="whatevert this will say">100-year flood</a>.
+I have been thinking about Act 2.
+
