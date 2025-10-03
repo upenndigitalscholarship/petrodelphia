@@ -5,7 +5,7 @@ permalink: /lesson-template.html
 credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
-<a href="/lesson-plans.html">back to all lesson plans</a>
+<a href="/lesson-plans.html">back to individual lesson plans</a>
 
 <span class="badge text-white bg-primary">Elementary School</span>
 <span class="badge text-white bg-secondary">K-5: Philadelphia's Petroleum Story and Our Environment</span>

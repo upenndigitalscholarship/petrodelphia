@@ -10,7 +10,14 @@ credits: true
 
 # {{ page.title }}
 
+Some explanatory text here.
+
+<div class="btn-group" role="group" aria-label="Item options">
+    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Download all materials (ZIP file with PDFs)</a>
+</div>
+
 <div class="container">
+
 
 {% include_relative lessons-content.html %}
 

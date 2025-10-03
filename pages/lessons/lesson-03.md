@@ -5,7 +5,7 @@ permalink: lesson-plans/6-8.html
 credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
-<a href="/lesson-plans.html">back to all lesson plans</a>
+<a href="/lesson-plans.html">back to individual lesson plans</a>
 
 <span class="badge text-white bg-primary">Elementary School</span>
 <span class="badge text-white bg-secondary">Middle School</span>
@@ -21,7 +21,7 @@ View or Download Materials
     <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Full Lesson Plan</a>
     <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Teach & Learn Slides</a>
     <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Source Sheet</a>
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Final Exam</a>
+    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Assignments</a>
 </div>
 ---
 ## Unit Snapshot

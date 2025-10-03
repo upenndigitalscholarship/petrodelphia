@@ -1,11 +1,11 @@
 ---
-title: Overview of History
+title: Overview of History for Educators
 layout: page
 permalink: lesson-plans/overview.html
 credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
-<a href="/lesson-plans.html">back to all lesson plans</a>
+<a href="/lesson-plans.html">back to individual lesson plans</a>
 
 <span class="badge text-white bg-primary">Elementary School</span>
 <span class="badge text-white bg-tertiary">Overview</span>
@@ -14,7 +14,7 @@ credits: true
 ## Petrodelphia: Environmental Justice & Civic Action 
 Author: Angie Whistler
 <br>
-
+<!-- This page is for a history overview for teachers. It is separate from the lesson plan included for each grade unit.-->
 ## Summary
 <p>The neighborhoods of South and Southwest Philadelphia—including Grays Ferry, Point Breeze, and Eastwick—have long lived alongside one of the nation’s most powerful yet hazardous petrochemical corridors. For over 150 years, oil refineries, tank farms, and gas works generated energy and jobs—but with significant externalities: air and water pollution, fires and explosions, and elevated health risks. A catastrophic explosion in 2019 accelerated a civic reckoning.</p>
 
@@ -22,10 +22,7 @@ Author: Angie Whistler
 
 View or Download Materials
 <div class="btn-group" role="group" aria-label="Item options">
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Full Lesson Plan</a>
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Teach & Learn Slides</a>
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Source Sheet</a>
-    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Final Exam</a>
+    <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">Full materials</a>
 </div>
 ---
 ## Unit Snapshot

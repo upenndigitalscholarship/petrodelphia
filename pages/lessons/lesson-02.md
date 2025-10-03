@@ -5,7 +5,7 @@ permalink: lesson-plans/k-5.html
 credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
-<a href="/lesson-plans.html">back to all lesson plans</a>
+<a href="/lesson-plans.html">back to individual lesson plans</a>
 
 <span class="badge text-white bg-primary">Elementary School</span>
 <span class="badge text-white bg-tertiary">K-5: Healthy Neighborhoods & Picture Histories</span>
@@ -17,7 +17,6 @@ Author: Angie Whistler
 
 <div class="btn-group" role="group" aria-label="Item options">
     <a target="_blank" rel="noopener" class="spotlight gallery-img btn btn-outline-primary" data-download="true" href="#">View or download PDF</a>
-
 </div>
 ---
 ## Unit Snapshot

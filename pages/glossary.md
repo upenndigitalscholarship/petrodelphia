@@ -10,5 +10,7 @@ credits: true
 # {{ page.title }}
 _If you identify factual error(s) in any of these definitions, please use the [Contact Us](/contact.html) form._
 
+For glossaries specific to teachers and students, see the glossaries included in the <a href="lesson-plans.html">Lesson Plans</a>.
+
 
 {% include_relative glossary-content.html %}
