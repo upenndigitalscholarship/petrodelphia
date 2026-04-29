@@ -1,31 +1,30 @@
 <footer class="bg-dark pt-4 mt-auto container-fluid">
+
     <div class="row pb-4 mb-2">
         <div class="col-md-12 px-4 mt-3">
             <h2 class="h4"><a href="{{ '/' | relative_url }}" class="text-white header-text-minion-pro">{{ site.title }}</a></h2>
             <p class="text-white"><small>{{ site.footer }}</small></p>
         </div>
-    </div>
-    <div class="container d-flex justify-content-end">
-        <div class="row pb-4 mb-2">
-            <div class="col-md mt-3 text-center">
+        <!--logos in this row-->
+        <div class="row pb-4 mb-2 mt-4 justify-content-end">
+            <!--rdds-->
+            <div class="col-md-1 mt-3 text-center">
             {% if site.organization-logo-nav %} 
                 <p class="text-md-end">
                     <a href="{{ site.organization-link }}" target="_blank" rel="noopener">
                         <img id="footer-logo" class="img-fluid p-1 rounded bg-light" src="{{ site.organization-logo-nav | relative_url }}" alt="{{ site.organization-name | escape }} home">
                     </a>
                 </p>
-            {% endif %}
+                {% endif %}
             </div>
-            <div class="col-md mt-3 text-center">
+            <!--collectionbuilder-->
+            <div class="col-md-1 mt-3 text-center">
                 <p class="text-white text-md-end" id="footer-credits">
                     <a href="https://collectionbuilder.github.io/" target="_blank" rel="noopener" title="CollectionBuilder">
                         <img src="{{ '/assets/img/collectionbuilder-logo.png' | relative_url }}" class="img-fluid" alt="CollectionBuilder">
                     </a>
                 </p>
-
             </div>
-
         </div>
     </div>
-
 </footer>
