@@ -70,9 +70,11 @@ a {
 #footer-logo {
     height: 40px;
 }
+
 #footer-credits {
     img { height: 40px; }
 }
+
 #footer-citation a.active, #footer-citation .show > a {
     color: #fff;
 }
@@ -132,6 +134,11 @@ a {
     vertical-align: text-bottom; 
     overflow: hidden;
 }
+
+.gh-footer {
+    width: 40px;
+}
+
 .icon-sprite {
     width: 1em;
     height: 1em;

@@ -116,16 +116,17 @@ font-cdn: # add font stylesheet, e.g. <link href="https://fonts.googleapis.com/c
 #
 # Better documentation for CB-CSV is found at: https://github.com/CollectionBuilder/collectionbuilder-csv/blob/main/docs/icons.md
 #
-#icons: 
-#  icon-image: image
-#  icon-audio: soundwave
-#  icon-video: film
-#  icon-pdf: file-pdf
-#  icon-record: file-text
-#  icon-panorama: image-alt
-#  icon-compound-object: collection 
-#  icon-multiple: postcard
-#  icon-default: file-earmark # fall back icon
-#  icon-back-to-top: arrow-up-square
-#  icon-info-circle-fill: info-circle-fill
-#  icon-example: arrow-right-square
+icons: 
+  icon-image: image
+  icon-audio: soundwave
+  icon-video: film
+  icon-pdf: file-pdf
+  icon-record: file-text
+  icon-panorama: image-alt
+  icon-compound-object: collection 
+  icon-multiple: postcard
+  icon-default: file-earmark # fall back icon
+  icon-back-to-top: arrow-up-square
+  icon-info-circle-fill: info-circle-fill
+  icon-example: arrow-right-square
+  icon-github: github
