@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petrosylvania Map Editor</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="controls">
+        <div>
+            <h2>Point Editor</h2>
+            <p>Drag to move | Toggle status | Reset to origin</p>
+        </div>
+        <div>
+            <button onclick="toggleTheme()">≡ƒîÖ Dark Mode</button>
+            <button onclick="exportGeoJSON()">Download Updated GeoJSON</button>
+        </div>
+    </div>
+    
+    <div id="container">
+        <div id="sidebar">
+            <div id="year-range-container">
+                <div class="year-label">Year Range</div>
+                <div class="dual-range-slider">
+                    <div class="range-track">
+                        <div class="range-fill" id="range-fill"></div>
+                    </div>
+                    <div class="range-inputs">
+                        <input type="range" id="year-start" min="1800" max="2024" value="1800">
+                        <input type="range" id="year-end" min="1800" max="2024" value="2024">
+                    </div>
+                </div>
+                <div class="year-values">
+                    <span id="year-start-value" class="year-value">1800</span>
+                    <span id="year-end-value" class="year-value">2024</span>
+                </div>
+            </div>
+            <div class="search-container">
+                <h3>Industrial Accidents</h3>
+                <input type="text" id="search-box" placeholder="Search...">
+            </div>
+            <div id="accident-list"></div>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

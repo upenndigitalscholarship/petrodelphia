@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petrosylvania Map Editor</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="controls">
+        <div style="display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start; flex: 1;">
+            <div>
+                <h2>Point Editor</h2>
+                <p>Drag to move | Toggle status | Reset to origin</p>
+            </div>
+            <div id="year-range-container" style="flex: 1; min-width: 250px;">
+                <div class="year-label">Year Range</div>
+                <div class="dual-range-slider">
+                    <div class="range-track">
+                        <div class="range-fill" id="range-fill"></div>
+                    </div>
+                    <div class="range-inputs">
+                        <input type="range" id="year-start" min="1800" max="2024" value="1800">
+                        <input type="range" id="year-end" min="1800" max="2024" value="2024">
+                    </div>
+                </div>
+                <div class="year-values">
+                    <span id="year-start-value" class="year-value">1800</span>
+                    <span id="year-end-value" class="year-value">2024</span>
+                </div>
+            </div>
+            <div id="precision-filter-container" style="flex: 1; min-width: 250px;">
+                <div class="year-label">Precision Filter</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" id="filter-all" checked style="margin-right: 6px; cursor: pointer;">
+                        <span>All</span>
+                    </label>
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" id="filter-high" checked style="margin-right: 6px; cursor: pointer;">
+                        <span>HIGH</span>
+                    </label>
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" id="filter-low" checked style="margin-right: 6px; cursor: pointer;">
+                        <span>LOW</span>
+                    </label>
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" id="filter-unknown" checked style="margin-right: 6px; cursor: pointer;">
+                        <span>UNKNOWN</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <button onclick="document.getElementById('geojson-upload').click()">Upload GeoJSON</button>
+            <input type="file" id="geojson-upload" accept=".geojson,.json" style="display: none;">
+            <button onclick="exportGeoJSON()">Download Updated GeoJSON</button>
+        </div>
+    </div>
+    
+    <div id="container">
+        <div id="sidebar">
+            <div class="search-container">
+                <h3>Industrial Accidents</h3>
+                <input type="text" id="search-box" placeholder="Search...">
+            </div>
+            <div id="accident-list"></div>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

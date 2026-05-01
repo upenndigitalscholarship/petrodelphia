@@ -1,4 +1,4 @@
-{
+﻿{
   "type": "FeatureCollection",
   "features": [
     {
@@ -116,10 +116,10 @@
     {
       "type": "Feature",
       "properties": {
-        "AOI_display": "PGW Property",
-        "AOI_ID": "PGW Property",
+        "AOI_display": "PGW",
+        "AOI_ID": "PGW",
         "label_position": [39.922055, -75.198777],
-        "Name": "PGW Property",
+        "Name": "PGW",
         "stroke": "#555555",
         "stroke-width": 2,
         "stroke-opacity": 1,
@@ -1636,10 +1636,10 @@
     {
       "type": "Feature",
       "properties": {
-        "AOI_display": "AOI 1 - Belmont Terminal",
-        "AOI_ID": "Belmont Terminal",
+        "AOI_display": "AOI 1 - Belmont",
+        "AOI_ID": "Belmont",
         "label_position": [39.920478, -75.192988],
-        "Name": "Belmont Terminal",
+        "Name": "Belmont",
         "stroke": "#555555",
         "stroke-width": 2,
         "stroke-opacity": 1,

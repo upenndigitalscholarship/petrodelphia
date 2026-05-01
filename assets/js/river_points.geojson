@@ -1,0 +1,61 @@
+﻿{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yankee Point",
+        "River Bank": "L"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21312859879129,
+          39.90883768118748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Point Breeze",
+        "River Bank": "R"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20477496989044,
+          39.916378227269796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Girard Point",
+        "River Bank": "L"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19524367907917,
+          39.89365190379997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Harkness Point",
+        "River Bank": "R"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21746987707807,
+          39.904665723449654
+        ]
+      }
+    }
+  ]
+}

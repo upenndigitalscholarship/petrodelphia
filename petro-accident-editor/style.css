@@ -1,0 +1,349 @@
+﻿/* ============================================================================
+   CSS Variables - Color & Spacing Palette
+   ============================================================================ */
+:root {
+    /* Colors - Light Mode (Default) */
+    --color-primary: #007bff;
+    --color-primary-dark: #0056b3;
+    --color-danger: #e74c3c;
+    --color-warning: #ffc107;
+    --color-text: #333;
+    --color-text-muted: #666;
+    --color-border: #ccc;
+    --color-border-light: #ddd;
+    --color-bg: #fdfdfd;
+    --color-bg-light: #f9f9f9;
+    --color-bg-lighter: #f0f0f0;
+    --color-white: white;
+    
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 12px;
+    --space-lg: 16px;
+    --space-xl: 20px;
+    
+    /* Others */
+    --border-radius: 4px;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --color-text: #e0e0e0;
+    --color-text-muted: #a0a0a0;
+    --color-border: #444;
+    --color-border-light: #555;
+    --color-bg: #1a1a1a;
+    --color-bg-light: #2a2a2a;
+    --color-bg-lighter: #333;
+    --color-white: #2a2a2a;
+    --color-primary: #4a9eff;
+    --color-primary-dark: #2a7cc0;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Global Layout & Typography */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: var(--color-bg);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--color-text);
+}
+
+/* Controls Bar (Header) */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.controls h2 {
+    margin: 0;
+}
+
+.controls p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--color-text-muted);
+}
+
+.controls > div:last-child {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+/* Main Container & Sidebar */
+#container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+#sidebar {
+    width: 300px;
+    background: var(--color-white);
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#accident-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-sm);
+}
+
+/* Accident List Items */
+.accident-item {
+    padding: var(--space-sm);
+    margin: var(--space-xs) 0;
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    font-size: 0.9em;
+}
+
+.accident-item:hover {
+    background: #e3f2fd;
+    border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .accident-item:hover {
+    background: #1a3a52;
+    border-color: var(--color-primary);
+}
+
+.accident-item.selected {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary-dark);
+}
+
+.accident-date {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.accident-item.selected .accident-date {
+    color: var(--color-white);
+}
+
+.accident-location {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: var(--space-xs);
+}
+
+.accident-item.selected .accident-location {
+    color: var(--color-white);
+}
+
+.accident-coords {
+    font-size: 0.85em;
+    color: var(--color-text-muted);
+    margin-top: var(--space-xs);
+    font-style: italic;
+}
+
+.accident-item.selected .accident-coords {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.accident-desc {
+    font-size: 0.85em;
+    margin-top: var(--space-sm);
+}
+
+/* Map */
+#map {
+    flex: 1;
+    border-radius: 0;
+    margin: 0;
+    border: none;
+}
+
+/* Buttons */
+button {
+    padding: var(--space-xs) var(--space-sm);
+    cursor: pointer;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    margin-top: var(--space-xs);
+    width: 100%;
+    transition: opacity 0.2s, background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button.reset-btn {
+    background: #6c757d;
+    font-size: 0.8em;
+}
+
+/* Year Range Control */
+#year-range-container {
+    padding: var(--space-md);
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.year-label {
+    font-size: 0.85em;
+    font-weight: bold;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.dual-range-slider {
+    position: relative;
+    margin: var(--space-xl) 0 var(--space-lg) 0;
+}
+
+.range-track {
+    width: 100%;
+    height: 5px;
+    background: var(--color-border-light);
+    border-radius: 3px;
+    position: relative;
+    margin-top: var(--space-lg);
+    transition: background-color 0.3s ease;
+}
+
+.range-fill {
+    position: absolute;
+    height: 5px;
+    background: var(--color-primary);
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+.range-inputs {
+    position: relative;
+}
+
+.range-inputs input {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: var(--space-lg);
+    left: 0;
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.range-inputs input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--color-primary);
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: var(--shadow);
+}
+
+.range-inputs input::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--color-primary);
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: var(--shadow);
+}
+
+.year-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-sm);
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.year-value {
+    color: var(--color-primary);
+}
+
+/* Search Box */
+#search-box {
+    width: 100%;
+    padding: var(--space-xs);
+    box-sizing: border-box;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: 0.85em;
+    background: var(--color-bg-light);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Search Container */
+.search-container {
+    padding: var(--space-md);
+    background: var(--color-bg-lighter);
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.search-container h3 {
+    margin: 0 0 var(--space-xs) 0;
+    font-size: 0.95em;
+}
+
+/* Marker Colors */
+.marker-blue {
+    color: #3388ff;
+}
+
+.marker-yellow {
+    color: var(--color-warning);
+}
+
+.marker-red {
+    color: var(--color-danger);
+}
+
+/* Selected Marker Highlight */
+.marker-hidden {
+    opacity: 0.1 !important; /*set to 0 for invisible, 0.1 for semi-transparent*/
+    pointer-events: none !important;
+}
+
+/* Precision Marker Styling */
+.precision-marker div {
+    user-select: none;
+    pointer-events: none;
+}
