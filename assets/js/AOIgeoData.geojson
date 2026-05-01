@@ -2986,7 +2986,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Year": 1965,
+        "Year": "1965",
         "Month": "08",
         "Day": "09",
         "Description": "Lightning-caused explosion of 100,000-gallon tank (butane).",
