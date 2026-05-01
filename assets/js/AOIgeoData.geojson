@@ -3163,6 +3163,31 @@
       "type": "Feature",
       "properties": {
         "Year": "1969",
+        "Month": "09",
+        "Day": "07",
+        "Description": "Five-alarm fire destroys three phenol tanks and five extractor towers.",
+        "Injurious?": "Y",
+        "Deadly?": "Y",
+        "Injured (minimum)": "2",
+        "Dead (minimum)": "1",
+        "Responsible corporate entity": "ARCO",
+        "General Location": "AOI-8",
+        "Street coordinates": "28th St and Passyunk Ave",
+        "Year-Month-Day": "1969-09-07",
+        "marker": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.194000,
+          39.920222
+        ]
+      }
+    }, 
+    {
+      "type": "Feature",
+      "properties": {
+        "Year": "1969",
         "Month": "11",
         "Day": "28",
         "Description": "Explosion of pipeline and some 70 drums (naphtha); seven-alarm fire.",
