@@ -3399,7 +3399,7 @@
         "General Location": "Girard Point",
         "Street coordinates": "Near Penrose Ave (Platt) Bridge, east side",
         "Year-Month-Day": "1975-05-17",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -3449,7 +3449,7 @@
         "General Location": "Schuylkill River",
         "Street coordinates": "Between Penrose Ave (Platt) Bridge and Girard Point (I-95) Bridge",
         "Year-Month-Day": "1975-09-18",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -3474,7 +3474,7 @@
         "General Location": "AOI-1",
         "Street coordinates": "26th St and Passyunk Ave",
         "Year-Month-Day": "1975-10-12",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -3524,7 +3524,7 @@
         "General Location": "AOI-2",
         "Street coordinates": "Passyunk Ave and River Rd",
         "Year-Month-Day": "1976-04-25",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -3599,7 +3599,7 @@
         "General Location": "AOI-5",
         "Street coordinates": "Between Penrose Ave (Platt) Bridge and Girard Point (I-95) Bridge",
         "Year-Month-Day": "1977-04-09",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -3624,7 +3624,7 @@
         "General Location": "Bartrams North",
         "Street coordinates": "49th St and Schuylkill River",
         "Year-Month-Day": "1978-02-04",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -3749,7 +3749,7 @@
         "General Location": "AOI-2",
         "Street coordinates": "3100 Passyunk Ave",
         "Year-Month-Day": "1983-12-28",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -3824,7 +3824,7 @@
         "General Location": "Girard Point",
         "Street coordinates": null,
         "Year-Month-Day": "1986-08-10",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -3874,7 +3874,7 @@
         "General Location": "AOI-2",
         "Street coordinates": "Passyunk Ave and Schuykill Ave",
         "Year-Month-Day": "1988-01-11",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -4224,7 +4224,7 @@
         "General Location": "AOI-1",
         "Street coordinates": "Schuylkill Expressway and Passyunk Ave",
         "Year-Month-Day": "1995-07-18",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -4399,7 +4399,7 @@
         "General Location": "AOI-1",
         "Street coordinates": "2800 W Passyunk Ave",
         "Year-Month-Day": "2000-06-30",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -4424,7 +4424,7 @@
         "General Location": "AOI-1",
         "Street coordinates": "2800 W Passyunk Ave",
         "Year-Month-Day": "2000-09-07",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -4524,7 +4524,7 @@
         "General Location": "AOI-2",
         "Street coordinates": "3144 W Passyunk Avenue",
         "Year-Month-Day": "2002-04-17",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -4624,7 +4624,7 @@
         "General Location": "AOI-2",
         "Street coordinates": "3144 W Passyunk Avenue",
         "Year-Month-Day": "2016-12-10",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -4640,7 +4640,7 @@
         "Year": "2019",
         "Month": "06",
         "Day": "21",
-        "Description": "Ignition of flammable vapor in alkylation unit leads to fire and explosions, and approximately $750 million in property loss.",
+        "Description": "Ignition of flammable vapor in alkylation unit leads to explosions, release of dangerous toxin (hydrogen fluoride), and approximately $750 million in property loss.",
         "Injurious?": "Y",
         "Deadly?": "N",
         "Injured (minimum)": "5",
@@ -4674,7 +4674,7 @@
         "General Location": "AOI-4",
         "Street coordinates": "26th St and Penrose Ave",
         "Year-Month-Day": "2021-08-23",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
