@@ -6,15 +6,23 @@
             <p class="text-white"><small>{{ site.footer }}</small></p>
         </div>
         <!--logos/citation in this row-->
-        <div class="row pb-4 mb-2 mt-4">
+        <div class="row pb-1 mb-2 mt-4 d-flex align-items-end">
             <!--image citation-->
-            <div class="col-md-10 mt-3 px-4 text-start text-white" id="footer-citation">
+            <div class="col-md-10 mt-3 px-4 text-start text-primary d-flex align-items-end" id="footer-citation">
                 <h6>
                 Above image: <a href="/items/view_0035" target="_blank" rel="noopener">"Video still of 2019 PES Refinery accident," US Chemical Safety and Hazard Investigation Board, <i>Wake Up Call: Refinery Disaster in Philadelphia</i>, 2022.</a>
                 </h6>
             </div>
+            <!--can't get github icon (svg) to align with bottom of its container
+            <div class="d-flex col-md-1 mt-3 text-center align-content-end">
+                <a href="http://"
+                <svg class="bi gh-footer mb-0 text-white" aria-hidden="true" role="img">
+                    <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-github"/>
+                </svg>
+            </div>
+            -->
             <!--rdds-->
-            <div class="col-md-1 mt-3 text-center">
+            <div class="d-flex col-md-1 mt-3 text-center">
             {% if site.organization-logo-nav %} 
                 <p class="text-md-end">
                     <a href="{{ site.organization-link }}" target="_blank" rel="noopener">
@@ -24,8 +32,8 @@
                 {% endif %}
             </div>
             <!--collectionbuilder-->
-            <div class="col-md-1 mt-3 text-center">
-                <p class="text-white text-md-end" id="footer-credits">
+            <div class="d-flex col-md-1 mt-3 text-center" id="footer-credits">
+                <p class="text-white text-md-end">
                     <a href="https://collectionbuilder.github.io/" target="_blank" rel="noopener" title="CollectionBuilder">
                         <img src="{{ '/assets/img/collectionbuilder-logo.png' | relative_url }}" class="img-fluid" alt="CollectionBuilder">
                     </a>
