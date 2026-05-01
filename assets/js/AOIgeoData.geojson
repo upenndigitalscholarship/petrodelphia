@@ -873,13 +873,13 @@
         "General Location": "Schuylkill River",
         "Street coordinates": "Below Passyunk Bridge",
         "Year-Month-Day": "1892-10-30",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.2011438172262,
-          39.91972358097296
+          -75.200946,
+          39.918744
         ]
       }
     },
