@@ -57,5 +57,19 @@
         ]
       }
     }
+        {
+      "type": "Feature",
+      "properties": {
+        "Name": "Gibson Point",
+        "River Bank": "L"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.213514,
+          39.925113
+        ]
+      }
+    }
   ]
 }
