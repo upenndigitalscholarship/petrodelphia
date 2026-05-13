@@ -503,7 +503,7 @@ function updatePointsByYear(yearRange) {
                 const props = feature.properties;
                 let content = `<b>Date:</b> ${props["Year-Month-Day"] || 'Unknown date'}<br>`;
                 content += `<b>Description:</b> ${props.Description || 'No description'}<br>`;
-                content += `<b>General location:</b> ${props["General location"] || 'Unknown'}<br>`;
+                content += `<b>General location:</b> ${props["General Location"] || 'Unknown'}<br>`;
                 if (props["Street coordinates"]) {
                     content += `<b>Street coordinates:</b> ${props["Street coordinates"]}<br>`;
                 }

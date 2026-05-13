@@ -554,7 +554,7 @@
             { name: "1895 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2184/{z}/{x}/{y}.png', {
                  attribution: 'Free Library of Philadelphia'
             }), year: 1895 },
-            { name: "1897 Baist City Map", layer: L.tileLayer('https://mapwarper.net/maps/tile/104328/{z}/{x}/{y}.png', {
+            { name: "1897 Baist", layer: L.tileLayer('https://mapwarper.net/maps/tile/104328/{z}/{x}/{y}.png', {
                  attribution: 'Free Library of Philadelphia'
             }), year: 1897 },
             { name: "1901 Bromley", layer: L.tileLayer('https://mapwarper.net/mosaics/tile/2272/{z}/{x}/{y}.png', {
@@ -666,7 +666,7 @@
             "Areas of Interest (AOI)": L.layerGroup([aoiBoundaries, aoiLabels]),
             "Philadelphia County": L.layerGroup(),
             "Political Ward Boundaries, 2025": L.layerGroup(),
-            "River Points": L.layerGroup(),
+            "River points": L.layerGroup(),
             "ZIP Codes, 2025": L.layerGroup(),
             "Industrial zones": L.layerGroup(),
             "Percent industrial, 2026": L.layerGroup(),
@@ -1140,7 +1140,7 @@ loadGeoJSON('{{ site.baseurl }}/assets/js/industrial_tracts_trimmed.geojson',
         
         // Load the River Points GeoJSON with custom labels
         loadGeoJSON('{{ site.baseurl }}/assets/js/river_points.geojson',
-            overlays["River Points"],
+            overlays["River points"],
             { pointToLayer: createRiverPointLabel }
         );
         
