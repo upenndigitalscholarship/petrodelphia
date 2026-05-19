@@ -471,11 +471,11 @@ function updatePointsByYear(yearRange) {
     }, {
         pointToLayer: function(feature, latlng) {
             // Customize marker color based on casualties
-            let color = "#3388ff"; // Default blue
+            let color = "#3498db"; // Default blue
             if (feature.properties["Deadly?"] === "Y" || parseInt(feature.properties["Dead (minimum)"]) > 0) {
-                color = "#ff0000"; // Red for fatal accidents
+                color = "#e74c3c"; // Red for fatal accidents
             } else if (feature.properties["Injurious?"] === "Y" || parseInt(feature.properties["Injured (minimum)"]) > 0) {
-                color = "#ff7800"; // Orange for injuries
+                color = "#e67e22"; // Orange for injuries
             }
             
             // Check marker type (default to circle if not specified)
