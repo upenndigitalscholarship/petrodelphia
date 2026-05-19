@@ -894,7 +894,7 @@ const legendSections = {
     "Industrial zones": {
         title: 'Industrial Zones',
         items: [
-            {color: 'rgba(128, 0, 128, 0.2)', label: 'Industrial Zoning', border: '1px solid black'},
+            {color: 'rgba(128, 0, 128, 0.2)', label: 'Industrial Districts', border: '1px solid black'},
             {color: 'rgba(128, 0, 128, 0.7)', label: 'Keystone Opportunity Zone', border: '1px solid black'}
         ]
     },
@@ -1077,19 +1077,19 @@ loadGeoJSON('{{ site.baseurl }}/assets/js/industrial_tracts_trimmed.geojson',
                     overlays["Census, 50+ percent Black, 1980"], {style: {color: '#21918c', weight:1, fillOpacity: 0.2}, attribution: 'US Census Bureau'});
 
         loadGeoJSON('{{ site.baseurl }}/assets/js/1980_25pctPoverty.geojson',
-                    overlays["Census, 25+ percent children in poverty, 1980"], {style: {color: '#a0da39', weight:1, fillOpacity: 0.2}, attribution: 'US Census Bureau'});
+                    overlays["Census, 25+ percent children in poverty, 1980"], {style: {color: '#83d838', weight:1, fillOpacity: 0.2}, attribution: 'US Census Bureau'});
 
         loadGeoJSON('{{ site.baseurl }}/assets/js/predominantAfam_2000.geojson',
                     overlays["Census, 50+ percent Black, 2000"], {style: {color: '#21918c', weight:1, fillOpacity: 0.2}, attribution: 'US Census Bureau'});
         
         loadGeoJSON('{{ site.baseurl }}/assets/js/2000_25pctPoverty.geojson',
-                    overlays["Census, 25+ percent children in poverty, 2000"], {style: {color: '#a0da39', weight:1, fillOpacity: 0.2}, attribution: 'US Census Bureau'});
+                    overlays["Census, 25+ percent children in poverty, 2000"], {style: {color: '#83d838', weight:1, fillOpacity: 0.2}, attribution: 'US Census Bureau'});
         
         loadGeoJSON('{{ site.baseurl }}/assets/js/2020_pct_Afam.geojson',
                     overlays["Census, 50+ percent Black, 2020"], {style: {color: '#21918c', weight:1, fillOpacity: 0.2}, attribution: 'US Census Bureau'});
 
         loadGeoJSON('{{ site.baseurl }}/assets/js/2020_25pctPoverty.geojson',
-                    overlays["Census, 25+ percent children in poverty, 2020"], {style: {color: '#a0da39', weight:1, fillOpacity: 0.2}, attribution: 'US Census Bureau'});
+                    overlays["Census, 25+ percent children in poverty, 2020"], {style: {color: '#83d838', weight:1, fillOpacity: 0.2}, attribution: 'US Census Bureau'});
 
         loadGeoJSON('{{ site.baseurl }}/assets/js/city_limits.geojson',
                     overlays["Philadelphia County"], {style: {color: '#222', weight:4, fillOpacity: 0}, attribution: 'Data &copy; City of Philadelphia'});
