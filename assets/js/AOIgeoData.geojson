@@ -2996,7 +2996,7 @@
         "Dead (minimum)": 0,
         "Responsible corporate entity": "Gulf",
         "General Location": "AOI-9",
-        "Street coordinates": "null",
+        "Street coordinates": null,
         "Year-Month-Day": "1965-08-09",
         "marker": "circle"
       },
