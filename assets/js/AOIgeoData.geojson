@@ -4774,7 +4774,7 @@
         "General Location": "Bartrams North",
         "Street coordinates": "49th St and Botanic Ave",
         "Year-Month-Day": "1925-02-21",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
