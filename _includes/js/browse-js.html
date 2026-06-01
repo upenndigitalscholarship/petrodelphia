@@ -944,13 +944,25 @@ function shuffle(array) {
  * Sort items by specified field
  */
 function sorting(jsonObject, keyToSortBy) {
+    let descending = false;
+    let sortKey = keyToSortBy;
+
+    if (typeof keyToSortBy === 'string' && keyToSortBy.endsWith('_desc')) {
+        descending = true;
+        sortKey = keyToSortBy.slice(0, -5);
+    }
+
     jsonObject.sort((a, b) => {
-        let x = a[keyToSortBy];
-        let y = b[keyToSortBy];
+        let x = a[sortKey];
+        let y = b[sortKey];
         if (typeof x === 'string') x = x.toUpperCase();
         if (typeof y === 'string') y = y.toUpperCase();
         return (x == null) ? 1 : (y == null) ? -1 : (x < y) ? -1 : (x > y) ? 1 : 0;
     });
+
+    if (descending) {
+        jsonObject.reverse();
+    }
 }
 
 // =============================================================================
