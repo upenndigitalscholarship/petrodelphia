@@ -2948,7 +2948,7 @@
         "General Location": "AOI-4",
         "Street coordinates": "26th St and Hartranft St",
         "Year-Month-Day": "1962-08-23",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -4774,7 +4774,7 @@
         "General Location": "Bartrams North",
         "Street coordinates": "49th St and Botanic Ave",
         "Year-Month-Day": "1925-02-21",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
