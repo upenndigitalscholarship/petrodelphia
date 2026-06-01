@@ -2948,7 +2948,7 @@
         "General Location": "AOI-4",
         "Street coordinates": "26th St and Hartranft St",
         "Year-Month-Day": "1962-08-23",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
