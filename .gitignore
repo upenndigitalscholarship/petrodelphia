@@ -12,5 +12,5 @@ vendor/
 # Ignore mac files 
 .DS_Store
 
-# temporarily ignore gemfile.lock
-# Gemfile.lock
+# ignore gemfile.lock
+Gemfile.lock
