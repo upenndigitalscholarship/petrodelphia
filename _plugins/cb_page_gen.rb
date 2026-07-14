@@ -91,12 +91,18 @@ module CollectionBuilderPageGenerator
         end
         # Filter records if filter_condition is configured
         if filter_condition
-          filtered_records = records.select { |record| eval(filter_condition) } 
-          filtered_number = records.size - filtered_records.size
-          records = filtered_records
-          # provide notice if non-default filter is applied
-          if filter_condition != filter_condition_default 
-            puts color_text("Notice cb_page_gen: filter_condition '#{filter_condition}' is applied. #{filtered_number} records are filtered.", :green) if filtered_number != 0 
+          condition_proc = build_filter_condition_proc(filter_condition)
+          if condition_proc
+            filtered_records = records.select { |record| condition_proc.call(record) }
+            filtered_number = records.size - filtered_records.size
+            records = filtered_records
+            # provide notice if non-default filter is applied
+            if filter_condition != filter_condition_default 
+              puts color_text("Notice cb_page_gen: filter_condition '#{filter_condition}' is applied. #{filtered_number} records are filtered.", :green) if filtered_number != 0 
+            end
+          else
+            puts color_text("Error cb_page_gen: unsupported filter_condition '#{filter_condition}'. Supported patterns are record existence and string equality checks. Skipping filter_condition.", :yellow)
+          
           end
         end
 
@@ -176,6 +182,33 @@ module CollectionBuilderPageGenerator
 
     # Color helper, to add warning colors to message outputs
     # use like: puts color_text("example", :red)
+    def build_filter_condition_proc(filter_condition)
+      condition = filter_condition.to_s.strip
+      return nil if condition.empty?
+
+      # record["field"] and !record["field"]
+      exist_match = condition.match(/\A(!)?record\[(["'])([^"']+)\2\]\z/)
+      if exist_match
+        negate = !exist_match[1].nil?
+        key = exist_match[3]
+        return lambda { |record| negate ? !record[key] : !!record[key] }
+      end
+
+      # record["field"] == "value" and != variant
+      compare_match = condition.match(/\Arecord\[(["'])([^"']+)\1\]\s*(==|!=)\s*(["'])(.*)\4\z/)
+      if compare_match
+        key = compare_match[2]
+        operator = compare_match[3]
+        value = compare_match[5]
+        return lambda do |record|
+          record_value = record[key].to_s
+          operator == '==' ? record_value == value : record_value != value
+        end
+      end
+
+      nil
+    end
+
     def text_colors
       @colors = {
         red: 31,
