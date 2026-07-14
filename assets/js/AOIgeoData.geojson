@@ -23,7 +23,7 @@
         "General Location": "PGW at Point Breeze",
         "Street coordinates": null,
         "Year-Month-Day": "1866-01-04",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
@@ -2996,9 +2996,9 @@
         "Dead (minimum)": 0,
         "Responsible corporate entity": "Gulf",
         "General Location": "AOI-9",
-        "Street coordinates": "null",
+        "Street coordinates": null,
         "Year-Month-Day": "1965-08-09",
-        "marker": "circle"
+        "marker": "diamond"
       },
       "geometry": {
         "type": "Point",
