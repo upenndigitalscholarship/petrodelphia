@@ -1,19 +1,14 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" />
-    <script>
-        // Suppress livereload.js errors - it may not be available but isn't critical
-        window.addEventListener('error', function(event) {
-            if (event.filename && event.filename.includes('livereload.js')) {
-                event.preventDefault();
-            }
-        }, true);
-    </script>
-    <style>
+﻿<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" />
+<script>
+    // Suppress livereload.js errors - it may not be available but isn't critical
+    window.addEventListener('error', function(event) {
+        if (event.filename && event.filename.includes('livereload.js')) {
+            event.preventDefault();
+        }
+    }, true);
+</script>
+<style>
 
         #map {
             width: 100%;
@@ -468,15 +463,47 @@
         .leaflet-control-layers-overlays label span {
             width: 100%;
         }
-    </style>
-</head>
-<body>
-    <div id="map"></div>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
-    <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
 
-    <script>
+        /* Mobile responsiveness for layered map controls */
+        @media (max-width: 768px) {
+            #map {
+                height: 70vh;
+                min-height: 420px;
+            }
+
+            .leaflet-control-custom-panel,
+            .leaflet-control-basemaps-panel,
+            .leaflet-control-overlays-panel {
+                max-width: calc(100vw - 24px) !important;
+            }
+
+            .leaflet-control-basemaps-panel,
+            .leaflet-control-overlays-panel {
+                width: calc(100vw - 24px) !important;
+            }
+
+            .leaflet-control-basemaps-panel .leaflet-control-layers,
+            .leaflet-control-overlays-panel .leaflet-control-layers {
+                width: 100% !important;
+                min-width: 0 !important;
+            }
+
+            .leaflet-control-basemaps-panel .leaflet-control-layers-list,
+            .leaflet-control-overlays-panel .leaflet-control-layers-list {
+                white-space: normal !important;
+            }
+
+            .leaflet-control-attribution {
+                max-width: calc(100vw - 24px);
+                white-space: normal !important;
+            }
+        }
+</style>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
+<script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
+
+<script>
         // Wait for stylesheets to load before initializing map
         // This prevents "Layout was forced before page was fully loaded" warning
         if (document.readyState === 'loading') {
@@ -519,16 +546,6 @@
 
         map.createPane('topPane').style.zIndex = 650;
         //map.attributionControl.setPrefix(false)
-        const historicalMap = L.tileLayer('https://mapwarper.net/maps/tile/94844/{z}/{x}/{y}.png', {
-            attribution: 'Historical map from <a href="https://mapwarper.net">MapWarper</a>',
-            maxZoom: 18,
-            minZoom: 10,
-            pane: 'topPane', // this is what makes it stay on top
-            tms: false,
-            crossOrigin: true,
-            detectRetina: false,
-            noWrap: true
-        });
         var permanentOSM = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
             minZoom: 0,
             maxZoom: 19,
@@ -687,14 +704,6 @@
             "NOAA, 4-foot rise in sea level": L.layerGroup(),
         };
 
-// function to fix styling using geoJSON defined styles
-function getStyle(feature) {
-    // Custom logic per feature
-    return {
-        color: feature.properties.color || 'gray',
-        weight: feature.properties.weight || 2
-    };
-}
         // Function to load GeoJSON data
 async function loadGeoJSON(url, targetLayer, options = {}) {
   try {
@@ -730,47 +739,42 @@ const zipCodeLayers = L.layerGroup();//.addTo(map);
 
 async function loadZIPLayers() {
   try {
+    const response = await fetch('{{ site.baseurl }}/assets/js/zip_codes.geojson');
+    const zipData = await response.json();
+
     // add ZIP code white lines (on bottom)
-    const whiteOutlines = await loadGeoJSON(
-      '{{ site.baseurl }}/assets/js/zip_codes.geojson',
-      null,
-      {
-        style: {
+    const whiteOutlines = L.geoJSON(zipData, {
+      style: {
         color: 'white',
         weight: 5,
         fillOpacity: 0
-        }
       }
-    );
+    });
     zipCodeLayers.addLayer(whiteOutlines); // 
 
 
       //add ZIP code blue lines (on top) 
-    const blueLines = await loadGeoJSON(
-      '{{ site.baseurl }}/assets/js/zip_codes.geojson',
-      null, // Don't auto-add to layer
-      {
-        style: { // Explicit style object
-          color: '#002F6C',
-          weight: 2,
-          fillOpacity: 0
-        },
-        onEachFeature: function(feature, layer) {
-          const label = L.marker(layer.getBounds().getCenter(), {
-            pane: 'labelPane',
-            icon: L.divIcon({
-              className: 'zip-code-label',
-              html: `<div><b>${feature.properties.CODE}</b></div>`,
-              iconSize: null,  // Auto-size to content
-              iconAnchor: null  // Center the icon
-            }),
-            interactive: false
-          });
-          zipCodeLabels.addLayer(label);
-          layer._label = label;
-        }
+    const blueLines = L.geoJSON(zipData, {
+      style: {
+        color: '#002F6C',
+        weight: 2,
+        fillOpacity: 0
+      },
+      onEachFeature: function(feature, layer) {
+        const label = L.marker(layer.getBounds().getCenter(), {
+          pane: 'labelPane',
+          icon: L.divIcon({
+            className: 'zip-code-label',
+            html: `<div><b>${feature.properties.CODE}</b></div>`,
+            iconSize: null,  // Auto-size to content
+            iconAnchor: null  // Center the icon
+          }),
+          interactive: false
+        });
+        zipCodeLabels.addLayer(label);
+        layer._label = label;
       }
-    );
+    });
     zipCodeLayers.addLayer(blueLines);
 
     
@@ -1127,7 +1131,7 @@ loadGeoJSON('{{ site.baseurl }}/assets/js/industrial_tracts_trimmed.geojson',
             const anchorDirection = feature.properties["River Bank"] || 'L'; // Default to L if not specified
             const anchorClass = anchorDirection === 'R' ? 'river-point-label-right' : 'river-point-label-left';
             
-            const labelHtml = `<div class="river-point-label ${anchorClass}"><i>${feature.properties.Name}</i></    div>`;
+            const labelHtml = `<div class="river-point-label ${anchorClass}"><i>${feature.properties.Name}</i></div>`;
             const customIcon = L.divIcon({
                 html: labelHtml,
                 className: 'river-point-icon',
@@ -1208,6 +1212,12 @@ loadGeoJSON('{{ site.baseurl }}/assets/js/industrial_tracts_trimmed.geojson',
         overlayContainer.style.background = 'transparent';
         overlayContainer.style.border = 'none';
         overlayContainer.style.boxShadow = 'none';
+
+        const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
+        if (isMobileViewport) {
+            basemapContainer.classList.add('collapsed');
+            overlayContainer.classList.add('collapsed');
+        }
         
         // Add label to overlay control
         const overlayLabelContainer = L.DomUtil.create('div', 'control-label-container', overlayContainer);
@@ -1278,12 +1288,10 @@ loadGeoJSON('{{ site.baseurl }}/assets/js/industrial_tracts_trimmed.geojson',
             const mapEl = document.getElementById('map');
             const overlaysPanel = document.querySelector('.leaflet-control-overlays-panel');
             const overlaysList = overlaysPanel ? overlaysPanel.querySelector('.leaflet-control-layers-list') : null;
-            const overlaysControl = overlaysPanel ? overlaysPanel.querySelector('.leaflet-control-layers') : null;
             const legendPanel = document.querySelector('.leaflet-control-legend-panel');
             const attribution = document.querySelector('.leaflet-control-attribution');
             
             if (!mapEl || !overlaysPanel) {
-                console.log('Sizing: Missing mapEl or overlaysPanel');
                 return;
             }
             
@@ -1318,8 +1326,6 @@ loadGeoJSON('{{ site.baseurl }}/assets/js/industrial_tracts_trimmed.geojson',
             if (overlaysList) {
                 overlaysList.style.setProperty('max-height', finalHeight + 'px', 'important');
             }
-            
-            console.log('Overlays size: finalHeight=' + finalHeight + 'px, total=' + (finalHeight + headerHeight) + 'px (header=' + headerHeight + 'px, legend=' + legendHeight + 'px, map=' + mapHeight + 'px, attribution=' + attributionHeight + 'px)');
         }
         
         // Update on load
@@ -1329,46 +1335,17 @@ loadGeoJSON('{{ site.baseurl }}/assets/js/industrial_tracts_trimmed.geojson',
         window.addEventListener('resize', updateOverlaysPanelHeight);
         
         // Update when legend expands/collapses
-        const legendCollapseObserver = setInterval(() => {
-            const legendPanel = document.querySelector('.leaflet-control-legend-panel');
-            if (legendPanel) {
-                clearInterval(legendCollapseObserver);
-                // Monitor for class changes (collapse/expand)
-                const legendControl = legendPanel.querySelector('.legend-control');
-                if (legendControl) {
-                    const observer = new MutationObserver(updateOverlaysPanelHeight);
-                    observer.observe(legendControl, { attributes: true, attributeFilter: ['class'] });
-                    // Also update when legend container visibility changes
-                    const containerObserver = new MutationObserver(updateOverlaysPanelHeight);
-                    containerObserver.observe(legendPanel, { attributes: true, attributeFilter: ['style'] });
-                }
-            }
-        }, 100);
+        const legendPanel = document.querySelector('.leaflet-control-legend-panel');
+        if (legendPanel) {
+            const legendControl = legendPanel.querySelector('.legend-control');
+            if (legendControl) {
+                const observer = new MutationObserver(updateOverlaysPanelHeight);
+                observer.observe(legendControl, { attributes: true, attributeFilter: ['class'] });
 
-// Define layer descriptions (add this new object for info pane or popup)
-const layerDescriptions = {
-    "Industrial zones": "Areas where more than half the land is designated for industrial use (darker purple) and state-designated Keystone Opportunity Zones with tax incentives (lighter purple).",
-    "Percent industrial, 2026": "Percentage of industrial and mixed-use zoning by 1000-foot grid cells, showing concentration of industrial zoning across the study area.",
-    "HOLC \"redlining map,\" 1937": "Historical maps that color-coded neighborhoods by perceived investment risk.",
-    "FEMA, 100-year flood zone, 2025": "Areas with a 1% annual chance of flooding according to FEMA models.",
-    "ZIP Codes, 2025": "Current US Postal Service ZIP code boundaries.",
-    "Areas of Interest (AOI)": "Key locations selected for detailed study in this research project.",
-    "Philadelphia County": "Philadelphia county boundaries.",
-    "LNAPL plume, 1996A": "Light non-aqueous phase liquid contamination plumes from 1996 surveys.",
-    "LNAPL plume, 1996B": "Light non-aqueous phase liquid contamination plumes from 1996 surveys.",
-    "LNAPL plume, 1996C": "Light non-aqueous phase liquid contamination plumes from 1996 surveys.",
-    "LNAPL plume, 1996D": "Light non-aqueous phase liquid contamination plumes from 1996 surveys.",
-    "Census, 50+ percent Black, 1960": "Census tracts with majority Black population in 1960.",
-    "Census, 50+ percent Black, 1980": "Census tracts with majority Black population in 1980.",
-    "Census, 50+ percent Black, 2000": "Census tracts with majority Black population in 2000.",
-    "Census, 50+ percent Black, 2020": "Census tracts with majority Black population in 2020.",
-    "Census, 25+ percent children in poverty, 1980": "Census tracts with high child poverty rates in 1980.",
-    "Census, 25+ percent children in poverty, 2000": "Census tracts with high child poverty rates in 2000.",
-    "Census, 25+ percent children in poverty, 2020": "Census tracts with high child poverty rates in 2020.",
-    "NOAA, 2-foot rise in sea level": "Areas vulnerable to 2 feet of sea level rise according to NOAA models.",
-    "NOAA, 4-foot rise in sea level": "Areas vulnerable to 4 feet of sea level rise according to NOAA models.",
-    "Street labels": "CartoDB street name labels for reference."
-};
+                const containerObserver = new MutationObserver(updateOverlaysPanelHeight);
+                containerObserver.observe(legendPanel, { attributes: true, attributeFilter: ['style'] });
+            }
+        }
 
 
 
@@ -1393,6 +1370,4 @@ labelStyle.textContent = `
 document.head.appendChild(labelStyle);
         } // End initializeMap function
 
-    </script>
-</body>
-</html>
+</script>

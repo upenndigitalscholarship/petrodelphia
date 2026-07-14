@@ -1,19 +1,13 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" />
-    <!-- Choose your style: accident-style-clean.css (sharp/modern) or accident-style-original.css (rounded/soft) -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/accident-style-clean.css" />
-    
-</head>
-<body>
-    <div id="map"></div>
-	<!-- libraries are for leaflet, fullscreen mode, and chart.js -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+﻿<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" />
+<!-- Choose your style: accident-style-clean.css (sharp/modern) or accident-style-original.css (rounded/soft) -->
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/accident-style-clean.css" />
+
+<!-- libraries are for leaflet, fullscreen mode, and chart.js -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
  
 
     <script>
@@ -164,28 +158,8 @@ function calculateNiceInterval(maxValue) {
     
     return Math.ceil(interval);
 }
-function logChartState(label) {
-    if (accidentChart && accidentChart.scales && accidentChart.scales.x) {
-        const xScale = accidentChart.scales.x;
-        const yScale = accidentChart.scales.y;
-        console.log(`=== ${label} ===`);
-        console.log('Chart max:', accidentChart.options.scales.x.max);
-        console.log('Step size set:', accidentChart.options.scales.x.ticks.stepSize);
-        console.log('Actual X-axis ticks:', xScale.ticks.map(t => t.value)); // What ticks are actually rendered
-        console.log('X-axis label rotation:', accidentChart.options.scales.x.ticks.maxRotation);
-        console.log('X-axis scale height:', xScale.height);
-        console.log('Y-axis scale width:', yScale.width);
-        console.log('Chart area:', {top: accidentChart.chartArea.top, bottom: accidentChart.chartArea.bottom, height: accidentChart.chartArea.bottom - accidentChart.chartArea.top});
-        console.log('Chart data:', accidentChart.data.datasets[0].data);
-    } else {
-        console.log(`=== ${label} === (chart not fully initialized yet)`);
-    }
-}
 // update count display and update the chart
 function updateAccidentCount(filteredFeatures) {
-    logChartState('BEFORE UPDATE')
-    const count = filteredFeatures.length;
-
     // Count accident types
     let nonInjuriousCount = 0;
     let injuriousCount = 0;
@@ -227,12 +201,7 @@ function updateAccidentCount(filteredFeatures) {
         accidentChart.options.scales.x.max = niceMax;  // Axis max at 100, bars can overflow
         
         accidentChart.update();
-        logChartState('AFTER UPDATE')
     }
-
-    // Log to console for debugging
-    console.log(`Accidents displayed: ${count}`);
-    console.log(`Non-injurious: ${nonInjuriousCount}, Injurious: ${injuriousCount}, Deadly: ${deadlyCount}`);
 }        
         // Fetch the external GeoJSON
         fetch('{{ site.baseurl }}/assets/js/AOIgeoData.geojson')
@@ -306,9 +275,14 @@ function updateAccidentCount(filteredFeatures) {
             
             // Function to update range fill position
             function updateRangeFill() {
-                const start = parseInt(yearStart.value);
-                const end = parseInt(yearEnd.value);
+                const start = parseInt(yearStart.value, 10);
+                const end = parseInt(yearEnd.value, 10);
                 const range = maxYear - minYear;
+                if (range <= 0) {
+                    rangeFill.style.left = '0%';
+                    rangeFill.style.width = '100%';
+                    return;
+                }
                 const fillStart = ((start - minYear) / range) * 100;
                 const fillEnd = ((end - minYear) / range) * 100;
                 rangeFill.style.left = fillStart + '%';
@@ -526,8 +500,6 @@ function updatePointsByYear(yearRange) {
             // Define updateAccidentDisplay function for slider changes
             function updateAccidentDisplay(yearRange) {
                 updatePointsByYear(yearRange);
-                // Update chart based on year range
-                updateChart(yearRange);
             }
             
             // Update marker sizes when zoom changes
@@ -537,6 +509,4 @@ function updatePointsByYear(yearRange) {
                 updatePointsByYear([start, end]);
             });
         }
-    </script>
-</body>
-</html>
+</script>

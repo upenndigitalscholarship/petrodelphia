@@ -228,3 +228,36 @@
 .leaflet-control-zoom a:last-child {
     border-radius: 0 0 1px 1px !important;
 }
+
+/* Mobile responsiveness for accident map controls */
+@media (max-width: 768px) {
+    #map {
+        height: 70vh;
+        min-height: 420px;
+    }
+
+    .slider-control {
+        min-width: 0;
+        width: min(260px, calc(100vw - 24px));
+        padding: 10px 12px;
+    }
+
+    .chart-control {
+        display: none;
+    }
+
+    .leaflet-popup-content {
+        max-width: 220px;
+    }
+
+    .leaflet-control-attribution {
+        max-width: calc(100vw - 24px);
+        white-space: normal !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-control {
+        width: min(220px, calc(100vw - 20px));
+    }
+}
