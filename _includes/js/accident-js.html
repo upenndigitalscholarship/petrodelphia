@@ -201,6 +201,7 @@
         // Store all accidents and current filter state for list updates
         let allAccidents = [];
         let currentYearRange = [1800, 2024];
+        let markersByAccidentId = {}; // Store markers indexed by accident ID for highlighting
 
         // Define accident table control
         const AccidentTableControl = L.Control.extend({
@@ -581,7 +582,7 @@ function updateAccidentCount(filteredFeatures) {
                     const year = props.Year || 'Unknown';
                     const date = props['Year-Month-Day'] || year;
                     const desc = props.Description || 'No description';
-                    const location = props['General location'] || 'Unknown location';
+                    const location = props['Street coordinates'] || 'Unknown location';
                     
                     // Determine severity color
                     let severityColor = '#3388ff'; // Blue
@@ -595,10 +596,10 @@ function updateAccidentCount(filteredFeatures) {
                     }
                     
                     html += `
-                        <div style="padding: 8px 10px; border-bottom: 1px solid #eee; cursor: pointer; transition: background 0.2s;" 
-                             onmouseover="this.style.background='#f9f9f9'" 
-                             onmouseout="this.style.background='transparent'"
-                             onclick="highlightAccidentOnMap('${feature.id}')">
+                        <div data-accident-id="${feature.id}" style="padding: 8px 10px; border-bottom: 1px solid #eee; cursor: pointer; transition: background 0.2s;" 
+                             onmouseenter="highlightMarkerOnHover('${feature.id}')"
+                             onmouseleave="unhighlightMarkerOnHover('${feature.id}')"
+                             onclick="openAccidentPopup('${feature.id}')">
                             <div style="display: flex; align-items: flex-start; gap: 6px;">
                                 <div style="width: 8px; height: 8px; border-radius: 50%; background-color: ${severityColor}; margin-top: 2px; flex-shrink: 0; border: 1px solid #000;"></div>
                                 <div style="flex: 1; min-width: 0;">
@@ -615,12 +616,49 @@ function updateAccidentCount(filteredFeatures) {
                 listEl.innerHTML = html;
             }
 
-            // Function to highlight an accident on the map when clicked in list
-            window.highlightAccidentOnMap = function(accidentId) {
+            // Function to highlight a marker when hovering over list item
+            window.highlightMarkerOnHover = function(accidentId) {
+                const marker = markersByAccidentId[accidentId];
+                if (marker) {
+                    // Flash effect: toggle visibility
+                    let flashCount = 0;
+                    const flashInterval = setInterval(() => {
+                        if (flashCount >= 6) {
+                            clearInterval(flashInterval);
+                            // Restore original appearance
+                            if (marker._icon) marker._icon.style.opacity = '1';
+                            return;
+                        }
+                        if (marker._icon) {
+                            marker._icon.style.opacity = flashCount % 2 === 0 ? '0.5' : '1';
+                        }
+                        flashCount++;
+                    }, 150);
+                }
+            };
+
+            // Function to remove hover highlight from marker
+            window.unhighlightMarkerOnHover = function(accidentId) {
+                const marker = markersByAccidentId[accidentId];
+                if (marker && marker._icon) {
+                    marker._icon.style.opacity = '1';
+                }
+            };
+
+            // Function to open popup when clicking on list item
+            window.openAccidentPopup = function(accidentId) {
                 const accident = allAccidents.find(f => f.id === accidentId);
                 if (accident && accident.geometry && accident.geometry.coordinates) {
                     const [lng, lat] = accident.geometry.coordinates;
                     map.setView([lat, lng], Math.max(map.getZoom(), 15), { animate: true });
+                    
+                    // Open the popup after map animation completes
+                    const marker = markersByAccidentId[accidentId];
+                    if (marker) {
+                        setTimeout(() => {
+                            marker.openPopup();
+                        }, 300);
+                    }
                 }
             };
 
@@ -629,8 +667,9 @@ function updateAccidentCount(filteredFeatures) {
             // ================================================================
             // Filter accident features by year range and redraw markers
 function updatePointsByYear(yearRange) {
-    // Clear existing points
+    // Clear existing points and marker references
     pointsLayer.clearLayers();
+    markersByAccidentId = {};
     
     // Filter features by year
     const filteredFeatures = geojsonData.features.filter(feature => {
@@ -702,6 +741,10 @@ function updatePointsByYear(yearRange) {
                     fillOpacity: 0.8
                 }).bindPopup(createPopupContent(feature));
             }
+        },
+        onEachFeature: function(feature, layer) {
+            // Store marker reference by accident ID for later highlighting
+            markersByAccidentId[feature.id] = layer;
         }
     }).addTo(pointsLayer);
 }
