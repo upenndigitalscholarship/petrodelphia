@@ -5,7 +5,40 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" />
     <!-- Choose your style: accident-style-clean.css (sharp/modern) or accident-style-original.css (rounded/soft) -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/accident-style-clean.css" />
-    
+    <style>
+        /* Accident table control styling */
+        .accident-table-control {
+            font-family: Arial, sans-serif;
+        }
+        
+        .accident-table-control a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        /* Scrollbar styling for accident list */
+        .accident-table-control #accident-list {
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f5f5f5;
+        }
+        
+        .accident-table-control #accident-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .accident-table-control #accident-list::-webkit-scrollbar-track {
+            background: #f5f5f5;
+        }
+        
+        .accident-table-control #accident-list::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        
+        .accident-table-control #accident-list::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+    </style>
 </head>
 <body>
     <div id="map"></div>
@@ -17,11 +50,20 @@
  
 
     <script>
-        // Register the datalabels plugin
+        // ============================================================================
+        // ACCIDENT MAP: Interactive map showing historical refinery accidents
+        // Features: Year-range filtering slider, accident markers (circles/diamonds),
+        // zoom-based scaling, severity-based coloring, and accident statistics chart
+        // ============================================================================
+
+        // Register the datalabels plugin for Chart.js (displays values on bars)
         Chart.register(ChartDataLabels);
         // Chart object (initialized after DOM loads)
         let accidentChart = null;
 
+        // ============================================================================
+        // MAP INITIALIZATION
+        // ============================================================================
         // Initialize a map with a view set to S Philly at city-scale 13
         const map = L.map('map', { attributionControl: false, zoomControl: false }).setView([39.921276, -75.189891], 13);
         
@@ -30,6 +72,7 @@
         //    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">CARTO (OpenStreetMap data)</a>'
         //}).addTo(map);
         
+        // Add CARTO light basemap layer with retina support
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png' + (L.Browser.retina ? '@2x.png' : '.png'), {
             attribution:'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
@@ -41,6 +84,9 @@
         L.control.attribution({position: 'bottomleft'}).addTo(map);
         map.attributionControl.setPrefix();
         
+        // ============================================================================
+        // CUSTOM CONTROLS: Zoom + Fullscreen
+        // ============================================================================
         // Create custom combined zoom + fullscreen control (matching layeredmap-js.html)
         const CombinedControl = L.Control.extend({
             onAdd: function(map) {
@@ -63,19 +109,27 @@
         });
         
         new CombinedControl({position: 'bottomright'}).addTo(map);
-		
-        // Create a layer group for accident dots
+
+        // ============================================================================
+        // ACCIDENT MARKERS & LAYER GROUP
+        // ============================================================================
+        // Create a layer group for accident dots - this container holds all point markers
         const pointsLayer = L.layerGroup().addTo(map);
         
         // Function to calculate marker radius based on zoom level
+        // This ensures markers scale appropriately as user zooms in/out
         function getScaledRadius(zoom) {
             // Base radius at zoom 13, scales up/down with zoom
             // Adjust the multiplier to control how much the dots scale
             const baseZoom = 13; 
             const baseRadius = 4; // Base radius at zoom 13
-            const scaleFactor = .75; // Adjust this for more/less scaling
+            const scaleFactor = .75; // Adjust this to control how much radius changes with zoom
             return Math.max(2, baseRadius + (zoom - baseZoom) * scaleFactor);
         }
+
+        // ============================================================================
+        // SLIDER CONTROL: Year range filtering (native HTML5 range inputs)
+        // ============================================================================
         const SliderControl = L.Control.extend({
             options: {
                 position: 'topright'
@@ -107,11 +161,14 @@
                 return container;
             }
         });
-        
-        // Add the custom control to the map
+
+        // Add the slider control to the map
         const sliderControl = new SliderControl();
         map.addControl(sliderControl);
 
+        // ============================================================================
+        // ACCIDENT STATISTICS CHART
+        // ============================================================================
         // Define a customized chart control
         const ChartControl = L.Control.extend({
             options: {
@@ -138,9 +195,47 @@
         const chartControl = new ChartControl();
         map.addControl(chartControl);
 
-				
-        
-// Calculate nice round intervals for chart scales
+        // ============================================================================
+        // ACCIDENT TABLE PANEL: Browse accidents visible on-screen
+        // ============================================================================
+        // Store all accidents and current filter state for list updates
+        let allAccidents = [];
+        let currentYearRange = [1800, 2024];
+
+        // Define accident table control
+        const AccidentTableControl = L.Control.extend({
+            options: {
+                position: 'bottomleft'
+            },
+
+            onAdd: function(map) {
+                const container = L.DomUtil.create('div', 'accident-table-control');
+                L.DomEvent.disableClickPropagation(container);
+
+                container.innerHTML = `
+                    <div style="background: white; border: 1px solid #ccc; border-radius: 2px; max-width: 320px; max-height: 400px; display: flex; flex-direction: column; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div style="padding: 8px; border-bottom: 1px solid #ddd; background: #f5f5f5; font-weight: 600; font-size: 12px; color: #333;">
+                            Accidents Visible
+                            <span id="accident-count" style="float: right; color: #666;">(0)</span>
+                        </div>
+                        <div id="accident-list" style="overflow-y: auto; flex: 1; font-size: 11px;">
+                            <div style="padding: 12px; color: #999; text-align: center;">Loading...</div>
+                        </div>
+                    </div>
+                `;
+                return container;
+            }
+        });
+
+        // Add the accident table control to the map
+        const tableControl = new AccidentTableControl();
+        map.addControl(tableControl);
+
+        // ============================================================================
+        // CHART UTILITIES
+        // ============================================================================
+        // Calculate nice round intervals for chart scales
+        // This ensures y-axis tick labels are readable whole numbers
 function calculateNiceInterval(maxValue) {
     if (maxValue <= 0) return 1;
     
@@ -164,6 +259,8 @@ function calculateNiceInterval(maxValue) {
     
     return Math.ceil(interval);
 }
+
+// Debug function: logs current chart configuration to browser console
 function logChartState(label) {
     if (accidentChart && accidentChart.scales && accidentChart.scales.x) {
         const xScale = accidentChart.scales.x;
@@ -181,7 +278,9 @@ function logChartState(label) {
         console.log(`=== ${label} === (chart not fully initialized yet)`);
     }
 }
-// update count display and update the chart
+
+// Update accident statistics and chart based on filtered features
+// Counts accidents by severity: deadly (red), injurious (orange), non-injurious (blue)
 function updateAccidentCount(filteredFeatures) {
     logChartState('BEFORE UPDATE')
     const count = filteredFeatures.length;
@@ -233,8 +332,12 @@ function updateAccidentCount(filteredFeatures) {
     // Log to console for debugging
     console.log(`Accidents displayed: ${count}`);
     console.log(`Non-injurious: ${nonInjuriousCount}, Injurious: ${injuriousCount}, Deadly: ${deadlyCount}`);
-}        
-        // Fetch the external GeoJSON
+}
+
+        // ============================================================================
+        // LOAD AND PROCESS GEOJSON DATA
+        // ============================================================================
+        // Fetch the external GeoJSON file containing accident data
         fetch('{{ site.baseurl }}/assets/js/AOIgeoData.geojson')
             .then(response => {
                 if (!response.ok) throw new Error('Network response failed');
@@ -249,19 +352,22 @@ function updateAccidentCount(filteredFeatures) {
                     .openOn(map);
             });
 
-			function processGeoJSON(geojsonData) {
-				// Add unique IDs to each feature for matching
-				geojsonData.features.forEach((feature, index) => {
-					feature.id = `accident-${index}`; // Add a unique ID
-				});
-				
-			    // Set map view to fit bounds of all data points in AOIgeodata.geojson
-				const tempLayer = L.geoJSON(geojsonData);
-    			const bounds = tempLayer.getBounds();
-    			if (bounds.isValid()) {
-        			map.fitBounds(bounds, { padding: [50, 50] }); // Fit map to layer bounds with padding
-    			}
-				// Extract all valid years from features
+        // Main GeoJSON processing function
+        // Extracts year range, initializes slider, renders markers and chart
+        function processGeoJSON(geojsonData) {
+            // Add unique IDs to each feature for reference
+            geojsonData.features.forEach((feature, index) => {
+                feature.id = `accident-${index}`;
+            });
+            
+            // Auto-fit map view to show all data points
+            const tempLayer = L.geoJSON(geojsonData);
+            const bounds = tempLayer.getBounds();
+            if (bounds.isValid()) {
+                map.fitBounds(bounds, { padding: [50, 50] });
+            }
+
+            // Extract all valid years from GeoJSON to set slider range
             const years = [];
             
             geojsonData.features.forEach(feature => {
@@ -292,7 +398,7 @@ function updateAccidentCount(filteredFeatures) {
             const yearStartValue = document.getElementById('year-start-value');
             const yearEndValue = document.getElementById('year-end-value');
             
-            // Set slider min/max to data range
+            // Configure slider controls to match actual year range from data
             yearStart.min = minYear;
             yearStart.max = maxYear;
             yearStart.value = minYear;
@@ -300,11 +406,11 @@ function updateAccidentCount(filteredFeatures) {
             yearEnd.max = maxYear;
             yearEnd.value = maxYear;
             
-            // Update display values
+            // Update display text to show min/max years
             yearStartValue.textContent = minYear;
             yearEndValue.textContent = maxYear;
             
-            // Function to update range fill position
+            // Update visual fill bar position based on slider values
             function updateRangeFill() {
                 const start = parseInt(yearStart.value);
                 const end = parseInt(yearEnd.value);
@@ -315,7 +421,7 @@ function updateAccidentCount(filteredFeatures) {
                 rangeFill.style.width = (fillEnd - fillStart) + '%';
             }
             
-            // Event listeners for range inputs
+            // Handle start year slider changes
             yearStart.addEventListener('input', function() {
                 if (parseInt(yearStart.value) > parseInt(yearEnd.value)) {
                     yearStart.value = yearEnd.value;
@@ -325,6 +431,7 @@ function updateAccidentCount(filteredFeatures) {
                 updateAccidentDisplay([parseInt(yearStart.value), parseInt(yearEnd.value)]);
             });
             
+            // Handle end year slider changes
             yearEnd.addEventListener('input', function() {
                 if (parseInt(yearEnd.value) < parseInt(yearStart.value)) {
                     yearEnd.value = yearStart.value;
@@ -334,10 +441,12 @@ function updateAccidentCount(filteredFeatures) {
                 updateAccidentDisplay([parseInt(yearStart.value), parseInt(yearEnd.value)]);
             });
             
-            // Initial range fill
+            // Initialize visual fill bar
             updateRangeFill();
             
-            // Initialize the chart
+            // ================================================================
+            // CHART INITIALIZATION: Bar chart showing accident statistics
+            // ================================================================
             const ctx = document.getElementById('accidentChart').getContext('2d');
             accidentChart = new Chart(ctx, {
                 type: 'bar',
@@ -422,7 +531,103 @@ function updateAccidentCount(filteredFeatures) {
                 }
             });
             
-            // Function to filter and display points
+            // Store accident data globally for table updates
+            allAccidents = geojsonData.features;
+            
+            // ================================================================
+            // ACCIDENT TABLE UPDATES: Show accidents visible on screen
+            // ================================================================
+            // Update the accident list based on current map bounds and year filter
+            function updateAccidentTable(yearRange) {
+                // Filter accidents by year range
+                const filteredByYear = allAccidents.filter(feature => {
+                    const year = feature.properties.Year;
+                    const yearNum = Number(year);
+                    return year && !isNaN(yearNum) && yearNum >= yearRange[0] && yearNum <= yearRange[1];
+                });
+
+                // Get current map bounds
+                const bounds = map.getBounds();
+                
+                // Filter by visibility in map viewport
+                const visibleAccidents = filteredByYear.filter(feature => {
+                    if (!feature.geometry || !feature.geometry.coordinates) return false;
+                    const [lng, lat] = feature.geometry.coordinates;
+                    const point = L.latLng(lat, lng);
+                    return bounds.contains(point);
+                });
+
+                // Sort by year descending (newest first)
+                visibleAccidents.sort((a, b) => (b.properties.Year || 0) - (a.properties.Year || 0));
+
+                // Update count
+                const countEl = document.getElementById('accident-count');
+                if (countEl) {
+                    countEl.textContent = `(${visibleAccidents.length})`;
+                }
+
+                // Build list HTML
+                const listEl = document.getElementById('accident-list');
+                if (!listEl) return;
+
+                if (visibleAccidents.length === 0) {
+                    listEl.innerHTML = '<div style="padding: 12px; color: #999; text-align: center;">No accidents in view</div>';
+                    return;
+                }
+
+                let html = '';
+                visibleAccidents.forEach((feature, idx) => {
+                    const props = feature.properties;
+                    const year = props.Year || 'Unknown';
+                    const date = props['Year-Month-Day'] || year;
+                    const desc = props.Description || 'No description';
+                    const location = props['General location'] || 'Unknown location';
+                    
+                    // Determine severity color
+                    let severityColor = '#3388ff'; // Blue
+                    let severityLabel = 'Non-injurious';
+                    if (props['Deadly?'] === 'Y' || parseInt(props['Dead (minimum)']) > 0) {
+                        severityColor = '#ff0000'; // Red
+                        severityLabel = 'Deadly';
+                    } else if (props['Injurious?'] === 'Y' || parseInt(props['Injured (minimum)']) > 0) {
+                        severityColor = '#ff7800'; // Orange
+                        severityLabel = 'Injurious';
+                    }
+                    
+                    html += `
+                        <div style="padding: 8px 10px; border-bottom: 1px solid #eee; cursor: pointer; transition: background 0.2s;" 
+                             onmouseover="this.style.background='#f9f9f9'" 
+                             onmouseout="this.style.background='transparent'"
+                             onclick="highlightAccidentOnMap('${feature.id}')">
+                            <div style="display: flex; align-items: flex-start; gap: 6px;">
+                                <div style="width: 8px; height: 8px; border-radius: 50%; background-color: ${severityColor}; margin-top: 2px; flex-shrink: 0; border: 1px solid #000;"></div>
+                                <div style="flex: 1; min-width: 0;">
+                                    <div style="font-weight: 600; color: #333;">${date}</div>
+                                    <div style="color: #666; font-size: 10px; margin: 2px 0; line-height: 1.3;">${desc.substring(0, 60)}${desc.length > 60 ? '...' : ''}</div>
+                                    <div style="color: #999; font-size: 9px;">${location}</div>
+                                    <div style="color: ${severityColor}; font-size: 9px; font-weight: 600; margin-top: 2px;">${severityLabel}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                listEl.innerHTML = html;
+            }
+
+            // Function to highlight an accident on the map when clicked in list
+            window.highlightAccidentOnMap = function(accidentId) {
+                const accident = allAccidents.find(f => f.id === accidentId);
+                if (accident && accident.geometry && accident.geometry.coordinates) {
+                    const [lng, lat] = accident.geometry.coordinates;
+                    map.setView([lat, lng], Math.max(map.getZoom(), 15), { animate: true });
+                }
+            };
+
+            // ================================================================
+            // MARKER RENDERING: Update points based on year range filter
+            // ================================================================
+            // Filter accident features by year range and redraw markers
 function updatePointsByYear(yearRange) {
     // Clear existing points
     pointsLayer.clearLayers();
@@ -440,7 +645,8 @@ function updatePointsByYear(yearRange) {
     // Get current zoom level for scaling
     const currentZoom = map.getZoom();
     
-    // Function to create a diamond-shaped marker
+    // Create diamond-shaped SVG markers for certain accident types
+    // Used for accidents marked with 'diamond' property in GeoJSON
     function createDiamondMarker(feature, latlng, radius, color) {
         // Create diamond as an SVG icon
         const svgSize = radius * 2 + 4;
@@ -464,13 +670,14 @@ function updatePointsByYear(yearRange) {
         return L.marker(latlng, { icon: svgIcon }).bindPopup(createPopupContent(feature));
     }
     
-    // Add filtered features to map
+    // Add accident markers to map
+    // Each feature gets a color based on severity and shape based on marker type
     L.geoJSON({
         type: "FeatureCollection",
         features: filteredFeatures
     }, {
         pointToLayer: function(feature, latlng) {
-            // Customize marker color based on casualties
+            // Color coding: Red = deadly, Orange = injurious, Blue = non-injurious
             let color = "#3388ff"; // Default blue
             if (feature.properties["Deadly?"] === "Y" || parseInt(feature.properties["Dead (minimum)"]) > 0) {
                 color = "#ff0000"; // Red for fatal accidents
@@ -478,7 +685,7 @@ function updatePointsByYear(yearRange) {
                 color = "#ff7800"; // Orange for injuries
             }
             
-            // Check marker type (default to circle if not specified)
+            // Check for special marker type (default to circle if not specified)
             const markerType = feature.properties.marker || 'circle';
             
             if (markerType === 'diamond') {
@@ -498,7 +705,7 @@ function updatePointsByYear(yearRange) {
         }
     }).addTo(pointsLayer);
 }
-            // Function to create popup content
+            // Generate HTML content for marker popups
             function createPopupContent(feature) {
                 const props = feature.properties;
                 let content = `<b>Date:</b> ${props["Year-Month-Day"] || 'Unknown date'}<br>`;
@@ -520,21 +727,23 @@ function updatePointsByYear(yearRange) {
                 return content;
             }
 
-            // Initial display with all points
+            // Draw initial markers for full year range
             updatePointsByYear([minYear, maxYear]);
+            updateAccidentTable([minYear, maxYear]);
             
-            // Define updateAccidentDisplay function for slider changes
-            function updateAccidentDisplay(yearRange) {
-                updatePointsByYear(yearRange);
-                // Update chart based on year range
-                updateChart(yearRange);
-            }
-            
-            // Update marker sizes when zoom changes
+            // Update table when user zooms (points resize and visibility changes)
             map.on('zoomend', function() {
                 const start = parseInt(yearStart.value);
                 const end = parseInt(yearEnd.value);
                 updatePointsByYear([start, end]);
+                updateAccidentTable([start, end]);
+            });
+
+            // Update table when user pans the map
+            map.on('moveend', function() {
+                const start = parseInt(yearStart.value);
+                const end = parseInt(yearEnd.value);
+                updateAccidentTable([start, end]);
             });
         }
     </script>

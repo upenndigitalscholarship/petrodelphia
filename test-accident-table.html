@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" />
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+        
+        /* Accident table control styling */
+        .accident-table-control {
+            font-family: Arial, sans-serif;
+        }
+        
+        .accident-table-control a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        /* Scrollbar styling for accident list */
+        .accident-table-control #accident-list {
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f5f5f5;
+        }
+        
+        .accident-table-control #accident-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .accident-table-control #accident-list::-webkit-scrollbar-track {
+            background: #f5f5f5;
+        }
+        
+        .accident-table-control #accident-list::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        
+        .accident-table-control #accident-list::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    
+    <script>
+        Chart.register(ChartDataLabels);
+        let accidentChart = null;
+
+        const map = L.map('map', { attributionControl: false, zoomControl: false }).setView([39.921276, -75.189891], 13);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png' + (L.Browser.retina ? '@2x.png' : '.png'), {
+            attribution:'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20,
+            minZoom: 0
+        }).addTo(map);
+
+        L.control.attribution({position: 'bottomleft'}).addTo(map);
+        map.attributionControl.setPrefix();
+        
+        // Custom zoom + fullscreen control
+        const CombinedControl = L.Control.extend({
+            onAdd: function(map) {
+                const container = L.DomUtil.create('div', 'leaflet-control leaflet-control-combined');
+                container.innerHTML = '<button class="control-button zoom-in" title="Zoom in" style="padding:5px 10px; background:#fff; border:1px solid #ccc; cursor:pointer; margin:2px;">+</button>' +
+                                      '<button class="control-button zoom-out" title="Zoom out" style="padding:5px 10px; background:#fff; border:1px solid #ccc; cursor:pointer; margin:2px;">−</button>' +
+                                      '<button class="control-button fullscreen-btn" title="Fullscreen" style="padding:5px 10px; background:#fff; border:1px solid #ccc; cursor:pointer; margin:2px;">⛶</button>';
+                
+                L.DomEvent.on(container.querySelector('.zoom-in'), 'click', () => map.zoomIn());
+                L.DomEvent.on(container.querySelector('.zoom-out'), 'click', () => map.zoomOut());
+                L.DomEvent.on(container.querySelector('.fullscreen-btn'), 'click', () => {
+                    if (document.fullscreenElement) {
+                        document.exitFullscreen();
+                    } else {
+                        document.getElementById('map').requestFullscreen();
+                    }
+                });
+                return container;
+            }
+        });
+        
+        new CombinedControl({position: 'bottomright'}).addTo(map);
+
+        const pointsLayer = L.layerGroup().addTo(map);
+        
+        function getScaledRadius(zoom) {
+            const baseZoom = 13; 
+            const baseRadius = 4;
+            const scaleFactor = .75;
+            return Math.max(2, baseRadius + (zoom - baseZoom) * scaleFactor);
+        }
+
+        // ============================================================================
+        // ACCIDENT TABLE PANEL: Browse accidents visible on-screen
+        // ============================================================================
+        // Store all accidents and current filter state for list updates
+        let allAccidents = [];
+        let currentYearRange = [1800, 2024];
+
+        // Define accident table control
+        const AccidentTableControl = L.Control.extend({
+            options: {
+                position: 'bottomleft'
+            },
+
+            onAdd: function(map) {
+                const container = L.DomUtil.create('div', 'accident-table-control');
+                L.DomEvent.disableClickPropagation(container);
+
+                container.innerHTML = `
+                    <div style="background: white; border: 1px solid #ccc; border-radius: 2px; max-width: 320px; max-height: 400px; display: flex; flex-direction: column; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div style="padding: 8px; border-bottom: 1px solid #ddd; background: #f5f5f5; font-weight: 600; font-size: 12px; color: #333;">
+                            Accidents Visible
+                            <span id="accident-count" style="float: right; color: #666;">(0)</span>
+                        </div>
+                        <div id="accident-list" style="overflow-y: auto; flex: 1; font-size: 11px;">
+                            <div style="padding: 12px; color: #999; text-align: center;">Loading...</div>
+                        </div>
+                    </div>
+                `;
+                return container;
+            }
+        });
+
+        // Add the accident table control to the map
+        const tableControl = new AccidentTableControl();
+        map.addControl(tableControl);
+
+        // Update the accident list based on current map bounds and year filter
+        function updateAccidentTable(yearRange) {
+            // Filter accidents by year range
+            const filteredByYear = allAccidents.filter(feature => {
+                const year = feature.properties.Year;
+                const yearNum = Number(year);
+                return year && !isNaN(yearNum) && yearNum >= yearRange[0] && yearNum <= yearRange[1];
+            });
+
+            // Get current map bounds
+            const bounds = map.getBounds();
+            
+            // Filter by visibility in map viewport
+            const visibleAccidents = filteredByYear.filter(feature => {
+                if (!feature.geometry || !feature.geometry.coordinates) return false;
+                const [lng, lat] = feature.geometry.coordinates;
+                const point = L.latLng(lat, lng);
+                return bounds.contains(point);
+            });
+
+            // Sort by year descending (newest first)
+            visibleAccidents.sort((a, b) => (b.properties.Year || 0) - (a.properties.Year || 0));
+
+            // Update count
+            const countEl = document.getElementById('accident-count');
+            if (countEl) {
+                countEl.textContent = `(${visibleAccidents.length})`;
+            }
+
+            // Build list HTML
+            const listEl = document.getElementById('accident-list');
+            if (!listEl) return;
+
+            if (visibleAccidents.length === 0) {
+                listEl.innerHTML = '<div style="padding: 12px; color: #999; text-align: center;">No accidents in view</div>';
+                return;
+            }
+
+            let html = '';
+            visibleAccidents.forEach((feature, idx) => {
+                const props = feature.properties;
+                const year = props.Year || 'Unknown';
+                const date = props['Year-Month-Day'] || year;
+                const desc = props.Description || 'No description';
+                const location = props['General location'] || 'Unknown location';
+                
+                // Determine severity color
+                let severityColor = '#3388ff'; // Blue
+                let severityLabel = 'Non-injurious';
+                if (props['Deadly?'] === 'Y' || parseInt(props['Dead (minimum)']) > 0) {
+                    severityColor = '#ff0000'; // Red
+                    severityLabel = 'Deadly';
+                } else if (props['Injurious?'] === 'Y' || parseInt(props['Injured (minimum)']) > 0) {
+                    severityColor = '#ff7800'; // Orange
+                    severityLabel = 'Injurious';
+                }
+                
+                html += `
+                    <div style="padding: 8px 10px; border-bottom: 1px solid #eee; cursor: pointer; transition: background 0.2s;" 
+                         onmouseover="this.style.background='#f9f9f9'" 
+                         onmouseout="this.style.background='transparent'"
+                         onclick="highlightAccidentOnMap('${feature.id}')">
+                        <div style="display: flex; align-items: flex-start; gap: 6px;">
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background-color: ${severityColor}; margin-top: 2px; flex-shrink: 0; border: 1px solid #000;"></div>
+                            <div style="flex: 1; min-width: 0;">
+                                <div style="font-weight: 600; color: #333;">${date}</div>
+                                <div style="color: #666; font-size: 10px; margin: 2px 0; line-height: 1.3;">${desc.substring(0, 60)}${desc.length > 60 ? '...' : ''}</div>
+                                <div style="color: #999; font-size: 9px;">${location}</div>
+                                <div style="color: ${severityColor}; font-size: 9px; font-weight: 600; margin-top: 2px;">${severityLabel}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            listEl.innerHTML = html;
+        }
+
+        // Function to highlight an accident on the map when clicked in list
+        window.highlightAccidentOnMap = function(accidentId) {
+            const accident = allAccidents.find(f => f.id === accidentId);
+            if (accident && accident.geometry && accident.geometry.coordinates) {
+                const [lng, lat] = accident.geometry.coordinates;
+                map.setView([lat, lng], Math.max(map.getZoom(), 15), { animate: true });
+            }
+        };
+
+        // Load GeoJSON data
+        fetch('/assets/js/AOIgeoData.geojson')
+            .then(response => response.json())
+            .then(data => {
+                geojsonData = data;
+                
+                // Add unique IDs to each feature
+                geojsonData.features.forEach((feature, index) => {
+                    feature.id = `accident-${index}`;
+                });
+                
+                // Store globally
+                allAccidents = geojsonData.features;
+                
+                // Auto-fit map view
+                const tempLayer = L.geoJSON(geojsonData);
+                const bounds = tempLayer.getBounds();
+                if (bounds.isValid()) {
+                    map.fitBounds(bounds, { padding: [50, 50] });
+                }
+                
+                // Initialize
+                updateAccidentTable([1800, 2024]);
+                
+                // Add markers
+                L.geoJSON(geojsonData, {
+                    pointToLayer: function(feature, latlng) {
+                        let color = "#3388ff";
+                        if (feature.properties["Deadly?"] === "Y" || parseInt(feature.properties["Dead (minimum)"]) > 0) {
+                            color = "#ff0000";
+                        } else if (feature.properties["Injurious?"] === "Y" || parseInt(feature.properties["Injured (minimum)"]) > 0) {
+                            color = "#ff7800";
+                        }
+                        
+                        return L.circleMarker(latlng, {
+                            radius: getScaledRadius(map.getZoom()),
+                            fillColor: color,
+                            color: "#000",
+                            weight: 1,
+                            opacity: 0.7,
+                            fillOpacity: 0.8
+                        });
+                    }
+                }).addTo(pointsLayer);
+            })
+            .catch(error => {
+                console.error('Error loading GeoJSON:', error);
+                document.getElementById('accident-list').innerHTML = 'Error loading data';
+            });
+
+        // Update table on map events
+        map.on('moveend', function() {
+            updateAccidentTable(currentYearRange);
+        });
+
+        map.on('zoomend', function() {
+            updateAccidentTable(currentYearRange);
+        });
+    </script>
+</body>
+</html>
