@@ -212,6 +212,7 @@
             onAdd: function(map) {
                 const container = L.DomUtil.create('div', 'accident-table-control');
                 L.DomEvent.disableClickPropagation(container);
+                L.DomEvent.disableScrollPropagation(container);
 
                 container.innerHTML = `
                     <div style="background: white; border: 1px solid #ccc; border-radius: 2px; max-width: 320px; max-height: 400px; display: flex; flex-direction: column; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
@@ -619,21 +620,31 @@ function updateAccidentCount(filteredFeatures) {
             // Function to highlight a marker when hovering over list item
             window.highlightMarkerOnHover = function(accidentId) {
                 const marker = markersByAccidentId[accidentId];
-                if (marker) {
-                    // Flash effect: toggle visibility
-                    let flashCount = 0;
-                    const flashInterval = setInterval(() => {
-                        if (flashCount >= 6) {
-                            clearInterval(flashInterval);
-                            // Restore original appearance
-                            if (marker._icon) marker._icon.style.opacity = '1';
-                            return;
-                        }
-                        if (marker._icon) {
-                            marker._icon.style.opacity = flashCount % 2 === 0 ? '0.5' : '1';
-                        }
-                        flashCount++;
-                    }, 150);
+                if (marker && marker._icon) {
+                    // Create or update yellow outline overlay
+                    let outline = marker._icon.querySelector('.marker-highlight-outline');
+                    if (!outline) {
+                        outline = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                        outline.setAttribute('class', 'marker-highlight-outline');
+                        outline.setAttribute('cx', '50%');
+                        outline.setAttribute('cy', '50%');
+                        outline.setAttribute('fill', 'none');
+                        outline.setAttribute('stroke', '#ffff00');
+                        outline.setAttribute('stroke-width', '3');
+                        outline.setAttribute('pointer-events', 'none');
+                        marker._icon.appendChild(outline);
+                        
+                        // Set radius based on marker type
+                        const size = marker._icon.getBoundingClientRect();
+                        outline.setAttribute('r', Math.max(size.width, size.height) * 0.4);
+                    }
+                    outline.style.display = 'block';
+                    marker._icon.style.zIndex = '10000';
+                    
+                    // Ensure it's on top by bringing parent to front
+                    if (marker._container) {
+                        marker._container.style.zIndex = '10000';
+                    }
                 }
             };
 
@@ -641,7 +652,14 @@ function updateAccidentCount(filteredFeatures) {
             window.unhighlightMarkerOnHover = function(accidentId) {
                 const marker = markersByAccidentId[accidentId];
                 if (marker && marker._icon) {
-                    marker._icon.style.opacity = '1';
+                    const outline = marker._icon.querySelector('.marker-highlight-outline');
+                    if (outline) {
+                        outline.style.display = 'none';
+                    }
+                    marker._icon.style.zIndex = '';
+                    if (marker._container) {
+                        marker._container.style.zIndex = '';
+                    }
                 }
             };
 
@@ -759,12 +777,17 @@ function updatePointsByYear(yearRange) {
                 }
                 content += `<b>Responsible entity:</b> ${props["Responsible corporate entity"] || 'Unknown'}<br>`;
 
-                // Add casualty information
-                if (props["Injurious?"] === "Y" || parseInt(props["Injured (minimum)"]) > 0) {
-                    content += `<b style="color:orange">Non-fatal injured:</b> ${props["Injured (minimum)"] || 'Yes'}<br>`;
+                // Add casualty information with explicit counts
+                const deadCount = parseInt(props["Dead (minimum)"]) || 0;
+                const injuredCount = parseInt(props["Injured (minimum)"]) || 0;
+                const isDeadly = props["Deadly?"] === "Y" || deadCount > 0;
+                const isInjurious = props["Injurious?"] === "Y" || injuredCount > 0;
+                
+                if (isDeadly) {
+                    content += `<b style="color:red">Fatalities:</b> ${deadCount > 0 ? deadCount : 'Confirmed'}<br>`;
                 }
-                if (props["Deadly?"] === "Y" || parseInt(props["Dead (minimum)"]) > 0) {
-                    content += `<b style="color:red">Fatalities:</b> ${props["Dead (minimum)"] || 'Yes'}<br>`;
+                if (isInjurious) {
+                    content += `<b style="color:orange">Injured (minimum):</b> ${injuredCount > 0 ? injuredCount : 'Confirmed'}<br>`;
                 }
                 
                 return content;
