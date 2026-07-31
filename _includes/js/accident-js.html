@@ -185,15 +185,23 @@ const YearRangeControl = L.Control.extend({
                 <div class="year-range-display">
                     <div class="year-box year-box-min">
                         <div class="year-box-label">Start Year:</div>
-                        <div id="year-min-display" class="year-value">1866</div>
+                        <input id="year-min-display" class="year-value year-value-input" type="number" inputmode="numeric" value="1866">
                     </div>
                     <div class="year-box year-box-max">
                         <div class="year-box-label">End Year:</div>
-                        <div id="year-max-display" class="year-value">2021</div>
+                        <input id="year-max-display" class="year-value year-value-input" type="number" inputmode="numeric" value="2021">
                     </div>
                 </div>
             </div>
         `;
+
+        // Let the user type a year directly instead of only dragging the slider
+        const minDisplay = container.querySelector('#year-min-display');
+        const maxDisplay = container.querySelector('#year-max-display');
+        [minDisplay, maxDisplay].forEach(input => {
+            input.addEventListener('change', handleYearTextChange);
+            input.addEventListener('keydown', e => { if (e.key === 'Enter') e.target.blur(); });
+        });
 
         return container;
     }
@@ -552,13 +560,51 @@ function handleYearRangeChange(e) {
     updatePointsByYear([minVal, maxVal]);
 }
 
+// Handle the user typing a year directly into the start/end year boxes
+function handleYearTextChange(e) {
+    const minInput = document.getElementById('year-min-input');
+    const maxInput = document.getElementById('year-max-input');
+    const minDisplay = document.getElementById('year-min-display');
+    const maxDisplay = document.getElementById('year-max-display');
+
+    const rangeMin = parseInt(minInput.getAttribute('min'));
+    const rangeMax = parseInt(maxInput.getAttribute('max'));
+
+    let minVal = parseInt(minDisplay.value);
+    let maxVal = parseInt(maxDisplay.value);
+
+    // Fall back to the current slider value if the box was cleared or non-numeric
+    if (isNaN(minVal)) minVal = parseInt(minInput.value);
+    if (isNaN(maxVal)) maxVal = parseInt(maxInput.value);
+
+    // Clamp to the data's actual year range
+    minVal = Math.min(Math.max(minVal, rangeMin), rangeMax);
+    maxVal = Math.min(Math.max(maxVal, rangeMin), rangeMax);
+
+    // Keep min <= max: whichever box the user just edited wins the conflict
+    if (minVal > maxVal) {
+        if (e.target === minDisplay) {
+            maxVal = minVal;
+        } else {
+            minVal = maxVal;
+        }
+    }
+
+    minInput.value = minVal;
+    maxInput.value = maxVal;
+
+    updateYearDisplay(minVal, maxVal);
+    updatePointsByYear([minVal, maxVal]);
+}
+
 function updateYearDisplay(minYear, maxYear) {
     const minDisplay = document.getElementById('year-min-display');
     const maxDisplay = document.getElementById('year-max-display');
     const rangeFill = document.querySelector('.range-fill');
 
-    if (minDisplay) minDisplay.textContent = minYear;
-    if (maxDisplay) maxDisplay.textContent = maxYear;
+    // Skip updating a box the user is actively typing in, so it isn't clobbered mid-edit
+    if (minDisplay && document.activeElement !== minDisplay) minDisplay.value = minYear;
+    if (maxDisplay && document.activeElement !== maxDisplay) maxDisplay.value = maxYear;
 
     // Update range fill bar
     if (rangeFill) {

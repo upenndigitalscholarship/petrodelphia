@@ -73,6 +73,24 @@
     color: #0075FF;
 }
 
+/* .year-value is also an <input type="number"> now (user can type a year directly);
+   strip the browser's default input chrome so it still looks like the old plain box */
+.year-value-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    width: 4.5em;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.year-value-input:focus {
+    outline: 2px solid #0075FF;
+    outline-offset: 1px;
+    border-radius: 2px;
+}
+
 .dual-range-slider {
     position: relative;
     margin: 20px 0 12px 0;
