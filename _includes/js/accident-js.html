@@ -201,7 +201,10 @@
         // Store all accidents and current filter state for list updates
         let allAccidents = [];
         let currentYearRange = [1800, 2024];
-        let markersByAccidentId = {}; // Store markers indexed by accident ID for highlighting
+        let markersByAccidentId = {};
+        let clusteringEnabled = false;
+        let clusterGroup = null;
+        let currentYearRange = null; // Store markers indexed by accident ID for highlighting
 
         // Define accident table control
         const AccidentTableControl = L.Control.extend({
@@ -356,7 +359,39 @@ function updateAccidentCount(filteredFeatures) {
 
         // Main GeoJSON processing function
         // Extracts year range, initializes slider, renders markers and chart
-        function processGeoJSON(geojsonData) {
+const ClusterToggle = L.Control.extend({
+            options: {
+                position: 'topright'
+            },
+            
+            onAdd: function(map) {
+                const container = L.DomUtil.create('div', 'cluster-toggle-control');
+                L.DomEvent.disableClickPropagation(container);
+                
+                container.innerHTML = `
+                    <div style="background: white; border: 1px solid #ccc; padding: 8px; border-radius: 2px;">
+                        <button id="cluster-toggle-btn" style="padding: 6px 12px; background: #3388ff; color: white; border: none; border-radius: 2px; cursor: pointer; font-weight: 600; font-size: 12px;">
+                            Clustering: OFF
+                        </button>
+                    </div>
+                `;
+                return container;
+            }
+        });
+
+        function toggleClustering() {
+            clusteringEnabled = !clusteringEnabled;
+            const btn = document.getElementById('cluster-toggle-btn');
+            btn.textContent = clusteringEnabled ? 'Clustering: ON' : 'Clustering: OFF';
+            btn.style.background = clusteringEnabled ? '#ff6b6b' : '#3388ff';
+            
+            // Refresh display with current year range
+            if (currentYearRange) {
+                updatePointsByYear(currentYearRange);
+            }
+        
+
+                function processGeoJSON(geojsonData) {
             // Add unique IDs to each feature for reference
             geojsonData.features.forEach((feature, index) => {
                 feature.id = `accident-${index}`;
