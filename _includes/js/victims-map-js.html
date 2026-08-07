@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="{{ '/assets/lib/leaflet/leaflet.css' | relative_url }}" />
+
+<style>
+    #map {
+        width: 100%;
+        height: 90vh;
+    }
+</style>
+
+<!-- the #map div is provided by pages/victims-map.md -->
+<script src="{{ '/assets/lib/leaflet/leaflet.js' | relative_url }}"></script>
+
+<script>
+// =====================================================================
+// VICTIMS MAP: Shows approximate residences of industrial accident victims
+// =====================================================================
+
+// Initialize a map with a view set to S Philly at city-scale 13
+const map = L.map('map', { attributionControl: false }).setView([39.921276, -75.189891], 13);
+
+// Add CARTO Positron basemap
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png' + (L.Browser.retina ? '@2x.png' : '.png'), {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 20,
+    minZoom: 0
+}).addTo(map);
+
+// Add attribution control positioned at bottom left
+L.control.attribution({position: 'bottomleft'}).addTo(map);
+map.attributionControl.setPrefix();
+
+// Layer group for victim location dots
+const pointsLayer = L.layerGroup().addTo(map);
+
+// Helper: scale marker radius with zoom, same approach as the accident map
+function getScaledRadius(zoom) {
+    const baseZoom = 13;
+    const baseRadius = 4;
+    const scaleFactor = 0.75;
+    return Math.max(2, baseRadius + (zoom - baseZoom) * scaleFactor);
+}
+
+// Load and plot victim locations
+fetch('{{ site.baseurl }}/assets/js/victims-locations.geojson')
+    .then(response => {
+        if (!response.ok) throw new Error('Network response failed');
+        return response.json();
+    })
+    .then(data => {
+        const radius = getScaledRadius(map.getZoom());
+
+        data.features.forEach(feature => {
+            const [lng, lat] = feature.geometry.coordinates;
+            L.circleMarker([lat, lng], {
+                radius: radius,
+                fillColor: '#5555ff',
+                color: '#333',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(pointsLayer);
+        });
+
+        // Fit map view to the victim locations
+        const bounds = pointsLayer.getBounds();
+        if (bounds.isValid()) {
+            map.fitBounds(bounds, { padding: [50, 50] });
+        }
+    })
+    .catch(error => {
+        console.error('Error loading victim location data:', error);
+    });
+
+// Re-scale dots on zoom
+map.on('zoomend', function() {
+    const radius = getScaledRadius(map.getZoom());
+    pointsLayer.eachLayer(m => {
+        if (m.setRadius) m.setRadius(radius);
+    });
+});
+</script>
