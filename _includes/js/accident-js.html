@@ -207,6 +207,39 @@ const YearRangeControl = L.Control.extend({
     }
 });
 
+// =====================================================================
+// FEATURE: ACCIDENT TABLE (list of accidents currently visible on screen)
+// =====================================================================
+const AccidentTableControl = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+
+    onAdd: function(map) {
+        const container = L.DomUtil.create('div', 'accident-table-control');
+        L.DomEvent.disableClickPropagation(container);
+        L.DomEvent.disableScrollPropagation(container);
+
+        container.innerHTML = `
+            <div class="accident-table-header">
+                Accidents Visible
+                <span id="accident-count" class="accident-count">(0)</span>
+            </div>
+            <div id="accident-list" class="accident-list">
+                <div class="accident-list-empty">Loading...</div>
+            </div>
+        `;
+
+        // Event delegation: clicking any list item pans/zooms to that accident and opens its popup
+        container.querySelector('#accident-list').addEventListener('click', function(e) {
+            const item = e.target.closest('[data-accident-id]');
+            if (item) openAccidentPopup(item.getAttribute('data-accident-id'));
+        });
+
+        return container;
+    }
+});
+
 // Add the year range control to the map
 const yearRangeControl = new YearRangeControl();
 map.addControl(yearRangeControl);
@@ -214,6 +247,10 @@ map.addControl(yearRangeControl);
 // Add the cluster toggle control to the map (after year range, so it appears below)
 const clusterToggle = new ClusterToggle();
 map.addControl(clusterToggle);
+
+// Add the accident table control to the map (bottom left)
+const tableControl = new AccidentTableControl();
+map.addControl(tableControl);
 
 function toggleClustering() {
     clusteringEnabled = !clusteringEnabled;
@@ -393,6 +430,77 @@ function updatePointsByYear(yearRange) {
     });
 
     updateAccidentCount(filteredFeatures);
+    updateAccidentTable(yearRange);
+}
+
+// Build the "Accidents Visible" list: accidents within the current year range
+// AND the current map viewport, sorted oldest-first by date.
+function updateAccidentTable(yearRange) {
+    const listEl = document.getElementById('accident-list');
+    const countEl = document.getElementById('accident-count');
+    if (!listEl || !geojsonData) return;
+
+    const bounds = map.getBounds();
+
+    const visibleAccidents = geojsonData.features.filter(feature => {
+        const y = Number(feature.properties.Year);
+        if (isNaN(y) || y < yearRange[0] || y > yearRange[1]) return false;
+        const [lng, lat] = feature.geometry.coordinates;
+        return bounds.contains([lat, lng]);
+    });
+
+    // Sort oldest first (top) to newest last (bottom), by full date when available
+    visibleAccidents.sort((a, b) => {
+        const dateA = new Date(a.properties["Year-Month-Day"]);
+        const dateB = new Date(b.properties["Year-Month-Day"]);
+        const timeA = isNaN(dateA) ? Number(a.properties.Year) : dateA.getTime();
+        const timeB = isNaN(dateB) ? Number(b.properties.Year) : dateB.getTime();
+        return timeA - timeB;
+    });
+
+    if (countEl) countEl.textContent = `(${visibleAccidents.length})`;
+
+    if (visibleAccidents.length === 0) {
+        listEl.innerHTML = '<div class="accident-list-empty">No accidents in view</div>';
+        return;
+    }
+
+    listEl.innerHTML = visibleAccidents.map(feature => {
+        const props = feature.properties;
+        const date = props["Year-Month-Day"] || props.Year || 'Unknown date';
+        const desc = props.Description || 'No description';
+
+        let color = '#5555ff'; // Blue
+        if (props["Deadly?"] === "Y" || parseInt(props["Dead (minimum)"]) > 0) {
+            color = '#ff3333'; // Red
+        } else if (props["Injurious?"] === "Y" || parseInt(props["Injured (minimum)"]) > 0) {
+            color = '#ff9933'; // Orange
+        }
+
+        return `
+            <div class="accident-list-item" data-accident-id="${feature.id}">
+                <span class="accident-list-dot" style="background-color: ${color};"></span>
+                <div class="accident-list-info">
+                    <div class="accident-list-date">${date}</div>
+                    <div class="accident-list-desc">${desc}</div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// Pan/zoom the map to a clicked accident and open its popup
+function openAccidentPopup(accidentId) {
+    const marker = markersByAccidentId[accidentId];
+    if (!marker) return;
+
+    if (clusteringEnabled && clusterGroup && clusterGroup.hasLayer(marker)) {
+        // Marker may be hidden inside a collapsed cluster - zoom in until it's shown, then open it
+        clusterGroup.zoomToShowLayer(marker, () => marker.openPopup());
+    } else {
+        map.setView(marker.getLatLng(), Math.max(map.getZoom(), 15), { animate: true });
+        setTimeout(() => marker.openPopup(), 300);
+    }
 }
 
 function updateAccidentCount(filteredFeatures) {
@@ -528,6 +636,11 @@ map.on('zoomend', function() {
             });
         }
     });
+});
+
+// Refresh the accident table whenever the viewport changes (pan or zoom)
+map.on('moveend', function() {
+    if (currentYearRange) updateAccidentTable(currentYearRange);
 });
 
 // =====================================================================
