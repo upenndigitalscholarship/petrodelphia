@@ -1,201 +1,410 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.css" />
-    <!-- Choose your style: accident-style-clean.css (sharp/modern) or accident-style-original.css (rounded/soft) -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/accident-style-clean.css" />
-    
-</head>
-<body>
-    <div id="map"></div>
-	<!-- libraries are for leaflet, fullscreen mode, and chart.js -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@2.4.0/Control.FullScreen.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
- 
+﻿<link rel="stylesheet" href="{{ '/assets/lib/leaflet/leaflet.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/lib/leaflet/leaflet.fullscreen.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/lib/leaflet/MarkerCluster.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/lib/leaflet/MarkerCluster.Default.css' | relative_url }}" />
+<!-- Choose your style: accident-style-clean.css (sharp/modern) or accident-style-original.css (rounded/soft) -->
+<link rel="stylesheet" href="{{ '/assets/css/accident-style-clean.css' | relative_url }}" />
 
-    <script>
-        // Register the datalabels plugin
-        Chart.register(ChartDataLabels);
-        // Chart object (initialized after DOM loads)
-        let accidentChart = null;
+<!-- the #map div is provided by pages/accidents-map.md -->
+<!-- libraries are for leaflet, fullscreen mode, marker clustering, and chart.js -->
+<script src="{{ '/assets/lib/leaflet/leaflet.js' | relative_url }}"></script>
+<script src="{{ '/assets/lib/leaflet/Leaflet.fullscreen.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/lib/leaflet/leaflet.markercluster.js' | relative_url }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 
-        // Initialize a map with a view set to S Philly at city-scale 13
-        const map = L.map('map', { attributionControl: false, zoomControl: false }).setView([39.921276, -75.189891], 13);
-        
-        // Add OSM
-        //L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-        //    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">CARTO (OpenStreetMap data)</a>'
-        //}).addTo(map);
-        
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png' + (L.Browser.retina ? '@2x.png' : '.png'), {
-            attribution:'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
-            subdomains: 'abcd',
-            maxZoom: 20,
-            minZoom: 0
-        }).addTo(map);
+<script>
+// =====================================================================
+// ACCIDENT MAP: Interactive map showing historical refinery accidents
+// Features: Clustering, year-range filtering, accident markers, pop-ups,
+// severity-based coloring, and accident statistics
+// =====================================================================
 
-        // Add attribution control positioned at bottom left (matching layeredmap-js.html)
-        L.control.attribution({position: 'bottomleft'}).addTo(map);
-        map.attributionControl.setPrefix();
-        
-        // Create custom combined zoom + fullscreen control (matching layeredmap-js.html)
-        const CombinedControl = L.Control.extend({
-            onAdd: function(map) {
-                const container = L.DomUtil.create('div', 'leaflet-control leaflet-control-combined');
-                container.innerHTML = '<button class="control-button zoom-in" title="Zoom in">+</button>' +
-                                      '<button class="control-button zoom-out" title="Zoom out">\u2212</button>' +
-                                      '<button class="control-button fullscreen-btn" title="Fullscreen">\u26f6</button>';
-                
-                L.DomEvent.on(container.querySelector('.zoom-in'), 'click', () => map.zoomIn());
-                L.DomEvent.on(container.querySelector('.zoom-out'), 'click', () => map.zoomOut());
-                L.DomEvent.on(container.querySelector('.fullscreen-btn'), 'click', () => {
-                    if (document.fullscreenElement) {
-                        document.exitFullscreen();
-                    } else {
-                        document.getElementById('map').requestFullscreen();
-                    }
-                });
-                return container;
+// Register the datalabels plugin
+// Chart.register(ChartDataLabels); // disabled: was auto-drawing a number in the middle of each bar
+
+// Chart object (initialized after DOM loads)
+let accidentChart = null;
+
+// Initialize a map with a view set to S Philly at city-scale 13
+const map = L.map('map', { attributionControl: false, zoomControl: false }).setView([39.921276, -75.189891], 13);
+
+// Add OSM basemap
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png' + (L.Browser.retina ? '@2x.png' : '.png'), {
+    attribution:'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 20,
+    minZoom: 0
+}).addTo(map);
+
+// Add attribution control positioned at bottom left
+L.control.attribution({position: 'bottomleft'}).addTo(map);
+map.attributionControl.setPrefix();
+
+// Create custom combined zoom + fullscreen control
+const CombinedControl = L.Control.extend({
+    onAdd: function(map) {
+        const container = L.DomUtil.create('div', 'leaflet-control leaflet-control-combined');
+        container.innerHTML = '<button class="control-button zoom-in" title="Zoom in">+</button>' +
+                              '<button class="control-button zoom-out" title="Zoom out">−</button>' +
+                              '<button class="control-button fullscreen-btn" title="Fullscreen">⛶</button>';
+
+        L.DomEvent.on(container.querySelector('.zoom-in'), 'click', () => map.zoomIn());
+        L.DomEvent.on(container.querySelector('.zoom-out'), 'click', () => map.zoomOut());
+        L.DomEvent.on(container.querySelector('.fullscreen-btn'), 'click', () => {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                document.getElementById('map').requestFullscreen();
             }
         });
-        
-        new CombinedControl({position: 'bottomright'}).addTo(map);
-		
-        // Create a layer group for accident dots
-        const pointsLayer = L.layerGroup().addTo(map);
-        
-        // Function to calculate marker radius based on zoom level
-        function getScaledRadius(zoom) {
-            // Base radius at zoom 13, scales up/down with zoom
-            // Adjust the multiplier to control how much the dots scale
-            const baseZoom = 13; 
-            const baseRadius = 4; // Base radius at zoom 13
-            const scaleFactor = .75; // Adjust this for more/less scaling
-            return Math.max(2, baseRadius + (zoom - baseZoom) * scaleFactor);
+        return container;
+    }
+});
+
+new CombinedControl({position: 'bottomright'}).addTo(map);
+
+// Create a layer group for accident dots
+const pointsLayer = L.layerGroup().addTo(map);
+
+// Clustering feature state
+let clusteringEnabled = false;
+let clusterGroup = null;
+let currentYearRange = null;
+
+// Global state
+let geojsonData = null;
+const markersByAccidentId = {};
+
+// Helper: Calculate marker radius based on zoom
+function getScaledRadius(zoom) {
+    const baseZoom = 13;
+    const baseRadius = 4;
+    const scaleFactor = 0.75;
+    return Math.max(2, baseRadius + (zoom - baseZoom) * scaleFactor);
+}
+
+// Function to create popup content
+function createPopupContent(feature) {
+    const props = feature.properties;
+    let content = `<b>Date:</b> ${props["Year-Month-Day"] || 'Unknown date'}<br>`;
+    content += `<b>Description:</b> ${props.Description || 'No description'}<br>`;
+    content += `<b>General location:</b> ${props["General Location"] || 'Unknown'}<br>`;
+    if (props["Street coordinates"]) {
+        content += `<b>Street coordinates:</b> ${props["Street coordinates"]}<br>`;
+    }
+    content += `<b>Responsible entity:</b> ${props["Responsible corporate entity"] || 'Unknown'}<br>`;
+
+    // Add casualty information
+    if (props["Injurious?"] === "Y" || parseInt(props["Injured (minimum)"]) > 0) {
+        content += `<b style="color:orange">Non-fatal injured:</b> ${props["Injured (minimum)"] || 'Yes'}<br>`;
+    }
+    if (props["Deadly?"] === "Y" || parseInt(props["Dead (minimum)"]) > 0) {
+        content += `<b style="color:red">Fatalities:</b> ${props["Dead (minimum)"] || 'Yes'}<br>`;
+    }
+
+    return content;
+}
+
+// Function to create a diamond-shaped marker
+function createDiamondMarker(feature, latlng, radius, color) {
+    // Create diamond as an SVG icon
+    const svgSize = radius * 2 + 4;
+    const center = radius + 2;
+
+    // SVG for diamond shape
+    const svgString = `
+        <svg width="${svgSize}" height="${svgSize}" viewBox="0 0 ${svgSize} ${svgSize}" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="${center},2 ${center + radius},${center} ${center},${center + radius} ${center - radius},${center}"
+                     fill="${color}" stroke="black" stroke-width="1" opacity="0.8" fill-opacity="0.8"/>
+        </svg>
+    `;
+
+    const svgIcon = L.icon({
+        iconUrl: 'data:image/svg+xml;base64,' + btoa(svgString),
+        iconSize: [svgSize, svgSize],
+        iconAnchor: [svgSize / 2, svgSize / 2],
+        popupAnchor: [0, -svgSize / 2]
+    });
+
+    return L.marker(latlng, { icon: svgIcon }).bindPopup(createPopupContent(feature));
+}
+
+// =====================================================================
+// FEATURE: CLUSTERING
+// =====================================================================
+const ClusterToggle = L.Control.extend({
+    options: {
+        position: 'topright'
+    },
+
+    onAdd: function(map) {
+        const container = L.DomUtil.create('div', 'cluster-toggle-control');
+
+        L.DomEvent.disableClickPropagation(container);
+
+        container.innerHTML = `
+            <button id="cluster-toggle-btn"
+                    class="cluster-toggle-btn"
+                    title="Toggle marker clustering">
+                Clustering: <span id="cluster-status">OFF</span>
+            </button>
+        `;
+
+        L.DomEvent.on(container.querySelector('#cluster-toggle-btn'), 'click',
+            () => toggleClustering());
+
+        return container;
+    }
+});
+
+// =====================================================================
+// FEATURE: YEAR-RANGE SLIDER
+// =====================================================================
+const YearRangeControl = L.Control.extend({
+    options: {
+        position: 'topright'
+    },
+
+    onAdd: function(map) {
+        const container = L.DomUtil.create('div', 'year-range-control');
+        L.DomEvent.disableClickPropagation(container);
+
+        container.innerHTML = `
+            <div class="slider-control">
+                <div class="year-range-label">Year Range</div>
+                <div class="dual-range-slider">
+                    <div class="range-track">
+                        <div class="range-fill"></div>
+                    </div>
+                    <div class="range-inputs">
+                        <input id="year-min-input" type="range" min="1866" max="2021" value="1866">
+                        <input id="year-max-input" type="range" min="1866" max="2021" value="2021">
+                    </div>
+                </div>
+                <div class="year-range-display">
+                    <div class="year-box year-box-min">
+                        <div class="year-box-label">Start Year:</div>
+                        <input id="year-min-display" class="year-value year-value-input" type="number" inputmode="numeric" value="1866">
+                    </div>
+                    <div class="year-box year-box-max">
+                        <div class="year-box-label">End Year:</div>
+                        <input id="year-max-display" class="year-value year-value-input" type="number" inputmode="numeric" value="2021">
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Let the user type a year directly instead of only dragging the slider
+        const minDisplay = container.querySelector('#year-min-display');
+        const maxDisplay = container.querySelector('#year-max-display');
+        [minDisplay, maxDisplay].forEach(input => {
+            input.addEventListener('change', handleYearTextChange);
+            input.addEventListener('keydown', e => { if (e.key === 'Enter') e.target.blur(); });
+        });
+
+        return container;
+    }
+});
+
+// Add the year range control to the map
+const yearRangeControl = new YearRangeControl();
+map.addControl(yearRangeControl);
+
+// Add the cluster toggle control to the map (after year range, so it appears below)
+const clusterToggle = new ClusterToggle();
+map.addControl(clusterToggle);
+
+function toggleClustering() {
+    clusteringEnabled = !clusteringEnabled;
+
+    const btn = document.getElementById('cluster-toggle-btn');
+    const status = document.getElementById('cluster-status');
+
+    if (clusteringEnabled) {
+        // Initialize cluster group if not already done
+        if (!clusterGroup) {
+            clusterGroup = L.markerClusterGroup({
+                maxClusterRadius: 60,
+                iconCreateFunction: function(cluster) {
+                    const count = cluster.getChildCount();
+                    // Scale diameter with sqrt(count) so marker AREA (not diameter)
+                    // grows proportionally with the number of points clustered.
+                    const minDiameter = 26;
+                    const maxDiameter = 64;
+                    const maxCountForScale = 200;
+                    const t = Math.min(1, Math.sqrt(count / maxCountForScale));
+                    const diameter = Math.round(minDiameter + (maxDiameter - minDiameter) * t);
+                    const iconSize = diameter + 10;
+                    const offset = (iconSize - diameter) / 2;
+
+                    return L.divIcon({
+                        html: `<div style="width: ${diameter}px; height: ${diameter}px; line-height: ${diameter}px; margin-left: ${offset}px; margin-top: ${offset}px;">${count}</div>`,
+                        className: 'marker-cluster',
+                        iconSize: L.point(iconSize, iconSize)
+                    });
+                }
+            });
         }
-        const SliderControl = L.Control.extend({
-            options: {
-                position: 'topright'
-            },
-            
-            onAdd: function(map) {
-                const container = L.DomUtil.create('div', 'slider-control');
-                
-                // Prevent map click events from being intercepted by the slider
-                L.DomEvent.disableClickPropagation(container);
-                
-                // Add content to the control - use native HTML5 range inputs
-                container.innerHTML = `
-                    <div class="year-range-label">Year Range</div>
-                    <div class="dual-range-slider">
-                        <div class="range-track">
-                            <div class="range-fill" id="range-fill"></div>
-                        </div>
-                        <div class="range-inputs">
-                            <input type="range" id="year-start" min="1800" max="2024" value="1800">
-                            <input type="range" id="year-end" min="1800" max="2024" value="2024">
-                        </div>
-                    </div>
-                    <div class="year-values">
-                        <span id="year-start-value" class="year-value">1800</span>
-                        <span id="year-end-value" class="year-value">2024</span>
-                    </div>
-                `;
-                return container;
-            }
-        });
-        
-        // Add the custom control to the map
-        const sliderControl = new SliderControl();
-        map.addControl(sliderControl);
-
-        // Define a customized chart control
-        const ChartControl = L.Control.extend({
-            options: {
-                position: 'topleft'
-            },
-            
-            onAdd: function(map) {
-                const container = L.DomUtil.create('div', 'chart-control');
-                
-                // Prevent map click events from being intercepted by the chart
-                L.DomEvent.disableClickPropagation(container);
-                
-                container.innerHTML = `
-                    <div style="background: white; border: 1px solid #ccc; padding: 8px; border-radius: 2px; width: 240px;">
-                        <h4 style="margin: 0 0 6px 0; font-size: 12px; text-align: center; color: #333; font-weight: 600;">Accident Severity</h4>
-                        <canvas id="accidentChart" style="display: block; height: 110px;"></canvas>
-                    </div>
-                `;
-                return container;
-            }
-        });
-        
-        // Add the chart control to the map
-        const chartControl = new ChartControl();
-        map.addControl(chartControl);
-
-				
-        
-// Calculate nice round intervals for chart scales
-function calculateNiceInterval(maxValue) {
-    if (maxValue <= 0) return 1;
-    
-    // Find the order of magnitude
-    const magnitude = Math.pow(10, Math.floor(Math.log10(maxValue)));
-    
-    // Divide max by magnitude to get a normalized value (1-10)
-    const normalized = maxValue / magnitude;
-    
-    // Choose a nice interval based on the normalized value
-    let interval;
-    if (normalized <= 1.5) {
-        interval = 0.2 * magnitude;
-    } else if (normalized <= 2) {
-        interval = 0.25 * magnitude;
-    } else if (normalized <= 5) {
-        interval = 0.5 * magnitude;
+        if (!map.hasLayer(clusterGroup)) {
+            map.addLayer(clusterGroup);
+        }
+        status.textContent = 'ON';
+        btn.style.backgroundColor = '#ff6b6b'; // Red when ON
+        btn.style.color = 'white';
     } else {
-        interval = 1 * magnitude;
+        if (clusterGroup) {
+            map.removeLayer(clusterGroup);
+        }
+        status.textContent = 'OFF';
+        btn.style.backgroundColor = '#3388ff'; // Blue when OFF
+        btn.style.color = 'white';
     }
-    
-    return Math.ceil(interval);
-}
-function logChartState(label) {
-    if (accidentChart && accidentChart.scales && accidentChart.scales.x) {
-        const xScale = accidentChart.scales.x;
-        const yScale = accidentChart.scales.y;
-        console.log(`=== ${label} ===`);
-        console.log('Chart max:', accidentChart.options.scales.x.max);
-        console.log('Step size set:', accidentChart.options.scales.x.ticks.stepSize);
-        console.log('Actual X-axis ticks:', xScale.ticks.map(t => t.value)); // What ticks are actually rendered
-        console.log('X-axis label rotation:', accidentChart.options.scales.x.ticks.maxRotation);
-        console.log('X-axis scale height:', xScale.height);
-        console.log('Y-axis scale width:', yScale.width);
-        console.log('Chart area:', {top: accidentChart.chartArea.top, bottom: accidentChart.chartArea.bottom, height: accidentChart.chartArea.bottom - accidentChart.chartArea.top});
-        console.log('Chart data:', accidentChart.data.datasets[0].data);
-    } else {
-        console.log(`=== ${label} === (chart not fully initialized yet)`);
+
+    // Refresh markers with current year range
+    if (currentYearRange) {
+        updatePointsByYear(currentYearRange);
     }
 }
-// update count display and update the chart
-function updateAccidentCount(filteredFeatures) {
-    logChartState('BEFORE UPDATE')
-    const count = filteredFeatures.length;
 
-    // Count accident types
-    let nonInjuriousCount = 0;
-    let injuriousCount = 0;
-    let deadlyCount = 0;
+
+
+// Load and process GeoJSON
+fetch('{{ site.baseurl }}/assets/js/AOIgeoData.geojson')
+    .then(response => {
+        if (!response.ok) throw new Error('Network response failed');
+        return response.json();
+    })
+    .then(data => processGeoJSON(data))
+    .catch(error => {
+        console.error('Error loading GeoJSON:', error);
+        L.popup()
+            .setLatLng(map.getCenter())
+            .setContent('Error loading accident data')
+            .openOn(map);
+    });
+
+function processGeoJSON(data) {
+    geojsonData = data;
+
+    // Add unique IDs
+    geojsonData.features.forEach((feature, index) => {
+        feature.id = 'accident-' + index;
+    });
+
+    // Extract year range
+    const years = geojsonData.features
+        .map(f => Number(f.properties.Year))
+        .filter(y => !isNaN(y));
+
+    if (years.length === 0) {
+        console.error('No valid years found');
+        return;
+    }
+
+    const minYear = Math.min(...years);
+    const maxYear = Math.max(...years);
+
+    // Update slider min/max attributes and values
+    const minInput = document.getElementById('year-min-input');
+    const maxInput = document.getElementById('year-max-input');
+
+    if (minInput && maxInput) {
+        minInput.setAttribute('min', minYear);
+        minInput.setAttribute('max', maxYear);
+        minInput.value = minYear;
+
+        maxInput.setAttribute('min', minYear);
+        maxInput.setAttribute('max', maxYear);
+        maxInput.value = maxYear;
+
+        // Update display
+        updateYearDisplay(minYear, maxYear);
+
+        // Add event listeners
+        minInput.addEventListener('input', handleYearRangeChange);
+        maxInput.addEventListener('input', handleYearRangeChange);
+    }
+
+    // Fit map to data
+    const tempLayer = L.geoJSON(geojsonData);
+    const bounds = tempLayer.getBounds();
+    if (bounds.isValid()) {
+        map.fitBounds(bounds, { padding: [50, 50] });
+    }
+
+    currentYearRange = [minYear, maxYear];
+    updatePointsByYear([minYear, maxYear]);
+}
+
+function updatePointsByYear(yearRange) {
+    currentYearRange = yearRange;
+    pointsLayer.clearLayers();
+    if (clusterGroup) clusterGroup.clearLayers();
+
+    if (!geojsonData) return;
+
+    const filteredFeatures = geojsonData.features.filter(f => {
+        const y = Number(f.properties.Year);
+        return y >= yearRange[0] && y <= yearRange[1];
+    });
+
+    const currentZoom = map.getZoom();
 
     filteredFeatures.forEach(feature => {
-        const props = feature.properties;
-        const isDeadly = props["Deadly?"] === "Y" || parseInt(props["Dead (minimum)"]) > 0;
-        const isInjurious = props["Injurious?"] === "Y" || parseInt(props["Injured (minimum)"]) > 0;
-        
+        const [lng, lat] = feature.geometry.coordinates;
+
+        // Color by severity
+        const isDeadly = feature.properties["Deadly?"] === "Y" || parseInt(feature.properties["Dead (minimum)"]) > 0;
+        const isInjurious = feature.properties["Injurious?"] === "Y" || parseInt(feature.properties["Injured (minimum)"]) > 0;
+
+        let color = '#5555ff'; // Blue
+        if (isDeadly) color = '#ff3333'; // Red
+        else if (isInjurious) color = '#ff9933'; // Orange
+
+        const radius = getScaledRadius(currentZoom);
+        const latlng = [lat, lng];
+
+        // Check marker type (default to circle if not specified)
+        const markerType = feature.properties.marker || 'circle';
+
+        let marker;
+        if (markerType === 'diamond') {
+            marker = createDiamondMarker(feature, latlng, radius, color);
+        } else {
+            marker = L.circleMarker(latlng, {
+                radius: radius,
+                fillColor: color,
+                color: color,
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.7
+            }).bindPopup(createPopupContent(feature));
+        }
+
+        markersByAccidentId[feature.id] = marker;
+
+        // Add to clustering or normal layer
+        if (clusteringEnabled && clusterGroup) {
+            clusterGroup.addLayer(marker);
+        } else {
+            pointsLayer.addLayer(marker);
+        }
+    });
+
+    updateAccidentCount(filteredFeatures);
+}
+
+function updateAccidentCount(filteredFeatures) {
+    // Count accidents by category
+    let deadlyCount = 0;
+    let injuriousCount = 0;
+    let nonInjuriousCount = 0;
+
+    filteredFeatures.forEach(feature => {
+        const isDeadly = feature.properties["Deadly?"] === "Y" || parseInt(feature.properties["Dead (minimum)"]) > 0;
+        const isInjurious = feature.properties["Injurious?"] === "Y" || parseInt(feature.properties["Injured (minimum)"]) > 0;
+
         if (isDeadly) {
             deadlyCount++;
         } else if (isInjurious) {
@@ -205,338 +414,214 @@ function updateAccidentCount(filteredFeatures) {
         }
     });
 
-    // Update the chart
-    if (accidentChart) {
-        accidentChart.data.datasets[0].data = [nonInjuriousCount, injuriousCount, deadlyCount];
-        
-        // Calculate max value and nice interval
-        const maxValue = Math.max(nonInjuriousCount, injuriousCount, deadlyCount);
-        let niceInterval = calculateNiceInterval(maxValue);
-        // Cap the chart max at 100
-        let niceMax = Math.min(100, Math.ceil(maxValue / niceInterval) * niceInterval);
-        
-        // When capping at 100, ensure stepSize divides evenly into 100 to guarantee 100 is a tick
-        if (niceMax === 100) {
-            // Find a step size that divides 100 evenly and is close to our calculated interval
-            const divisorsOf100 = [50, 25, 20, 10, 5, 2, 1];
-            niceInterval = divisorsOf100.find(d => d <= niceInterval) || 1;
-        }
-        
-        // Update chart scale
-        accidentChart.options.scales.x.ticks.stepSize = niceInterval;
-        accidentChart.options.scales.x.max = niceMax;  // Axis max at 100, bars can overflow
-        
-        accidentChart.update();
-        logChartState('AFTER UPDATE')
+    updateAccidentChart(deadlyCount, injuriousCount, nonInjuriousCount);
+}
+
+function updateAccidentChart(deadlyCount, injuriousCount, nonInjuriousCount) {
+    // Create chart container if it doesn't exist
+    let chartContainer = document.getElementById('accident-chart-control');
+    if (!chartContainer) {
+        chartContainer = L.DomUtil.create('div', 'accident-chart-control');
+        chartContainer.id = 'accident-chart-control';
+        chartContainer.innerHTML = `
+            <div style="padding: 16px; background: white; border-radius: 2px; border: 1px solid #999;">
+                <div style="font-size: 13px; font-weight: 700; color: #333; margin-bottom: 12px;">Accident Severity</div>
+                <canvas id="severity-chart" width="280" height="140"></canvas>
+            </div>
+        `;
+
+        // Add to top left of map (create as a Leaflet control)
+        const AccidentChartControl = L.Control.extend({
+            options: { position: 'topleft' },
+            onAdd: function(map) {
+                return chartContainer;
+            }
+        });
+        new AccidentChartControl().addTo(map);
     }
 
-    // Log to console for debugging
-    console.log(`Accidents displayed: ${count}`);
-    console.log(`Non-injurious: ${nonInjuriousCount}, Injurious: ${injuriousCount}, Deadly: ${deadlyCount}`);
-}        
-        // Fetch the external GeoJSON
-        fetch('{{ site.baseurl }}/assets/js/AOIgeoData.geojson')
-            .then(response => {
-                if (!response.ok) throw new Error('Network response failed');
-                return response.json();
-            })
-            .then(data => processGeoJSON(data))
-            .catch(error => {
-                console.error('Error loading GeoJSON:', error);
-                L.popup()
-                    .setLatLng(map.getCenter())
-                    .setContent('Error loading accident data')
-                    .openOn(map);
-            });
+    // Update or create the chart
+    const ctx = document.getElementById('severity-chart');
+    if (ctx) {
+        // Destroy existing chart if it exists
+        if (window.severityChart) {
+            window.severityChart.destroy();
+        }
 
-			function processGeoJSON(geojsonData) {
-				// Add unique IDs to each feature for matching
-				geojsonData.features.forEach((feature, index) => {
-					feature.id = `accident-${index}`; // Add a unique ID
-				});
-				
-			    // Set map view to fit bounds of all data points in AOIgeodata.geojson
-				const tempLayer = L.geoJSON(geojsonData);
-    			const bounds = tempLayer.getBounds();
-    			if (bounds.isValid()) {
-        			map.fitBounds(bounds, { padding: [50, 50] }); // Fit map to layer bounds with padding
-    			}
-				// Extract all valid years from features
-            const years = [];
-            
-            geojsonData.features.forEach(feature => {
-                if (feature.properties.Year && !isNaN(feature.properties.Year)) {
-                    years.push(Number(feature.properties.Year));
-                }
-            });
-            
-            if (years.length === 0) {
-                console.error('No valid years found in GeoJSON properties!');
-                return;
-            }
-            
-            // Get min and max years from data
-            const minYear = Math.min(...years);
-            const maxYear = Math.max(...years);
-            
-            // Only proceed if we have valid numeric values
-            if (isNaN(minYear) || isNaN(maxYear)) {
-                console.error('Invalid year range values');
-                return;
-            }
-
-            // Initialize slider with numeric values
-            const yearStart = document.getElementById('year-start');
-            const yearEnd = document.getElementById('year-end');
-            const rangeFill = document.getElementById('range-fill');
-            const yearStartValue = document.getElementById('year-start-value');
-            const yearEndValue = document.getElementById('year-end-value');
-            
-            // Set slider min/max to data range
-            yearStart.min = minYear;
-            yearStart.max = maxYear;
-            yearStart.value = minYear;
-            yearEnd.min = minYear;
-            yearEnd.max = maxYear;
-            yearEnd.value = maxYear;
-            
-            // Update display values
-            yearStartValue.textContent = minYear;
-            yearEndValue.textContent = maxYear;
-            
-            // Function to update range fill position
-            function updateRangeFill() {
-                const start = parseInt(yearStart.value);
-                const end = parseInt(yearEnd.value);
-                const range = maxYear - minYear;
-                const fillStart = ((start - minYear) / range) * 100;
-                const fillEnd = ((end - minYear) / range) * 100;
-                rangeFill.style.left = fillStart + '%';
-                rangeFill.style.width = (fillEnd - fillStart) + '%';
-            }
-            
-            // Event listeners for range inputs
-            yearStart.addEventListener('input', function() {
-                if (parseInt(yearStart.value) > parseInt(yearEnd.value)) {
-                    yearStart.value = yearEnd.value;
-                }
-                yearStartValue.textContent = yearStart.value;
-                updateRangeFill();
-                updateAccidentDisplay([parseInt(yearStart.value), parseInt(yearEnd.value)]);
-            });
-            
-            yearEnd.addEventListener('input', function() {
-                if (parseInt(yearEnd.value) < parseInt(yearStart.value)) {
-                    yearEnd.value = yearStart.value;
-                }
-                yearEndValue.textContent = yearEnd.value;
-                updateRangeFill();
-                updateAccidentDisplay([parseInt(yearStart.value), parseInt(yearEnd.value)]);
-            });
-            
-            // Initial range fill
-            updateRangeFill();
-            
-            // Initialize the chart
-            const ctx = document.getElementById('accidentChart').getContext('2d');
-            accidentChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Non-Injurious', 'Injurious', 'Deadly'],
-                    datasets: [{
-                        label: 'Accidents',
-                        data: [0, 0, 0],
-                        backgroundColor: [
-                            'rgba(52, 152, 219, 0.7)', // Blue for non-injurious
-                            'rgba(230, 126, 34, 0.7)', // Orange for injurious
-                            'rgba(231, 76, 60, 0.7)'   // Red for deadly
-                        ],
-                        borderColor: [
-                            'rgba(52, 152, 219, 1)', // Darker blue for non-injurious
-                            'rgba(230, 126, 34, 1)', // Darker orange for injurious
-                            'rgba(231, 76, 60, 1)'   // Darker red for deadly
-                        ],
-                        borderWidth: 1, // Optional: add borders to bars
-                        barThickness: 15, // Fixed bar thickness to prevent resizing when ticks change
-                        clip: false // Allow bars to render outside chart bounds
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: false,
-                    maintainAspectRatio: true,
-                    layout: {
-                        padding: {
-                            right: 30  // Add space on the right for labels
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.parsed.x + ' accidents';
-                                }
+        // Create new Chart.js horizontal bar chart
+        window.severityChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Non-Injurious', 'Injurious', 'Deadly'],
+                datasets: [{
+                    label: 'Count',
+                    data: [nonInjuriousCount, injuriousCount, deadlyCount],
+                    backgroundColor: ['#5555ff', '#ff9933', '#ff3333'],
+                    borderWidth: 0,
+                    barThickness: 16
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: false,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.x;
                             }
-                        },
-                        datalabels: {
-                            anchor: 'end',
-                            align: 'end',
-                            color: '#333',
-                            font: {
-                                size: 10,
-                                weight: 'bold'
-                            },
-                            formatter: function(value) {
-                                return value;
-                            }
-                        }
-                    },
-                    scales: {   // Configure X and Y axes labels and ticks
-                        x: {
-                            beginAtZero: true,
-                            max: 100,
-                            ticks: {
-                                stepSize: 1,
-                                maxTicksLimit: 6,     // Keep exactly 6 ticks max to prevent height changes
-                                font: {
-                                    size: 10
-                                },
-                                maxRotation: 50,      // Lock rotation to prevent auto-fitting
-                                minRotation: 50       // Force exactly 50 degree rotation
-                            },
-                            padding: 0               // Reduce padding
-                        },
-                        y: {
-                            ticks: {
-                                font: {
-                                    size: 10
-                                }
-                            },
-                            categoryPercentage: 0.7,  // Lock vertical category spacing
-                            barPercentage: 0.9        // Lock bar thickness in Y direction
                         }
                     }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: Math.max(nonInjuriousCount, injuriousCount, deadlyCount) + 10,
+                        ticks: {
+                            font: { size: 10 },
+                            color: '#666'
+                        },
+                        grid: { drawBorder: false, color: '#e0e0e0' }
+                    },
+                    y: {
+                        ticks: {
+                            font: { size: 11, weight: '600' },
+                            color: '#333'
+                        },
+                        grid: { display: false }
+                    }
                 }
-            });
-            
-            // Function to filter and display points
-function updatePointsByYear(yearRange) {
-    // Clear existing points
-    pointsLayer.clearLayers();
-    
-    // Filter features by year
-    const filteredFeatures = geojsonData.features.filter(feature => {
-        const year = feature.properties.Year;
-        const yearNum = Number(year);
-        return year && !isNaN(yearNum) && yearNum >= yearRange[0] && yearNum <= yearRange[1];
-    });
-    
-    // Update accident count
-    updateAccidentCount(filteredFeatures);
-    
-    // Get current zoom level for scaling
-    const currentZoom = map.getZoom();
-    
-    // Function to create a diamond-shaped marker
-    function createDiamondMarker(feature, latlng, radius, color) {
-        // Create diamond as an SVG icon
-        const svgSize = radius * 2 + 4;
-        const center = radius + 2;
-        
-        // SVG for diamond shape
-        const svgString = `
-            <svg width="${svgSize}" height="${svgSize}" viewBox="0 0 ${svgSize} ${svgSize}" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="${center},2 ${center + radius},${center} ${center},${center + radius} ${center - radius},${center}" 
-                         fill="${color}" stroke="black" stroke-width="1" opacity="0.8" fill-opacity="0.8"/>
-            </svg>
-        `;
-        
-        const svgIcon = L.icon({
-            iconUrl: 'data:image/svg+xml;base64,' + btoa(svgString),
-            iconSize: [svgSize, svgSize],
-            iconAnchor: [svgSize / 2, svgSize / 2],
-            popupAnchor: [0, -svgSize / 2]
+            },
+            plugins: [{
+                id: 'customDataLabels',
+                afterDatasetsDraw(chart) {
+                    const { ctx, data, chartArea: { right } } = chart;
+                    chart.data.datasets.forEach((dataset, datasetIndex) => {
+                        const meta = chart.getDatasetMeta(datasetIndex);
+                        meta.data.forEach((bar, index) => {
+                            const x = bar.x + 8;
+                            const y = bar.y;
+                            const value = dataset.data[index];
+
+                            ctx.fillStyle = '#333';
+                            ctx.font = 'bold 11px sans-serif';
+                            ctx.textAlign = 'left';
+                            ctx.textBaseline = 'middle';
+                            ctx.fillText(value, x, y);
+                        });
+                    });
+                }
+            }]
         });
-        
-        return L.marker(latlng, { icon: svgIcon }).bindPopup(createPopupContent(feature));
     }
-    
-    // Add filtered features to map
-    L.geoJSON({
-        type: "FeatureCollection",
-        features: filteredFeatures
-    }, {
-        pointToLayer: function(feature, latlng) {
-            // Customize marker color based on casualties
-            let color = "#3388ff"; // Default blue
-            if (feature.properties["Deadly?"] === "Y" || parseInt(feature.properties["Dead (minimum)"]) > 0) {
-                color = "#ff0000"; // Red for fatal accidents
-            } else if (feature.properties["Injurious?"] === "Y" || parseInt(feature.properties["Injured (minimum)"]) > 0) {
-                color = "#ff7800"; // Orange for injuries
-            }
-            
-            // Check marker type (default to circle if not specified)
-            const markerType = feature.properties.marker || 'circle';
-            
-            if (markerType === 'diamond') {
-                // Create diamond marker with zoom-scaled radius
-                return createDiamondMarker(feature, latlng, getScaledRadius(currentZoom), color);
-            } else {
-                // Create circle marker (default)
-                return L.circleMarker(latlng, {
-                    radius: getScaledRadius(currentZoom),
-                    fillColor: color,
-                    color: "#000",
-                    weight: 1,
-                    opacity: 0.7,
-                    fillOpacity: 0.8
-                }).bindPopup(createPopupContent(feature));
-            }
-        }
-    }).addTo(pointsLayer);
 }
-            // Function to create popup content
-            function createPopupContent(feature) {
-                const props = feature.properties;
-                let content = `<b>Date:</b> ${props["Year-Month-Day"] || 'Unknown date'}<br>`;
-                content += `<b>Description:</b> ${props.Description || 'No description'}<br>`;
-                content += `<b>General location:</b> ${props["General Location"] || 'Unknown'}<br>`;
-                if (props["Street coordinates"]) {
-                    content += `<b>Street coordinates:</b> ${props["Street coordinates"]}<br>`;
-                }
-                content += `<b>Responsible entity:</b> ${props["Responsible corporate entity"] || 'Unknown'}<br>`;
 
-                // Add casualty information
-                if (props["Injurious?"] === "Y" || parseInt(props["Injured (minimum)"]) > 0) {
-                    content += `<b style="color:orange">Non-fatal injured:</b> ${props["Injured (minimum)"] || 'Yes'}<br>`;
-                }
-                if (props["Deadly?"] === "Y" || parseInt(props["Dead (minimum)"]) > 0) {
-                    content += `<b style="color:red">Fatalities:</b> ${props["Dead (minimum)"] || 'Yes'}<br>`;
-                }
-                
-                return content;
-            }
-
-            // Initial display with all points
-            updatePointsByYear([minYear, maxYear]);
-            
-            // Define updateAccidentDisplay function for slider changes
-            function updateAccidentDisplay(yearRange) {
-                updatePointsByYear(yearRange);
-                // Update chart based on year range
-                updateChart(yearRange);
-            }
-            
-            // Update marker sizes when zoom changes
-            map.on('zoomend', function() {
-                const start = parseInt(yearStart.value);
-                const end = parseInt(yearEnd.value);
-                updatePointsByYear([start, end]);
+// Re-scale on zoom
+map.on('zoomend', function() {
+    const radius = getScaledRadius(map.getZoom());
+    [pointsLayer, clusterGroup].forEach(layer => {
+        if (layer) {
+            layer.eachLayer(m => {
+                if (m.setRadius) m.setRadius(radius);
             });
         }
-    </script>
-</body>
-</html>
+    });
+});
+
+// =====================================================================
+// YEAR-RANGE SLIDER HANDLERS
+// =====================================================================
+
+function handleYearRangeChange(e) {
+    const minInput = document.getElementById('year-min-input');
+    const maxInput = document.getElementById('year-max-input');
+
+    let minVal = parseInt(minInput.value);
+    let maxVal = parseInt(maxInput.value);
+
+    // Ensure min is not greater than max
+    if (minVal > maxVal) {
+        minVal = maxVal;
+        minInput.value = minVal;
+    }
+
+    // Ensure max is not less than min
+    if (maxVal < minVal) {
+        maxVal = minVal;
+        maxInput.value = maxVal;
+    }
+
+    // Update display
+    updateYearDisplay(minVal, maxVal);
+
+    // Update map
+    updatePointsByYear([minVal, maxVal]);
+}
+
+// Handle the user typing a year directly into the start/end year boxes
+function handleYearTextChange(e) {
+    const minInput = document.getElementById('year-min-input');
+    const maxInput = document.getElementById('year-max-input');
+    const minDisplay = document.getElementById('year-min-display');
+    const maxDisplay = document.getElementById('year-max-display');
+
+    const rangeMin = parseInt(minInput.getAttribute('min'));
+    const rangeMax = parseInt(maxInput.getAttribute('max'));
+
+    let minVal = parseInt(minDisplay.value);
+    let maxVal = parseInt(maxDisplay.value);
+
+    // Fall back to the current slider value if the box was cleared or non-numeric
+    if (isNaN(minVal)) minVal = parseInt(minInput.value);
+    if (isNaN(maxVal)) maxVal = parseInt(maxInput.value);
+
+    // Clamp to the data's actual year range
+    minVal = Math.min(Math.max(minVal, rangeMin), rangeMax);
+    maxVal = Math.min(Math.max(maxVal, rangeMin), rangeMax);
+
+    // Keep min <= max: whichever box the user just edited wins the conflict
+    if (minVal > maxVal) {
+        if (e.target === minDisplay) {
+            maxVal = minVal;
+        } else {
+            minVal = maxVal;
+        }
+    }
+
+    minInput.value = minVal;
+    maxInput.value = maxVal;
+
+    updateYearDisplay(minVal, maxVal);
+    updatePointsByYear([minVal, maxVal]);
+}
+
+function updateYearDisplay(minYear, maxYear) {
+    const minDisplay = document.getElementById('year-min-display');
+    const maxDisplay = document.getElementById('year-max-display');
+    const rangeFill = document.querySelector('.range-fill');
+
+    // Skip updating a box the user is actively typing in, so it isn't clobbered mid-edit
+    if (minDisplay && document.activeElement !== minDisplay) minDisplay.value = minYear;
+    if (maxDisplay && document.activeElement !== maxDisplay) maxDisplay.value = maxYear;
+
+    // Update range fill bar
+    if (rangeFill) {
+        const minInput = document.getElementById('year-min-input');
+        const maxInput = document.getElementById('year-max-input');
+
+        if (minInput && maxInput) {
+            const min = parseInt(minInput.getAttribute('min'));
+            const max = parseInt(maxInput.getAttribute('max'));
+            const range = max - min;
+
+            const leftPercent = ((minYear - min) / range) * 100;
+            const rightPercent = 100 - ((maxYear - min) / range) * 100;
+
+            rangeFill.style.left = leftPercent + '%';
+            rangeFill.style.right = rightPercent + '%';
+        }
+    }
+}
+</script>

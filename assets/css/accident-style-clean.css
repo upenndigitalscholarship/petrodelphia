@@ -4,59 +4,122 @@
     position: relative;
 }
 
-/* Slider control styling - Updated April 30, 2026 */
-/* The container - matching the white background of your Overlays menu */
+/* Year Range Control */
+.year-range-control {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Slider control styling - kept compact/flat to match the accident table's density */
 .slider-control {
     background: white;
-    padding: 12px 16px;
-    border-radius: 2px;
-    border: 1px solid #999;
-    min-width: 300px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 240px;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 .year-range-label {
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     color: #333;
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
+    letter-spacing: 0.3px;
+}
+
+.year-range-display {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #0075FF !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 8px;
+    margin-top: 6px !important;
+    width: 100% !important;
+}
+
+.year-box {
+    background: #f0f7ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 3px;
+    padding: 4px 8px;
+    text-align: center;
+    flex: 1 1 0;
+}
+
+.year-box-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 1px;
+}
+
+.year-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0075FF;
+}
+
+/* .year-value is also an <input type="number"> now (user can type a year directly);
+   strip the browser's default input chrome so it still looks like a plain flat box */
+.year-value-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    width: 3.5em;
+    padding: 0;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.year-value-input:focus {
+    outline: 2px solid #0075FF;
+    outline-offset: 1px;
+    border-radius: 2px;
 }
 
 .dual-range-slider {
     position: relative;
-    margin: 16px 0 12px 0;
+    margin: 10px 0 4px 0;
 }
 
 .range-track {
     width: 100%;
-    height: 5px;
-    background: #ddd;
-    border-radius: 3px;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
     position: relative;
-    margin-top: 12px;
+    margin-top: 7px;
 }
 
 .range-fill {
     position: absolute;
-    height: 5px;
-    background: #0075FF;
-    border-radius: 3px;
+    height: 4px;
+    background: linear-gradient(to right, #0075FF, #0055cc);
+    border-radius: 2px;
     pointer-events: none;
 }
 
 .range-inputs {
-    position: absolute;
+    position: relative;
     width: 100%;
-    top: 12px;
-    left: 0;
-    margin: 0;
+    height: 0;
 }
 
 .range-inputs input {
     position: absolute;
     width: 100%;
     height: 0;
-    top: -10px;
+    top: 0;
     left: 0;
     pointer-events: none;
     -webkit-appearance: none;
@@ -65,61 +128,101 @@
     border: none;
     padding: 0;
     margin: 0;
+    z-index: 5;
 }
 
 .range-inputs input::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 16px;
-    height: 16px;
-    background: #ccc;
-    border: 1px solid #666;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border: 2px solid #0075FF;
     border-radius: 50%;
     cursor: pointer;
     pointer-events: auto;
-    box-shadow: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.range-inputs input::-webkit-slider-thumb:hover {
+    background: #f0f7ff;
+    box-shadow: 0 2px 6px rgba(0, 117, 255, 0.4);
+    transform: scale(1.1);
 }
 
 .range-inputs input::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
-    background: #ccc;
-    border: 1px solid #666;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border: 2px solid #0075FF;
     border-radius: 50%;
     cursor: pointer;
     pointer-events: auto;
-    box-shadow: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
 }
 
-.year-values {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 8px;
-    font-size: 0.9em;
-    font-weight: bold;
+.range-inputs input::-moz-range-thumb:hover {
+    background: #f0f7ff;
+    box-shadow: 0 2px 6px rgba(0, 117, 255, 0.4);
+    transform: scale(1.1);
 }
 
-.year-value {
-    color: #333;
+/* Cluster toggle styling */
+
+.cluster-toggle-control {
     background: white;
-    border: 1px solid #999;
-    border-radius: 2px;
-    padding: 4px 8px;
-    display: inline-block;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-/*    font-family: system-ui, sans-serif;
+
+.cluster-toggle-btn {
+    background: #3388ff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
-    background: #ffffffff;
-    color: #333;
-    padding: 1px 4px;
-    border: 1px solid #999;
-    border-radius: 2px; /* 2px corners like the menu *//*
-}*/
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cluster-toggle-btn:hover {
+    background: #2070d0;
+    transform: scale(1.05);
+}
+
+.cluster-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+.marker-cluster {
+    background-clip: padding-box;
+    border-radius: 50%;
+}
+
+/* diameter, margin, and line-height are set inline per-cluster (see iconCreateFunction)
+   so marker size can scale with point count; only color/shape live here */
+.marker-cluster div {
+    text-align: center;
+    border-radius: 50%;
+    font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background: rgba(51, 136, 255, 0.7);
+    color: white;
+}
 
 .leaflet-popup-content {
     font-family: system-ui, sans-serif;
     max-width: 300px;
+    /* vendored leaflet.css sets min-height/overflow-y:scroll (for another map feature),
+       which leaves large empty space below short popup content here - override it */
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow-y: visible !important;
 }
 
 /* Attribution control styling - matching layeredmap-js.html */
