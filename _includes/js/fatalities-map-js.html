@@ -1,0 +1,248 @@
+<link rel="stylesheet" href="{{ '/assets/lib/leaflet/leaflet.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/lib/leaflet/MarkerCluster.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/lib/leaflet/MarkerCluster.Default.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/fatalities-map-style.css' | relative_url }}" />
+
+<!-- the #map div is provided by pages/fatalities-map.md -->
+<script src="{{ '/assets/lib/leaflet/leaflet.js' | relative_url }}"></script>
+<script src="{{ '/assets/lib/leaflet/leaflet.markercluster.js' | relative_url }}"></script>
+
+<script>
+// =====================================================================
+// FATALITIES MAP: Dashboard showing approximate residences of industrial
+// accident fatalities, with a collapsible list of records
+// =====================================================================
+
+// Initialize a map with a view set to S Philly at city-scale 13. Default zoom control
+// is disabled here and replaced below with a combined zoom + fullscreen control at top
+// right, since the fatalities panel already occupies top left.
+const map = L.map('map', { attributionControl: false, zoomControl: false }).setView([39.921276, -75.189891], 13);
+
+// Combined zoom + fullscreen control (matching layeredmap-js.html's pattern)
+const CombinedControl = L.Control.extend({
+    onAdd: function(map) {
+        const container = L.DomUtil.create('div', 'leaflet-control leaflet-control-combined');
+        container.innerHTML = '<button class="control-button zoom-in" title="Zoom in">+</button>' +
+                              '<button class="control-button zoom-out" title="Zoom out">−</button>' +
+                              '<button class="control-button fullscreen-btn" title="Fullscreen">⛶</button>';
+
+        L.DomEvent.on(container.querySelector('.zoom-in'), 'click', () => map.zoomIn());
+        L.DomEvent.on(container.querySelector('.zoom-out'), 'click', () => map.zoomOut());
+        L.DomEvent.on(container.querySelector('.fullscreen-btn'), 'click', () => {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                document.getElementById('map').requestFullscreen();
+            }
+        });
+        return container;
+    }
+});
+
+new CombinedControl({ position: 'topright' }).addTo(map);
+
+// Add CARTO Positron basemap
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png' + (L.Browser.retina ? '@2x.png' : '.png'), {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 20,
+    minZoom: 0
+}).addTo(map);
+
+// Add attribution control positioned at bottom left
+L.control.attribution({position: 'bottomleft'}).addTo(map);
+map.attributionControl.setPrefix();
+
+// Cluster group for fatality location dots. Handles both "visually close" markers
+// (grouped into a badge that splits apart on zoom) and truly coincident markers at
+// identical coordinates (spiderfied into a fan on click, since zooming alone can't
+// separate points at the same lat/lng).
+const pointsLayer = L.markerClusterGroup({
+    maxClusterRadius: 60,
+    iconCreateFunction: function(cluster) {
+        const count = cluster.getChildCount();
+        // Scale diameter with sqrt(count) so marker AREA (not diameter) grows with
+        // count; maxCountForScale is tuned low since this dataset only has 88 points
+        // total (unlike the Accidents Map's larger dataset).
+        const minDiameter = 26;
+        const maxDiameter = 64;
+        const maxCountForScale = 20;
+        const t = Math.min(1, Math.sqrt(count / maxCountForScale));
+        const diameter = Math.round(minDiameter + (maxDiameter - minDiameter) * t);
+        const iconSize = diameter + 10;
+        const offset = (iconSize - diameter) / 2;
+
+        return L.divIcon({
+            html: `<div style="width: ${diameter}px; height: ${diameter}px; line-height: ${diameter}px; margin-left: ${offset}px; margin-top: ${offset}px;">${count}</div>`,
+            className: 'marker-cluster',
+            iconSize: L.point(iconSize, iconSize)
+        });
+    }
+}).addTo(map);
+const markersByFatalityId = {};
+
+// Fixed marker radius (not zoom-scaled): clustering already keeps individual dots from
+// overlapping, so there's no need to shrink them at low zoom - a constant size keeps
+// them comfortably clickable at every zoom level they're actually visible at.
+const MARKER_RADIUS = 6;
+
+const MONTH_NAMES = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+// Format a record's Day/Month/Year fields into a readable date string.
+// Some records have Year = 0 (date unknown).
+function formatFatalityDate(props) {
+    if (!props.Year) return 'Unknown date';
+    const parts = [];
+    if (props.Month) parts.push(MONTH_NAMES[props.Month]);
+    if (props.Day) parts.push(props.Day);
+    return parts.length ? `${parts.join(' ')}, ${props.Year}` : String(props.Year);
+}
+
+// Chronological sort key; unknown dates (Year 0) sort last
+function fatalitySortKey(props) {
+    if (!props.Year) return Infinity;
+    return props.Year * 10000 + (props.Month || 0) * 100 + (props.Day || 0);
+}
+
+// Build the attribute content shown in both the marker popup and (implicitly) the list row.
+// The source data's property keys have some quirks (leading/trailing spaces, "Occpation"
+// misspelling) - these are intentional, matching assets/js/Victims_Deidentified.geojson exactly.
+function createFatalityContent(feature) {
+    const p = feature.properties;
+    let html = `<b>Date:</b> ${formatFatalityDate(p)}<br>`;
+    if (p.Description) html += `<b>Description:</b> ${p.Description}<br>`;
+    if (p.Employer) html += `<b>Employer:</b> ${p.Employer}<br>`;
+    if (p.Occpation) html += `<b>Occupation:</b> ${p.Occpation}<br>`;
+    if (p[' Birth place']) html += `<b>Birth place:</b> ${p[' Birth place']}<br>`;
+    if (p.Race) html += `<b>Race:</b> ${p.Race}<br>`;
+    if (p['Age ']) html += `<b>Age:</b> ${p['Age ']}<br>`;
+    if (p['Medical report']) html += `<b>Medical report:</b> ${p['Medical report']}<br>`;
+    if (p['News report']) html += `<b>News report:</b> ${p['News report']}<br>`;
+    if (p['Burial place']) html += `<b>Burial place:</b> ${p['Burial place']}<br>`;
+    return html;
+}
+
+// =====================================================================
+// FEATURE: FATALITIES PANEL (collapsible list of records)
+// =====================================================================
+const FatalitiesPanelControl = L.Control.extend({
+    options: {
+        position: 'topleft'
+    },
+
+    onAdd: function(map) {
+        const container = L.DomUtil.create('div', 'fatalities-panel-control');
+        L.DomEvent.disableClickPropagation(container);
+        L.DomEvent.disableScrollPropagation(container);
+
+        container.innerHTML = `
+            <div class="fatalities-panel-header">
+                <span>Fatalities</span>
+                <span id="fatalities-count" class="fatalities-count">(0)</span>
+                <button id="fatalities-panel-toggle" class="fatalities-panel-toggle" title="Toggle fatalities panel"></button>
+            </div>
+            <div id="fatalities-list" class="fatalities-list">
+                <div class="fatalities-list-empty">Loading...</div>
+            </div>
+        `;
+
+        container.querySelector('#fatalities-panel-toggle').addEventListener('click', function(e) {
+            e.stopPropagation();
+            container.classList.toggle('collapsed');
+        });
+
+        // Event delegation: clicking any list row selects that record
+        container.querySelector('#fatalities-list').addEventListener('click', function(e) {
+            const item = e.target.closest('[data-fatality-id]');
+            if (item) selectFatality(item.getAttribute('data-fatality-id'));
+        });
+
+        return container;
+    }
+});
+
+const fatalitiesPanel = new FatalitiesPanelControl();
+map.addControl(fatalitiesPanel);
+
+// Highlight the list row matching a record (used by both list clicks and marker clicks)
+function highlightFatalityRow(fatalityId) {
+    document.querySelectorAll('.fatalities-list-item.active').forEach(el => el.classList.remove('active'));
+    const row = document.querySelector(`.fatalities-list-item[data-fatality-id="${fatalityId}"]`);
+    if (row) {
+        row.classList.add('active');
+        row.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+}
+
+// Reveal a record's marker (zooming/spiderfying it out of its cluster if needed), open
+// its popup, and highlight its list row - same zoomToShowLayer pattern used by the
+// Accidents Map's table-to-marker selection.
+function selectFatality(fatalityId) {
+    const marker = markersByFatalityId[fatalityId];
+    if (!marker) return;
+
+    pointsLayer.zoomToShowLayer(marker, () => marker.openPopup());
+    highlightFatalityRow(fatalityId);
+}
+
+// Load and plot fatality locations
+fetch('{{ site.baseurl }}/assets/js/Victims_Deidentified.geojson')
+    .then(response => {
+        if (!response.ok) throw new Error('Network response failed');
+        return response.json();
+    })
+    .then(data => {
+        data.features.forEach((feature, index) => {
+            feature.id = 'fatality-' + index;
+        });
+
+        // Sort oldest first (top) to newest last (bottom); unknown dates sort last
+        const sortedFeatures = [...data.features].sort((a, b) =>
+            fatalitySortKey(a.properties) - fatalitySortKey(b.properties)
+        );
+
+        data.features.forEach(feature => {
+            const [lng, lat] = feature.geometry.coordinates;
+            const marker = L.circleMarker([lat, lng], {
+                radius: MARKER_RADIUS,
+                fillColor: '#5555ff',
+                color: '#333',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).bindPopup(createFatalityContent(feature));
+
+            marker.on('click', () => highlightFatalityRow(feature.id));
+
+            markersByFatalityId[feature.id] = marker;
+            pointsLayer.addLayer(marker);
+        });
+
+        // Fit map view to the fatality locations
+        const bounds = pointsLayer.getBounds();
+        if (bounds.isValid()) {
+            map.fitBounds(bounds, { padding: [50, 50] });
+        }
+
+        // Build the sidebar list
+        const countEl = document.getElementById('fatalities-count');
+        const listEl = document.getElementById('fatalities-list');
+        if (countEl) countEl.textContent = `(${sortedFeatures.length})`;
+
+        if (listEl) {
+            listEl.innerHTML = sortedFeatures.map(feature => {
+                const p = feature.properties;
+                return `
+                    <div class="fatalities-list-item" data-fatality-id="${feature.id}">
+                        <div class="fatalities-list-date">${formatFatalityDate(p)}</div>
+                        <div class="fatalities-list-employer">${p.Employer || 'Unknown employer'}</div>
+                        <div class="fatalities-list-desc">${p.Description || ''}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+    })
+    .catch(error => {
+        console.error('Error loading fatality location data:', error);
+    });
+</script>
