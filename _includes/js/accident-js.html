@@ -395,7 +395,7 @@ function updatePointsByYear(yearRange) {
         const isDeadly = feature.properties["Deadly?"] === "Y" || parseInt(feature.properties["Dead (minimum)"]) > 0;
         const isInjurious = feature.properties["Injurious?"] === "Y" || parseInt(feature.properties["Injured (minimum)"]) > 0;
 
-        let color = '#5555ff'; // Blue
+        let color = '#3388ffcc'; // Blue
         if (isDeadly) color = '#ff3333'; // Red
         else if (isInjurious) color = '#ff9933'; // Orange
 
@@ -470,7 +470,7 @@ function updateAccidentTable(yearRange) {
         const date = props["Year-Month-Day"] || props.Year || 'Unknown date';
         const desc = props.Description || 'No description';
 
-        let color = '#5555ff'; // Blue
+        let color = '#3388ffcc'; // Blue
         if (props["Deadly?"] === "Y" || parseInt(props["Dead (minimum)"]) > 0) {
             color = '#ff3333'; // Red
         } else if (props["Injurious?"] === "Y" || parseInt(props["Injured (minimum)"]) > 0) {
@@ -564,7 +564,7 @@ function updateAccidentChart(deadlyCount, injuriousCount, nonInjuriousCount) {
                 datasets: [{
                     label: 'Count',
                     data: [nonInjuriousCount, injuriousCount, deadlyCount],
-                    backgroundColor: ['#5555ff', '#ff9933', '#ff3333'],
+                    backgroundColor: ['#3388ffcc', '#ff9933', '#ff3333'],
                     borderWidth: 0,
                     barThickness: 16
                 }]
