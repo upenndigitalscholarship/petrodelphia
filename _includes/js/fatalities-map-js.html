@@ -16,7 +16,7 @@
 // Initialize a map with a view set to S Philly at city-scale 13. Default zoom control
 // is disabled here and replaced below with a combined zoom + fullscreen control at top
 // right, since the fatalities panel already occupies top left.
-const map = L.map('map', { attributionControl: false, zoomControl: false }).setView([39.921276, -75.189891], 13);
+const map = L.map('map', { attributionControl: false, zoomControl: false, maxZoom: 16 }).setView([39.921276, -75.189891], 13);
 
 // Combined zoom + fullscreen control (matching layeredmap-js.html's pattern)
 const CombinedControl = L.Control.extend({
@@ -41,11 +41,11 @@ const CombinedControl = L.Control.extend({
 
 new CombinedControl({ position: 'topright' }).addTo(map);
 
-// Add CARTO Positron basemap
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png' + (L.Browser.retina ? '@2x.png' : '.png'), {
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+// Add ESRI basemap
+L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}' + (L.Browser.retina ? '@2x.png' : '.png'), {
+    attribution:'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://www.arcgis.com/home/item.html?id=ed712cb1db3e4bae9e85329040fb9a49">Esri</a>',
     subdomains: 'abcd',
-    maxZoom: 20,
+    maxZoom: 16,
     minZoom: 0
 }).addTo(map);
 

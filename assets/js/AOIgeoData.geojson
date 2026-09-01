@@ -4808,6 +4808,81 @@
           39.92022130526088
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Year": "1920",
+        "Month": "08",
+        "Day": "15",
+        "Description": "Two tanks (crude oil) catch fire, possibly from lightning, threatening several vessels on nearby wharf.",
+        "Injurious?": "N",
+        "Deadly?": "N",
+        "Injured (minimum)": {},
+        "Dead (minimum)": {},
+        "Responsible corporate entity": "Atlantic Refining",
+        "General Location": "AOI-2",
+        "Street coordinates": "Near Schuylkill River\n",
+        "Year-Month-Day": "1920-08-15",
+        "marker": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20021112831061,
+          39.91656499137513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Year": "1925",
+        "Month": "12",
+        "Day": "09",
+        "Description": "Explosion of still; two-alarm fire; crowds gather on Passyunk Avenue Bridge to watch.",
+        "Injurious?": "N",
+        "Deadly?": "N",
+        "Injured (minimum)": {},
+        "Dead (minimum)": {},
+        "Responsible corporate entity": "Atlantic Refining",
+        "General Location": "AOI-2",
+        "Street coordinates": "Near Schuylkill River",
+        "Year-Month-Day": "1925-12-09",
+        "marker": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19844659834641,
+          39.916977446685905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Year": "1934",
+        "Month": "03",
+        "Day": "13",
+        "Description": "Fire at box factory.",
+        "Injurious?": "N",
+        "Deadly?": "N",
+        "Injured (minimum)": {},
+        "Dead (minimum)": {},
+        "Responsible corporate entity": "Atlantic Refining",
+        "General Location": "AOI-2",
+        "Street coordinates": null,
+        "Year-Month-Day": "1934-03-13",
+        "marker": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19963666305061,
+          39.92005863739104
+        ]
+      }
     }
   ]
 }
