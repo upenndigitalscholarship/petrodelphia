@@ -116,7 +116,7 @@ function createDiamondMarker(feature, latlng, radius, color) {
     const svgString = `
         <svg width="${svgSize}" height="${svgSize}" viewBox="0 0 ${svgSize} ${svgSize}" xmlns="http://www.w3.org/2000/svg">
             <polygon points="${center},2 ${center + radius},${center} ${center},${center + radius} ${center - radius},${center}"
-                     fill="${color}" stroke="black" stroke-width="1" opacity="0.8" fill-opacity="0.8"/>
+                     fill="${color}" stroke="${color}" stroke-width="1" opacity="0.8" fill-opacity="0.8"/>
         </svg>
     `;
 
@@ -184,12 +184,12 @@ const YearRangeControl = L.Control.extend({
                 </div>
                 <div class="year-range-display">
                     <div class="year-box year-box-min">
-                        <div class="year-box-label">Start Year:</div>
-                        <input id="year-min-display" class="year-value year-value-input" type="number" inputmode="numeric" value="1866">
+                        <div class="year-box-label">Start Year: </div>
+                        <input id="year-min-display" class="year-value year-value-input" type="number" inputmode="numeric" value="1866" style="width:5em">
                     </div>
                     <div class="year-box year-box-max">
-                        <div class="year-box-label">End Year:</div>
-                        <input id="year-max-display" class="year-value year-value-input" type="number" inputmode="numeric" value="2021">
+                        <div class="year-box-label">End Year: </div>
+                        <input id="year-max-display" class="year-value year-value-input" type="number" inputmode="numeric" value="2021" style="width:5em">
                     </div>
                 </div>
             </div>
