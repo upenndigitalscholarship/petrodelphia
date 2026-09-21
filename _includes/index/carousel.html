@@ -66,10 +66,18 @@
 {%- comment -%}
     add slides using JS to allow for randomizing slide show
 {%- endcomment -%}
+<script type="application/json" id="carousel-items-data">
+[
+{%- for c in carousel-items -%}
+{%- include helpers/item-alt-text.html item=c -%}
+[{{ c.title | escape | jsonify }},{{ c.objectid | jsonify }},{% if c.image_small %}{{ c.image_small | relative_url | jsonify }}{% else %}{{ c.image_thumb | relative_url | jsonify }}{% endif %},{{ c.parentid | jsonify }},{{ item_alt_text | strip | escape | jsonify }}]{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+]
+</script>
 <script>
     /* add item data */
     // title,objectid,image_thumb/small
-    var carouselItems = [ {% for c in carousel-items %}[ {{ c.title | escape | jsonify }}, "{{ c.objectid }}", {% if c.image_small %}{{ c.image_small | relative_url | jsonify }}{% else %}{{ c.image_thumb | relative_url | jsonify }}{% endif %}, "{{ c.parentid }}", {{ c.image_alt_text | default: c.title | escape | jsonify }} ]{% unless forloop.last %}, {% endunless %}{% endfor %}];
+    var carouselItems = JSON.parse(document.getElementById("carousel-items-data").textContent);
     /* shuffle items */
     carouselItems.sort(function() { return 0.5 - Math.random() });
 
