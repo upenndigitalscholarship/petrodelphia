@@ -64,7 +64,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.19370098399997,
+          2035 McClellan St,
           39.92192034100003
         ]
       },
@@ -535,7 +535,7 @@
       "properties": {
         "Day": 19,
         "Month": 8,
-        "Year": 1902,
+        "Year": 1901,
         "Description": "Lightning-caused explosion of tank (benzene) becomes conflagration.",
         "Employer": "City of Philadelphia",
         "Cemetery state": "PA",
@@ -622,7 +622,7 @@
       "properties": {
         "Day": 19,
         "Month": 8,
-        "Year": 1903,
+        "Year": 1901,
         "Description": "Lightning-caused explosion of tank (benzene) becomes conflagration.",
         "Employer": "City of Philadelphia",
         "Cemetery state": "PA",
@@ -680,7 +680,7 @@
       "properties": {
         "Day": 19,
         "Month": 8,
-        "Year": 1904,
+        "Year": 1901,
         "Description": "Lightning-caused explosion of tank (benzene) becomes conflagration.",
         "Employer": "Atlantic (Standard)",
         "Cemetery state": null,
@@ -709,7 +709,7 @@
       "properties": {
         "Day": 12,
         "Month": 5,
-        "Year": 1907,
+        "Year": 1905,
         "Description": "Explosion of gas holder.",
         "Employer": "Gas Works (UGI)",
         "Cemetery state": "PA",
@@ -738,7 +738,7 @@
       "properties": {
         "Day": 12,
         "Month": 5,
-        "Year": 1908,
+        "Year": 1905,
         "Description": "Explosion of gas holder.",
         "Employer": "Gas Works (UGI)",
         "Cemetery state": "PA",
@@ -767,7 +767,7 @@
       "properties": {
         "Day": 12,
         "Month": 5,
-        "Year": 1906,
+        "Year": 1905,
         "Description": "Explosion of gas holder.",
         "Employer": "Gas Works (UGI)",
         "Cemetery state": "PA",
@@ -883,7 +883,7 @@
       "properties": {
         "Day": 12,
         "Month": 5,
-        "Year": 1909,
+        "Year": 1905,
         "Description": "Explosion of gas holder.",
         "Employer": "Gas Works (UGI)",
         "Cemetery state": "PA",
