@@ -1,0 +1,17 @@
+{% comment %}
+  Build alt text for a collection item.
+  Usage: {% include helpers/item-alt-text.html item=item %}
+  Then output {{ item_alt_text | strip | escape }} (or jsonify in JS).
+
+  Prefer image_alt_text when present; otherwise:
+  - description present: "{description} of {title} by {creator}"
+  - else: "Image of {title} by {creator}"
+{% endcomment %}
+{%- assign _alt_item = include.item -%}
+{%- if _alt_item.image_alt_text and _alt_item.image_alt_text != '' -%}
+{%- assign item_alt_text = _alt_item.image_alt_text -%}
+{%- else -%}
+{%- capture item_alt_text -%}
+{%- if _alt_item.description and _alt_item.description != '' -%}{{ _alt_item.description }} of {{ _alt_item.title }}{%- else -%}Image of {{ _alt_item.title }}{%- endif -%}{% if _alt_item.creator and _alt_item.creator != '' %} by {{ _alt_item.creator }}{% endif %}
+{%- endcapture -%}
+{%- endif -%}
