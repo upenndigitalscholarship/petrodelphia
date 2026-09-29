@@ -1,0 +1,2557 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18687808699997,
+          39.93870659000004
+        ]
+      },
+      "properties": {
+        "Day": 7,
+        "Month": 11,
+        "Year": 1889,
+        "Description": "Explosion of still.",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "3900 N Front St",
+        "Cemetery name": "New Cathedral Cemetery",
+        "Burial place": "New Cathedral Cemetery, 3900 N Front St",
+        "Occpation": "Refinery worker",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "21",
+        "Medical report": "Accidental death",
+        "News report": "Died from explosion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19161343699994,
+          39.92362581000003
+        ]
+      },
+      "properties": {
+        "Day": 8,
+        "Month": 7,
+        "Year": 1880,
+        "Description": "Explosion of still (kerosene)",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "3900 N Front St",
+        "Cemetery name": "New Cathedral Cemetery",
+        "Burial place": "New Cathedral Cemetery, 3900 N Front St",
+        "Occpation": "Foreman",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "32",
+        "Medical report": "Death by injury received from burning of oil",
+        "News report": "Died from full-body burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19370098399997,
+          39.92192034100003
+        ]
+      },
+      "properties": {
+        "Day": 26,
+        "Month": 7,
+        "Year": 1881,
+        "Description": "Explosion of still under repair.",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "3900 N Front St",
+        "Cemetery name": "New Cathedral Cemetery",
+        "Burial place": "New Cathedral Cemetery, 3900 N Front St",
+        "Occpation": "Foreman",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "45",
+        "Medical report": "Death from burns accidentally received",
+        "News report": "Died from full-body burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17292424999994,
+          39.93233805400007
+        ]
+      },
+      "properties": {
+        "Day": 26,
+        "Month": 3,
+        "Year": 1880,
+        "Description": "Workplace accident inside still (explosion of kerosene lamp).",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Riveter",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "26",
+        "Medical report": "N/A",
+        "News report": "Died from full-body burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19361766699996,
+          39.92235044700004
+        ]
+      },
+      "properties": {
+        "Day": 7,
+        "Month": 11,
+        "Year": 1889,
+        "Description": "Explosion of still.",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Refinery worker",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "36",
+        "Medical report": "Accidental death",
+        "News report": "Died from explosion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16057110499997,
+          39.92193621300004
+        ]
+      },
+      "properties": {
+        "Day": 5,
+        "Month": 6,
+        "Year": 1890,
+        "Description": "Explosion on tanker ship Hans und Kurt (refined oil) during loading.",
+        "Employer": "German steamship tanker Hans und Kurt",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "2300 S 18th St",
+        "Cemetery name": "Trinity Lutheran Cemetery",
+        "Burial place": "Trinity Lutheran Cemetery, 2300 S 18th St",
+        "Occpation": "Shipping clerk",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "36",
+        "Medical report": "Explosion of petroleum",
+        "News report": "Died from full-body burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21125574699994,
+          39.97230161400006
+        ]
+      },
+      "properties": {
+        "Day": 29,
+        "Month": 12,
+        "Year": 1893,
+        "Description": "Explosion of boiler.",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Refinery worker",
+        " Birth place": "N/A",
+        "Race": "N/A",
+        "Age ": "35",
+        "Medical report": "N/A",
+        "News report": "Died from full-body wounds after being pulled from wreckage"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16973194799994,
+          39.94328693400007
+        ]
+      },
+      "properties": {
+        "Day": 11,
+        "Month": 8,
+        "Year": 1891,
+        "Description": "Workplace accident in paraffin factory (explosion of air pressure device).",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "3900 N Front St",
+        "Cemetery name": "New Cathedral Cemetery",
+        "Burial place": "New Cathedral Cemetery, 3900 N Front St",
+        "Occpation": "Mechanic",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "50",
+        "Medical report": "N/A",
+        "News report": "Died after being struck by flying metal"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.23218162299997,
+          39.92709414400008
+        ]
+      },
+      "properties": {
+        "Day": 1,
+        "Month": 11,
+        "Year": 1892,
+        "Description": "River catches fire after continued oil spill from leaking pipes.",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Solderer",
+        " Birth place": "N/A",
+        "Race": "White",
+        "Age ": "28",
+        "Medical report": "Drowning",
+        "News report": "Died from drowning"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.14541655899995,
+          39.94178588300008
+        ]
+      },
+      "properties": {
+        "Day": 3,
+        "Month": 7,
+        "Year": 1891,
+        "Description": "Explosion of tanker ship Standard (refined oil).",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Refinery worker",
+        " Birth place": "N/A",
+        "Race": "N/A",
+        "Age ": "24",
+        "Medical report": "N/A",
+        "News report": "Died from full-body burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17708511799998,
+          39.93286426100008
+        ]
+      },
+      "properties": {
+        "Day": 27,
+        "Month": 2,
+        "Year": 1894,
+        "Description": "Explosion of purifying house.",
+        "Employer": "Gas Works (Philadelphia)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Laborer",
+        " Birth place": "New Jersey",
+        "Race": "N/A",
+        "Age ": "43",
+        "Medical report": "N/A",
+        "News report": "Died from explosion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17661435799994,
+          39.93767056100006
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 4,
+        "Year": 1894,
+        "Description": "Workplace accident.",
+        "Employer": "Philadelphia Refining (Standard)",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Refinery worker",
+        " Birth place": "England",
+        "Race": "N/A",
+        "Age ": "25",
+        "Medical report": "N/A",
+        "News report": "Died instantly after caught in the shafting"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16337948299997,
+          39.928586610000025
+        ]
+      },
+      "properties": {
+        "Day": 29,
+        "Month": 12,
+        "Year": 1893,
+        "Description": "Explosion of boiler.",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Refinery worker",
+        " Birth place": "N/A",
+        "Race": "N/A",
+        "Age ": "65",
+        "Medical report": "N/A",
+        "News report": "Died from explosion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17374856299995,
+          39.93118598600006
+        ]
+      },
+      "properties": {
+        "Day": 16,
+        "Month": 8,
+        "Year": 1900,
+        "Description": "Explosion of tank (kerosene) leads to fire in illuminating gas factory.",
+        "Employer": "Philadelphia Refining (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "4400 W Girard Ave",
+        "Cemetery name": "Olive Cemetery",
+        "Burial place": "Olive Cemetery (south side of W Girard Ave between Merion Ave and Belmont Ave)",
+        "Occpation": "Engineer",
+        " Birth place": "Maryland",
+        "Race": "Black",
+        "Age ": "49",
+        "Medical report": "Burns received by explosion of gas",
+        "News report": "Died from burns and noxious fumes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19283444799999,
+          39.92607979200005
+        ]
+      },
+      "properties": {
+        "Day": 2,
+        "Month": 8,
+        "Year": 1896,
+        "Description": "Fire in asphalt plant.",
+        "Employer": "N/A",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Civilian",
+        " Birth place": "N/A",
+        "Race": "N/A",
+        "Age ": "N/A",
+        "Medical report": "N/A",
+        "News report": "Died in flames"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.23642709199999,
+          39.942655226000056
+        ]
+      },
+      "properties": {
+        "Day": 2,
+        "Month": 8,
+        "Year": 1896,
+        "Description": "Fire in asphalt plant.",
+        "Employer": "N/A",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "1032 N 48th St",
+        "Cemetery name": "Old Cathedral Cemetery",
+        "Burial place": "Old Cathedral Cemetery, 1032 N 48th St",
+        "Occpation": "Civilian",
+        " Birth place": "Delaware",
+        "Race": "White",
+        "Age ": "14",
+        "Medical report": "Accidental burns",
+        "News report": "Died in flames"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17066925899996,
+          39.92323489700004
+        ]
+      },
+      "properties": {
+        "Day": 16,
+        "Month": 8,
+        "Year": 1900,
+        "Description": "Explosion of tank (kerosene) leads to fire in illuminating gas factory.",
+        "Employer": "Philadelphia Refining (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "930 Adams Ave",
+        "Cemetery name": "Knights of Pythias Greenwood",
+        "Burial place": "Knights of Pythias Greenwood Cemetery, 930 Adams Ave",
+        "Occpation": "Plumber",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "26",
+        "Medical report": "Burns",
+        "News report": "Died from burns and noxious fumes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19409206499995,
+          39.92624011300006
+        ]
+      },
+      "properties": {
+        "Day": 16,
+        "Month": 8,
+        "Year": 1900,
+        "Description": "Explosion of tank (kerosene) leads to fire in illuminating gas factory.",
+        "Employer": "Philadelphia Refining (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Lansdowne",
+        "Cemetery address": "6501 E Baltimore Ave",
+        "Cemetery name": "Fernwood Cemetery",
+        "Burial place": "Fernwood Cemetery, Lansdowne, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "41",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16802970999998,
+          39.98158482400004
+        ]
+      },
+      "properties": {
+        "Day": 19,
+        "Month": 8,
+        "Year": 1902,
+        "Description": "Lightning-caused explosion of tank (benzene) becomes conflagration.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "3499 W Lehigh Ave",
+        "Cemetery name": "Mount Vernon",
+        "Burial place": "Mount Vernon Cemetery, 3499 W Lehigh Ave",
+        "Occpation": "Firefighter",
+        " Birth place": "New Jersey",
+        "Race": "White",
+        "Age ": "35",
+        "Medical report": "Met death accidentally during the discharge of their duty",
+        "News report": "Died from injuries"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.15867124699997,
+          39.93523582100005
+        ]
+      },
+      "properties": {
+        "Day": 19,
+        "Month": 8,
+        "Year": 1901,
+        "Description": "Lightning-caused explosion of tank (benzene) becomes conflagration.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Firefighter",
+        " Birth place": "N/A",
+        "Race": "N/A",
+        "Age ": "N/A",
+        "Medical report": "Met death accidentally during the discharge of their duty",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17854133099996,
+          39.92885297500004
+        ]
+      },
+      "properties": {
+        "Day": 11,
+        "Month": 4,
+        "Year": 1903,
+        "Description": "Match-lit explosion of railroad tank car (benzene).",
+        "Employer": "N/A",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Civilian",
+        " Birth place": "N/A",
+        "Race": "White",
+        "Age ": "14",
+        "Medical report": "N/A",
+        "News report": "Died after being blown high into the air"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16033032799999,
+          39.94212187900007
+        ]
+      },
+      "properties": {
+        "Day": 19,
+        "Month": 8,
+        "Year": 1903,
+        "Description": "Lightning-caused explosion of tank (benzene) becomes conflagration.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Firefighter",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "60",
+        "Medical report": "Met death accidentally during the discharge of their duty",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19283444799999,
+          39.92607979200005
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 5,
+        "Year": 1905,
+        "Description": "Explosion of gas holder.",
+        "Employer": "Gas Works (UGI)",
+        "Cemetery state": "MA",
+        "Cemetery county": "Hampshire",
+        "Cemetery city": "Ware",
+        "Cemetery address": "176 West St",
+        "Cemetery name": null,
+        "Burial place": "Ware, MA",
+        "Occpation": "Laborer",
+        " Birth place": "Massachusetts",
+        "Race": "White",
+        "Age ": "21",
+        "Medical report": "N/A",
+        "News report": "Died from explosion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18170689099998,
+          39.93869608700004
+        ]
+      },
+      "properties": {
+        "Day": 19,
+        "Month": 8,
+        "Year": 1904,
+        "Description": "Lightning-caused explosion of tank (benzene) becomes conflagration.",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Refinery worker",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "N/A",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17666213199993,
+          39.92528082900003
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 5,
+        "Year": 1907,
+        "Description": "Explosion of gas holder.",
+        "Employer": "Gas Works (UGI)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Laborer",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "40",
+        "Medical report": "N/A",
+        "News report": "Died in hospital from injuries"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18116499599995,
+          39.93339479600007
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 5,
+        "Year": 1908,
+        "Description": "Explosion of gas holder.",
+        "Employer": "Gas Works (UGI)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Laborer",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "56",
+        "Medical report": "N/A",
+        "News report": "Died in hospital from injuries"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16747954799996,
+          39.94251565800005
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 5,
+        "Year": 1906,
+        "Description": "Explosion of gas holder.",
+        "Employer": "Gas Works (UGI)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Lansdowne",
+        "Cemetery address": "6501 E Baltimore Ave",
+        "Cemetery name": "Fernwood Cemetery",
+        "Burial place": "Fernwood Cemetery, Lansdowne, PA",
+        "Occpation": "Laborer",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "28",
+        "Medical report": "N/A",
+        "News report": "Died from explosion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17904375599994,
+          39.93311849600008
+        ]
+      },
+      "properties": {
+        "Day": 7,
+        "Month": 9,
+        "Year": 1906,
+        "Description": "Explosion of safety valve causes feed pipe to fall in paraffin plant.",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "27",
+        "Medical report": "Struck by pipe at Point Breeze Works",
+        "News report": "Died from head injury, crushed thigh, and several broken ribs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18334551899994,
+          39.93117121900008
+        ]
+      },
+      "properties": {
+        "Day": 7,
+        "Month": 9,
+        "Year": 1906,
+        "Description": "Explosion of safety valve causes feed pipe to fall in paraffin plant.",
+        "Employer": "Atlantic (Standard)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Lansdowne",
+        "Cemetery address": "6501 E Baltimore Ave",
+        "Cemetery name": "Fernwood Cemetery",
+        "Burial place": "Fernwood Cemetery, Lansdowne, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "44",
+        "Medical report": "Struck by pipe at Point Breeze Works",
+        "News report": "Died from compound fracture of skull"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18132745099996,
+          39.93259889300003
+        ]
+      },
+      "properties": {
+        "Day": 3,
+        "Month": 7,
+        "Year": 1911,
+        "Description": "Seeking relief from heat, worker swims in company pond, and drowns.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Fireman",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "55",
+        "Medical report": "N/A",
+        "News report": "Died from drowning"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17358440599997,
+          39.975594269000055
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 5,
+        "Year": 1909,
+        "Description": "Explosion of gas holder.",
+        "Employer": "Gas Works (UGI)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Painter",
+        " Birth place": "Pennsylvania",
+        "Race": "White",
+        "Age ": "69",
+        "Medical report": "Burns",
+        "News report": "Died in hospital from injuries"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.22192537599994,
+          39.95473232100005
+        ]
+      },
+      "properties": {
+        "Day": 16,
+        "Month": 1,
+        "Year": 1919,
+        "Description": "Tanker ship fire spreads to wharves and neighboring vessels.",
+        "Employer": "Anglo-American Oil Company",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Shipmate",
+        " Birth place": "N/A",
+        "Race": "N/A",
+        "Age ": "N/A",
+        "Medical report": "N/A",
+        "News report": "Died from burns (charred remains discovered)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.24867133599997,
+          39.93413192300005
+        ]
+      },
+      "properties": {
+        "Day": 3,
+        "Month": 8,
+        "Year": 1921,
+        "Description": "Workplace accident inside still (small fire).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Stillman",
+        " Birth place": "N/A",
+        "Race": "N/A",
+        "Age ": "52",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18436099499996,
+          39.92371583500005
+        ]
+      },
+      "properties": {
+        "Day": 16,
+        "Month": 1,
+        "Year": 1919,
+        "Description": "Tanker ship fire spreads to wharves and neighboring vessels.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "2300 S 18th St",
+        "Cemetery name": "Trinity Lutheran Cemetery",
+        "Burial place": "Trinity Lutheran Cemetery, 2300 S 18th St",
+        "Occpation": "Machinist",
+        " Birth place": "Tennessee",
+        "Race": "White",
+        "Age ": "28",
+        "Medical report": "General burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16462154399994,
+          39.92291447400004
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 8,
+        "Year": 1921,
+        "Description": "Explosion of still (steam) leads to explosion of tanks (refined oil); multi-day fire.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Foreman",
+        " Birth place": "England",
+        "Race": "White",
+        "Age ": "60",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.23453432999997,
+          39.95300952500003
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 8,
+        "Year": 1921,
+        "Description": "Explosion of still (steam) leads to explosion of tanks (refined oil); multi-day fire.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Pennsylvania",
+        "Race": "White",
+        "Age ": "21",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18496950499997,
+          39.93137843900007
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 8,
+        "Year": 1921,
+        "Description": "Explosion of still (steam) leads to explosion of tanks (refined oil); multi-day fire.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Refinery worker",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "30",
+        "Medical report": "Burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.23294227899999,
+          39.92929176700005
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 8,
+        "Year": 1921,
+        "Description": "Explosion of still (steam) leads to explosion of tanks (refined oil); multi-day fire.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Refinery worker",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "19",
+        "Medical report": "Auto injuries",
+        "News report": "Died from motorcycle crash (speeding to refinery accident scene)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.23294227899999,
+          39.92929176700005
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 8,
+        "Year": 1921,
+        "Description": "Explosion of still (steam) leads to explosion of tanks (refined oil); multi-day fire.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Lancaster",
+        "Cemetery city": "Peach Bottom",
+        "Cemetery address": "1530 Slate Hill Rd",
+        "Cemetery name": "Mount Zion United Methodist Cemetery",
+        "Burial place": "Mount Zion United Methodist Cemetery, Peach Bottom, Lancaster County, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Pennsylvania",
+        "Race": "White",
+        "Age ": "41",
+        "Medical report": "Toxemia from burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18194731799997,
+          39.92973899400005
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 8,
+        "Year": 1921,
+        "Description": "Explosion of still (steam) leads to explosion of tanks (refined oil); multi-day fire.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Stillman",
+        " Birth place": "New York",
+        "Race": "White",
+        "Age ": "66",
+        "Medical report": "General burns received at Atlantic Refining",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.23371994699994,
+          39.944568365000066
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Montgomery",
+        "Cemetery city": "Conshohocken",
+        "Cemetery address": "28 Maple Dr",
+        "Cemetery name": "Saint Matthew Cemetery",
+        "Burial place": "Saint Matthew Cemetery, Conshohocken, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Pennsylvania",
+        "Race": "White",
+        "Age ": "27",
+        "Medical report": "Cardiac dilatation",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18496950499997,
+          39.93137843900007
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Header",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "41",
+        "Medical report": "General burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19269490999994,
+          39.92684766000008
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Lithuania",
+        "Race": "White",
+        "Age ": "30",
+        "Medical report": "General burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19432499599998,
+          39.92671601200004
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Lithuania",
+        "Race": "White",
+        "Age ": "29",
+        "Medical report": "General burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19334407899998,
+          39.92743038800006
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Lithuania",
+        "Race": "White",
+        "Age ": "34",
+        "Medical report": "General burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16737702599994,
+          39.96527565400004
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Lithuania",
+        "Race": "White",
+        "Age ": "47",
+        "Medical report": "Burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17452264899998,
+          39.92244773700003
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Lansdowne",
+        "Cemetery address": "6501 E Baltimore Ave",
+        "Cemetery name": "Fernwood Cemetery",
+        "Burial place": "Fernwood Cemetery, Lansdowne, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "56",
+        "Medical report": "General burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19505719199998,
+          39.95202252400003
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Poland",
+        "Race": "White",
+        "Age ": "38",
+        "Medical report": "Burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17089383499996,
+          39.92956195600004
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Refinery worker",
+        " Birth place": "Pennsylvania",
+        "Race": "White",
+        "Age ": "56",
+        "Medical report": "General burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18732933399997,
+          39.936688298000036
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Rigger",
+        " Birth place": "N/A",
+        "Race": "White",
+        "Age ": "42",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.23623215699996,
+          39.924244413000054
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Bucks",
+        "Cemetery city": "Perkasie",
+        "Cemetery address": "1067 Old Bethlehem Rd",
+        "Cemetery name": "Tohickon Cemetery",
+        "Burial place": "Tohickon Cemetery, Perkasie, PA",
+        "Occpation": "Welder",
+        " Birth place": "Pennsylvania",
+        "Race": "White",
+        "Age ": "22",
+        "Medical report": "Burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21093663499994,
+          39.876038046000076
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Refinery worker",
+        " Birth place": "N/A",
+        "Race": "White",
+        "Age ": "42",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19409206499995,
+          39.92624011300006
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Refinery worker",
+        " Birth place": "Austria",
+        "Race": "White",
+        "Age ": "35",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.12855145499998,
+          39.98052704300005
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 10,
+        "Year": 1925,
+        "Description": "Explosion in engine room of tugboat VanDyke sinks the craft.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6909 Limekiln Pike",
+        "Cemetery name": "Philadelphia National Cemetery",
+        "Burial place": "Philadelphia National Cemetery, 6909 Limekiln Pike",
+        "Occpation": "Engineer",
+        " Birth place": "Texas",
+        "Race": "White",
+        "Age ": "32",
+        "Medical report": "N/A",
+        "News report": "Died from drowning"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18194041399994,
+          39.93760809100007
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1921,
+        "Description": "Explosion of still (naphtha).",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "6201 Kingsessing Ave",
+        "Cemetery name": "Mount Moriah Cemetery",
+        "Burial place": "Mount Moriah Cemetery",
+        "Occpation": "Refinery worker",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "63",
+        "Medical report": "General burns",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.08720698399998,
+          40.015699271000074
+        ]
+      },
+      "properties": {
+        "Day": 18,
+        "Month": 11,
+        "Year": 1926,
+        "Description": "Explosion of barge carrying gasoline.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Engineer",
+        " Birth place": "N/A",
+        "Race": "N/A",
+        "Age ": "N/A",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18272142199999,
+          39.92350783100005
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 9,
+        "Year": 1931,
+        "Description": "Explosion of gas stabilization plant.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Lansdowne",
+        "Cemetery address": "6501 E Baltimore Ave",
+        "Cemetery name": "Fernwood Cemetery",
+        "Burial place": "Fernwood Cemetery, Lansdowne, PA",
+        "Occpation": "Helper",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "40",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.23149463099998,
+          39.91923248300003
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 9,
+        "Year": 1931,
+        "Description": "Explosion of gas stabilization plant.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Foreman",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "30",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.22906240299994,
+          39.94276316300005
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 9,
+        "Year": 1931,
+        "Description": "Explosion of gas stabilization plant.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Helper",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "21",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19434800599998,
+          39.92175172800006
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 9,
+        "Year": 1931,
+        "Description": "Explosion of gas stabilization plant.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Machinist",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "25",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19283444799999,
+          39.92607979200005
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 9,
+        "Year": 1931,
+        "Description": "Explosion of gas stabilization plant.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Lansdowne",
+        "Cemetery address": "6501 E Baltimore Ave",
+        "Cemetery name": "Fernwood Cemetery",
+        "Burial place": "Fernwood Cemetery, Lansdowne, PA",
+        "Occpation": "Helper",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "22",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18603919599997,
+          39.929001225000036
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 9,
+        "Year": 1931,
+        "Description": "Explosion of gas stabilization plant.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Machinist",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "46",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.26524047099997,
+          39.91862695700007
+        ]
+      },
+      "properties": {
+        "Day": 7,
+        "Month": 5,
+        "Year": 1941,
+        "Description": "Explosion of vat in varnish distillery.",
+        "Employer": "DuPont",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Collingdale",
+        "Cemetery address": "1400 Springfield Rd",
+        "Cemetery name": "Mount Zion Cemetery",
+        "Burial place": "Mount Zion Cemetery, Collingdale, PA",
+        "Occpation": "Oil tester",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "54",
+        "Medical report": "Burns and injuries to hips",
+        "News report": "Died in hospital from injuries (crushed legs)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.21215834699996,
+          39.94444114200007
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 9,
+        "Year": 1931,
+        "Description": "Explosion of gas stabilization plant.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "900 Federal St",
+        "Cemetery name": "Lafayette Cemetery",
+        "Burial place": "Lafayette Cemetery (now Capitolo Playground), 900 Federal St",
+        "Occpation": "Pipefitter",
+        " Birth place": "Alabama",
+        "Race": "White",
+        "Age ": "27",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.22676337199994,
+          39.935015616000044
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 9,
+        "Year": 1931,
+        "Description": "Explosion of gas stabilization plant.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Rigger",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "30",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.22440329699998,
+          39.926375291000056
+        ]
+      },
+      "properties": {
+        "Day": 14,
+        "Month": 9,
+        "Year": 1931,
+        "Description": "Explosion of still.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": null,
+        "Cemetery county": null,
+        "Cemetery city": null,
+        "Cemetery address": null,
+        "Cemetery name": null,
+        "Burial place": "N/A",
+        "Occpation": "Stillman",
+        " Birth place": "Northern Ireland",
+        "Race": "White",
+        "Age ": "50",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16074739199996,
+          39.99310997300006
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 4,
+        "Year": 1944,
+        "Description": "Explosion of pumping unit; five-alarm fire.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "3301 W Cheltenham Ave",
+        "Cemetery name": "Holy Sepulchre Cemetery",
+        "Burial place": "Holy Sepulchre Cemetery, 3301 W Cheltenham Ave",
+        "Occpation": "Refinery worker",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "43",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18177704199996,
+          39.93052591800006
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 4,
+        "Year": 1944,
+        "Description": "Explosion of pumping unit; five-alarm fire.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Pumper",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "57",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.24568094899996,
+          39.924887022000064
+        ]
+      },
+      "properties": {
+        "Day": 6,
+        "Month": 5,
+        "Year": 1950,
+        "Description": "Explosion of experimental still.",
+        "Employer": "Gulf",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "225 Belmont Avenue",
+        "Cemetery name": "Laurel Hill West Cemetery",
+        "Burial place": "West Laurel Hill Cemetery, Philadelphia",
+        "Occpation": "Laboratory technician",
+        " Birth place": "Pennsylvania",
+        "Race": "White",
+        "Age ": "21",
+        "Medical report": "N/A",
+        "News report": "Died trapped by flames atop an experimental still"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.10128369299997,
+          39.98683111400004
+        ]
+      },
+      "properties": {
+        "Day": 1,
+        "Month": 11,
+        "Year": 1945,
+        "Description": "Explosion of gas generator.",
+        "Employer": "Gas Works (UGI)",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "8504 Frankford Ave",
+        "Cemetery name": "Saint Dominic Roman Catholic Cemetery",
+        "Burial place": "Saint Dominic Roman Catholic Cemetery, 8504 Frankford Avenue",
+        "Occpation": "Laborer",
+        " Birth place": "Poland",
+        "Race": "White",
+        "Age ": "54",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.19865100799996,
+          39.95363365000003
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 4,
+        "Year": 1944,
+        "Description": "Explosion of pumping unit; five-alarm fire.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Montgomery",
+        "Cemetery city": "Abington Township",
+        "Cemetery address": "2556 Susquehanna Rd",
+        "Cemetery name": "Hillside Cemetery",
+        "Burial place": "Hillside Cemetery, Montgomery, PA",
+        "Occpation": "Chemist",
+        " Birth place": "Michigan",
+        "Race": "Black",
+        "Age ": "60",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.07831422899994,
+          40.074367980000034
+        ]
+      },
+      "properties": {
+        "Day": 23,
+        "Month": 8,
+        "Year": 1962,
+        "Description": "Explosion of storm sewer tunnel infused with refinery leakage.",
+        "Employer": "Driscoll Construction Company",
+        "Cemetery state": "PA",
+        "Cemetery county": "Philadelphia",
+        "Cemetery city": "Philadelphia",
+        "Cemetery address": "3301 W Cheltenham Ave",
+        "Cemetery name": "Holy Sepulchre Cemetery",
+        "Burial place": "Holy Sepulchre Cemetery, 3301 W Cheltenham Ave",
+        "Occpation": "Sandhog",
+        " Birth place": "Kentucky",
+        "Race": "White",
+        "Age ": "26",
+        "Medical report": "Multiple injuries, trapped in tunnel during fire and explosion",
+        "News report": "Died in tunnel explosion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.22676365399997,
+          39.92325154900004
+        ]
+      },
+      "properties": {
+        "Day": 12,
+        "Month": 4,
+        "Year": 1944,
+        "Description": "Explosion of pumping unit; five-alarm fire.",
+        "Employer": "Atlantic Refining",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Ireland",
+        "Race": "White",
+        "Age ": "58",
+        "Medical report": "N/A",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.15126819199997,
+          39.983987746000025
+        ]
+      },
+      "properties": {
+        "Day": 23,
+        "Month": 8,
+        "Year": 1962,
+        "Description": "Explosion of storm sewer tunnel infused with refinery leakage.",
+        "Employer": "Driscoll Construction Company",
+        "Cemetery state": "PA",
+        "Cemetery county": "Bucks",
+        "Cemetery city": "Trevose",
+        "Cemetery address": "2701 Old Lincoln Hwy",
+        "Cemetery name": "Roosevelt Memorial Park",
+        "Burial place": "Roosevelt Memorial Park, Trevose, PA",
+        "Occpation": "Sandhog",
+        " Birth place": "Virginia",
+        "Race": "Black",
+        "Age ": "23",
+        "Medical report": "Multiple injuries, trapped in tunnel during fire and explosion",
+        "News report": "Died in tunnel explosion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.18035907799998,
+          39.923205395000025
+        ]
+      },
+      "properties": {
+        "Day": 23,
+        "Month": 8,
+        "Year": 1962,
+        "Description": "Explosion of storm sewer tunnel infused with refinery leakage.",
+        "Employer": "Driscoll Construction Company",
+        "Cemetery state": "SC",
+        "Cemetery county": "Florence",
+        "Cemetery city": "Coward",
+        "Cemetery address": "Olive Grove Cemetery",
+        "Cemetery name": "Olive Grove Baptist Church Cemetery",
+        "Burial place": "Olive Grove Baptist Church Cemetery, Florence, SC",
+        "Occpation": "Sandhog",
+        " Birth place": "South Carolina",
+        "Race": "Black",
+        "Age ": "36",
+        "Medical report": "Multiple injuries, trapped in tunnel during fire and explosion",
+        "News report": "Died in tunnel explosion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.34858232099998,
+          39.87889338300005
+        ]
+      },
+      "properties": {
+        "Day": 11,
+        "Month": 5,
+        "Year": 1970,
+        "Description": "Explosion of 13-story catalytic cracking unit leads to conflagration and general destruction.",
+        "Employer": "ARCO",
+        "Cemetery state": "PA",
+        "Cemetery county": "Chester",
+        "Cemetery city": "Frazer",
+        "Cemetery address": "124 Phoenixville Pike",
+        "Cemetery name": "Philadelphia Memorial Park",
+        "Burial place": "Philadelpia Memorial Park, Fraser, PA",
+        "Occpation": "Mechanic",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "44",
+        "Medical report": "Third-degree thermal burns of all of body surface",
+        "News report": "Died in blast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16420572199996,
+          39.99202569800008
+        ]
+      },
+      "properties": {
+        "Day": 23,
+        "Month": 8,
+        "Year": 1962,
+        "Description": "Explosion of storm sewer tunnel infused with refinery leakage.",
+        "Employer": "Driscoll Construction Company",
+        "Cemetery state": "NJ",
+        "Cemetery county": "Burlington",
+        "Cemetery city": "Beverly",
+        "Cemetery address": "916 Bridgeboro Rd",
+        "Cemetery name": "Beverly National Cemetery",
+        "Burial place": "Beverly National Cemetery, 916 Bridgeboro Rd, Beverly, NJ",
+        "Occpation": "Sandhog (Foreman)",
+        " Birth place": "Virginia",
+        "Race": "Black",
+        "Age ": "32",
+        "Medical report": "Multiple injuries, trapped in tunnel during fire and explosion",
+        "News report": "Died in tunnel explosion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.22869843299998,
+          39.916862140000035
+        ]
+      },
+      "properties": {
+        "Day": 11,
+        "Month": 5,
+        "Year": 1970,
+        "Description": "Explosion of 13-story catalytic cracking unit leads to conflagration and general destruction.",
+        "Employer": "ARCO",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Lansdowne",
+        "Cemetery address": "6501 E Baltimore Ave",
+        "Cemetery name": "Fernwood Cemetery",
+        "Burial place": "Fernwood Cemetery, Lansdowne, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Pennsylvania",
+        "Race": "White",
+        "Age ": "59",
+        "Medical report": "Third-degree thermal burns of all of body surface",
+        "News report": "Died in blast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.20830287399997,
+          40.13909644900008
+        ]
+      },
+      "properties": {
+        "Day": 11,
+        "Month": 5,
+        "Year": 1970,
+        "Description": "Explosion of 13-story catalytic cracking unit leads to conflagration and general destruction.",
+        "Employer": "ARCO",
+        "Cemetery state": "PA",
+        "Cemetery county": "Montgomery",
+        "Cemetery city": "Ambler",
+        "Cemetery address": "411 Susquehanna Rd",
+        "Cemetery name": "Rose Hill Cemetery",
+        "Burial place": "Rose Hill Cemetery, Ambler, PA",
+        "Occpation": "Stillman",
+        " Birth place": "Virginia",
+        "Race": "White",
+        "Age ": "47",
+        "Medical report": "Third-degree thermal burns of all of body surface",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.09956241599997,
+          40.04798307500005
+        ]
+      },
+      "properties": {
+        "Day": 11,
+        "Month": 5,
+        "Year": 1970,
+        "Description": "Explosion of 13-story catalytic cracking unit leads to conflagration and general destruction.",
+        "Employer": "ARCO",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Refinery worker",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "64",
+        "Medical report": "Third-degree thermal burns of all of body surface",
+        "News report": "Died in blast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.15776899199994,
+          39.91370918500007
+        ]
+      },
+      "properties": {
+        "Day": 17,
+        "Month": 8,
+        "Year": 1975,
+        "Description": "Explosion of pipes (crude oil); eleven-alarm fire.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Firefighter",
+        " Birth place": "Pennsylvania",
+        "Race": "White",
+        "Age ": "28",
+        "Medical report": "N/A",
+        "News report": "Died fighting flames"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.10961164599996,
+          39.999173488000054
+        ]
+      },
+      "properties": {
+        "Day": 17,
+        "Month": 8,
+        "Year": 1975,
+        "Description": "Explosion of pipes (crude oil); eleven-alarm fire.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": "PA",
+        "Cemetery county": "Bucks",
+        "Cemetery city": "Langhorne",
+        "Cemetery address": "1215 Super Highway",
+        "Cemetery name": "Our Lady of Grace Cemetery",
+        "Burial place": "Our Lady of Grace Cemetery, Langhorne, PA",
+        "Occpation": "Firefighter",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "43",
+        "Medical report": "N/A",
+        "News report": "Died fighting flames"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.24518832099994,
+          39.90497641500008
+        ]
+      },
+      "properties": {
+        "Day": 17,
+        "Month": 8,
+        "Year": 1975,
+        "Description": "Explosion of pipes (crude oil); eleven-alarm fire.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Yeadon",
+        "Cemetery address": "626 Baily Rd",
+        "Cemetery name": "Holy Cross Cemetery",
+        "Burial place": "Holy Cross Cemetery, Yeadon, PA",
+        "Occpation": "Firefighter",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "33",
+        "Medical report": "N/A",
+        "News report": "Died fighting flames"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.17407041199994,
+          39.917107722000026
+        ]
+      },
+      "properties": {
+        "Day": 17,
+        "Month": 8,
+        "Year": 1975,
+        "Description": "Explosion of pipes (crude oil); eleven-alarm fire.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": "PA",
+        "Cemetery county": "Delaware",
+        "Cemetery city": "Springfield",
+        "Cemetery address": "1600 Sproul Rd",
+        "Cemetery name": "Saints Peter and Paul Cemetery",
+        "Burial place": "Saints Peter and Paul Cemetery, Springfield, PA",
+        "Occpation": "Firefighter",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "49",
+        "Medical report": "N/A",
+        "News report": "Died fighting flames"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.25254645299998,
+          39.980779158000075
+        ]
+      },
+      "properties": {
+        "Day": 17,
+        "Month": 8,
+        "Year": 1975,
+        "Description": "Explosion of pipes (crude oil); eleven-alarm fire.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": "PA",
+        "Cemetery county": "Montgomery",
+        "Cemetery city": "Roslyn",
+        "Cemetery address": "2556 Susquehanna Rd",
+        "Cemetery name": "Hillside Cemetery and Memorial Gardens",
+        "Burial place": "Hillside Cemetery and Memorial Gardens, Roslyn, PA",
+        "Occpation": "Firefighter",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "33",
+        "Medical report": "Sepsis",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.11293476199995,
+          40.02014616300005
+        ]
+      },
+      "properties": {
+        "Day": 17,
+        "Month": 8,
+        "Year": 1975,
+        "Description": "Explosion of pipes (crude oil); eleven-alarm fire.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": "PA",
+        "Cemetery county": "Montgomery",
+        "Cemetery city": "Cheltenham Township",
+        "Cemetery address": "3301 W Cheltenham Ave",
+        "Cemetery name": "Holy Sepulchre Cemetery",
+        "Burial place": "Holy Sepulchre Cemetery, Cheltenham Township, PA",
+        "Occpation": "Firefighter (Lieutenant)",
+        " Birth place": "Minnesota",
+        "Race": "White",
+        "Age ": "35",
+        "Medical report": "Sepsis",
+        "News report": "Died from burns"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.06923433199995,
+          40.07150674700006
+        ]
+      },
+      "properties": {
+        "Day": 17,
+        "Month": 8,
+        "Year": 1975,
+        "Description": "Explosion of pipes (crude oil); eleven-alarm fire.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": "PA",
+        "Cemetery county": "Montgomery",
+        "Cemetery city": "Cheltenham Township",
+        "Cemetery address": "3301 W Cheltenham Ave",
+        "Cemetery name": "Holy Sepulchre Cemetery",
+        "Burial place": "Holy Sepulchre Cemetery, Cheltenham Township, PA",
+        "Occpation": "Firefighter",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "53",
+        "Medical report": "N/A",
+        "News report": "Died fighting flames"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.12638583999995,
+          40.03121955100005
+        ]
+      },
+      "properties": {
+        "Day": 17,
+        "Month": 8,
+        "Year": 1975,
+        "Description": "Explosion of pipes (crude oil); eleven-alarm fire.",
+        "Employer": "City of Philadelphia",
+        "Cemetery state": "PA",
+        "Cemetery county": "Montgomery",
+        "Cemetery city": "Roslyn",
+        "Cemetery address": "2556 Susquehanna Rd",
+        "Cemetery name": "Hillside Cemetery and Memorial Gardens",
+        "Burial place": "Hillside Cemetery and Memorial Gardens, Roslyn, PA",
+        "Occpation": "Firefighter",
+        " Birth place": "Philadelphia",
+        "Race": "White",
+        "Age ": "41",
+        "Medical report": "N/A",
+        "News report": "Died fighting flames"
+      }
+    }
+  ]
+}

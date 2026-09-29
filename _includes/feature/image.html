@@ -36,7 +36,8 @@
         {%- assign figure = site.data[site.metadata] | where: "objectid", i | first -%}
         {%- capture image_link -%}{{ '/items/' | relative_url }}{% if figure.parentid %}{{ figure.parentid }}.html#{{ figure.objectid }}{% else %}{{ figure.objectid }}.html{% endif %}{% endcapture %}
         {%- capture image_caption -%}{{ captions[forloop.index0] | default: figure.title }}{%- endcapture -%}
-        {%- capture image_alt -%}{{ alts[forloop.index0] | default: figure.image_alt_text | default: figure.description | default: figure.title }}{%- endcapture -%}
+        {%- include helpers/item-alt-text.html item=figure -%}
+        {%- capture image_alt -%}{{ alts[forloop.index0] | default: item_alt_text }}{%- endcapture -%}
         {%- capture image_src -%}{{ figure.image_small | default: figure.object_location | relative_url }}{% endcapture %}
     {% endif %}
     <div class="col-md {% if figcount == 1 %}text-center{% elsif forloop.first %}text-md-end{% elsif forloop.last %}text-md-start{% else %}text-center{% endif %}">
