@@ -22,7 +22,8 @@
 {%- elsif include.objectid -%}
 {%- assign item = site.data[site.metadata] | where: "objectid", include.objectid | first -%}
 {%- capture src -%}{{ item.image_small | default: item.object_location | relative_url }}{% endcapture %}
-{%- capture alt -%}{{ item.image_alt_text | default: item.description | default: item.title }}{% endcapture %}
+{%- include helpers/item-alt-text.html item=item -%}
+{%- capture alt -%}{{ include.alt | default: item_alt_text }}{% endcapture %}
 {%- endif -%}
 <div class="card mb-3{% if include.float %} feature-float-{{ include.float }}{% endif %}{% if include.width %} feature-w-{{ include.width }}{% endif %}{% if include.centered %} mx-auto{% endif %}">
     {% if src %}<img class="card-img-top" src="{{ src }}" alt="{{ alt | escape }}">{%- endif -%}
